@@ -1,17 +1,45 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const mode = process.env.NODE_ENV || 'development';
-const devMode = mode === 'development';
-
-const target = devMode ? 'web' : 'browserslist';
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+//=================================================================
+const devMode = process.env.NODE_ENV === 'development';
+const prodMode = !devMode;
 const devtool = devMode ? 'source-map' : undefined;
-
+//=================================================================
+const fileName = ext => devMode ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+const pagesDir = path.resolve(__dirname, './src/pages');
+const pageFiles = fs.readdirSync(pagesDir);
+const HTML_PLUGINS = pageFiles.map((file) => {
+	return new HtmlWebpackPlugin({
+		template: path.resolve(pagesDir, file),
+		filename: path.join('pages', fileName('html'))
+	})
+}
+);
+const optimization = () => {
+	const config = {
+		splitChunks: {
+			chunks: 'all'
+		}
+	}
+	if (prodMode) {
+		config.minimizer = [
+			new CssMinimizerPlugin(),
+			new TerserPlugin()
+		]
+	}
+	return config
+};
+//=================================================================
 module.exports = {
-	mode,
-	target,
 	devtool,
+	target: 'web',
+	mode: 'development',
+	optimization: optimization(),
 	devServer: {
 		port: 4300,
 		open: true,
@@ -21,7 +49,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
-		filename: '[name].[contenthash].js',
+		filename: fileName('js'),
 		assetModuleFilename: 'assets'
 	},
 	resolve: {
@@ -30,21 +58,27 @@ module.exports = {
 		],
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
-			'@fonts': path.resolve(__dirname, 'src/fonts'),
-			'@img': path.resolve(__dirname, 'src/img'),
+			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
+			'@img': path.resolve(__dirname, 'src/assets/iamges'),
+			'@styles': path.resolve(__dirname, 'src/assets/styles'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
-			'@modules': path.resolve(__dirname, 'src/modules'),
-			'@styles': path.resolve(__dirname, 'src/styles'),
+			'@components': path.resolve(__dirname, 'src/components'),
 		}
 	},
+	//=================================================================
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, './src/index.html')
 		}),
+		...HTML_PLUGINS,
 		new MiniCssExtractPlugin({
-			filename: '[name].[contenthash].css'
+			filename: fileName('css')
+		}),
+		new CopyWebpackPlugin({
+			//need to end
 		}),
 	],
+	//=================================================================
 	module: {
 		rules: [{
 			test: /\.html$/i,
@@ -52,16 +86,21 @@ module.exports = {
 		}, {
 			test: /\.(c|sa|sc)ss$/i,
 			use: [
-				devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-				'css-loader', {
+				MiniCssExtractPlugin.loader,
+				'css-loader',
+				, {
 					loader: 'postcss-loader',
 					options: {
 						postcssOptions: {
 							plugins: [require('postcss-preset-env')]
 						}
 					}
-				}, 'sass-loader'
+				},
+				"sass-loader",
 			],
+		}, {
+			test: /\.hbs$/,
+			loader: 'handlebars-loader'
 		}, {
 			test: /\.(?:js|mjs|cjs)$/i,
 			exclude: /node_modules/,
@@ -70,7 +109,9 @@ module.exports = {
 				options: {
 					presets: [[
 						'@babel/preset-env',
-						{ targets: "defaults" }
+						{
+							targets: "defaults",
+						}
 					]],
 					plugins: [
 						'@babel/plugin-proposal-class-properties',
@@ -108,7 +149,7 @@ module.exports = {
 			}],
 			type: 'asset/resource',
 			generator: {
-				filename: `assets/image/${devMode ? '[contenthash]' : '[name]'}.[ext]`
+				filename: `assets/images/${devMode ? '[contenthash]' : '[name]'}.[ext]`
 			}
 		}]
 	}
