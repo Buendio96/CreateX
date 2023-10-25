@@ -6,20 +6,23 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 //=================================================================
-const devMode = process.env.NODE_ENV === 'development';
-const prodMode = !devMode;
+const mode = process.env.NODE_ENV || 'development';
+const devMode = mode === 'development'
+const prodMode = mode === 'production'
 const devtool = devMode ? 'source-map' : undefined;
 //=================================================================
-const fileName = ext => devMode ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+const fileName = ext => devMode ? `[name].${ext}` : `[contenthash].${ext}`;
+
 const pagesDir = path.resolve(__dirname, './src/pages');
 const pageFiles = fs.readdirSync(pagesDir);
 const HTML_PLUGINS = pageFiles.map((file) => {
 	return new HtmlWebpackPlugin({
 		template: path.resolve(pagesDir, file),
-		filename: path.join('pages', fileName('html'))
+		filename: path.join('pages', file)
 	})
 }
 );
+
 const optimization = () => {
 	const config = {
 		splitChunks: {
@@ -27,10 +30,10 @@ const optimization = () => {
 		}
 	}
 	if (prodMode) {
-		config.minimizer = [
-			new CssMinimizerPlugin(),
-			new TerserPlugin()
-		]
+			config.minimizer = [
+				new CssMinimizerPlugin(),
+				new TerserPlugin()
+			]
 	}
 	return config
 };
@@ -60,7 +63,8 @@ module.exports = {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
 			'@img': path.resolve(__dirname, 'src/assets/iamges'),
-			'@styles': path.resolve(__dirname, 'src/assets/styles'),
+			'@icons': path.resolve(__dirname, 'src/assets/icons'),
+			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
 			'@components': path.resolve(__dirname, 'src/components'),
 		}
@@ -68,27 +72,31 @@ module.exports = {
 	//=================================================================
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, './src/index.html')
+			template: path.resolve(__dirname, './src/index.html'),
+			filename: fileName('html'),
+			minimizer: prodMode
 		}),
 		...HTML_PLUGINS,
 		new MiniCssExtractPlugin({
 			filename: fileName('css')
 		}),
 		new CopyWebpackPlugin({
-			//need to end
-		}),
+			patterns: [
+				{
+					from: path.resolve(__dirname, './src/assets/icons'),
+					to: path.resolve(__dirname, 'dist/assets/icons')
+				}
+			]
+		})
 	],
 	//=================================================================
 	module: {
 		rules: [{
-			test: /\.html$/i,
-			loader: 'html-loader'
-		}, {
 			test: /\.(c|sa|sc)ss$/i,
 			use: [
 				MiniCssExtractPlugin.loader,
 				'css-loader',
-				, {
+				{
 					loader: 'postcss-loader',
 					options: {
 						postcssOptions: {
@@ -96,7 +104,7 @@ module.exports = {
 						}
 					}
 				},
-				"sass-loader",
+				'sass-loader',
 			],
 		}, {
 			test: /\.hbs$/,
@@ -122,7 +130,7 @@ module.exports = {
 			test: /\.(woff|woff2|ttf)$/i,
 			type: 'asset/resource',
 			generator: {
-				filename: 'assets/fonts/[name].[ext]'
+				filename: `assets/fonts/${fileName('[ext]')}`
 			}
 		}, {
 			test: /\.(jpe?g|png|webp|gif|svg)$/i,
@@ -149,7 +157,7 @@ module.exports = {
 			}],
 			type: 'asset/resource',
 			generator: {
-				filename: `assets/images/${devMode ? '[contenthash]' : '[name]'}.[ext]`
+				filename: `assets/images/${fileName('[ext]')}`
 			}
 		}]
 	}

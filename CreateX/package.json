@@ -4,7 +4,7 @@
 	"description": "Website for a build company",
 	"main": "index.js",
 	"scripts": {
-		"start": "set NODE_ENV=development&&webpack server",
+		"start": "set NODE_ENV=development&&webpack serve",
 		"dev": "set NODE_ENV=development&&webpack",
 		"prod": "set NODE_ENV=production&&webpack",
 		"clear": "rd /s /q dist"
