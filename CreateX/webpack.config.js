@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 //=================================================================
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development'
-const prodMode = mode === 'production'
+const prodMode = !devMode
 const devtool = devMode ? 'source-map' : undefined;
 //=================================================================
 const fileName = ext => devMode ? `[name].${ext}` : `[contenthash].${ext}`;
@@ -17,12 +17,13 @@ const pagesDir = path.resolve(__dirname, './src/pages');
 const pageFiles = fs.readdirSync(pagesDir);
 const HTML_PLUGINS = pageFiles.map((file) => {
 	return new HtmlWebpackPlugin({
+		minify: !devMode,
 		template: path.resolve(pagesDir, file),
 		filename: path.join('pages', file)
 	})
 }
 );
-
+//=================================================================
 const optimization = () => {
 	const config = {
 		splitChunks: {
@@ -30,10 +31,13 @@ const optimization = () => {
 		}
 	}
 	if (prodMode) {
-			config.minimizer = [
-				new CssMinimizerPlugin(),
-				new TerserPlugin()
-			]
+		config.minimize = true
+		config.minimizer = [
+			new CssMinimizerPlugin(),
+			new TerserPlugin({
+				extractComments: false,
+			})
+		]
 	}
 	return config
 };
@@ -42,12 +46,12 @@ module.exports = {
 	devtool,
 	target: 'web',
 	mode: 'development',
-	optimization: optimization(),
 	devServer: {
 		port: 4300,
 		open: true,
 		hot: true
 	},
+	optimization: optimization(),
 	entry: path.resolve(__dirname, './src/main.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -57,7 +61,7 @@ module.exports = {
 	},
 	resolve: {
 		extensions: [
-			'.html', '.js', '.ts', '.json', '.css', '.scss', '.png', '.jpg',
+			'.html', '.hbs', '.js', '.ts', '.json', '.css', '.scss', '.png', '.jpg',
 		],
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
@@ -66,6 +70,7 @@ module.exports = {
 			'@icons': path.resolve(__dirname, 'src/assets/icons'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
+			'@hbs': path.resolve(__dirname, 'src/templates'),
 			'@components': path.resolve(__dirname, 'src/components'),
 		}
 	},
@@ -73,8 +78,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, './src/index.html'),
-			filename: fileName('html'),
-			minimizer: prodMode
+			filename: 'index.html',
+			minify: prodMode,
 		}),
 		...HTML_PLUGINS,
 		new MiniCssExtractPlugin({
@@ -108,7 +113,7 @@ module.exports = {
 			],
 		}, {
 			test: /\.hbs$/,
-			loader: 'handlebars-loader'
+			loader: "handlebars-loader"
 		}, {
 			test: /\.(?:js|mjs|cjs)$/i,
 			exclude: /node_modules/,
