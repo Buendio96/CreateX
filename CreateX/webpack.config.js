@@ -13,16 +13,19 @@ const devtool = devMode ? 'source-map' : undefined;
 //=================================================================
 const fileName = ext => devMode ? `[name].${ext}` : `[contenthash].${ext}`;
 
-const pagesDir = path.resolve(__dirname, './src/pages');
-const pageFiles = fs.readdirSync(pagesDir);
-const HTML_PLUGINS = pageFiles.map((file) => {
-	return new HtmlWebpackPlugin({
-		minify: !devMode,
-		template: path.resolve(pagesDir, file),
-		filename: path.join('pages', file)
-	})
+const pages = ['About', 'Services', 'Work', 'News', 'Contacts',];
+const HTML_PLUGINS = () => {
+	return pages.map((page) => new HtmlWebpackPlugin({
+		template: path.resolve(__dirname, `src/pages/${page}.hbs`),
+		filename: `${page}.html`,
+		minify: prodMode,
+		chunks: [`${page}`],
+		templateParameters: {
+			'filename': `${page}`,
+			'favicon': '/assets/icons/favicon.ico'
+		}
+	}))
 }
-);
 //=================================================================
 const optimization = () => {
 	const config = {
@@ -52,11 +55,14 @@ module.exports = {
 		hot: true
 	},
 	optimization: optimization(),
-	entry: path.resolve(__dirname, './src/main.js'),
+	entry: {
+		main: path.resolve(__dirname, 'src/main.js'),
+		News: path.resolve(__dirname, 'src/scripts/news.js'),
+	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
-		filename: fileName('js'),
+		filename: 'scripts/' + fileName('js'),
 		assetModuleFilename: 'assets'
 	},
 	resolve: {
@@ -69,29 +75,32 @@ module.exports = {
 			'@img': path.resolve(__dirname, 'src/assets/iamges'),
 			'@icons': path.resolve(__dirname, 'src/assets/icons'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
+			'@common': path.resolve(__dirname, 'src/styles/common'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
-			'@hbs': path.resolve(__dirname, 'src/templates'),
-			'@components': path.resolve(__dirname, 'src/components'),
+			'@pages': path.resolve(__dirname, 'src/pages'),
 		}
 	},
 	//=================================================================
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, './src/index.html'),
+			template: path.resolve(__dirname, 'src/CreateX.hbs'),
 			filename: 'index.html',
+			chunks: ['main'],
 			minify: prodMode,
+			templateParameters: {
+				'filename': 'CreateX',
+				'favicon': '/assets/icons/favicon.ico',
+			}
 		}),
-		...HTML_PLUGINS,
+		...HTML_PLUGINS(),
 		new MiniCssExtractPlugin({
-			filename: fileName('css')
+			filename: 'styles/' + fileName('css')
 		}),
 		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: path.resolve(__dirname, './src/assets/icons'),
-					to: path.resolve(__dirname, 'dist/assets/icons')
-				}
-			]
+			patterns: [{
+				from: path.resolve(__dirname, 'src/assets/icons'),
+				to: path.resolve(__dirname, 'dist/assets/icons')
+			}]
 		})
 	],
 	//=================================================================
@@ -113,7 +122,10 @@ module.exports = {
 			],
 		}, {
 			test: /\.hbs$/,
-			loader: "handlebars-loader"
+			loader: "handlebars-loader",
+			options: {
+				partialDirs: [path.join(__dirname, 'src/pages/templates')]
+			}
 		}, {
 			test: /\.(?:js|mjs|cjs)$/i,
 			exclude: /node_modules/,

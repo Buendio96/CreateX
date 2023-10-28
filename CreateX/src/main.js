@@ -1,1 +1,1 @@
-import './style'
+import '@styles/createX'
