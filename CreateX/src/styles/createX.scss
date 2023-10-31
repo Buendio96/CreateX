@@ -1,2 +1,8 @@
-@import url("@libs/normalize");
-@import url("@common/fonts");
+@import "@libs/normalize";
+@import "@common/fonts";
+@import "@common/vars";
+
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+}

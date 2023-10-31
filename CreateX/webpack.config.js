@@ -19,7 +19,7 @@ const HTML_PLUGINS = () => {
 		template: path.resolve(__dirname, `src/pages/${page}.hbs`),
 		filename: `${page}.html`,
 		minify: prodMode,
-		chunks: [`${page}`],
+		chunks: ['main', `${page}`],
 		templateParameters: {
 			'filename': `${page}`,
 			'favicon': '/assets/icons/favicon.ico'
@@ -74,8 +74,10 @@ module.exports = {
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
 			'@img': path.resolve(__dirname, 'src/assets/iamges'),
 			'@icons': path.resolve(__dirname, 'src/assets/icons'),
+			'@vendors': path.resolve(__dirname, 'src/assets/vendors'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@common': path.resolve(__dirname, 'src/styles/common'),
+			'@js': path.resolve(__dirname, 'src/scripts'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
 			'@pages': path.resolve(__dirname, 'src/pages'),
 		}
