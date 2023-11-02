@@ -52,11 +52,11 @@ module.exports = {
 	devServer: {
 		port: 4300,
 		open: true,
-		hot: true
+		hot: true,
 	},
 	optimization: optimization(),
 	entry: {
-		main: path.resolve(__dirname, 'src/main.js'),
+		main: path.resolve(__dirname, 'src/scripts/main.js'),
 		News: path.resolve(__dirname, 'src/scripts/news.js'),
 	},
 	output: {
@@ -72,11 +72,9 @@ module.exports = {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
-			'@img': path.resolve(__dirname, 'src/assets/iamges'),
-			'@icons': path.resolve(__dirname, 'src/assets/icons'),
-			'@vendors': path.resolve(__dirname, 'src/assets/vendors'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@common': path.resolve(__dirname, 'src/styles/common'),
+			'@modules': path.resolve(__dirname, 'src/styles/modules'),
 			'@js': path.resolve(__dirname, 'src/scripts'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
 			'@pages': path.resolve(__dirname, 'src/pages'),
@@ -102,6 +100,9 @@ module.exports = {
 			patterns: [{
 				from: path.resolve(__dirname, 'src/assets/icons'),
 				to: path.resolve(__dirname, 'dist/assets/icons')
+			}, {
+				from: path.resolve(__dirname, 'src/assets/vendors'),
+				to: path.resolve(__dirname, 'dist/assets/vendors')
 			}]
 		})
 	],

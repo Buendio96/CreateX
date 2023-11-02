@@ -1,0 +1,66 @@
+.header {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	left: 0;
+	&__body {
+		min-height: 90px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__links {
+		display: flex;
+		&-logo {
+			margin: 0 60px 0 0;
+		}
+		&-list {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 447px;
+		}
+		&-item {
+			color: $links;
+			font-size: 16px;
+			font-family: "Ubu-B";
+			transition: all 0.5s ease;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+	&__contacts {
+		display: flex;
+		column-gap: 36px;
+	}
+	&__contact {
+		display: flex;
+		column-gap: 12px;
+		&:hover .header__contact-data-title {
+			color: $primary;
+		}
+		&-img {
+			display: flex;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+		}
+		&-data {
+			&-title {
+				font-family: "Ubu-B";
+				font-size: 14px;
+				color: $links;
+				transition: all 0.5s ease;
+			}
+			&-subtitle {
+				font-family: "Ubu-R";
+				font-size: 18px;
+				line-height: 150%;
+				color: $titles;
+			}
+		}
+	}
+}

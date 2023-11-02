@@ -330,7 +330,7 @@ template {
 }
 .container {
   max-width: 1230px;
-  background-color: #ff5a30;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map*/

@@ -1,8 +1,15 @@
 @import "@libs/normalize";
 @import "@common/fonts";
 @import "@common/vars";
+@import "@modules/header";
+@import "@modules/footer";
 
+.content {
+	min-height: 1500px;
+}
 .container {
 	max-width: 1230px;
+	padding: 0 15px;
 	margin: 0 auto;
+	overflow: hidden;
 }
