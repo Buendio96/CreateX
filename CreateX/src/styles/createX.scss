@@ -1,9 +1,13 @@
 @import "@libs/normalize";
 @import "@common/fonts";
 @import "@common/vars";
+@import "@common/mixins";
 @import "@modules/header";
 @import "@modules/footer";
 
+body {
+	font-family: "Ubu-R";
+}
 .content {
 	min-height: 1500px;
 }

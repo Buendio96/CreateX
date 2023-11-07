@@ -1,4 +1,79 @@
 .footer {
 	background-color: $titles;
 	min-height: 566px;
+	&__box {
+		display: flex;
+		flex-direction: column;
+		padding: 80px 0;
+	}
+	&__box-head {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__box-body {
+		display: flex;
+	}
+	&__box-copy {
+		font-size: 12px;
+		margin: 60px 0 0 0;
+		color: $btn-text;
+		letter-spacing: 0.8px;
+	}
+}
+.svg-social {
+	fill: white;
+	width: 24px;
+	height: 24px;
+	&:nth-child(1):hover {
+		fill: green;
+	}
+}
+.head {
+	&__description {
+		display: flex;
+		flex-direction: column;
+		max-width: 493px;
+	}
+	&__description-social {
+		display: flex;
+		column-gap: 60px;
+	}
+	&__description-list {
+		display: flex;
+		column-gap: 16px;
+	}
+	&__description-link {
+		display: flex;
+	}
+	&__description-text {
+	}
+	&__subscribe {
+		max-width: 359px;
+	}
+	&__subscribe-title {
+	}
+	&__subscribe-area {
+	}
+	.solid-btn {
+		@include solid-btn(14px, 44px, 0px, 23px);
+	}
+	&__subscribe-input {
+	}
+	&__subscribe-note {
+	}
+}
+
+.body {
+	&__column {
+	}
+	&__column-title {
+	}
+	&__column-list {
+	}
+	&__column-link {
+	}
+}
+.iframe-none {
+	display: none;
 }

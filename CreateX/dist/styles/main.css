@@ -321,16 +321,92 @@ template {
 }
 
 @font-face {
-  font-family: "Ubu-R";
+  font-family: "Ubu-B";
   src: url(../assets/fonts/Ubuntu-Bold..ttf);
 }
 @font-face {
-  font-family: "Ubu-B";
+  font-family: "Ubu-R";
   src: url(../assets/fonts/Ubuntu-Regular..ttf);
 }
+.header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.header__body {
+  min-height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__links {
+  display: flex;
+}
+.header__links-logo {
+  margin: 0 60px 0 0;
+}
+.header__links-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 447px;
+}
+.header__links-item {
+  color: #424551;
+  font-size: 16px;
+  font-family: "Ubu-B";
+  transition: all 0.5s ease;
+}
+.header__links-item:hover {
+  color: #ff5a30;
+}
+.header__contacts {
+  display: flex;
+  column-gap: 36px;
+}
+.header__contact {
+  display: flex;
+  column-gap: 12px;
+}
+.header__contact:hover .header__contact-data-title {
+  color: #ff5a30;
+}
+.header__contact-img {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+.header__contact-data-title {
+  font-family: "Ubu-B";
+  font-size: 14px;
+  color: #424551;
+  transition: all 0.5s ease;
+}
+.header__contact-data-subtitle {
+  font-family: "Ubu-R";
+  font-size: 18px;
+  line-height: 150%;
+  color: #1e212c;
+}
+
+.footer {
+  background-color: #1e212c;
+  min-height: 566px;
+}
+
+.content {
+  min-height: 1500px;
+}
+
 .container {
   max-width: 1230px;
+  padding: 0 15px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map*/

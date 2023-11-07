@@ -1,0 +1,16 @@
+@mixin solid-btn($f-size: 16px, $height: 52px, $bord-rad: 4px, $p-ing: 40px) {
+	display: flex;
+	align-items: center;
+	font-family: "Ubu-B";
+	font-size: $f-size;
+	height: $height;
+	color: $btn-text;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: $primary;
+	border: none;
+	border-radius: $bord-rad;
+	padding: 0 $p-ing;
+	cursor: pointer;
+}
