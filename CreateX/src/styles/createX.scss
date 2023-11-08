@@ -3,6 +3,7 @@
 @import "@s-common/vars";
 @import "@s-common/mixins";
 @import "@s-modules/header";
+@import "@s-pages/homepage";
 @import "@s-modules/footer";
 
 body {
@@ -12,10 +13,9 @@ body {
 .wrapper {
 	min-height: 100%;
 	display: grid;
-	grid-template: minmax(90px, auto) minmax(auto, 100vh) 1fr minmax(566px, auto) / 1fr;
+	grid-template: minmax(90px, auto) 1fr minmax(566px, auto) / 1fr;
 	grid-template-areas:
 		"header"
-		"parallax"
 		"main"
 		"footer";
 }
@@ -37,6 +37,7 @@ body {
 	position: fixed;
 	top: 90px;
 	z-index: -1;
+	margin: 0 -15px;
 	img {
 		position: absolute;
 		top: 0;
@@ -47,12 +48,9 @@ body {
 	}
 }
 .main {
-	grid-area: main;
 	display: grid;
 	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
 	padding: 0 15px;
-	height: 1000px;
-	background: #000;
 }
 .footer {
 	grid-area: footer;

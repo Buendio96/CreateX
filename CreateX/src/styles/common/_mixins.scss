@@ -14,8 +14,31 @@
 	padding: 0 $p-ing;
 	cursor: pointer;
 	transition: all 0.4s ease;
+	box-sizing: border-box;
 	&:hover {
-		box-sizing: border-box;
+		background: $text;
+		color: $primary;
+		border: 1px solid $primary;
+	}
+}
+@mixin outline-btn($f-size: 16px, $height: 52px, $bord-rad: 4px, $p-ing: 40px) {
+	display: flex;
+	align-items: center;
+	font-family: "Ubu-B";
+	font-size: $f-size;
+	height: $height;
+	color: $text;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: transparent;
+	border: 1px solid $text;
+	border-radius: $bord-rad;
+	padding: 0 $p-ing;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	box-sizing: border-box;
+	&:hover {
 		background: $text;
 		color: $primary;
 		border: 1px solid $primary;
