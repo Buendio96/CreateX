@@ -72,9 +72,11 @@ module.exports = {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
+			'@images': path.resolve(__dirname, 'src/assets/images'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
-			'@common': path.resolve(__dirname, 'src/styles/common'),
-			'@modules': path.resolve(__dirname, 'src/styles/modules'),
+			'@s-common': path.resolve(__dirname, 'src/styles/common'),
+			'@s-modules': path.resolve(__dirname, 'src/styles/modules'),
+			'@s-pages': path.resolve(__dirname, 'src/styles/pages'),
 			'@js': path.resolve(__dirname, 'src/scripts'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
 			'@pages': path.resolve(__dirname, 'src/pages'),

@@ -4,7 +4,7 @@
 	font-family: "Ubu-B";
 	font-size: $f-size;
 	height: $height;
-	color: $btn-text;
+	color: $text;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 	text-align: center;
@@ -13,4 +13,16 @@
 	border-radius: $bord-rad;
 	padding: 0 $p-ing;
 	cursor: pointer;
+	transition: all 0.4s ease;
+	&:hover {
+		box-sizing: border-box;
+		background: $text;
+		color: $primary;
+		border: 1px solid $primary;
+	}
+}
+@mixin link-hover {
+	&:hover {
+		color: $primary;
+	}
 }
