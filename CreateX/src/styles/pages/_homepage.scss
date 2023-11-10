@@ -1,12 +1,13 @@
 .homepage {
 	&__first {
 		grid-column: 2/3;
-		min-height: 100vh;
+		display: flex;
+		height: 100vh;
 	}
 }
 .hp-first {
 	&__body {
-		margin: 220px 0 0 0;
+		align-self: center;
 	}
 	&__title {
 		color: $text;
@@ -16,6 +17,9 @@
 		letter-spacing: 1px;
 		span {
 			color: $primary;
+		}
+		@media (max-width: $tablet-s) {
+			font-size: 50px;
 		}
 	}
 	&__subtitle {
@@ -43,6 +47,11 @@
 		display: flex;
 		margin: 180px 0 0;
 		column-gap: 8px;
+		@media (max-width: $tablet-s) {
+			margin: 50px 0 0;
+			flex-wrap: wrap;
+			row-gap: 10px;
+		}
 	}
 	&__item {
 		width: 178px;
@@ -73,6 +82,11 @@
 			a {
 				color: rgba($color: $text, $alpha: 1);
 			}
+		}
+		@media (max-width: $tablet-s) {
+			flex: 0 1 49%;
+			flex-wrap: wrap;
+			row-gap: 10px;
 		}
 	}
 }
