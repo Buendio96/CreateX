@@ -4,7 +4,7 @@
 		display: flex;
 		flex-direction: column;
 		padding: 80px 0;
-		@media (max-width: $tablet-s) {
+		@media (max-width: $tablet) {
 			padding: 30px 0;
 		}
 	}
@@ -22,7 +22,7 @@
 	justify-content: space-between;
 	column-gap: 40px;
 	line-height: 150%;
-	@media (max-width: $tablet-s) {
+	@media (max-width: $tablet) {
 		row-gap: 30px;
 		flex-wrap: wrap;
 	}
@@ -112,7 +112,7 @@
 	max-width: 865px;
 	justify-content: space-between;
 	column-gap: 40px;
-	@media (max-width: $tablet-s) {
+	@media (max-width: $tablet) {
 		row-gap: 20px;
 		flex-wrap: wrap;
 	}

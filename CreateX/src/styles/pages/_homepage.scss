@@ -1,13 +1,19 @@
 .homepage {
+	min-height: 100%;
 	&__first {
 		grid-column: 2/3;
-		display: flex;
-		height: 100vh;
+		display: inline-flex;
 	}
 }
 .hp-first {
 	&__body {
-		align-self: center;
+		padding: 220px 0 100px 0;
+		@media (max-width: $desktop) {
+			padding: 140px 0 70px 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 40px 0 30px 0;
+		}
 	}
 	&__title {
 		color: $text;
@@ -18,8 +24,12 @@
 		span {
 			color: $primary;
 		}
-		@media (max-width: $tablet-s) {
-			font-size: 50px;
+		@media (max-width: $desktop) {
+			font-size: 56px;
+		}
+		@media (max-width: $tablet) {
+			font-size: 40px;
+			line-height: 120%;
 		}
 	}
 	&__subtitle {
@@ -30,25 +40,54 @@
 		color: $text;
 		font-family: "Ubu-R";
 		font-weight: 400;
+		@media (max-width: $tablet) {
+			margin: 15px 0 0;
+			font-size: 15px;
+			line-height: 130%;
+		}
 	}
 	&__buttons {
 		margin: 61px 0 0;
 		display: flex;
 		column-gap: 24px;
 		box-sizing: border-box;
+		@media (max-width: $tablet) {
+			margin: 30px 0 0;
+		}
+		@media (max-width: $phone) {
+			flex-wrap: wrap;
+			row-gap: 15px;
+		}
 	}
 	&__buttons-lb {
 		@include outline-btn();
+		@media (max-width: $tablet) {
+			@include outline-btn(14px, 40px, none, 20px);
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 50%;
+		}
 	}
 	&__buttons-rb {
 		@include solid-btn();
+		@media (max-width: $tablet) {
+			@include solid-btn(14px, 40px, none, 30px);
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 50%;
+		}
 	}
 	&__list {
 		display: flex;
 		margin: 180px 0 0;
 		column-gap: 8px;
-		@media (max-width: $tablet-s) {
-			margin: 50px 0 0;
+		@media (max-width: $desktop) {
+			margin: 80px 0 0;
+		}
+		@media (max-width: $tablet) {
+			margin: 30px 0 0;
+		}
+		@media (max-width: $phone) {
 			flex-wrap: wrap;
 			row-gap: 10px;
 		}
@@ -83,10 +122,14 @@
 				color: rgba($color: $text, $alpha: 1);
 			}
 		}
-		@media (max-width: $tablet-s) {
+		@media (max-width: $tablet) {
+			height: 35px;
+			a {
+				font-size: 20px;
+			}
+		}
+		@media (max-width: $phone) {
 			flex: 0 1 49%;
-			flex-wrap: wrap;
-			row-gap: 10px;
 		}
 	}
 }
