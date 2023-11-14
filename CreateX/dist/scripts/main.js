@@ -1,6 +1,18 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/scripts/header.js":
+/*!*******************************!*\
+  !*** ./src/scripts/header.js ***!
+  \*******************************/
+/***/ (() => {
+
+const burgerMenuEl = document.getElementById('burgerMenu');
+document.getElementById('burgerToggle').addEventListener('click', () => {
+  burgerMenuEl.classList.toggle('active-burger');
+});
+
+/***/ }),
 
 /***/ "./src/styles/createX.scss":
 /*!*********************************!*\
@@ -8,6 +20,7 @@
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -20,6 +33,7 @@ __webpack_require__.r(__webpack_exports__);
   \****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "assets/images/bg-image..jpg";
 
 /***/ })
@@ -51,6 +65,30 @@ module.exports = __webpack_require__.p + "assets/images/bg-image..jpg";
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -61,6 +99,11 @@ module.exports = __webpack_require__.p + "assets/images/bg-image..jpg";
 /******/ 				if (typeof window === 'object') return window;
 /******/ 			}
 /******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -99,18 +142,22 @@ module.exports = __webpack_require__.p + "assets/images/bg-image..jpg";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!*****************************!*\
   !*** ./src/scripts/main.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_createX__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @styles/createX */ "./src/styles/createX.scss");
-/* harmony import */ var _images_bg_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @images/bg-image */ "./src/assets/images/bg-image.jpg");
+/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js/header */ "./src/scripts/header.js");
+/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_header__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_bg_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @images/bg-image */ "./src/assets/images/bg-image.jpg");
+
 
 
 const titleImg = document.getElementById('titleImage');
-titleImg.src = _images_bg_image__WEBPACK_IMPORTED_MODULE_1__;
+titleImg.src = _images_bg_image__WEBPACK_IMPORTED_MODULE_2__;
 })();
 
 /******/ })()

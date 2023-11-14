@@ -2,8 +2,9 @@
 @import "@s-common/fonts";
 @import "@s-common/vars";
 @import "@s-common/mixins";
-@import "@s-modules/header";
 @import "@s-pages/homepage";
+@import "@s-modules/header";
+@import "@s-modules/discuss";
 @import "@s-modules/footer";
 
 body {
@@ -13,10 +14,11 @@ body {
 .wrapper {
 	min-height: 100%;
 	display: grid;
-	grid-template: minmax(90px, auto) 1fr minmax(566px, auto) / 1fr;
+	grid-template: minmax(90px, auto) 1fr minmax(auto, 825px) minmax(566px, auto) / 1fr;
 	grid-template-areas:
 		"header"
 		"main"
+		"discuss"
 		"footer";
 }
 .header {
@@ -31,23 +33,21 @@ body {
 	background-color: rgba($color: white, $alpha: 0.4);
 }
 .parallax-block {
-	grid-area: parallax;
 	width: 100%;
-	min-height: 100vh;
+	height: 100vh;
 	position: fixed;
 	top: 90px;
 	z-index: -1;
-	margin: 0 -15px;
-	img {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+	@include img-adaptive();
 }
 .main {
+	grid-area: main;
+	display: grid;
+	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
+	padding: 0 15px;
+}
+.discuss {
+	grid-area: discuss;
 	display: grid;
 	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
 	padding: 0 15px;

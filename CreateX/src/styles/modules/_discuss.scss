@@ -1,0 +1,73 @@
+.discuss-cover {
+	z-index: -1;
+	margin: 0 -15px;
+	position: relative;
+	grid-column: 1/4;
+	grid-row: 1/2;
+	min-height: 100%;
+	@include img-adaptive();
+}
+.discuss {
+	&__box {
+		grid-column: 2/3;
+		grid-row: 1/2;
+		display: flex;
+		padding: 80px 0;
+		justify-content: flex-end;
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		max-width: 415px;
+		padding: 48px 40px;
+		background: white;
+		border-radius: 4px;
+		border: 1px solid #e5e8ed;
+	}
+	&__title {
+		text-align: center;
+		font-size: 28px;
+		line-height: 150%;
+		font-family: "Ubu-B";
+		color: $titles;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		margin: 24px 0 0;
+	}
+	&__label {
+		@include label;
+		&:not(:first-child) {
+			margin: 20px 0 0;
+		}
+	}
+	&__input {
+		@include input;
+		margin: 8px 0 0;
+	}
+	&__textarea {
+		height: 66px;
+		overflow: auto;
+		resize: none;
+		@include input;
+	}
+	&__checkbox {
+	}
+	&__agreement {
+		margin: 20px 0 0;
+		display: flex;
+		align-items: flex-start;
+		column-gap: 12px;
+	}
+	&__agreement-text {
+		font-size: 14px;
+		line-height: 150%;
+		color: $links;
+	}
+	&__btn {
+		align-self: center;
+		margin: 24px 0 0;
+		@include solid-btn(14px, 44px, 4px, 32px);
+	}
+}

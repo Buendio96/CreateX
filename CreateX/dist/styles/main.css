@@ -359,6 +359,7 @@ template {
     border-radius: 0 0 40px 0;
     box-shadow: 0 10px 10px 1px #1e212c;
     background: #d7dadd;
+    transition: all 0.5s ease;
   }
 }
 .header__list {
@@ -458,7 +459,7 @@ template {
 }
 
 .burger {
-  display: none;
+  transition: all 0.5s ease;
 }
 @media (max-width: 768px) {
   .burger {
@@ -488,6 +489,7 @@ template {
 }
 
 .active-burger {
+  transition: all 0.5s ease;
   left: -15px;
 }
 
@@ -504,7 +506,7 @@ template {
 }
 @media (max-width: 992px) {
   .hp-first__body {
-    padding: 140px 0 70px 0;
+    padding: 80px 0 70px 0;
   }
 }
 @media (max-width: 768px) {
@@ -683,7 +685,7 @@ template {
 }
 @media (max-width: 992px) {
   .hp-first__list {
-    margin: 80px 0 0;
+    margin: 60px 0 0;
   }
 }
 @media (max-width: 768px) {
@@ -930,7 +932,7 @@ body {
   min-height: 100%;
   display: grid;
   grid-template: minmax(90px, auto) 1fr minmax(566px, auto)/1fr;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "header" "main" "discuss" "footer";
 }
 
 .header {
@@ -949,9 +951,8 @@ body {
 .parallax-block {
   grid-area: parallax;
   width: 100%;
-  min-height: 100vh;
   position: fixed;
-  top: 90px;
+  height: 100vh;
   z-index: -1;
   margin: 0 -15px;
 }

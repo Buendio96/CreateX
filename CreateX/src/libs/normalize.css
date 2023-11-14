@@ -170,7 +170,7 @@ height: 100%;
 	line-height: 1.15; /* 1 */
 	margin: 0; /* 2 */
   }
-input:focus{
+  textarea,input:focus{
 	outline:none;
 }
   
