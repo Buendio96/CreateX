@@ -8,27 +8,38 @@
 				A quick way to discuss details
 			</h2>
 			<form class="discuss__form" id="discussForm">
-				<label class="discuss__label" for="name">Name*</label>
-				<input class="discuss__input" type="text" id="name" name="name" placeholder="Your name">
+				<div class="discuss__form-field" data-error-text="Please use only letters">
+					<label class="discuss__label" for="name">Name*</label>
+					<input class="discuss__input" data-typeCheck="letters" data-required="true" type="text" id="name"
+						name="name" placeholder="Your name">
+				</div>
 
-				<label class="discuss__label" for="phone">Phone*</label>
-				<input class="discuss__input" type="number" id="phone" name="phone" placeholder="Your phone number">
+				<div class="discuss__form-field" data-error-text="Please use only numbers">
+					<label class="discuss__label" for="phone">Phone*</label>
+					<input class="discuss__input" data-typeCheck="numbers" data-required="true" type="text" id="phone"
+						name="phone" placeholder="Your phone number">
+				</div>
 
-				<label class="discuss__label" for="email">Email:</label>
-				<input class="discuss__input" type="email" id="email" name="email" placeholder="Your working email">
+				<div class="discuss__form-field" data-error-text="Please enter valid Email(example@mail.com)">
+					<label class="discuss__label" for="email">Email:</label>
+					<input class="discuss__input" data-typeCheck="email" type="text" id="email" name="email"
+						placeholder="Your working email">
+				</div>
 
-				<label class="discuss__label" for="message">Message*</label>
-				<textarea class="discuss__textarea" type="email" id="message" name="message"
-					placeholder="Your message"></textarea>
+				<div class="discuss__form-field" data-error-text="Ask your qustion">
+					<label class="discuss__label" for="message">Message*</label>
+					<textarea class="discuss__textarea" data-required="true" type="email" id="message" name="message"
+						placeholder="Your message"></textarea>
+				</div>
 
-				<label class="discuss__agreement">
+				<div class="discuss__form-field-checkbox" data-error-text="This agreement allows us to contact you">
 					<input class="discuss__checkbox" type="checkbox" id="agreement" name="agreement">
 					<h4 class="discuss__agreement-text">
 						I agree to receive communications from Createx Construction Bureau.
 					</h4>
-				</label>
+				</div>
 
-				<button class="discuss__btn" type="button">Send request</button>
+				<button class="discuss__btn" type="submit">Send request</button>
 			</form>
 		</div>
 	</div>

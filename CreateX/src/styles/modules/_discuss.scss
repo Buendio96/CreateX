@@ -36,11 +36,21 @@
 		flex-direction: column;
 		margin: 24px 0 0;
 	}
-	&__label {
-		@include label;
+	&__form-field {
+		display: flex;
+		flex-direction: column;
 		&:not(:first-child) {
 			margin: 20px 0 0;
 		}
+		&-checkbox {
+			margin: 20px 0 0;
+			display: flex;
+			align-items: flex-start;
+			column-gap: 8px;
+		}
+	}
+	&__label {
+		@include label;
 	}
 	&__input {
 		@include input;
@@ -51,6 +61,7 @@
 		overflow: auto;
 		resize: none;
 		@include input;
+		margin: 8px 0 0;
 	}
 	&__checkbox {
 	}
