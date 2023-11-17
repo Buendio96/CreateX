@@ -7,4 +7,4 @@ const titleImg = document.getElementById('titleImage')
 titleImg.src = title
 
 const newForm = document.getElementById('discussForm')
-isValidate(newForm, 'required')
+isValidate(newForm)
