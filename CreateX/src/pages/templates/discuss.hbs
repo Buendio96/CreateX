@@ -11,19 +11,19 @@
 				<div class="discuss__form-field" data-error-text="Please use only letters">
 					<label class="discuss__label" for="name">Name*</label>
 					<input class="discuss__input" data-typeCheck="letters" data-required="true" type="text" id="name"
-						name="name" placeholder="Your name">
+						name="name" placeholder="Your name" autocomplete="name">
 				</div>
 
 				<div class="discuss__form-field" data-error-text="Please use only numbers">
 					<label class="discuss__label" for="phone">Phone*</label>
 					<input class="discuss__input" data-typeCheck="numbers" data-required="true" type="text" id="phone"
-						name="phone" placeholder="Your phone number">
+						name="phone" placeholder="Your phone number" autocomplete="tel">
 				</div>
 
 				<div class="discuss__form-field" data-error-text="Please enter valid Email(example@mail.com)">
 					<label class="discuss__label" for="email">Email:</label>
 					<input class="discuss__input" data-typeCheck="email" type="text" id="email" name="email"
-						placeholder="Your working email">
+						placeholder="Your working email" autocomplete="email">
 				</div>
 
 				<div class="discuss__form-field" data-error-text="Ask your qustion">
@@ -33,15 +33,24 @@
 				</div>
 
 				<div class="discuss__form-field-checkbox"
-					data-error-text="&dArr;		This agreement allows us to contact you">
+					data-error-text="&dArr;	This agreement allows us to contact you">
 					<input class="discuss__checkbox" type="checkbox" id="agreement" name="agreement">
-					<h4 class="discuss__agreement-text">
+					<span class="discuss__custom-checkbox"></span>
+					<label for="agreement" class="discuss__label">
 						I agree to receive communications from Createx Construction Bureau.
-					</h4>
+					</label>
 				</div>
 
 				<button class="discuss__btn" type="submit">Send request</button>
 			</form>
+			<div id="discussSuccess" class="discuss__success-block show-success">
+				<h5>Congratulations!</h5>
+				<p
+					data-success-text="	Your question has been sent to our consultant, please wait for the answer to your contact details.">
+				</p>
+				<button id="discussClose">Great!</button>
+			</div>
 		</div>
 	</div>
+
 </div>

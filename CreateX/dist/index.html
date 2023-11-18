@@ -8,7 +8,7 @@
 	<title>
 		CreateX
 	</title>
-<script defer src="scripts/main.js"></script><link href="styles/main.css" rel="stylesheet"></head>
+<script defer src="scripts/main.js"></script></head>
 
 <body class="body">
 	<div class="wrapper">
@@ -62,10 +62,10 @@
 					</a>
 				</div>
 			</section>
-		</header>		<main class="homepage main">
-			<section class="parallax-block">
-				<img id="titleImage" alt="">
-			</section>
+		</header>		<section class="parallax-block">
+			<img id="titleImage" alt="">
+		</section>
+		<main class="homepage main">
 			<div class="homepage__first hp-first">
 				<div class="hp-first__body">
 					<h1 class="hp-first__title">
@@ -101,7 +101,7 @@
 		</main>
 		<div class="discuss">
 			<section class="discuss-cover">
-				<img id="discussImg" alt="Image not found...">
+				<img id="discussImage" alt="Image not found...">
 			</section>
 			<div class="discuss__box">
 				<div class="discuss__body">
@@ -109,28 +109,51 @@
 						A quick way to discuss details
 					</h2>
 					<form class="discuss__form" id="discussForm">
-						<label class="discuss__label" for="name">Name*</label>
-						<input class="discuss__input" type="text" id="name" name="name" placeholder="Your name">
+						<div class="discuss__form-field" data-error-text="Please use only letters">
+							<label class="discuss__label" for="name">Name*</label>
+							<input class="discuss__input" data-typeCheck="letters" data-required="true" type="text" id="name"
+								name="name" placeholder="Your name" autocomplete="name">
+						</div>
 		
-						<label class="discuss__label" for="phone">Phone*</label>
-						<input class="discuss__input" type="number" id="phone" name="phone" placeholder="Your phone number">
+						<div class="discuss__form-field" data-error-text="Please use only numbers">
+							<label class="discuss__label" for="phone">Phone*</label>
+							<input class="discuss__input" data-typeCheck="numbers" data-required="true" type="text" id="phone"
+								name="phone" placeholder="Your phone number" autocomplete="tel">
+						</div>
 		
-						<label class="discuss__label" for="email">Email:</label>
-						<input class="discuss__input" type="email" id="email" name="email" placeholder="Your working email">
+						<div class="discuss__form-field" data-error-text="Please enter valid Email(example@mail.com)">
+							<label class="discuss__label" for="email">Email:</label>
+							<input class="discuss__input" data-typeCheck="email" type="text" id="email" name="email"
+								placeholder="Your working email" autocomplete="email">
+						</div>
 		
-						<label class="discuss__label" for="message">Message*</label>
-						<textarea class="discuss__textarea" type="email" id="message" name="message"
-							placeholder="Your message"></textarea>
+						<div class="discuss__form-field" data-error-text="Ask your qustion">
+							<label class="discuss__label" for="message">Message*</label>
+							<textarea class="discuss__textarea" data-required="true" type="email" id="message" name="message"
+								placeholder="Your message"></textarea>
+						</div>
 		
-						<label class="discuss__label">
+						<div class="discuss__form-field-checkbox"
+							data-error-text="&dArr;	This agreement allows us to contact you">
 							<input class="discuss__checkbox" type="checkbox" id="agreement" name="agreement">
-							I agree to receive communications from Createx Construction Bureau.
-						</label>
+							<span class="discuss__real-checkbox"></span>
+							<label for="agreement" class="discuss__agreement-text">
+								I agree to receive communications from Createx Construction Bureau.
+							</label>
+						</div>
 		
-						<button class="discuss__btn" type="button">Send request</button>
+						<button class="discuss__btn" type="submit">Send request</button>
 					</form>
+					<div id="discussSuccess" class="discuss__success-block show-success">
+						<h5>Congratulations!</h5>
+						<p
+							data-success-text="	Your question has been sent to our consultant, please wait for the answer to your contact details.">
+						</p>
+						<button id="discussClose">Great!</button>
+					</div>
 				</div>
 			</div>
+		
 		</div>		<footer class="footer">
 			<div class="footer__box">
 				<div class="footer__box-head head">
@@ -248,7 +271,7 @@
 						</h4>
 						<ul class="bottom__column-list">
 							<li>
-								<a href="#" class="bottom__column-link">
+								<a href="./About.html" class="bottom__column-link">
 									About Us
 								</a>
 							</li>
@@ -258,7 +281,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="#" class="bottom__column-link">
+								<a href="./Contacts.html" class="bottom__column-link">
 									Contacts
 								</a>
 							</li>
@@ -270,17 +293,17 @@
 						</h4>
 						<ul class="bottom__column-list">
 							<li>
-								<a href="#" class="bottom__column-link">
+								<a href="./Services.html" class="bottom__column-link">
 									Services
 								</a>
 							</li>
 							<li>
-								<a href="#" class="bottom__column-link">
+								<a href="./Work.html" class="bottom__column-link">
 									Work
 								</a>
 							</li>
 							<li>
-								<a href="#" class="bottom__column-link">
+								<a href="./News.html" class="bottom__column-link">
 									News
 								</a>
 							</li>
@@ -291,7 +314,10 @@
 					&copy;All rights reserved. Made with &#10084; by Createx Studio
 				</p>
 			</div>
-		</footer>	</div>
+		</footer>		<button id="scrollToTopBtn" class="go-top">
+			<span class="go-top__text">GO TO TOP</span>
+			<div class="go-top__squer"></div>
+		</button>	</div>
 </body>
 
 </html>

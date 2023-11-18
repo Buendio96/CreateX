@@ -1,3 +1,5 @@
+
+//Error toggle
 const showError = (input) => {
 	input.classList.add('error__box');
 	input.parentElement.classList.add('error');
@@ -7,73 +9,97 @@ const hideError = (input) => {
 	input.parentElement.classList.remove('error');
 };
 
-function regexCheck(field) {
-	const value = field.value.trim();
-	const dataType = field.getAttribute('data-typecheck');
+//Helped function
+const convertToText = (field) => {
+	if (field)
+		return field.value.trim()
+	else console.log('Field not found')
+};
+const clearElements = (element) => {
+	element.addEventListener('change', () => {
+		hideError(element)
+	})
+};
+const regexCheck = (field, dataType) => {
 	const regexPatterns = {
-		'letters': /^[a-zA-Z]+$/,
+		'letters': /^[a-zA-Z\s]+$/,
 		'numbers': /^[+]?\d+$/,
 		'email': /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
 	};
-	return regexPatterns[dataType] ? regexPatterns[dataType].test(value) : true;
-}
-
+	return regexPatterns[dataType] ? regexPatterns[dataType].test(convertToText(field)) : true;
+};
 const emptyFieldsCheck = (field) => {
-	const value = field.value.trim();
-	if (value === '') {
+	if (convertToText(field) === '') {
 		return false;
 	} else {
 		return true
 	}
 };
 
-const isValidate = (form) => {
-	const requiredInputs = form.querySelectorAll('[data-required="true"]');
-	const regexInputs = form.querySelectorAll('[data-typecheck]');
-	const checkboxEl = form.querySelector('input[type="checkbox"]');
-
-	regexInputs.forEach(field => {
-		field.addEventListener('input', () => {
-			if (field.value.trim() === '' || regexCheck(field)) {
+//Main function
+const checkRegexInputs = (fields) => {
+	fields.forEach(field => {
+		field.addEventListener('change', () => {
+			if (convertToText(field) === ''
+				|| regexCheck(field, field.getAttribute('data-typecheck'))
+			) {
 				hideError(field);
 			} else {
 				showError(field);
 			}
 		});
 	});
-	checkboxEl.addEventListener('change', () => {
-		hideError(checkboxEl);
+};
+const checkRequiredInputs = (fields) => {
+	let result = true;
+	fields.forEach(field => {
+		if (emptyFieldsCheck(field)) {
+			hideError(field);
+		} else {
+			showError(field);
+			result = false;
+		}
 	});
+	console.log(result)
+	return result;
+};
+const checkCheckbox = (element) => {
+	let result = true;
+	if (element.checked) {
+		hideError(element)
+	} else {
+		showError(element);
+		result = false;
+	};
+	console.log(result)
+
+	return result;
+};
+
+//Init function
+const isValidate = (form, successBlock, closeButton) => {
+	const requiredInputs = form.querySelectorAll('[data-required="true"]');
+	const regexInputs = form.querySelectorAll('[data-typecheck]');
+	const checkboxEl = form.querySelector('input[type="checkbox"]');
+	checkRegexInputs(regexInputs)
+	clearElements(checkboxEl)
 	form.addEventListener('submit', e => {
 		e.preventDefault();
-		const testCheckbox = () => {
-			if (checkboxEl.checked) {
-				hideError(checkboxEl);
-				return true
-			} else {
-				showError(checkboxEl);
-				return false
-			}
-		}
-		const testRequired = () => {
-			let result = true;
-			Array.from(requiredInputs).forEach(field => {
-				if (emptyFieldsCheck(field)) {
-					hideError(field);
-				} else {
-					showError(field);
-					result = false;
-				}
+		requiredInputs.forEach(field => {
+			clearElements(field)
+		})
+		checkCheckbox(checkboxEl)
+		checkRequiredInputs(requiredInputs)
+		checkRegexInputs(regexInputs)
+		if (checkRequiredInputs(requiredInputs) && checkCheckbox(checkboxEl)) {
+			successBlock.style.display = 'flex';
+			closeButton.addEventListener('click', () => {
+				successBlock.style.display = 'none';
 			});
-			return result;
-		};
-		if (testRequired() && testCheckbox()) {
-			alert('Please expect our consultant to contact you shortly')
 			form.reset()
-		}
-		else alert('Something is wrong, please check all fields with the data and try again. If the error occurs again, please contact our consultant using the contacts at the top of the page')
-	})
+		};
+	});
+};
 
 
-}
 export default isValidate;

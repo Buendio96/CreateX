@@ -6,10 +6,10 @@
 @import "@s-modules/header";
 @import "@s-modules/discuss";
 @import "@s-modules/footer";
-@import "@s-common/error";
 
 body {
 	font-family: "Ubu-R";
+	user-select: none;
 }
 
 .wrapper {
@@ -27,7 +27,7 @@ body {
 	display: grid;
 	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
 	padding: 0 15px;
-	z-index: 1;
+	z-index: 1000;
 	position: sticky;
 	top: 0;
 	backdrop-filter: blur(3px);
@@ -59,4 +59,40 @@ body {
 	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
 	padding: 0 15px;
 	background-color: $titles;
+}
+.go-top {
+	position: fixed;
+	display: flex;
+	column-gap: 16px;
+	bottom: 4%;
+	right: 4%;
+	background: none;
+	opacity: 0;
+	transition: all 0.5s ease;
+	font-weight: 600;
+	text-shadow: 0 0 4px rgba($color: $text, $alpha: 0.6);
+	&__text {
+		align-self: flex-end;
+		font-size: 14px;
+		color: $primary;
+		line-height: 150%;
+	}
+	&__squer {
+		width: 40px;
+		height: 40px;
+		border-radius: 4px;
+		background: $primary;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			top: 60%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+			border-left: 3px solid $text;
+			border-top: 3px solid $text;
+		}
+	}
 }

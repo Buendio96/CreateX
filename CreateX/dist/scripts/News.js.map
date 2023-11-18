@@ -1,1 +1,0 @@
-{"version":3,"file":"scripts/News.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,kCAAkC,CAAC,C","sources":["webpack://createx/./src/scripts/news.js"],"sourcesContent":["console.log(\"Hi, do you want some funny news?\")"],"names":["console","log"],"sourceRoot":""}
