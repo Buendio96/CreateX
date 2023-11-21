@@ -38,14 +38,19 @@ body {
 	height: 100vh;
 	position: fixed;
 	top: 90px;
-	z-index: -1;
 	@include img-adaptive();
+	z-index: -1;
 }
 .main {
 	grid-area: main;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
+	section {
+		display: grid;
+		grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
+		padding: 0 15px;
+		.center {
+			grid-column: 2/3;
+		}
+	}
 }
 .discuss {
 	grid-area: discuss;

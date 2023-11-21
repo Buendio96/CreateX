@@ -1,10 +1,4 @@
-.homepage {
-	&__first {
-		grid-column: 2/3;
-		display: inline-flex;
-	}
-}
-.hp-first {
+.welcome {
 	&__body {
 		display: flex;
 		flex-direction: column;
@@ -128,4 +122,7 @@
 			flex: 0 1 49%;
 		}
 	}
+}
+.we-are {
+	background-color: #fff;
 }

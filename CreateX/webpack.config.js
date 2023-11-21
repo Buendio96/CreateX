@@ -25,7 +25,7 @@ const HTML_PLUGINS = () => {
 			'favicon': '/assets/icons/favicon.ico'
 		}
 	}))
-}
+};
 //=================================================================
 const optimization = () => {
 	const config = {
@@ -44,6 +44,12 @@ const optimization = () => {
 	}
 	return config
 };
+const pattern = (folder) => {
+	return {
+		from: path.resolve(__dirname, `src/assets/${folder}`),
+		to: path.resolve(__dirname, `dist/assets/${folder}`)
+	}
+}
 //=================================================================
 module.exports = {
 	devtool,
@@ -63,7 +69,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 		filename: 'scripts/' + fileName('js'),
-		assetModuleFilename: 'assets'
+		assetModuleFilename: 'assets/[name]'
 	},
 	resolve: {
 		extensions: [
@@ -99,14 +105,12 @@ module.exports = {
 			filename: 'styles/' + fileName('css')
 		}),
 		new CopyWebpackPlugin({
-			patterns: [{
-				from: path.resolve(__dirname, 'src/assets/icons'),
-				to: path.resolve(__dirname, 'dist/assets/icons')
-			}, {
-				from: path.resolve(__dirname, 'src/assets/vendors'),
-				to: path.resolve(__dirname, 'dist/assets/vendors')
-			}]
-		})
+			patterns: [
+				pattern('icons'),
+				pattern('vendors'),
+				pattern('videos'),
+			]
+		}),
 	],
 	//=================================================================
 	module: {

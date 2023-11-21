@@ -92,9 +92,9 @@ const isValidate = (form, successBlock, closeButton) => {
 		checkRequiredInputs(requiredInputs)
 		checkRegexInputs(regexInputs)
 		if (checkRequiredInputs(requiredInputs) && checkCheckbox(checkboxEl)) {
-			successBlock.style.display = 'flex';
+			successBlock.style.transform = 'scaleY(1)';
 			closeButton.addEventListener('click', () => {
-				successBlock.style.display = 'none';
+				successBlock.style.transform = 'scaleY(0)';
 			});
 			form.reset()
 		};
