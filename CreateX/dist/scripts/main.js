@@ -1,15 +1,47 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/scripts/discuss.js":
-/*!********************************!*\
-  !*** ./src/scripts/discuss.js ***!
-  \********************************/
+/***/ "./src/styles/createX.scss":
+/*!*********************************!*\
+  !*** ./src/styles/createX.scss ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_validator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js/validator */ "./src/scripts/validator.js");
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/assets/images/bg-image.jpg":
+/*!****************************************!*\
+  !*** ./src/assets/images/bg-image.jpg ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/oImages/bg-image..jpg";
+
+/***/ }),
+
+/***/ "./src/assets/images/discuss.png":
+/*!***************************************!*\
+  !*** ./src/assets/images/discuss.png ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/oImages/discuss..png";
+
+/***/ }),
+
+/***/ "./src/scripts/modules/discuss.mjs":
+/*!*****************************************!*\
+  !*** ./src/scripts/modules/discuss.mjs ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _js_modules_validator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-modules/validator */ "./src/scripts/modules/validator.mjs");
 /* harmony import */ var _images_discuss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @images/discuss */ "./src/assets/images/discuss.png");
 
 
@@ -18,16 +50,17 @@ titleImg.src = _images_discuss__WEBPACK_IMPORTED_MODULE_1__;
 const successEl = document.getElementById('discussSuccess');
 const closeBtn = document.getElementById('discussClose');
 const newForm = document.getElementById('discussForm');
-(0,_js_validator__WEBPACK_IMPORTED_MODULE_0__["default"])(newForm, successEl, closeBtn);
+(0,_js_modules_validator__WEBPACK_IMPORTED_MODULE_0__["default"])(newForm, successEl, closeBtn);
 
 /***/ }),
 
-/***/ "./src/scripts/header.js":
-/*!*******************************!*\
-  !*** ./src/scripts/header.js ***!
-  \*******************************/
-/***/ (() => {
+/***/ "./src/scripts/modules/header.mjs":
+/*!****************************************!*\
+  !*** ./src/scripts/modules/header.mjs ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
 const burgerMenuEl = document.getElementById('burgerMenu');
 document.getElementById('burgerToggle').addEventListener('click', () => {
   burgerMenuEl.classList.toggle('active-burger');
@@ -35,12 +68,13 @@ document.getElementById('burgerToggle').addEventListener('click', () => {
 
 /***/ }),
 
-/***/ "./src/scripts/scrollToTop.js":
-/*!************************************!*\
-  !*** ./src/scripts/scrollToTop.js ***!
-  \************************************/
-/***/ (() => {
+/***/ "./src/scripts/modules/scrollToTop.mjs":
+/*!*********************************************!*\
+  !*** ./src/scripts/modules/scrollToTop.mjs ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
 const scrollToTopButton = document.getElementById("scrollToTopBtn");
 const scrollFunction = () => {
   if (document.documentElement.scrollTop > 100) {
@@ -59,13 +93,12 @@ scrollToTopButton.addEventListener('click', () => {
 
 /***/ }),
 
-/***/ "./src/scripts/validator.js":
-/*!**********************************!*\
-  !*** ./src/scripts/validator.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/scripts/modules/validator.mjs":
+/*!*******************************************!*\
+  !*** ./src/scripts/modules/validator.mjs ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -170,41 +203,6 @@ const isValidate = (form, successBlock, closeButton) => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isValidate);
 
-/***/ }),
-
-/***/ "./src/styles/createX.scss":
-/*!*********************************!*\
-  !*** ./src/styles/createX.scss ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/assets/images/bg-image.jpg":
-/*!****************************************!*\
-  !*** ./src/assets/images/bg-image.jpg ***!
-  \****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/images/bg-image..jpg";
-
-/***/ }),
-
-/***/ "./src/assets/images/discuss.png":
-/*!***************************************!*\
-  !*** ./src/assets/images/discuss.png ***!
-  \***************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/images/discuss..png";
-
 /***/ })
 
 /******/ 	});
@@ -234,18 +232,6 @@ module.exports = __webpack_require__.p + "assets/images/discuss..png";
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -311,19 +297,16 @@ module.exports = __webpack_require__.p + "assets/images/discuss..png";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!*****************************!*\
   !*** ./src/scripts/main.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_createX__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @styles/createX */ "./src/styles/createX.scss");
-/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js/header */ "./src/scripts/header.js");
-/* harmony import */ var _js_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_header__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _js_discuss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js/discuss */ "./src/scripts/discuss.js");
-/* harmony import */ var _js_scrollToTop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js/scrollToTop */ "./src/scripts/scrollToTop.js");
-/* harmony import */ var _js_scrollToTop__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_scrollToTop__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _js_modules_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-modules/header */ "./src/scripts/modules/header.mjs");
+/* harmony import */ var _js_modules_discuss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-modules/discuss */ "./src/scripts/modules/discuss.mjs");
+/* harmony import */ var _js_modules_scrollToTop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js-modules/scrollToTop */ "./src/scripts/modules/scrollToTop.mjs");
 /* harmony import */ var _images_bg_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @images/bg-image */ "./src/assets/images/bg-image.jpg");
 
 

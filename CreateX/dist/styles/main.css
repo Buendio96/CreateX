@@ -328,244 +328,6 @@ template {
   font-family: "Ubu-R";
   src: url(../assets/fonts/Ubuntu-Regular..ttf);
 }
-.welcome__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-}
-.welcome__title {
-  color: #fff;
-  font-family: "Ubu-B";
-  font-size: 72px;
-  line-height: 130%;
-  letter-spacing: 1px;
-}
-.welcome__title span {
-  color: #ff5a30;
-}
-@media (max-width: 992px) {
-  .welcome__title {
-    font-size: 56px;
-  }
-}
-@media (max-width: 768px) {
-  .welcome__title {
-    font-size: 40px;
-    line-height: 120%;
-  }
-}
-.welcome__subtitle {
-  margin: 24px 0 0;
-  max-width: 595px;
-  font-size: 20px;
-  line-height: 150%;
-  color: #fff;
-  font-family: "Ubu-R";
-  font-weight: 400;
-}
-@media (max-width: 768px) {
-  .welcome__subtitle {
-    margin: 15px 0 0;
-    font-size: 15px;
-    line-height: 130%;
-  }
-}
-.welcome__buttons {
-  margin: 61px 0 0;
-  display: flex;
-  column-gap: 24px;
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .welcome__buttons {
-    margin: 30px 0 0;
-  }
-}
-@media (max-width: 480px) {
-  .welcome__buttons {
-    flex-wrap: wrap;
-    row-gap: 15px;
-  }
-}
-.welcome__buttons-lb {
-  display: flex;
-  align-items: center;
-  font-family: "Ubu-B";
-  font-size: 16px;
-  height: 52px;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: transparent;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  padding: 0 40px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  box-sizing: border-box;
-  justify-content: center;
-}
-.welcome__buttons-lb:hover {
-  background: #fff;
-  color: #ff5a30;
-  border: 1px solid #ff5a30;
-}
-@media (max-width: 768px) {
-  .welcome__buttons-lb {
-    display: flex;
-    align-items: center;
-    font-family: "Ubu-B";
-    font-size: 14px;
-    height: 40px;
-    color: #fff;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: none;
-    padding: 0 20px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    box-sizing: border-box;
-    justify-content: center;
-  }
-  .welcome__buttons-lb:hover {
-    background: #fff;
-    color: #ff5a30;
-    border: 1px solid #ff5a30;
-  }
-}
-@media (max-width: 480px) {
-  .welcome__buttons-lb {
-    flex: 0 1 50%;
-  }
-}
-.welcome__buttons-rb {
-  display: flex;
-  align-items: center;
-  font-family: "Ubu-B";
-  font-size: 16px;
-  height: 52px;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: #ff5a30;
-  border: none;
-  border-radius: 4px;
-  padding: 0 40px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  box-sizing: border-box;
-  justify-content: center;
-}
-.welcome__buttons-rb:hover {
-  background: #fff;
-  color: #ff5a30;
-  border: 1px solid #ff5a30;
-}
-@media (max-width: 768px) {
-  .welcome__buttons-rb {
-    display: flex;
-    align-items: center;
-    font-family: "Ubu-B";
-    font-size: 14px;
-    height: 40px;
-    color: #fff;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-align: center;
-    background-color: #ff5a30;
-    border: none;
-    border-radius: none;
-    padding: 0 30px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    box-sizing: border-box;
-    justify-content: center;
-  }
-  .welcome__buttons-rb:hover {
-    background: #fff;
-    color: #ff5a30;
-    border: 1px solid #ff5a30;
-  }
-}
-@media (max-width: 480px) {
-  .welcome__buttons-rb {
-    flex: 0 1 50%;
-  }
-}
-.welcome__list {
-  display: flex;
-  margin: 160px 0 0;
-  column-gap: 8px;
-}
-@media (max-width: 992px) {
-  .welcome__list {
-    margin: 60px 0 0;
-  }
-}
-@media (max-width: 768px) {
-  .welcome__list {
-    margin: 30px 0 0;
-  }
-}
-@media (max-width: 480px) {
-  .welcome__list {
-    flex-wrap: wrap;
-    row-gap: 10px;
-  }
-}
-.welcome__item {
-  width: 178px;
-  height: 54px;
-  cursor: pointer;
-  position: relative;
-}
-.welcome__item::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-.welcome__item a {
-  width: 100%;
-  height: 100%;
-  font-size: 28px;
-  color: rgba(255, 255, 255, 0.6);
-}
-.welcome__item:hover::after {
-  background-color: white;
-  height: 2px;
-  box-shadow: 0 0 3px 0.5px #f4f5f6;
-}
-.welcome__item:hover a {
-  color: white;
-}
-@media (max-width: 768px) {
-  .welcome__item {
-    height: 35px;
-  }
-  .welcome__item a {
-    font-size: 20px;
-  }
-}
-@media (max-width: 480px) {
-  .welcome__item {
-    flex: 0 1 49%;
-  }
-}
-
-.we-are {
-  background-color: #fff;
-}
-
 .header__body {
   grid-column: 2/3;
   height: 90px;
@@ -1160,6 +922,243 @@ template {
   display: none;
 }
 
+.welcome__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.welcome__title {
+  color: #fff;
+  font-family: "Ubu-B";
+  font-size: 72px;
+  line-height: 130%;
+  letter-spacing: 1px;
+}
+.welcome__title span {
+  color: #ff5a30;
+}
+@media (max-width: 992px) {
+  .welcome__title {
+    font-size: 56px;
+  }
+}
+@media (max-width: 768px) {
+  .welcome__title {
+    font-size: 40px;
+    line-height: 120%;
+  }
+}
+.welcome__subtitle {
+  margin: 24px 0 0;
+  max-width: 595px;
+  font-size: 20px;
+  line-height: 150%;
+  color: #fff;
+  font-family: "Ubu-R";
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .welcome__subtitle {
+    margin: 15px 0 0;
+    font-size: 15px;
+    line-height: 130%;
+  }
+}
+.welcome__buttons {
+  margin: 61px 0 0;
+  display: flex;
+  column-gap: 24px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .welcome__buttons {
+    margin: 30px 0 0;
+  }
+}
+@media (max-width: 480px) {
+  .welcome__buttons {
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+}
+.welcome__buttons-lb {
+  display: flex;
+  align-items: center;
+  font-family: "Ubu-B";
+  font-size: 16px;
+  height: 52px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0 40px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.welcome__buttons-lb:hover {
+  background: #fff;
+  color: #ff5a30;
+  border: 1px solid #ff5a30;
+}
+@media (max-width: 768px) {
+  .welcome__buttons-lb {
+    display: flex;
+    align-items: center;
+    font-family: "Ubu-B";
+    font-size: 14px;
+    height: 40px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  .welcome__buttons-lb:hover {
+    background: #fff;
+    color: #ff5a30;
+    border: 1px solid #ff5a30;
+  }
+}
+@media (max-width: 480px) {
+  .welcome__buttons-lb {
+    flex: 0 1 50%;
+  }
+}
+.welcome__buttons-rb {
+  display: flex;
+  align-items: center;
+  font-family: "Ubu-B";
+  font-size: 16px;
+  height: 52px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #ff5a30;
+  border: none;
+  border-radius: 4px;
+  padding: 0 40px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.welcome__buttons-rb:hover {
+  background: #fff;
+  color: #ff5a30;
+  border: 1px solid #ff5a30;
+}
+@media (max-width: 768px) {
+  .welcome__buttons-rb {
+    display: flex;
+    align-items: center;
+    font-family: "Ubu-B";
+    font-size: 14px;
+    height: 40px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #ff5a30;
+    border: none;
+    border-radius: none;
+    padding: 0 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  .welcome__buttons-rb:hover {
+    background: #fff;
+    color: #ff5a30;
+    border: 1px solid #ff5a30;
+  }
+}
+@media (max-width: 480px) {
+  .welcome__buttons-rb {
+    flex: 0 1 50%;
+  }
+}
+.welcome__list {
+  display: flex;
+  margin: 160px 0 0;
+  column-gap: 8px;
+}
+@media (max-width: 992px) {
+  .welcome__list {
+    margin: 60px 0 0;
+  }
+}
+@media (max-width: 768px) {
+  .welcome__list {
+    margin: 30px 0 0;
+  }
+}
+@media (max-width: 480px) {
+  .welcome__list {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
+.welcome__item {
+  width: 178px;
+  height: 54px;
+  cursor: pointer;
+  position: relative;
+}
+.welcome__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.welcome__item a {
+  width: 100%;
+  height: 100%;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.welcome__item:hover::after {
+  background-color: white;
+  height: 2px;
+  box-shadow: 0 0 3px 0.5px #f4f5f6;
+}
+.welcome__item:hover a {
+  color: white;
+}
+@media (max-width: 768px) {
+  .welcome__item {
+    height: 35px;
+  }
+  .welcome__item a {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .welcome__item {
+    flex: 0 1 49%;
+  }
+}
+
+.we-are {
+  background-color: white;
+}
 body {
   font-family: "Ubu-R";
   -webkit-user-select: none;

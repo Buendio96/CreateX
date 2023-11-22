@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -13,7 +12,7 @@ const devtool = devMode ? 'source-map' : undefined;
 //=================================================================
 const fileName = ext => devMode ? `[name].${ext}` : `[contenthash].${ext}`;
 
-const pages = ['About', 'Services', 'Work', 'News', 'Contacts',];
+const pages = ['about', 'services', 'work', 'news', 'contacts',];
 const HTML_PLUGINS = () => {
 	return pages.map((page) => new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, `src/pages/${page}.hbs`),
@@ -53,17 +52,19 @@ const pattern = (folder) => {
 //=================================================================
 module.exports = {
 	devtool,
-	target: 'web',
+	target: devMode ? "web" : "browserslist",
 	mode: 'development',
 	devServer: {
 		port: 4300,
 		open: true,
 		hot: true,
+		watchFiles: path.join(__dirname, 'src')
 	},
 	optimization: optimization(),
 	entry: {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),
-		News: path.resolve(__dirname, 'src/scripts/news.js'),
+		homepageJS: path.resolve(__dirname, 'src/scripts/pages/homepage.js'),
+		news: path.resolve(__dirname, 'src/scripts/pages/news.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -73,17 +74,19 @@ module.exports = {
 	},
 	resolve: {
 		extensions: [
-			'.html', '.hbs', '.js', '.ts', '.json', '.css', '.scss', '.png', '.jpg',
+			'.html', '.hbs', '.js', '.mjs', '.ts', '.json', '.css', '.scss', '.png', '.jpg',
 		],
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
 			'@images': path.resolve(__dirname, 'src/assets/images'),
+			'@sImages': path.resolve(__dirname, 'src/assets/sImages'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@s-common': path.resolve(__dirname, 'src/styles/common'),
 			'@s-modules': path.resolve(__dirname, 'src/styles/modules'),
 			'@s-pages': path.resolve(__dirname, 'src/styles/pages'),
 			'@js': path.resolve(__dirname, 'src/scripts'),
+			'@js-modules': path.resolve(__dirname, 'src/scripts/modules'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
 			'@pages': path.resolve(__dirname, 'src/pages'),
 		}
@@ -91,12 +94,12 @@ module.exports = {
 	//=================================================================
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, 'src/CreateX.hbs'),
+			template: path.resolve(__dirname, 'src/createX.hbs'),
 			filename: 'index.html',
-			chunks: ['main'],
+			chunks: ['main', 'homepageJS'],
 			minify: prodMode,
 			templateParameters: {
-				'filename': 'CreateX',
+				'filename': 'createX',
 				'favicon': '/assets/icons/favicon.ico',
 			}
 		}),
@@ -109,6 +112,7 @@ module.exports = {
 				pattern('icons'),
 				pattern('vendors'),
 				pattern('videos'),
+				pattern('sImages'),
 			]
 		}),
 	],
@@ -117,7 +121,7 @@ module.exports = {
 		rules: [{
 			test: /\.(c|sa|sc)ss$/i,
 			use: [
-				MiniCssExtractPlugin.loader,
+				devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
 				'css-loader',
 				{
 					loader: 'postcss-loader',
@@ -183,7 +187,7 @@ module.exports = {
 			}],
 			type: 'asset/resource',
 			generator: {
-				filename: `assets/images/${fileName('[ext]')}`
+				filename: `assets/oImages/${fileName('[ext]')}`
 			}
 		}]
 	}

@@ -1,4 +1,4 @@
-import isValidate from '@js/validator'
+import isValidate from '@js-modules/validator'
 import cover from '@images/discuss'
 
 const titleImg = document.getElementById('discussImage')

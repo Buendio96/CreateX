@@ -74,3 +74,21 @@
 	background-color: $input-bg;
 	border-radius: 4px;
 }
+@mixin title-block {
+	margin: 0 auto;
+	text-align: center;
+	h2 {
+		font-family: "Ubu-B";
+		font-size: 46px;
+		line-height: 130%;
+		color: $titles;
+	}
+	h4 {
+		margin: 24px 0 0;
+		font-size: 18px;
+		line-height: 150%;
+		color: $desc;
+		font-family: "Ubu-R";
+		font-weight: 400;
+	}
+}

@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
 	<title>
-		CreateX
+		createX
 	</title>
-<script defer src="scripts/main.js"></script><link href="styles/main.css" rel="stylesheet"></head>
+<script defer src="scripts/main.js"></script><script defer src="scripts/homepage.js"></script><link href="styles/main.css" rel="stylesheet"></head>
 
 <body class="body">
 	<div class="wrapper">
@@ -25,19 +25,19 @@
 				<nav id="burgerMenu" class="header__menu">
 					<ul class="header__list">
 						<li>
-							<a class="header__link" href="./About.html">About us</a>
+							<a class="header__link" href="./about.html">About us</a>
 						</li>
 						<li>
-							<a class="header__link" href="./Services.html">Services</a>
+							<a class="header__link" href="./services.html">Services</a>
 						</li>
 						<li>
-							<a class="header__link" href="./Work.html">Work</a>
+							<a class="header__link" href="./work.html">Work</a>
 						</li>
 						<li>
-							<a class="header__link" href="./News.html">News</a>
+							<a class="header__link" href="./news.html">News</a>
 						</li>
 						<li>
-							<a class="header__link" href="./Contacts.html">Contacts</a>
+							<a class="header__link" href="./contacts.html">Contacts</a>
 						</li>
 					</ul>
 				</nav>
@@ -108,10 +108,23 @@
 							We are rightfully considered to be the best construction company in the USA.
 						</h4>
 					</div>
-					<div class="we-are__content">
-						<video>
-							<source src="./assets/video/SON OF KICK _Playing The Villain_ (Official Video).mp4">
+					<div class="we-are__content" id="homepageVideoBox">
+						<video id="homepageVideoBox-video" poster="assets/sImages/videoCoverImage.png"
+							class="we-are__content-video" src="/assets/videos/SON OF KICK.mp4" type="video/mp4">
 						</video>
+						<input type="checkbox" class="we-are__content-play" id="homepageVideoBox-play">
+						<div class="we-are__content-controls">
+							<div class="we-are__content-controls-volume">
+								<input type="checkbox" class="we-are__content-controls-volume-mute"
+									id="homepageVideoBox-mute">
+								<input type="range" max="100" value="50" class="we-are__content-controls-volume-lvl"
+									id="homepageVideoBox-volume">
+							</div>
+							<div class="we-are__content-controls-bar">
+								<progress class="we-are__content-controls-progress" id="homepageVideoBox-progress"
+									max="100" value="0"></progress>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

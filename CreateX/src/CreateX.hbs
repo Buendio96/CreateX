@@ -59,9 +59,24 @@
 							We are rightfully considered to be the best construction company in the USA.
 						</h4>
 					</div>
-					<div class="we-are__content">
-						<video controls src="./assets/videos/SON OF KICK.mp4" type="video/mp4">
+					<div class="we-are__content" id="homepageVideoBox">
+						<video id="homepageVideoBox-video" poster="" class="we-are__content-video"
+							src="/assets/videos/SON OF KICK.mp4" type="video/mp4">
 						</video>
+						<input type="checkbox" class="we-are__content-play" id="homepageVideoBox-play">
+						<span class="we-are__content-play-real"></span>
+						<div class="we-are__content-controls">
+							<div class="we-are__content-controls-volume">
+								<input type="checkbox" class="we-are__content-controls-volume-mute"
+									id="homepageVideoBox-mute">
+								<input type="range" max="100" value="50" class="we-are__content-controls-volume-lvl"
+									id="homepageVideoBox-volume">
+							</div>
+							<div class="we-are__content-controls-bar">
+								<progress class="we-are__content-controls-progress" id="homepageVideoBox-progress"
+									max="100" value="0"></progress>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
