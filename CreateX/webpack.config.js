@@ -87,6 +87,7 @@ module.exports = {
 			'@s-pages': path.resolve(__dirname, 'src/styles/pages'),
 			'@js': path.resolve(__dirname, 'src/scripts'),
 			'@js-modules': path.resolve(__dirname, 'src/scripts/modules'),
+			'@js-tamplates': path.resolve(__dirname, 'src/scripts/tamplates'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
 			'@pages': path.resolve(__dirname, 'src/pages'),
 		}

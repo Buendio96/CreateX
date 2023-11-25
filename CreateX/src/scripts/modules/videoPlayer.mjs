@@ -1,6 +1,5 @@
 const playAndPause = (videoElement) => {
 	videoElement.paused ? videoElement.play() : videoElement.pause();
-
 };
 
 const volumeMute = (videoElement) => {
@@ -29,7 +28,6 @@ const rewide = (videoElement, progressControl, event) => {
 
 const errorMessage = (elementName) => {
 	console.error(`${elementName} isn't found`);
-	alert('Something went wrong');
 };
 
 const setFunction = (control, func, targetElement) => {

@@ -87,8 +87,8 @@
 		border: 1px solid rgba(255, 255, 255, 0.2);
 		overflow: hidden;
 	}
-	.solid-btn {
-		@include solid-btn(14px, 44px, 0px, 23px);
+	&__subscribe-btn {
+		@include regular-btn();
 		border-radius: 0 4px 4px 0;
 	}
 	&__subscribe-input {

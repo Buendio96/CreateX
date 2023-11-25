@@ -60,7 +60,6 @@ const checkRequiredInputs = (fields) => {
 			result = false;
 		}
 	});
-	console.log(result)
 	return result;
 };
 const checkCheckbox = (element) => {
@@ -71,8 +70,6 @@ const checkCheckbox = (element) => {
 		showError(element);
 		result = false;
 	};
-	console.log(result)
-
 	return result;
 };
 
@@ -81,23 +78,24 @@ const isValidate = (form, successBlock, closeButton) => {
 	const requiredInputs = form.querySelectorAll('[data-required="true"]');
 	const regexInputs = form.querySelectorAll('[data-typecheck]');
 	const checkboxEl = form.querySelector('input[type="checkbox"]');
-	checkRegexInputs(regexInputs)
-	clearElements(checkboxEl)
+
+	if (checkboxEl) clearElements(checkboxEl);
+	if (regexInputs) checkRegexInputs(regexInputs);
 	form.addEventListener('submit', e => {
 		e.preventDefault();
 		requiredInputs.forEach(field => {
 			clearElements(field)
 		})
-		checkCheckbox(checkboxEl)
-		checkRequiredInputs(requiredInputs)
-		checkRegexInputs(regexInputs)
-		if (checkRequiredInputs(requiredInputs) && checkCheckbox(checkboxEl)) {
+		if (checkboxEl) checkCheckbox(checkboxEl);
+		if (requiredInputs) checkRequiredInputs(requiredInputs);
+		if (regexInputs) checkRegexInputs(regexInputs);
+		if (checkRequiredInputs(requiredInputs) && (!checkboxEl || checkCheckbox(checkboxEl))) {
 			successBlock.style.transform = 'scaleY(1)';
 			closeButton.addEventListener('click', () => {
 				successBlock.style.transform = 'scaleY(0)';
 			});
-			form.reset()
-		};
+			form.reset();
+		}
 	});
 };
 

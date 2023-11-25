@@ -1,17 +1,17 @@
-@mixin solid-btn($f-size: 16px, $height: 52px, $bord-rad: 4px, $p-ing: 40px) {
+@mixin solid-btn() {
 	display: flex;
 	align-items: center;
 	font-family: "Ubu-B";
-	font-size: $f-size;
-	height: $height;
+	font-size: 16px;
+	height: 52px;
 	color: $text;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 	text-align: center;
 	background-color: $primary;
 	border: none;
-	border-radius: $bord-rad;
-	padding: 0 $p-ing;
+	border-radius: 4px;
+	padding: 0 40px;
 	cursor: pointer;
 	transition: all 0.4s ease;
 	box-sizing: border-box;
@@ -22,20 +22,45 @@
 		border: 1px solid $primary;
 	}
 }
-@mixin outline-btn($f-size: 16px, $height: 52px, $bord-rad: 4px, $p-ing: 40px) {
+@mixin regular-btn() {
 	display: flex;
 	align-items: center;
 	font-family: "Ubu-B";
-	font-size: $f-size;
-	height: $height;
+	font-size: 14px;
+	line-height: 44px;
+	height: 44px;
+	color: $text;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: $primary;
+	border: none;
+	border-radius: 4px;
+	padding: 0 32px;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	box-sizing: border-box;
+	justify-content: center;
+	&:hover {
+		background: $text;
+		color: $primary;
+		border: 1px solid $primary;
+	}
+}
+@mixin outline-solid-btn() {
+	display: flex;
+	align-items: center;
+	font-family: "Ubu-B";
+	font-size: 16px;
+	height: 52px;
 	color: $text;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 	text-align: center;
 	background-color: transparent;
 	border: 1px solid $text;
-	border-radius: $bord-rad;
-	padding: 0 $p-ing;
+	border-radius: 4px;
+	padding: 0 40px;
 	cursor: pointer;
 	transition: all 0.4s ease;
 	box-sizing: border-box;
