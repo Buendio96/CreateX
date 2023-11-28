@@ -107,6 +107,15 @@
 		font-size: 46px;
 		line-height: 130%;
 		color: $titles;
+		@media (max-width: $desktop) {
+			font-size: 40px;
+		}
+		@media (max-width: $tablet) {
+			font-size: 30px;
+		}
+		@media (max-width: $phone) {
+			font-size: 20px;
+		}
 	}
 	h4 {
 		margin: 24px 0 0;
@@ -115,5 +124,13 @@
 		color: $desc;
 		font-family: "Ubu-R";
 		font-weight: 400;
+		@media (max-width: $tablet) {
+			font-size: 16px;
+			margin: 16px 0 0;
+		}
+		@media (max-width: $phone) {
+			margin: 10px 0 0;
+			font-size: 13px;
+		}
 	}
 }

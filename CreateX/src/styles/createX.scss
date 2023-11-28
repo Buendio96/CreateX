@@ -1,6 +1,9 @@
 body {
 	font-family: "Ubu-R";
 	user-select: none;
+	button {
+		cursor: pointer;
+	}
 }
 
 @import "@libs/normalize";
@@ -14,6 +17,7 @@ body {
 
 .wrapper {
 	min-height: 100%;
+	box-sizing: border-box;
 	display: grid;
 	grid-template: minmax(90px, auto) 1fr minmax(auto, 825px) minmax(566px, auto) / 1fr;
 	grid-template-areas:
@@ -37,6 +41,7 @@ body {
 	width: 100%;
 	height: 100vh;
 	position: fixed;
+	display: flex;
 	top: 90px;
 	@include img-adaptive();
 	z-index: -1;
