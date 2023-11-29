@@ -3,7 +3,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		height: 100vh;
+		height: calc(100vh - 90px);
+		max-width: 720px;
 	}
 	&__title {
 		color: $text;
@@ -15,11 +16,12 @@
 			color: $primary;
 		}
 		@media (max-width: $desktop) {
-			font-size: 56px;
+			line-height: 110%;
+			font-size: 40px;
 		}
 		@media (max-width: $tablet) {
-			font-size: 40px;
-			line-height: 120%;
+			line-height: 1;
+			font-size: 35px;
 		}
 	}
 	&__subtitle {
@@ -30,17 +32,26 @@
 		color: $text;
 		font-family: "Ubu-R";
 		font-weight: 400;
-		@media (max-width: $tablet) {
-			margin: 15px 0 0;
-			font-size: 15px;
+		@media (max-width: $desktop) {
+			margin: 16px 0 0;
+			font-size: 16px;
 			line-height: 130%;
+		}
+		@media (max-width: $tablet) {
+			margin: 14px 0 0;
+			font-size: 14px;
+			line-height: 110%;
 		}
 	}
 	&__buttons {
-		margin: 61px 0 0;
+		margin: 60px 0 0;
 		display: flex;
-		column-gap: 24px;
+		max-width: 530px;
+		column-gap: 25px;
 		box-sizing: border-box;
+		@media (max-width: $desktop) {
+			margin: 40px 0 0;
+		}
 		@media (max-width: $tablet) {
 			margin: 30px 0 0;
 		}
@@ -51,8 +62,13 @@
 	}
 	&__buttons-lb {
 		@include outline-solid-btn();
+		@media (max-width: $desktop) {
+			height: 35px;
+			padding: 0 20px;
+			font-size: 15px;
+		}
 		@media (max-width: $tablet) {
-			@include outline-solid-btn();
+			font-size: 12px;
 		}
 		@media (max-width: $phone) {
 			flex: 0 1 50%;
@@ -60,8 +76,13 @@
 	}
 	&__buttons-rb {
 		@include solid-btn();
+		@media (max-width: $desktop) {
+			height: 35px;
+			padding: 0 20px;
+			font-size: 15px;
+		}
 		@media (max-width: $tablet) {
-			@include solid-btn();
+			font-size: 12px;
 		}
 		@media (max-width: $phone) {
 			flex: 0 1 50%;
@@ -79,14 +100,20 @@
 		}
 		@media (max-width: $phone) {
 			flex-wrap: wrap;
-			row-gap: 10px;
+			row-gap: 15px;
 		}
 	}
 	&__item {
-		width: 178px;
+		flex: 0 1 25%;
 		height: 54px;
 		cursor: pointer;
 		position: relative;
+		a {
+			width: 100%;
+			height: 100%;
+			font-size: 28px;
+			color: rgba($color: $text, $alpha: 0.6);
+		}
 		&::after {
 			content: "";
 			position: absolute;
@@ -95,12 +122,6 @@
 			right: 0;
 			height: 1px;
 			background-color: rgba($color: $text, $alpha: 0.6);
-		}
-		a {
-			width: 100%;
-			height: 100%;
-			font-size: 28px;
-			color: rgba($color: $text, $alpha: 0.6);
 		}
 		&:hover {
 			&::after {
@@ -112,6 +133,12 @@
 				color: rgba($color: $text, $alpha: 1);
 			}
 		}
+		@media (max-width: $desktop) {
+			height: 35px;
+			a {
+				font-size: 20px;
+			}
+		}
 		@media (max-width: $tablet) {
 			height: 35px;
 			a {
@@ -119,16 +146,21 @@
 			}
 		}
 		@media (max-width: $phone) {
-			flex: 0 1 49%;
+			flex: 0 1 100%;
+			a {
+				font-size: 25px;
+			}
 		}
 	}
 }
 .we-are {
 	background-color: $main-bg;
 	&__body {
+		display: flex;
+		flex-direction: column;
 		padding: 120px 0;
 		@media (max-width: $desktop) {
-			padding: 90px 0;
+			padding: 70px 0;
 		}
 		@media (max-width: $tablet) {
 			padding: 50px 0;
@@ -141,16 +173,17 @@
 		@include title-block();
 	}
 	&__content {
-		display: flex;
 		margin: 60px 0 0;
 		border-radius: 4px;
 		overflow: hidden;
 		position: relative;
-		width: 100%;
 		height: 500px;
-		@media (max-width: $tablet) {
+		@media (max-width: $desktop) {
 			margin: 40px 0 0;
-			height: 350px;
+			height: 60vh;
+		}
+		@media (max-width: $tablet) {
+			margin: 30px 0 0;
 		}
 		@media (max-width: $phone) {
 			margin: 20px 0 0;
@@ -196,6 +229,15 @@
 			height: 80px;
 			transform: translate(-50%, -50%);
 			transition: all 0.3s ease;
+			@media (max-width: $desktop) {
+				transform: translate(-50%, -50%) scale(0.8);
+			}
+			@media (max-width: $tablet) {
+				transform: translate(-50%, -50%) scale(0.6);
+			}
+			@media (max-width: $phone) {
+				transform: translate(-50%, -50%) scale(0.5);
+			}
 		}
 	}
 	&__content-controls {
@@ -203,11 +245,14 @@
 		z-index: 1;
 		bottom: -200px;
 		left: 0;
+		right: 0;
 		display: flex;
 		align-items: center;
-		width: 100%;
 		transition: all 0.4s ease;
 		margin: 0 0 32px 32px;
+		@media (max-width: $tablet) {
+			margin: 0 0 15px 15px;
+		}
 	}
 	&__content-controls-volume {
 		display: flex;
@@ -218,6 +263,12 @@
 		height: 40px;
 		border-radius: 50%;
 		background-color: rgba($color: white, $alpha: 0.2);
+		@media (max-width: $tablet) {
+			width: 30px;
+			height: 30px;
+		}
+		@media (max-width: $phone) {
+		}
 	}
 	&__content-controls-volume-mute {
 		position: absolute;
@@ -451,6 +502,14 @@
 		border-radius: 4px;
 		@media (max-width: $desktop) {
 			top: 80px;
+			padding: 35px 45px;
+		}
+		@media (max-width: $tablet) {
+			top: 10px;
+			padding: 25px 30px;
+		}
+		@media (max-width: $phone) {
+			padding: 5px;
 		}
 	}
 
@@ -461,20 +520,44 @@
 			font-family: "Ubu-B";
 			font-size: 28px;
 			line-height: 150%;
+			@media (max-width: $tablet) {
+				font-size: 20px;
+			}
 		}
 		&__body {
 			padding: 32px 0 0;
 			display: flex;
 			align-items: flex-end;
 			column-gap: 24px;
+			@media (max-width: calc($desktop - 50px)) {
+				flex-wrap: wrap;
+				column-gap: 15px;
+				row-gap: 10px;
+				justify-content: space-between;
+			}
+			@media (max-width: $tablet) {
+				padding: 10px 0 0;
+			}
 		}
 		&__field {
 			display: flex;
 			flex-direction: column;
 			flex: 0 1 23.5%;
+			@media (max-width: calc($desktop - 50px)) {
+				flex: 0 1 48%;
+			}
+			@media (max-width: calc($tablet - 50px)) {
+				flex: 0 1 100%;
+			}
 		}
 		.width {
 			flex: 0 1 37.5%;
+			@media (max-width: calc($desktop - 50px)) {
+				flex: 0 1 70%;
+			}
+			@media (max-width: calc($tablet - 50px)) {
+				flex: 0 1 100%;
+			}
 		}
 		&__label {
 			text-align-last: left;
@@ -487,6 +570,12 @@
 		&__btn {
 			@include regular-btn();
 			height: 46px;
+			@media (max-width: calc($desktop - 50px)) {
+				flex: 0 1 25%;
+			}
+			@media (max-width: calc($tablet - 50px)) {
+				margin: 0 auto;
+			}
 		}
 	}
 	.qustion-success {
@@ -495,17 +584,37 @@
 		text-align: left;
 		align-items: center;
 		justify-content: space-around;
-		top: 50%;
-		height: 50%;
+		@media (max-width: $tablet) {
+			height: 70%;
+			top: 30%;
+		}
+		@media (max-width: $phone) {
+			height: 40%;
+			top: 60%;
+			flex-direction: column;
+			text-align: center;
+			justify-content: space-between;
+		}
 		p {
 			margin: 0;
+			@media (max-width: $tablet) {
+				margin: 10px;
+				font-size: 18px;
+			}
 		}
 		h5 {
 			margin: 0;
+			@media (max-width: $tablet) {
+				margin: 10px;
+				font-size: 24px;
+			}
 		}
 		button {
 			width: 250px;
 			margin: 0 0 10px 0;
+			@media (max-width: $tablet) {
+				width: 150px;
+			}
 		}
 	}
 }
@@ -526,6 +635,15 @@
 		flex-direction: column;
 		align-items: center;
 		z-index: 1;
+		@media (max-width: $desktop) {
+			padding: 100px 0 60px;
+		}
+		@media (max-width: $tablet) {
+			padding: 60px 0 40px;
+		}
+		@media (max-width: $phone) {
+			padding: 40px 0 20px;
+		}
 	}
 	&__title-block {
 		@include title-block;
@@ -535,9 +653,19 @@
 		display: flex;
 		column-gap: 30px;
 		width: 100%;
+		@media (max-width: $desktop) {
+			margin: 40px 0 0;
+		}
+		@media (max-width: $tablet) {
+			margin: 30px 0 0;
+			column-gap: 15px;
+			row-gap: 10px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 	}
 	&__item {
-		flex: 1 0 25%;
+		flex: 0 1 25%;
 		height: 285px;
 		background: $main-bg;
 		display: flex;
@@ -554,14 +682,14 @@
 		position: relative;
 		img {
 			transition: all 0.8s;
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+			@include img-adaptive;
+		}
+		@media (max-width: $desktop) {
+			height: 200px;
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 calc(50% - 15px);
+			height: 150px;
 		}
 	}
 	&__item-box {
@@ -579,6 +707,9 @@
 	&__item-box-svg {
 		fill: $primary;
 		transition: all 0.2s ease;
+		@media (max-width: $tablet) {
+			width: 35px;
+		}
 	}
 	&__item-box-title {
 		margin: 24px 0 0;
@@ -586,20 +717,41 @@
 		font-family: "Ubu-B";
 		line-height: 150%;
 		transition: all 0.2s ease;
+		@media (max-width: $desktop) {
+			font-size: 17px;
+		}
+		@media (max-width: $tablet) {
+			margin: 15px 0 0;
+			font-size: 14px;
+		}
 	}
 	&__box {
 		display: flex;
 		margin: 80px 0 0;
 		column-gap: 40px;
+		@media (max-width: $tablet) {
+			flex-wrap: wrap;
+			text-align: center;
+			justify-content: center;
+			row-gap: 10px;
+			margin: 20px 0 0;
+		}
 	}
 	&__box-text {
 		color: $titles;
 		font-size: 28px;
 		font-family: "Ubu-B";
 		line-height: 150%;
+		@media (max-width: $tablet) {
+			font-size: 24px;
+			flex: 0 1 100%;
+		}
 	}
 	&__box-btn {
 		@include solid-btn;
+		@media (max-width: $tablet) {
+			height: 30px;
+		}
 	}
 }
 .our-service__item-box:hover {

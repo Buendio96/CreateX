@@ -1,11 +1,3 @@
-body {
-	font-family: "Ubu-R";
-	user-select: none;
-	button {
-		cursor: pointer;
-	}
-}
-
 @import "@libs/normalize";
 @import "@s-common/fonts";
 @import "@s-common/vars";
@@ -15,43 +7,42 @@ body {
 @import "@s-modules/footer";
 @import "@s-pages/homepage";
 
-.wrapper {
+body {
+	width: 100%;
 	min-height: 100%;
-	box-sizing: border-box;
+	font-family: "Ubu-R";
+	user-select: none;
+}
+//===================================
+//===================================
+.wrapper {
+	height: 100%;
+	width: 100%;
 	display: grid;
-	grid-template: minmax(90px, auto) 1fr minmax(auto, 825px) minmax(566px, auto) / 1fr;
+	grid-template: minmax(90px, auto) 1fr minmax(1fr, 825px) minmax(566px, auto) / 1fr;
 	grid-template-areas:
 		"header"
 		"main"
 		"discuss"
 		"footer";
 }
+//===================================
+//===================================
 .header {
 	grid-area: header;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
+	@include grid-layout;
 	z-index: 1000;
 	position: sticky;
 	top: 0;
 	backdrop-filter: blur(3px);
 	background-color: rgba($color: white, $alpha: 0.4);
 }
-.parallax-block {
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	display: flex;
-	top: 90px;
-	@include img-adaptive();
-	z-index: -1;
-}
 .main {
 	grid-area: main;
+	display: flex;
+	flex-direction: column;
 	section {
-		display: grid;
-		grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-		padding: 0 15px;
+		@include grid-layout;
 		.center {
 			grid-column: 2/3;
 		}
@@ -59,16 +50,24 @@ body {
 }
 .discuss {
 	grid-area: discuss;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
+	@include grid-layout;
 }
 .footer {
 	grid-area: footer;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
+	@include grid-layout;
 	background-color: $titles;
+}
+//===================================
+//===================================
+.parallax-block {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 90px;
+	z-index: -1;
+	img {
+		@include img-adaptive;
+	}
 }
 .go-top {
 	position: fixed;
@@ -81,11 +80,18 @@ body {
 	transition: all 0.5s ease;
 	font-weight: 600;
 	text-shadow: 0 0 4px rgba($color: $text, $alpha: 0.6);
+	z-index: 100;
 	&__text {
 		align-self: flex-end;
 		font-size: 14px;
 		color: $primary;
 		line-height: 150%;
+		@media (max-width: $desktop) {
+			margin: 10px 0 0;
+			align-self: flex-end;
+			writing-mode: vertical-lr;
+			font-size: 16px;
+		}
 	}
 	&__squer {
 		width: 40px;
@@ -93,17 +99,31 @@ body {
 		border-radius: 4px;
 		background: $primary;
 		position: relative;
+		overflow: hidden;
 		&::before {
 			content: "";
 			position: absolute;
 			width: 16px;
 			height: 16px;
-			top: 60%;
+			top: 65%;
 			left: 50%;
 			transform: translate(-50%, -50%) rotate(45deg);
 			border-left: 3px solid $text;
 			border-top: 3px solid $text;
 		}
+		@media (max-width: $desktop) {
+			width: 15px;
+			height: 25px;
+			&::before {
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+	@media (max-width: $desktop) {
+		flex-direction: column-reverse;
+		right: 5px;
+		align-items: center;
 	}
 }
 .success-block {

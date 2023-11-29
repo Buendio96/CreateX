@@ -7,7 +7,9 @@
 	grid-column: 1/4;
 	grid-row: 1/2;
 	min-height: 100%;
-	@include img-adaptive();
+	img {
+		@include img-adaptive();
+	}
 }
 .discuss {
 	&__box {
@@ -16,18 +18,28 @@
 		display: flex;
 		justify-content: flex-end;
 		padding: 80px 0;
+		@media (max-width: $tablet) {
+			justify-content: center;
+			align-items: start;
+			padding: 40px 0;
+		}
 	}
 	&__body {
-		max-width: 495px;
-		max-height: 665px;
-		position: relative;
-		display: flex;
-		flex-direction: column;
 		max-width: 415px;
+		position: relative;
+		display: inline-flex;
+		flex-direction: column;
 		padding: 48px 40px;
 		background: white;
 		border-radius: 4px;
 		border: 1px solid #e5e8ed;
+		@media (max-width: $desktop) {
+			padding: 25px 30px 10px;
+			justify-content: center;
+		}
+		@media (max-width: $tablet) {
+			max-width: 90%;
+		}
 	}
 	&__title {
 		text-align: center;
@@ -35,17 +47,42 @@
 		line-height: 150%;
 		font-family: "Ubu-B";
 		color: $titles;
+		@media (max-width: $tablet) {
+			font-size: 24px;
+			text-align: left;
+		}
 	}
 	&__form {
 		display: flex;
 		flex-direction: column;
 		margin: 24px 0 0;
+		@media (max-width: $tablet) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
 	}
 	&__form-field {
 		display: flex;
 		flex-direction: column;
 		&:not(:first-child) {
 			margin: 20px 0 0;
+			@media (max-width: $desktop) {
+				margin: 10px 0 0;
+			}
+			@media (max-width: $tablet) {
+				margin: 0;
+			}
+		}
+		@media (max-width: $tablet) {
+			margin: 0;
+			flex: 0 1 calc(50% - 10px);
+			&:nth-child(n + 3) {
+				flex: 0 1 100%;
+			}
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 100%;
 		}
 	}
 	&__form-field-checkbox {
@@ -59,6 +96,11 @@
 		&::before {
 			top: -15px;
 			left: 4px;
+		}
+		@media (max-width: $tablet) {
+			justify-content: start;
+			margin: 10px 0;
+			flex: 0 1 100%;
 		}
 	}
 	&__label {
@@ -116,6 +158,9 @@
 		align-self: center;
 		margin: 24px 0 0;
 		@include regular-btn();
+		@media (max-width: $tablet) {
+			margin: 0 auto;
+		}
 	}
 }
 .discuss__checkbox:checked + .discuss__custom-checkbox::before {
