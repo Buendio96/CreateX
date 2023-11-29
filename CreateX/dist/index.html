@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
 	<title>
-		CreateX
+		createX
 	</title>
-<script defer src="scripts/main.js"></script></head>
+<script defer src="scripts/main.js"></script><script defer src="scripts/homepage.js"></script><link href="styles/main.css" rel="stylesheet"></head>
 
 <body class="body">
 	<div class="wrapper">
@@ -25,19 +25,19 @@
 				<nav id="burgerMenu" class="header__menu">
 					<ul class="header__list">
 						<li>
-							<a class="header__link" href="./About.html">About us</a>
+							<a class="header__link" href="./about.html">About us</a>
 						</li>
 						<li>
-							<a class="header__link" href="./Services.html">Services</a>
+							<a class="header__link" href="./services.html">Services</a>
 						</li>
 						<li>
-							<a class="header__link" href="./Work.html">Work</a>
+							<a class="header__link" href="./work.html">Work</a>
 						</li>
 						<li>
-							<a class="header__link" href="./News.html">News</a>
+							<a class="header__link" href="./news.html">News</a>
 						</li>
 						<li>
-							<a class="header__link" href="./Contacts.html">Contacts</a>
+							<a class="header__link" href="./contacts.html">Contacts</a>
 						</li>
 					</ul>
 				</nav>
@@ -65,39 +65,69 @@
 		</header>		<section class="parallax-block">
 			<img id="titleImage" alt="">
 		</section>
-		<main class="homepage main">
-			<div class="homepage__first hp-first">
-				<div class="hp-first__body">
-					<h1 class="hp-first__title">
+		<main class="main">
+			<section class="welcome ">
+				<div class="welcome__body center">
+					<h1 class="welcome__title">
 						CREATE<span>X</span>
 						<br>
 						CONSTRUCTION
 					</h1>
-					<h2 class="hp-first__subtitle">
+					<h2 class="welcome__subtitle">
 						Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin
 						ipsum
 						sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis.
 					</h2>
-					<div class="hp-first__buttons">
-						<button class="hp-first__buttons-lb">LEARN MORE ABOUT US</button>
-						<button class="hp-first__buttons-rb">SUBMIT REQUEST</button>
+					<div class="welcome__buttons">
+						<button class="welcome__buttons-lb">LEARN MORE ABOUT US</button>
+						<button class="welcome__buttons-rb">SUBMIT REQUEST</button>
 					</div>
-					<ul class="hp-first__list">
-						<li class="hp-first__item">
+					<ul class="welcome__list">
+						<li class="welcome__item">
 							<a href="#">01</a>
 						</li>
-						<li class="hp-first__item">
+						<li class="welcome__item">
 							<a href="#">02</a>
 						</li>
-						<li class="hp-first__item">
+						<li class="welcome__item">
 							<a href="#">03</a>
 						</li>
-						<li class="hp-first__item">
+						<li class="welcome__item">
 							<a href="#">04</a>
 						</li>
 					</ul>
 				</div>
-			</div>
+			</section>
+			<section class="we-are">
+				<div class="we-are__body center">
+					<div class="we-are__title-block ">
+						<h2>
+							We are Createx Construction Bureau
+						</h2>
+						<h4>
+							We are rightfully considered to be the best construction company in the USA.
+						</h4>
+					</div>
+					<div class="we-are__content" id="homepageVideoBox">
+						<video id="homepageVideoBox-video" poster="assets/sImages/videoCoverImage.png"
+							class="we-are__content-video" src="/assets/videos/SON OF KICK.mp4" type="video/mp4">
+						</video>
+						<input type="checkbox" class="we-are__content-play" id="homepageVideoBox-play">
+						<div class="we-are__content-controls">
+							<div class="we-are__content-controls-volume">
+								<input type="checkbox" class="we-are__content-controls-volume-mute"
+									id="homepageVideoBox-mute">
+								<input type="range" max="100" value="50" class="we-are__content-controls-volume-lvl"
+									id="homepageVideoBox-volume">
+							</div>
+							<div class="we-are__content-controls-bar">
+								<progress class="we-are__content-controls-progress" id="homepageVideoBox-progress"
+									max="100" value="0"></progress>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<div class="discuss">
 			<section class="discuss-cover">
@@ -135,11 +165,11 @@
 		
 						<div class="discuss__form-field-checkbox"
 							data-error-text="&dArr;	This agreement allows us to contact you">
-							<input class="discuss__checkbox" type="checkbox" id="agreement" name="agreement">
-							<span class="discuss__real-checkbox"></span>
-							<label for="agreement" class="discuss__agreement-text">
+							<label for="agreement" class="discuss__label">
 								I agree to receive communications from Createx Construction Bureau.
 							</label>
+							<input class="discuss__checkbox" type="checkbox" id="agreement" name="agreement">
+							<span class="discuss__custom-checkbox"></span>
 						</div>
 		
 						<button class="discuss__btn" type="submit">Send request</button>

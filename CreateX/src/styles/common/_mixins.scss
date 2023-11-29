@@ -1,17 +1,20 @@
-@mixin solid-btn($f-size: 16px, $height: 52px, $bord-rad: 4px, $p-ing: 40px) {
+//==============================================
+//BUTTONS=======================================
+//==============================================
+@mixin solid-btn {
 	display: flex;
 	align-items: center;
 	font-family: "Ubu-B";
-	font-size: $f-size;
-	height: $height;
+	font-size: 16px;
+	height: 52px;
 	color: $text;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 	text-align: center;
 	background-color: $primary;
 	border: none;
-	border-radius: $bord-rad;
-	padding: 0 $p-ing;
+	border-radius: 4px;
+	padding: 0 40px;
 	cursor: pointer;
 	transition: all 0.4s ease;
 	box-sizing: border-box;
@@ -22,20 +25,45 @@
 		border: 1px solid $primary;
 	}
 }
-@mixin outline-btn($f-size: 16px, $height: 52px, $bord-rad: 4px, $p-ing: 40px) {
+@mixin regular-btn {
 	display: flex;
 	align-items: center;
 	font-family: "Ubu-B";
-	font-size: $f-size;
-	height: $height;
+	font-size: 14px;
+	line-height: 44px;
+	height: 44px;
+	color: $text;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: $primary;
+	border: none;
+	border-radius: 4px;
+	padding: 0 32px;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	box-sizing: border-box;
+	justify-content: center;
+	&:hover {
+		background: $text;
+		color: $primary;
+		border: 1px solid $primary;
+	}
+}
+@mixin outline-solid-btn {
+	display: flex;
+	align-items: center;
+	font-family: "Ubu-B";
+	font-size: 16px;
+	height: 52px;
 	color: $text;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 	text-align: center;
 	background-color: transparent;
 	border: 1px solid $text;
-	border-radius: $bord-rad;
-	padding: 0 $p-ing;
+	border-radius: 4px;
+	padding: 0 40px;
 	cursor: pointer;
 	transition: all 0.4s ease;
 	box-sizing: border-box;
@@ -46,19 +74,12 @@
 		border: 1px solid $primary;
 	}
 }
+//==============================================
+//FORM TAGS=====================================
+//==============================================
 @mixin link-hover {
 	&:hover {
 		color: $primary;
-	}
-}
-@mixin img-adaptive {
-	img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		object-fit: cover;
 	}
 }
 @mixin label {
@@ -73,4 +94,60 @@
 	border: 1px solid $input-bor;
 	background-color: $input-bg;
 	border-radius: 4px;
+}
+//==============================================
+//REPEATED BLOCKS===============================
+//==============================================
+@mixin title-block {
+	margin: 0 auto;
+	text-align: center;
+	h2 {
+		font-family: "Ubu-B";
+		font-size: 46px;
+		line-height: 130%;
+		color: $titles;
+		@media (max-width: $desktop) {
+			font-size: 40px;
+		}
+		@media (max-width: $tablet) {
+			font-size: 25px;
+		}
+		@media (max-width: $phone) {
+			font-size: 18px;
+		}
+	}
+	h4 {
+		margin: 24px 0 0;
+		font-size: 18px;
+		line-height: 150%;
+		color: $desc;
+		font-family: "Ubu-R";
+		font-weight: 400;
+		@media (max-width: $tablet) {
+			font-size: 15px;
+			margin: 12px 0 0;
+		}
+		@media (max-width: $phone) {
+			margin: 10px 0 0;
+			font-size: 13px;
+		}
+	}
+}
+//==============================================
+//ADAPTIVE======================================
+//==============================================
+@mixin grid-layout {
+	display: grid;
+	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
+	padding: 0 15px;
+}
+@mixin img-adaptive {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	object-fit: cover;
 }

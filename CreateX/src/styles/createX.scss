@@ -2,63 +2,72 @@
 @import "@s-common/fonts";
 @import "@s-common/vars";
 @import "@s-common/mixins";
-@import "@s-pages/homepage";
 @import "@s-modules/header";
 @import "@s-modules/discuss";
 @import "@s-modules/footer";
+@import "@s-pages/homepage";
 
 body {
+	width: 100%;
+	min-height: 100%;
 	font-family: "Ubu-R";
 	user-select: none;
 }
-
+//===================================
+//===================================
 .wrapper {
-	min-height: 100%;
+	height: 100%;
+	width: 100%;
 	display: grid;
-	grid-template: minmax(90px, auto) 1fr minmax(auto, 825px) minmax(566px, auto) / 1fr;
+	grid-template: minmax(90px, auto) 1fr minmax(1fr, 825px) minmax(566px, auto) / 1fr;
 	grid-template-areas:
 		"header"
 		"main"
 		"discuss"
 		"footer";
 }
+//===================================
+//===================================
 .header {
 	grid-area: header;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
+	@include grid-layout;
 	z-index: 1000;
 	position: sticky;
 	top: 0;
 	backdrop-filter: blur(3px);
 	background-color: rgba($color: white, $alpha: 0.4);
 }
+.main {
+	grid-area: main;
+	display: flex;
+	flex-direction: column;
+	section {
+		@include grid-layout;
+		.center {
+			grid-column: 2/3;
+		}
+	}
+}
+.discuss {
+	grid-area: discuss;
+	@include grid-layout;
+}
+.footer {
+	grid-area: footer;
+	@include grid-layout;
+	background-color: $titles;
+}
+//===================================
+//===================================
 .parallax-block {
 	width: 100%;
 	height: 100vh;
 	position: fixed;
 	top: 90px;
 	z-index: -1;
-	@include img-adaptive();
-}
-.main {
-	grid-area: main;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
-}
-.discuss {
-	grid-area: discuss;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
-}
-.footer {
-	grid-area: footer;
-	display: grid;
-	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
-	padding: 0 15px;
-	background-color: $titles;
+	img {
+		@include img-adaptive;
+	}
 }
 .go-top {
 	position: fixed;
@@ -71,11 +80,18 @@ body {
 	transition: all 0.5s ease;
 	font-weight: 600;
 	text-shadow: 0 0 4px rgba($color: $text, $alpha: 0.6);
+	z-index: 100;
 	&__text {
 		align-self: flex-end;
 		font-size: 14px;
 		color: $primary;
 		line-height: 150%;
+		@media (max-width: $desktop) {
+			margin: 10px 0 0;
+			align-self: flex-end;
+			writing-mode: vertical-lr;
+			font-size: 16px;
+		}
 	}
 	&__squer {
 		width: 40px;
@@ -83,16 +99,72 @@ body {
 		border-radius: 4px;
 		background: $primary;
 		position: relative;
+		overflow: hidden;
 		&::before {
 			content: "";
 			position: absolute;
 			width: 16px;
 			height: 16px;
-			top: 60%;
+			top: 65%;
 			left: 50%;
 			transform: translate(-50%, -50%) rotate(45deg);
 			border-left: 3px solid $text;
 			border-top: 3px solid $text;
 		}
+		@media (max-width: $desktop) {
+			width: 15px;
+			height: 25px;
+			&::before {
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+	@media (max-width: $desktop) {
+		flex-direction: column-reverse;
+		right: 5px;
+		align-items: center;
+	}
+}
+.success-block {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: -1px;
+	text-align: center;
+	background-color: $titles;
+	border: 1px solid $primary;
+	border-radius: 6px;
+	box-shadow: 0 0 10px 1px rgba($color: $primary, $alpha: 0.6);
+	z-index: 100;
+	transition: all 0.5s ease;
+	transform: scaleY(0);
+
+	h5 {
+		margin: 40px 0 0;
+		font-size: 40px;
+		user-select: none;
+		font-family: "Ubu-B";
+		color: $primary;
+		text-shadow: 0 0 4px rgba($color: $text, $alpha: 0.5);
+		letter-spacing: 0.2rem;
+	}
+	p {
+		margin: 50px 30px 0;
+		font-size: 30px;
+		line-height: 130%;
+		&::before {
+			content: attr(data-success-text);
+			color: $text;
+		}
+	}
+	button {
+		margin: 100px 0 40px;
+		align-self: center;
+		@include solid-btn();
 	}
 }
