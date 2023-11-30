@@ -80,7 +80,7 @@ module.exports = {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
 			'@images': path.resolve(__dirname, 'src/assets/images'),
-			'@sImages': path.resolve(__dirname, 'src/assets/sImages'),
+			'@staticImages': path.resolve(__dirname, 'src/assets/static-iamges'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@s-common': path.resolve(__dirname, 'src/styles/common'),
 			'@s-modules': path.resolve(__dirname, 'src/styles/modules'),
@@ -113,7 +113,7 @@ module.exports = {
 				pattern('icons'),
 				pattern('vendors'),
 				pattern('videos'),
-				pattern('sImages'),
+				pattern('static-images'),
 			]
 		}),
 	],
@@ -188,7 +188,7 @@ module.exports = {
 			}],
 			type: 'asset/resource',
 			generator: {
-				filename: `assets/oImages/${fileName('[ext]')}`
+				filename: `assets/images/${fileName('[ext]')}`
 			}
 		}]
 	}
