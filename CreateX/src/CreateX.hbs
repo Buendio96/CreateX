@@ -13,11 +13,11 @@
 <body class="body">
 	<div class="wrapper">
 		<section class="parallax-block">
-			<img id="titleImage" alt="">
+			<img id="titleImage" class="image-adaptive" alt="Title image">
 		</section>
 		{{> header}}
-		<main class="main">
-			<section class="welcome">
+		<main class="main ">
+			<section class="welcome grid">
 				<div class="welcome__body center">
 					<h1 class="welcome__title">
 						CREATE<span>X</span>
@@ -30,8 +30,8 @@
 						sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis.
 					</h2>
 					<div class="welcome__buttons">
-						<button class="welcome__buttons-lb">LEARN MORE ABOUT US</button>
-						<button class="welcome__buttons-rb">SUBMIT REQUEST</button>
+						<button class="welcome__buttons-lb outline-solid-btn">LEARN MORE ABOUT US</button>
+						<button class="welcome__buttons-rb solid-button">SUBMIT REQUEST</button>
 					</div>
 					<ul class="welcome__list">
 						<li class="welcome__item">
@@ -49,19 +49,20 @@
 					</ul>
 				</div>
 			</section>
-			<section class="we-are">
+			<section class="we-are grid">
 				<div class="we-are__body center">
-					<div class="we-are__title-block ">
-						<h2>
+					<div class="we-are__title title-block">
+						<h2 class="title-block__title">
 							We are Createx Construction Bureau
 						</h2>
-						<h4>
+						<h4 class="title-block__subtitle">
 							We are rightfully considered to be the best construction company in the USA.
 						</h4>
 					</div>
 					<div class="we-are__content" id="homepageVideoBox">
-						<video id="homepageVideoBox-video" poster="./assets/static-images/videoCoverImage.png"
-							class="we-are__content-video" src="/assets/videos/SON OF KICK.mp4" type="video/mp4">
+						<video id="homepageVideoBox-video" class="image-adaptive"
+							poster="./assets/static-images/videoCoverImage.png" class="we-are__content-video"
+							src="/assets/videos/SON OF KICK.mp4" type="video/mp4">
 						</video>
 						<input type="checkbox" class="we-are__content-play" id="homepageVideoBox-play">
 						<span class="we-are__content-play-real"></span>
@@ -103,13 +104,13 @@
 					</div>
 				</div>
 			</section>
-			<section class="our-core">
+			<section class="our-core grid">
 				<div class="our-core__body center">
-					<div class="our-core__title-block ">
-						<h2>
+					<div class="our-core__title title-block">
+						<h2 class="title-block__title">
 							Our core values
 						</h2>
-						<h4>
+						<h4 class="title-block__subtitle">
 							Our mission is to set the highest standards for construction sphere. </h4>
 					</div>
 					<div class="our-core__content">
@@ -200,26 +201,26 @@
 						</h2>
 						<form class="question-form__body" id="questionForm">
 							<div class="question-form__field" data-error-text="Please use only letters">
-								<label class="question-form__label" for="qustionName">Name</label>
-								<input class="question-form__input" data-typeCheck="letters" data-required="true"
+								<label class="question-form__label label" for="qustionName">Name</label>
+								<input class="question-form__input input" data-typeCheck="letters" data-required="true"
 									type="text" id="qustionName" name="qustionName" placeholder="Your name"
 									autocomplete="name">
 							</div>
 
 							<div class="question-form__field" data-error-text="Please use only numbers">
-								<label class="question-form__label" for="questionPhone">Phone</label>
-								<input class="question-form__input" data-typeCheck="numbers" data-required="true"
+								<label class="question-form__label label" for="questionPhone">Phone</label>
+								<input class="question-form__input input" data-typeCheck="numbers" data-required="true"
 									type="text" id="questionPhone" name="questionPhone" placeholder="Your phone number"
 									autocomplete="tel">
 							</div>
 
 							<div class="question-form__field width" data-error-text="Ask your qustion">
-								<label class="question-form__label" for="questionMessage">Message</label>
-								<input class="question-form__input" data-required="true" type="text"
+								<label class="question-form__label label" for="questionMessage">Message</label>
+								<input class="question-form__input input" data-required="true" type="text"
 									id="questionMessage" name="questionMessage" placeholder="Your message"></input>
 							</div>
 
-							<button class="question-form__btn" type="submit">Send</button>
+							<button class="question-form__btn solid-button" type="submit">Send</button>
 
 							<div id="questionSuccess" class="success-block qustion-success">
 								<div>
@@ -227,23 +228,25 @@
 									<p data-success-text="Please expect a call from our consultant soon">
 									</p>
 								</div>
-								<button id="questionClose" type="submit">Great!</button>
+								<button id="questionClose" class="solid-button" type="submit">Great!</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</section>
-			<section class="our-service">
-				<img class="our-service__image" id="ourServicesBg" alt="">
+			<section class="our-service grid">
+				<img class="image-adaptive" id="ourServicesBg" alt="Pretty background">
 				<div class="our-service__body center">
-					<div class="our-service__title-block">
-						<h2>Our services</h2>
-						<h4>Createx Construction Bureau is a construction giant with a full range of construction
-							services.</h4>
+					<div class="our-service__title title-block">
+						<h2 class="title-block__title">Our services</h2>
+						<h4 class="title-block__subtitle">
+							Createx Construction Bureau is a construction giant with a full range of construction
+							services.
+						</h4>
 					</div>
 					<div class="our-service__content">
 						<a href="#" class="our-service__item">
-							<img id="service-one" alt="">
+							<img id="service-one" class="image-adaptive" alt="">
 							<div class="our-service__item-box" id="box">
 								<svg class="our-service__item-box-svg" xmlns="http://www.w3.org/2000/svg" width="53"
 									height="52" viewBox="0 0 53 52">
@@ -261,7 +264,7 @@
 							</div>
 						</a>
 						<a href="#" class="our-service__item">
-							<img id="service-two" alt="">
+							<img id="service-two" class="image-adaptive" alt="">
 							<div class="our-service__item-box">
 								<svg class="our-service__item-box-svg" xmlns="http://www.w3.org/2000/svg" width="53"
 									height="52" viewBox="0 0 53 52">
@@ -281,7 +284,7 @@
 							</div>
 						</a>
 						<a href="#" class="our-service__item">
-							<img id="service-three" alt="">
+							<img id="service-three" class="image-adaptive" alt="">
 							<div class="our-service__item-box">
 								<svg class="our-service__item-box-svg" xmlns="http://www.w3.org/2000/svg" width="53"
 									height="52" viewBox="0 0 53 52">
@@ -301,7 +304,7 @@
 							</div>
 						</a>
 						<a href="#" class="our-service__item">
-							<img id="service-four" alt="">
+							<img id="service-four" class="image-adaptive" alt="">
 							<div class="our-service__item-box">
 								<svg class="our-service__item-box-svg" xmlns="http://www.w3.org/2000/svg" width="53"
 									height="52" viewBox="0 0 53 52">
@@ -312,88 +315,91 @@
 							</div>
 						</a>
 					</div>
-					<div class="our-service__box">
-						<p>
+					<div class="our-service__box view-more-block">
+						<p class="view-more-block__title">
 							Learn more about our services
 						</p>
-						<a href="#">
+						<a class="view-more-block__link solid-button" href="#">
 							view services
 						</a>
 					</div>
 				</div>
 			</section>
-			<section class="our-work">
+			<section class="our-work grid">
 				<div class="our-work__body center">
 					<div class="our-work__body-top">
-						<div class="our-work__title-block">
-							<h2>
+						<div class="our-work__title title-block">
+							<h2 class="title-block__title">
 								Browse our selected projects and learn more about our work
 							</h2>
 						</div>
 						<div class="our-work__buttons">
-							<button type="button" id="our-work-go-left" class="our-work__btn">
+							<button type="button" id="our-work-go-left" class="arrow">
 								<img src="assets/vendors/arrow-left.svg" alt="go left">
 							</button>
-							<button type="button" id="our-work-go-right" class="our-work__btn">
+							<button type="button" id="our-work-go-right" class="arrow">
 								<img src="assets/vendors/arrow-right.svg" alt="go rigth">
 							</button>
 						</div>
 					</div>
 					<div class="our-work__content" id="our-work-container">
-						<div class="our-work__item">
-							<div class="our-work__item-img">
-								<img src="assets/static-images/image-portfolio-2.png" alt="some iamage">
+						<div class="portfolio-card">
+							<div class="portfolio-card__img">
+								<img class="image-adaptive" src="assets/static-images/image-portfolio-2.png"
+									alt="some iamage">
 							</div>
-							<div class="our-work__item-box">
-								<h3 class="our-work__item-box-title">
+							<div class="portfolio-card__box">
+								<h3 class="portfolio-card__box-title">
 									Red Finger Building
 								</h3>
-								<h3 class="our-work__item-box-subtitle">
+								<h3 class="portfolio-card__box-subtitle">
 									Business Centers
 								</h3>
-								<a href="#" class="our-work__item-box-btn">
+								<a href="#" class="portfolio-card__box-btn outline-regular-btn">
 									View Project
 								</a>
 							</div>
 						</div>
-						<div class="our-work__item">
-							<div class="our-work__item-img">
-								<img src="assets/static-images/image-portfolio-2.png" alt="some iamage">
+						<div class="portfolio-card">
+							<div class="portfolio-card__img">
+								<img class="image-adaptive" src="assets/static-images/image-portfolio-2.png"
+									alt="some iamage">
 							</div>
-							<div class="our-work__item-box">
-								<h3 class="our-work__item-box-title">
+							<div class="portfolio-card__box">
+								<h3 class="portfolio-card__box-title">
 									Red Finger Building
 								</h3>
-								<h3 class="our-work__item-box-subtitle">
+								<h3 class="portfolio-card__box-subtitle">
 									Business Centers
 								</h3>
-								<a href="#" class="our-work__item-box-btn">
+								<a href="#" class="portfolio-card__box-btn outline-regular-btn">
 									View Project
 								</a>
 							</div>
 						</div>
-						<div class="our-work__item">
-							<div class="our-work__item-img">
-								<img src="assets/static-images/image-portfolio-2.png" alt="some iamage">
+						<div class="portfolio-card">
+							<div class="portfolio-card__img">
+								<img class="image-adaptive" src="assets/static-images/image-portfolio-2.png"
+									alt="some iamage">
 							</div>
-							<div class="our-work__item-box">
-								<h3 class="our-work__item-box-title">
+							<div class="portfolio-card__box">
+								<h3 class="portfolio-card__box-title">
 									Red Finger Building
 								</h3>
-								<h3 class="our-work__item-box-subtitle">
+								<h3 class="portfolio-card__box-subtitle">
 									Business Centers
 								</h3>
-								<a href="#" class="our-work__item-box-btn">
+								<a href="#" class="portfolio-card__box-btn outline-regular-btn">
 									View Project
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="our-work__box">
-						<p>
+					<div class="our-work__box view-more-block">
+						<p class="view-more-block__title">
 							Explore all our works
 						</p>
-						<a href="#">
+						<a class="view-more-block__link solid-button" href="#">
 							view portfolio
 						</a>
 					</div>

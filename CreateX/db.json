@@ -3,7 +3,24 @@
 	"projects": [
 		{
 			"id": 1,
-			"head": "spmoe text"
+			"name": "Red Finger Building",
+			"description": "Business Centers",
+			"imageName": "image-portfolio-2.png",
+			"linkToPage": "red-finger-building"
+		},
+		{
+			"id": 2,
+			"name": "Cubes Building",
+			"description": "Business Centers",
+			"imageName": "image-portfolio-1.png",
+			"linkToPage": "cubes-building"
+		},
+		{
+			"id": 3,
+			"name": "The Pencil Building",
+			"description": "Stores & Malls",
+			"imageName": "image-portfolio-2.png",
+			"linkToPage": "the-pencil-building"
 		}
 	]
 }

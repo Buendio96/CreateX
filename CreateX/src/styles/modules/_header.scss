@@ -48,7 +48,6 @@
 		font-size: 16px;
 		font-family: "Ubu-B";
 		transition: all 0.5s ease;
-		@include link-hover;
 		white-space: nowrap;
 	}
 	&__contacts {
@@ -136,6 +135,5 @@
 }
 .active-burger {
 	transition: all 0.5s ease;
-
 	left: -15px;
 }
