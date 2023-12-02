@@ -2,6 +2,7 @@ import player from "@js-modules/videoPlayer";
 import isValidate from '@js-modules/validator';
 import bgImageServices from '@images/homepage-services';
 
+
 //============================================================
 const videoBox = document.getElementById('homepageVideoBox');
 if (videoBox) player(videoBox);
@@ -29,10 +30,11 @@ const bgImages = [
 	require('@images/home-serv-item-2'),
 	require('@images/home-serv-item-3')
 ];
-
 imageBlocks.forEach((blockId, index) => {
 	const serviceBox = document.getElementById(blockId);
 	if (serviceBox) {
 		serviceBox.src = bgImages[index];
 	}
 });
+//============================================================
+const containerElement = document.getElementById('our-work-container');

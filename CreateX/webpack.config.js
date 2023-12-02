@@ -89,6 +89,7 @@ module.exports = {
 			'@js-modules': path.resolve(__dirname, 'src/scripts/modules'),
 			'@js-tamplates': path.resolve(__dirname, 'src/scripts/tamplates'),
 			'@js-api': path.resolve(__dirname, 'src/scripts/api'),
+			'@js-store': path.resolve(__dirname, 'src/scripts/store'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
 			'@pages': path.resolve(__dirname, 'src/pages'),
 		}
