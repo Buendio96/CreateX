@@ -1,6 +1,6 @@
 import '@styles/createX'
-import '@js-tamplates/header'
-import '@js-tamplates/discuss'
+import '@js-templates/header'
+import '@js-templates/discuss'
 import '@js-modules/scrollToTop'
 import '@js-store/projectsStore'
 

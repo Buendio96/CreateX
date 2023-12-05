@@ -1,8 +1,9 @@
 import player from "@js-modules/videoPlayer";
 import isValidate from '@js-modules/validator';
 import bgImageServices from '@images/homepage-services';
-
-
+import { PROJECTS_STORE, initGetData } from "@js-store/projectsStore";
+import Handlebars from "handlebars";
+import { createCardNode } from '@js-templates/work-item'
 //============================================================
 const videoBox = document.getElementById('homepageVideoBox');
 if (videoBox) player(videoBox);
@@ -38,3 +39,20 @@ imageBlocks.forEach((blockId, index) => {
 });
 //============================================================
 const containerElement = document.getElementById('our-work-container');
+const todayIs = new Date();
+await initGetData(todayIs); //As the second argument can be the Number for the date range
+
+const data = {
+	name: "dasd",
+	description: "asdas"
+}
+
+const FILTRED_STORE = PROJECTS_STORE.byDateProjects
+
+FILTRED_STORE.forEach(item => {
+	const card = createCardNode(item);
+	console.log(card)
+	containerElement.appendChild(card)
+})
+
+console.log(FILTRED_STORE)

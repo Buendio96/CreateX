@@ -10,7 +10,7 @@ const YYYY_MM_DD = (date) => {
 	return `${year}-${month}-${day}`;
 };
 
-const filterByDate = (targetTime = 3) => {
+const filterByDate = (targetTime) => {
 	const sometimeAgo = new Date();
 	sometimeAgo.setMonth(sometimeAgo.getMonth() - targetTime);
 	return YYYY_MM_DD(sometimeAgo)

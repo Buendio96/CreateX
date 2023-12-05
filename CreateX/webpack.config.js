@@ -64,6 +64,7 @@ module.exports = {
 	entry: {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),
 		homepageJS: path.resolve(__dirname, 'src/scripts/pages/homepage.js'),
+		nandlebars: path.resolve(__dirname, 'src/scripts/pages/homepage.js'),
 		news: path.resolve(__dirname, 'src/scripts/pages/news.js'),
 	},
 	output: {
@@ -87,11 +88,11 @@ module.exports = {
 			'@s-pages': path.resolve(__dirname, 'src/styles/pages'),
 			'@js': path.resolve(__dirname, 'src/scripts'),
 			'@js-modules': path.resolve(__dirname, 'src/scripts/modules'),
-			'@js-tamplates': path.resolve(__dirname, 'src/scripts/tamplates'),
+			'@js-templates': path.resolve(__dirname, 'src/scripts/templates'),
 			'@js-api': path.resolve(__dirname, 'src/scripts/api'),
 			'@js-store': path.resolve(__dirname, 'src/scripts/store'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
-			'@pages': path.resolve(__dirname, 'src/pages'),
+			'@hbs-templates': path.resolve(__dirname, 'src/pages/templates'),
 		}
 	},
 	//=================================================================
