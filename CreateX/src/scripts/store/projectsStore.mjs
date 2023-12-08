@@ -1,21 +1,13 @@
 import fetchData from '@js-api/getData';
 import { YYYY_MM_DD, filterByDate } from '@js-modules/filterByDate';
-
+import sortByDate from '@js-modules/sortByDate';
 
 const PROJECTS_STORE = {
 	allProjects: [],
 	byDateProjects: []
 };
 
-const sortByDate = (data) => {
-	return data.sort((a, b) => {
-		const dateA = new Date(a.date);
-		const dateB = new Date(b.date);
-		if (!isNaN(dateA) && !isNaN(dateB)) {
-			return dateB - dateA;
-		}
-	});
-};
+
 
 const initGetFiltredData = async (from, to = 3) => {
 	try {

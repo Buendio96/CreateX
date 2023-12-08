@@ -1,22 +1,24 @@
 import player from "@js-modules/videoPlayer";
 import isValidate from '@js-modules/validator';
+import addBackground from '@js-modules/addBackground';
 import bgImageServices from '@images/homepage-services';
+import bgImageSupport from '@images/homepage-support';
 import { PROJECTS_STORE, initGetFiltredData } from "@js-store/projectsStore";
+import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore";
 import showCards from '@js-modules/renderCards'
+import showOpinion from '@js-modules/showOpinion'
 //============================================================
 const videoBox = document.getElementById('homepageVideoBox');
-if (videoBox) player(videoBox);
-
+if (videoBox && player) player(videoBox);
 //============================================================
 const newForm = document.getElementById('questionForm');
 const successEl = document.getElementById('questionSuccess');
 const closeBtn = document.getElementById('questionClose');
 
 if (newForm) isValidate(newForm, successEl, closeBtn);
-
 //============================================================
-const targetBlock = document.getElementById('ourServicesBg');
-if (targetBlock && bgImageServices) targetBlock.src = bgImageServices;
+addBackground('ourServicesBg', bgImageServices);
+addBackground('supportBoxBg', bgImageSupport);
 
 const imageBlocks = [
 	'service-one',
@@ -31,24 +33,24 @@ const bgImages = [
 	require('@images/home-serv-item-3')
 ];
 imageBlocks.forEach((blockId, index) => {
-	const serviceBox = document.getElementById(blockId);
-	if (serviceBox) {
-		serviceBox.src = bgImages[index];
-	}
+	addBackground(blockId, bgImages[index])
 });
+
 //============================================================
 const todayIs = new Date();
-await initGetFiltredData(todayIs, 6); //As the second argument can be the Number for the date range
+await initGetFiltredData(todayIs); //As the second argument can be the Number for the date range
 
-const PARAMS = {
+const WORK_PARAMS = {
 	array: PROJECTS_STORE.byDateProjects,
 	containerElement: document.getElementById('our-work-container'),
 	skipLeft: document.getElementById('our-work-go-left'),
 	skipRight: document.getElementById('our-work-go-right'),
 	/* quantityOfCards: 3 */  //This is an optional option to increase the output cards
 };
-showCards(PARAMS);
-
-
+showCards(WORK_PARAMS);
+//============================================================
+await initGetOpinionData();
+const opinionElement = document.getElementById('opinion')
+showOpinion(opinionElement)
 
 

@@ -117,6 +117,8 @@ module.exports = {
 				pattern('vendors'),
 				pattern('videos'),
 				pattern('static-images'),
+				pattern('static-images/portfolio'),
+				pattern('static-images/opinion'),
 			]
 		}),
 	],
