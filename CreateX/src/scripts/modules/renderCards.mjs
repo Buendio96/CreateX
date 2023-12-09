@@ -8,10 +8,8 @@ const showCards = ({
 	containerElement
 }) => {
 	let currentIndex = 0;
-
 	const renderCards = () => {
 		containerElement.innerHTML = '';
-
 		for (let x = 0; x < quantityOfCards; x++) {
 			const index = currentIndex + x;
 			if (index < array.length) {

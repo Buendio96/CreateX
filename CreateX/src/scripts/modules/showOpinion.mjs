@@ -1,13 +1,47 @@
+let currentIndex = 0;
 
+const cleaner = (elements) => {
+	for (let key in elements) {
+		const element = elements[key];
+		if ('innerText' in element) element.innerText = '';
+		if ('src' in element) element.src = '';
+	}
+};
 
-const showOpinion = (container) => {
-	const BoxImgElement = document.getElementById(`${container}BoxImg`);
-	const UserNameElement = document.getElementById(`${container}UserName`);
-	const UserWorkElement = document.getElementById(`${container}UserWork`);
-	const ToLeftElement = document.getElementById(`${container}ToLeft`);
-	const ToRightElement = document.getElementById(`${container}ToRight`);
+const fillContent = (elements, data) => {
+	for (let key in elements) {
+		const element = elements[key];
+		if (data.hasOwnProperty(key)) {
+			if ('innerText' in element) element.innerText = data[key];
+			if ('src' in element) element.src = `assets/static-images/opinion/${data[key]}.png`;
+		}
+	}
+};
 
-}
+const toLeft = (elements, data) => {
+	if (elements && data) {
+		currentIndex = (currentIndex - 1 + data.length) % data.length;
+		const currentOpinion = data[currentIndex];
+		cleaner(elements);
+		fillContent(elements, currentOpinion);
+	};
+};
 
+const toRight = (elements, data) => {
+	if (elements && data) {
+		currentIndex = (currentIndex + 1) % data.length;
+		const currentOpinion = data[currentIndex];
+		cleaner(elements);
+		fillContent(elements, currentOpinion);
+	};
+};
 
-export default showOpinion;
+const initShowOpinion = (elements, data) => {
+	if (data.length > 0) {
+		const firstOpinion = data[currentIndex];
+		cleaner(elements);
+		fillContent(elements, firstOpinion);
+	};
+};
+
+export { toLeft, toRight, initShowOpinion };
