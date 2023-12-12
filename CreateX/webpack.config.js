@@ -64,6 +64,7 @@ module.exports = {
 	entry: {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),
 		homepageJS: path.resolve(__dirname, 'src/scripts/pages/homepage.js'),
+		nandlebars: path.resolve(__dirname, 'src/scripts/pages/homepage.js'),
 		news: path.resolve(__dirname, 'src/scripts/pages/news.js'),
 	},
 	output: {
@@ -80,16 +81,18 @@ module.exports = {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
 			'@images': path.resolve(__dirname, 'src/assets/images'),
-			'@sImages': path.resolve(__dirname, 'src/assets/sImages'),
+			'@staticImages': path.resolve(__dirname, 'src/assets/static-iamges'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@s-common': path.resolve(__dirname, 'src/styles/common'),
 			'@s-modules': path.resolve(__dirname, 'src/styles/modules'),
 			'@s-pages': path.resolve(__dirname, 'src/styles/pages'),
 			'@js': path.resolve(__dirname, 'src/scripts'),
 			'@js-modules': path.resolve(__dirname, 'src/scripts/modules'),
-			'@js-tamplates': path.resolve(__dirname, 'src/scripts/tamplates'),
+			'@js-templates': path.resolve(__dirname, 'src/scripts/templates'),
+			'@js-api': path.resolve(__dirname, 'src/scripts/api'),
+			'@js-store': path.resolve(__dirname, 'src/scripts/store'),
 			'@libs': path.resolve(__dirname, 'src/libs'),
-			'@pages': path.resolve(__dirname, 'src/pages'),
+			'@hbs-templates': path.resolve(__dirname, 'src/pages/templates'),
 		}
 	},
 	//=================================================================
@@ -113,7 +116,9 @@ module.exports = {
 				pattern('icons'),
 				pattern('vendors'),
 				pattern('videos'),
-				pattern('sImages'),
+				pattern('static-images'),
+				pattern('static-images/portfolio'),
+				pattern('static-images/opinion'),
 			]
 		}),
 	],
@@ -188,7 +193,7 @@ module.exports = {
 			}],
 			type: 'asset/resource',
 			generator: {
-				filename: `assets/oImages/${fileName('[ext]')}`
+				filename: `assets/images/${fileName('[ext]')}`
 			}
 		}]
 	}

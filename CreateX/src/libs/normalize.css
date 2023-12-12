@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+  }
+
 html,
 body,
 div,
@@ -77,6 +81,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 ul,
@@ -109,6 +114,7 @@ textarea {
   vertical-align: middle;
   border: none;
   cursor: pointer;
+  background:none;
 }
 
 input[type="checkbox"],

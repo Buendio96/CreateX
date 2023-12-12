@@ -7,9 +7,6 @@
 	grid-column: 1/4;
 	grid-row: 1/2;
 	min-height: 100%;
-	img {
-		@include img-adaptive();
-	}
 }
 .discuss {
 	&__box {
@@ -25,7 +22,7 @@
 		}
 	}
 	&__body {
-		max-width: 415px;
+		max-width: 495px;
 		position: relative;
 		display: inline-flex;
 		flex-direction: column;
@@ -104,25 +101,22 @@
 		}
 	}
 	&__label {
-		@include label;
 		cursor: pointer;
 	}
 	&__input {
-		@include input;
 		margin: 8px 0 0;
 	}
 	&__textarea {
 		height: 66px;
 		overflow: auto;
 		resize: none;
-		@include input;
 		margin: 8px 0 0;
 	}
 	&__checkbox {
 		position: absolute;
 		left: 0;
 		margin: 5px 0 0 0;
-		width: 24px;
+		width: 29px;
 		height: 24px;
 		z-index: 1;
 		cursor: pointer;
@@ -130,8 +124,8 @@
 	}
 	&__custom-checkbox {
 		margin: 5px 0 0 0;
-		width: 21px;
-		height: 18px;
+		width: 29px;
+		height: 24px;
 		border: 3px solid $primary;
 		border-radius: 4px;
 		display: flex;
@@ -144,8 +138,6 @@
 			content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 24 24" fill="none"><g id="Mark"><path id="Line (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M21.7071 5.29289C22.0976 5.68342 22.0976 6.31658 21.7071 6.70711L9.70711 18.7071C9.31658 19.0976 8.68342 19.0976 8.29289 18.7071L2.29289 12.7071C1.90237 12.3166 1.90237 11.6834 2.29289 11.2929C2.68342 10.9024 3.31658 10.9024 3.70711 11.2929L9 16.5858L20.2929 5.29289C20.6834 4.90237 21.3166 4.90237 21.7071 5.29289Z" fill="white"/></g></svg>');
 			position: absolute;
 			top: 0;
-			right: 0;
-			bottom: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
@@ -157,7 +149,6 @@
 	&__btn {
 		align-self: center;
 		margin: 24px 0 0;
-		@include regular-btn();
 		@media (max-width: $tablet) {
 			margin: 0 auto;
 		}

@@ -6,12 +6,36 @@
 @import "@s-modules/discuss";
 @import "@s-modules/footer";
 @import "@s-pages/homepage";
-
+* {
+	&::-webkit-scrollbar-thumb {
+		background: $primary;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+	&::-webkit-scrollbar-track {
+		background: rgba($color: $titles, $alpha: 0.6);
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	scroll-behavior: smooth;
+}
 body {
 	width: 100%;
 	min-height: 100%;
 	font-family: "Ubu-R";
 	user-select: none;
+}
+.invisible {
+	opacity: 0;
+	transform: scaleY(0);
+	transition: all 1s ease;
+}
+.visible {
+	opacity: 1;
+	transform: scaleY(1);
+	transition: all 1s ease;
 }
 //===================================
 //===================================
@@ -30,7 +54,6 @@ body {
 //===================================
 .header {
 	grid-area: header;
-	@include grid-layout;
 	z-index: 1000;
 	position: sticky;
 	top: 0;
@@ -42,7 +65,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	section {
-		@include grid-layout;
 		.center {
 			grid-column: 2/3;
 		}
@@ -50,11 +72,10 @@ body {
 }
 .discuss {
 	grid-area: discuss;
-	@include grid-layout;
 }
 .footer {
 	grid-area: footer;
-	@include grid-layout;
+
 	background-color: $titles;
 }
 //===================================
@@ -65,9 +86,6 @@ body {
 	position: fixed;
 	top: 90px;
 	z-index: -1;
-	img {
-		@include img-adaptive;
-	}
 }
 .go-top {
 	position: fixed;
@@ -165,6 +183,5 @@ body {
 	button {
 		margin: 100px 0 40px;
 		align-self: center;
-		@include solid-btn();
 	}
 }

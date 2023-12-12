@@ -46,7 +46,7 @@
 	&__buttons {
 		margin: 60px 0 0;
 		display: flex;
-		max-width: 530px;
+		max-width: 535px;
 		column-gap: 25px;
 		box-sizing: border-box;
 		@media (max-width: $desktop) {
@@ -61,7 +61,8 @@
 		}
 	}
 	&__buttons-lb {
-		@include outline-solid-btn();
+		color: $text;
+		border-color: $text;
 		@media (max-width: $desktop) {
 			height: 35px;
 			padding: 0 20px;
@@ -75,7 +76,6 @@
 		}
 	}
 	&__buttons-rb {
-		@include solid-btn();
 		@media (max-width: $desktop) {
 			height: 35px;
 			padding: 0 20px;
@@ -153,6 +153,7 @@
 		}
 	}
 }
+//==========================================
 .we-are {
 	background-color: $main-bg;
 	&__body {
@@ -168,9 +169,6 @@
 		@media (max-width: $phone) {
 			padding: 30px 0;
 		}
-	}
-	&__title-block {
-		@include title-block();
 	}
 	&__content {
 		margin: 60px 0 0;
@@ -371,22 +369,24 @@
 		height: 15px;
 	}
 }
+//==========================================
 .our-core {
 	background-color: $main-bg;
 	&__body {
-		padding: 60px 0 25px;
+		padding: 60px 0 0;
+		margin: 0 0 -90px 0;
+
 		@media (max-width: $desktop) {
 			padding: 45px 0;
+			margin: 0 0 -45px 0;
 		}
 		@media (max-width: $tablet) {
 			padding: 35px 0;
+			margin: 0;
 		}
 		@media (max-width: $phone) {
 			padding: 15px 0;
 		}
-	}
-	&__title-block {
-		@include title-block();
 	}
 	&__content {
 		margin: 60px 0 0;
@@ -495,17 +495,14 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		top: 120px;
 		padding: 48px 60px;
 		text-align: center;
 		background-color: $main-bg;
 		border-radius: 4px;
 		@media (max-width: $desktop) {
-			top: 80px;
 			padding: 35px 45px;
 		}
 		@media (max-width: $tablet) {
-			top: 10px;
 			padding: 25px 30px;
 		}
 		@media (max-width: $phone) {
@@ -514,7 +511,6 @@
 	}
 
 	.question-form {
-		z-index: 1;
 		&__title {
 			color: $titles;
 			font-family: "Ubu-B";
@@ -561,14 +557,11 @@
 		}
 		&__label {
 			text-align-last: left;
-			@include label();
 		}
 		&__input {
 			margin: 8px 0 0;
-			@include input();
 		}
 		&__btn {
-			@include regular-btn();
 			height: 46px;
 			@media (max-width: calc($desktop - 50px)) {
 				flex: 0 1 25%;
@@ -618,17 +611,11 @@
 		}
 	}
 }
+//==========================================
 .our-service {
 	background: $auxiliary-bg;
 	position: relative;
-	&__image {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+	z-index: -1;
 	&__body {
 		padding: 210px 0 80px;
 		display: flex;
@@ -644,9 +631,6 @@
 		@media (max-width: $phone) {
 			padding: 40px 0 20px;
 		}
-	}
-	&__title-block {
-		@include title-block;
 	}
 	&__content {
 		margin: 60px 0 0;
@@ -682,7 +666,6 @@
 		position: relative;
 		img {
 			transition: all 0.8s;
-			@include img-adaptive;
 		}
 		@media (max-width: $desktop) {
 			height: 200px;
@@ -726,32 +709,7 @@
 		}
 	}
 	&__box {
-		display: flex;
 		margin: 80px 0 0;
-		column-gap: 40px;
-		@media (max-width: $tablet) {
-			flex-wrap: wrap;
-			text-align: center;
-			justify-content: center;
-			row-gap: 10px;
-			margin: 20px 0 0;
-		}
-	}
-	&__box-text {
-		color: $titles;
-		font-size: 28px;
-		font-family: "Ubu-B";
-		line-height: 150%;
-		@media (max-width: $tablet) {
-			font-size: 24px;
-			flex: 0 1 100%;
-		}
-	}
-	&__box-btn {
-		@include solid-btn;
-		@media (max-width: $tablet) {
-			height: 30px;
-		}
 	}
 }
 .our-service__item-box:hover {
@@ -769,4 +727,316 @@
 	left: -10px;
 	width: calc(100% + 10px);
 	height: calc(100% + 10px);
+}
+//==========================================
+.our-work {
+	background-color: $main-bg;
+	&__body {
+		padding: 120px 0;
+		@media (max-width: $desktop) {
+			padding: 80px 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 60px 0;
+		}
+		@media (max-width: $phone) {
+			padding: 40px 0;
+		}
+	}
+	&__body-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+	&__title {
+		text-align: left;
+		max-width: 700px;
+		margin: 0;
+	}
+	&__buttons {
+		display: flex;
+		column-gap: 24px;
+	}
+	&__content {
+		display: flex;
+		margin: 60px 0 0;
+		column-gap: 30px;
+		@media (max-width: $desktop) {
+			margin: 30px 0 0;
+			column-gap: 20px;
+		}
+		@media (max-width: $tablet) {
+			margin: 15px 0 0;
+			flex-wrap: wrap;
+			row-gap: 10px;
+		}
+		@media (max-width: $phone) {
+		}
+	}
+	&__box {
+		display: flex;
+		justify-content: center;
+		margin: 85px 0 0;
+		@media (max-width: $desktop) {
+			margin: 60px 0 0;
+		}
+		@media (max-width: $tablet) {
+			margin: 40px 0 0;
+		}
+		@media (max-width: $phone) {
+		}
+	}
+	.card {
+		animation: fadeIn 0.5s ease-out;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateX(-100px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+}
+//==========================================
+.supported {
+	background: $auxiliary-bg;
+	&__body {
+		padding: 80px 0 0;
+		margin: 0 0 -60px;
+		@media (max-width: $desktop) {
+			padding: 60px 0 10px;
+			margin: 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 40px 0 10px;
+		}
+		@media (max-width: $phone) {
+			padding: 20px 0 0;
+		}
+	}
+	&__clients {
+		margin: 21px 0 0;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $desktop) {
+			flex-wrap: wrap;
+			/* img {
+				flex: 0 1 25%;
+			} */
+		}
+	}
+	&__content {
+		margin: 150px 0 0;
+		display: flex;
+		column-gap: 135px;
+		@media (max-width: $desktop) {
+			margin: 70px 0 0;
+			column-gap: 40px;
+		}
+		@media (max-width: $tablet) {
+			margin: 35px 0 0;
+			column-gap: 20px;
+			position: relative;
+		}
+	}
+	&__content-box {
+		max-width: 600px;
+		@media (max-width: $tablet) {
+			max-width: 400px;
+		}
+		@media (max-width: calc($tablet - 100px)) {
+			max-width: 100%;
+			position: absolute;
+			top: 35px;
+			z-index: 2;
+			padding: 0 10px;
+		}
+	}
+	&__content-box-title {
+		text-align: left;
+	}
+	&__content-opinion {
+		margin: 60px 0 0;
+	}
+	&__content-image {
+		flex: 0 1 495px;
+		height: 550px;
+		position: relative;
+		border-radius: 4px;
+		overflow: hidden;
+		@media (max-width: $desktop) {
+			height: 370px;
+		}
+		@media (max-width: $tablet) {
+			margin: 35px 0 0;
+			column-gap: 20px;
+		}
+		@media (max-width: calc($tablet - 100px)) {
+			flex: 0 1 100%;
+			img {
+				opacity: 0.5;
+			}
+		}
+	}
+}
+.opinion {
+	transition: all 0.5s ease;
+	&__img {
+		width: 72px;
+		height: 72px;
+		border-radius: 50%;
+		background: rgba($color: $primary, $alpha: 0.5);
+		box-shadow:
+			0 -3px 10px 0.5px rgba($color: $primary, $alpha: 0.9),
+			0 -7px 15px 1px rgba($color: $desc, $alpha: 0.4);
+		position: relative;
+	}
+	&__text {
+		margin: 24px 0 0;
+		font-size: 16px;
+		line-height: 160%;
+		color: $links;
+		max-height: 80px;
+		overflow-x: auto;
+		transition: all 0.5s ease;
+		@media (max-width: calc($tablet - 100px)) {
+			background-color: rgba($color: $desc, $alpha: 0.7);
+			margin: 10px -10px 0;
+			padding: 0 10px;
+			color: $titles;
+		}
+	}
+	&__bottom {
+		margin: 24px 0 0;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: calc($tablet - 100px)) {
+			background-color: rgba($color: $desc, $alpha: 0.7);
+			margin: 10px -10px 0;
+			padding: 0 10px;
+			color: $titles;
+		}
+	}
+	&__bottom-user {
+	}
+	&__user-name {
+		font-family: "Ubu-B";
+		font-size: 16px;
+		line-height: 160%;
+		color: $titles;
+	}
+	&__user-work {
+		font-size: 14px;
+		line-height: 150%;
+		color: $desc;
+	}
+	&__bottom-buttons {
+		display: flex;
+		align-items: center;
+		button {
+			background-color: $auxiliary-bg;
+			@media (max-width: calc($tablet - 100px)) {
+				background-color: rgba($color: $desc, $alpha: 0.1);
+			}
+		}
+	}
+}
+//==========================================
+.achievement {
+	background: $main-bg;
+	&__body {
+		padding: 180px 0 90px;
+	}
+	&__title {
+	}
+	&__content {
+		margin: 60px 0 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+.progress {
+	&__wrapper {
+		display: flex;
+		position: relative;
+		box-sizing: border-box;
+		span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: $titles;
+			font-family: "Ubu-B";
+			font-size: 32px;
+		}
+		&::before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			box-sizing: border-box;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+		}
+	}
+	&__ring {
+		width: 150px;
+		height: 150px;
+		fill: none;
+	}
+	&__circle {
+		stroke-width: 6px;
+		transform-origin: center;
+		transform: rotate(-90deg);
+	}
+
+	&__name {
+		margin: 20px 0 0;
+		font-size: 14px;
+		color: $titles;
+	}
+
+	.yellow {
+		&__stroke {
+			stroke: #f89828;
+		}
+		&::before {
+			border: 6px solid rgba($color: #f89828, $alpha: 0.3);
+		}
+	}
+	.purple {
+		&__stroke {
+			stroke: #f52f6e;
+		}
+		&::before {
+			border: 6px solid rgba($color: #f52f6e, $alpha: 0.3);
+		}
+	}
+	.blue {
+		&__stroke {
+			stroke: #5a87fc;
+		}
+		&::before {
+			border: 6px solid rgba($color: #5a87fc, $alpha: 0.3);
+		}
+	}
+	.green {
+		&__stroke {
+			stroke: #03cea4;
+		}
+		&::before {
+			border: 6px solid rgba($color: #03cea4, $alpha: 0.3);
+		}
+	}
 }

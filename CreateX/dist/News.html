@@ -8,10 +8,10 @@
 	<title>
 		news
 	</title>
-<script defer src="scripts/main.js"></script><script defer src="scripts/news.js"></script><link href="styles/main.css" rel="stylesheet"></head>
+<script defer src="scripts/main.js"></script><script defer src="scripts/news.js"></script></head>
 
 <body>
-	<header class="header">
+	<header class="header grid">
 		<section class="header__body">
 			<div class="header__logo">
 				<a href="index.html">
@@ -24,19 +24,19 @@
 			<nav id="burgerMenu" class="header__menu">
 				<ul class="header__list">
 					<li>
-						<a class="header__link" href="./about.html">About us</a>
+						<a class="header__link link-hover" href="./about.html">About us</a>
 					</li>
 					<li>
-						<a class="header__link" href="./services.html">Services</a>
+						<a class="header__link link-hover" href="./services.html">Services</a>
 					</li>
 					<li>
-						<a class="header__link" href="./work.html">Work</a>
+						<a class="header__link link-hover" href="./work.html">Work</a>
 					</li>
 					<li>
-						<a class="header__link" href="./news.html">News</a>
+						<a class="header__link link-hover" href="./news.html">News</a>
 					</li>
 					<li>
-						<a class="header__link" href="./contacts.html">Contacts</a>
+						<a class="header__link link-hover" href="./contacts.html">Contacts</a>
 					</li>
 				</ul>
 			</nav>
@@ -61,9 +61,9 @@
 				</a>
 			</div>
 		</section>
-	</header>	<div class="discuss">
+	</header>	<div class="discuss grid">
 		<section class="discuss-cover">
-			<img id="discussImage" alt="Image not found...">
+			<img id="discussImage" class="image-adaptive" alt="Image not found...">
 		</section>
 		<div class="discuss__box">
 			<div class="discuss__body">
@@ -72,26 +72,26 @@
 				</h2>
 				<form class="discuss__form" id="discussForm">
 					<div class="discuss__form-field" data-error-text="Please use only letters">
-						<label class="discuss__label" for="name">Name*</label>
-						<input class="discuss__input" data-typeCheck="letters" data-required="true" type="text" id="name"
-							name="name" placeholder="Your name" autocomplete="name">
+						<label class="discuss__label label" for="name">Name*</label>
+						<input class="discuss__input input" data-typeCheck="letters" data-required="true" type="text"
+							id="name" name="name" placeholder="Your name" autocomplete="name">
 					</div>
 	
 					<div class="discuss__form-field" data-error-text="Please use only numbers">
-						<label class="discuss__label" for="phone">Phone*</label>
-						<input class="discuss__input" data-typeCheck="numbers" data-required="true" type="text" id="phone"
-							name="phone" placeholder="Your phone number" autocomplete="tel">
+						<label class="discuss__label label" for="phone">Phone*</label>
+						<input class="discuss__input input" data-typeCheck="numbers" data-required="true" type="text"
+							id="phone" name="phone" placeholder="Your phone number" autocomplete="tel">
 					</div>
 	
 					<div class="discuss__form-field" data-error-text="Please enter valid Email(example@mail.com)">
-						<label class="discuss__label" for="email">Email:</label>
-						<input class="discuss__input" data-typeCheck="email" type="text" id="email" name="email"
+						<label class="discuss__label label" for="email">Email:</label>
+						<input class="discuss__input input" data-typeCheck="email" type="text" id="email" name="email"
 							placeholder="Your working email" autocomplete="email">
 					</div>
 	
 					<div class="discuss__form-field" data-error-text="Ask your qustion">
-						<label class="discuss__label" for="message">Message*</label>
-						<textarea class="discuss__textarea" data-required="true" type="email" id="message" name="message"
+						<label class="discuss__label label" for="message">Message*</label>
+						<textarea class="discuss__textarea input" data-required="true" id="message" name="message"
 							placeholder="Your message"></textarea>
 					</div>
 	
@@ -104,19 +104,19 @@
 						<span class="discuss__custom-checkbox"></span>
 					</div>
 	
-					<button class="discuss__btn" type="submit">Send request</button>
+					<button class="discuss__btn regular-button" type="submit">Send request</button>
 				</form>
-				<div id="discussSuccess" class="discuss__success-block show-success">
+				<div id="discussSuccess" class="success-block">
 					<h5>Congratulations!</h5>
 					<p
-						data-success-text="	Your question has been sent to our consultant, please wait for the answer to your contact details.">
+						data-success-text="Your question has been sent to our consultant, please wait for the answer to your contact details.">
 					</p>
-					<button id="discussClose">Great!</button>
+					<button id="discussClose regular-button">Great!</button>
 				</div>
 			</div>
 		</div>
 	
-	</div>	<footer class="footer">
+	</div>	<footer class="footer grid">
 		<div class="footer__box">
 			<div class="footer__box-head head">
 				<div class="head__description">
@@ -124,7 +124,7 @@
 						<img src="assets/vendors/logo-white.svg" alt="CREATEX">
 						<ul class="head__description-list">
 							<li>
-								<a href="" class="head__description-link">
+								<a href="" class="head__description-link ">
 									<svg class="svg-social whatsapp" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g opacity="0.6">
@@ -135,7 +135,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="" class="head__description-link">
+								<a href="" class="head__description-link ">
 									<svg class="svg-social messanger" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g opacity="0.6">
@@ -146,7 +146,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="" class="head__description-link">
+								<a href="" class="head__description-link ">
 									<svg class="svg-social  facebook" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g opacity="0.6">
@@ -157,7 +157,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="" class="head__description-link">
+								<a href="" class="head__description-link ">
 									<svg class="svg-social twitter" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g opacity="0.6">
@@ -168,7 +168,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="" class="head__description-link">
+								<a href="" class="head__description-link ">
 									<svg class="svg-social youtube" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g opacity="0.6">
@@ -191,8 +191,8 @@
 						Let’s stay in touch
 					</h4>
 					<div class="head__subscribe-area">
-						<input class="head__subscribe-input" placeholder="Enter your Email" type="text">
-						<button class="solid-btn">subscribe</button>
+						<input class="head__subscribe-input " placeholder="Enter your Email" type="text">
+						<button class="head__subscribe-btn regular-button">subscribe</button>
 					</div>
 					<p class="head__subscribe-note">
 						*Subscribe to our newsletter to receive communications and early updates from Createx
@@ -208,7 +208,7 @@
 					<ul class="bottom__column-list">
 						<li>
 							<a href="https://maps.app.goo.gl/9acEZNNAnFxfDRNr8" target="_blank"
-								class="bottom__column-link open-iframe">
+								class="bottom__column-link link-hover open-iframe">
 								<span> Address: </span>15200 Roger Balet, Uruguay, Atlantida
 								<iframe class="close-iframe"
 									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26221.670271890172!2d-55.778821186925384!3d-34.7629280093892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959ff53a7d09b749%3A0xf1a0b86c0ebe409e!2zMTUyMDAg0JDRgtC70LDQvdGC0LjQtNCwLCDQmtCw0L3QtdC70L7QvdC10YEsINCj0YDRg9Cz0LLQsNC5!5e0!3m2!1sru!2spl!4v1699364616801!5m2!1sru!2spl"
@@ -216,12 +216,12 @@
 							</a>
 						</li>
 						<li>
-							<a href="tel:+14055550128" class="bottom__column-link">
+							<a href="tel:+14055550128" class="bottom__column-link link-hover">
 								<span>Call: </span>(405) 555-0128
 							</a>
 						</li>
 						<li>
-							<a href="mailto:dmitriivitenko@gmail.com" class="bottom__column-link">
+							<a href="mailto:dmitriivitenko@gmail.com" class="bottom__column-link link-hover">
 								<span>Email: </span>hello@createx.com
 							</a>
 						</li>
@@ -233,17 +233,17 @@
 					</h4>
 					<ul class="bottom__column-list">
 						<li>
-							<a href="./About.html" class="bottom__column-link">
+							<a href="./About.html" class="bottom__column-link link-hover">
 								About Us
 							</a>
 						</li>
 						<li>
-							<a href="#" class="bottom__column-link">
+							<a href="#" class="bottom__column-link link-hover">
 								Available Positions
 							</a>
 						</li>
 						<li>
-							<a href="./Contacts.html" class="bottom__column-link">
+							<a href="./Contacts.html" class="bottom__column-link link-hover">
 								Contacts
 							</a>
 						</li>
@@ -255,17 +255,17 @@
 					</h4>
 					<ul class="bottom__column-list">
 						<li>
-							<a href="./Services.html" class="bottom__column-link">
+							<a href="./Services.html" class="bottom__column-link link-hover">
 								Services
 							</a>
 						</li>
 						<li>
-							<a href="./Work.html" class="bottom__column-link">
+							<a href="./Work.html" class="bottom__column-link link-hover">
 								Work
 							</a>
 						</li>
 						<li>
-							<a href="./News.html" class="bottom__column-link">
+							<a href="./News.html" class="bottom__column-link link-hover">
 								News
 							</a>
 						</li>
