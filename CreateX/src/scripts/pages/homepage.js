@@ -6,8 +6,8 @@ import bgImageSupport from '@images/homepage-support';
 import { PROJECTS_STORE, initGetFiltredData } from "@js-store/projectsStore";
 import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore";
 import { toLeft, toRight, initShowOpinion } from '@js-modules/showOpinion'
-import showCards from '@js-modules/renderCards'
-import progressRing from "@js-modules/progressRing";
+import showCards from '@js-modules/renderCards';
+import showProgress from "@js-modules/progressRing";
 //WE-ARE=====================================================
 const videoBox = document.getElementById('homepageVideoBox');
 if (videoBox && player) player(videoBox);
@@ -62,13 +62,18 @@ initShowOpinion(OPINION_DOM_ELEMENTS, OPINIONS_STORE);
 document.getElementById('opinionToLeft').addEventListener('click', () => toLeft(OPINION_DOM_ELEMENTS, OPINIONS_STORE));
 document.getElementById('opinionToRight').addEventListener('click', () => toRight(OPINION_DOM_ELEMENTS, OPINIONS_STORE));
 //PROGRESS===================================================
+const PROGRESS_EL = document.getElementById('progressBox');
+const isElementInViewport = (el) => {
+	const rect = el.getBoundingClientRect();
+	return rect.top >= 0 && rect.bottom <= window.innerHeight;
+};
+const handleScroll = () => {
+	if (isElementInViewport(PROGRESS_EL)) {
+		showProgress(document.getElementById('progressRingClients'), 98);
+		showProgress(document.getElementById('progressRingExp'), 75);
+		showProgress(document.getElementById('progressRingHours'), 82);
+		showProgress(document.getElementById('progressRingProjects'), 100);
+	};
+}
+window.addEventListener('scroll', handleScroll);
 
-const CLIENTS = document.getElementById('progressRingClients');
-const EXPERIENCE = document.getElementById('progressRingExp');
-const HOURS = document.getElementById('progressRingHours');
-const PROJECTS = document.getElementById('progressRingProjects');
-
-progressRing(CLIENTS, 98);
-progressRing(EXPERIENCE, 75);
-progressRing(HOURS, 80);
-progressRing(PROJECTS, 100);

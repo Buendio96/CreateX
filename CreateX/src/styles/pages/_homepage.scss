@@ -373,12 +373,16 @@
 .our-core {
 	background-color: $main-bg;
 	&__body {
-		padding: 60px 0 25px;
+		padding: 60px 0 0;
+		margin: 0 0 -90px 0;
+
 		@media (max-width: $desktop) {
 			padding: 45px 0;
+			margin: 0 0 -45px 0;
 		}
 		@media (max-width: $tablet) {
 			padding: 35px 0;
+			margin: 0;
 		}
 		@media (max-width: $phone) {
 			padding: 15px 0;
@@ -489,20 +493,16 @@
 	}
 	&__question-form {
 		position: relative;
-		z-index: 3;
 		display: flex;
 		flex-direction: column;
-		top: 120px;
 		padding: 48px 60px;
 		text-align: center;
 		background-color: $main-bg;
 		border-radius: 4px;
 		@media (max-width: $desktop) {
-			top: 80px;
 			padding: 35px 45px;
 		}
 		@media (max-width: $tablet) {
-			top: 10px;
 			padding: 25px 30px;
 		}
 		@media (max-width: $phone) {
@@ -615,6 +615,7 @@
 .our-service {
 	background: $auxiliary-bg;
 	position: relative;
+	z-index: -1;
 	&__body {
 		padding: 210px 0 80px;
 		display: flex;
@@ -998,20 +999,8 @@
 		stroke-width: 6px;
 		transform-origin: center;
 		transform: rotate(-90deg);
-		transition: stroke-dashoffset 2s ease;
 	}
-	.yellow {
-		stroke: #f89828;
-	}
-	.purple {
-		stroke: #f52f6e;
-	}
-	.blue {
-		stroke: #5a87fc;
-	}
-	.green {
-		stroke: #03cea4;
-	}
+
 	&__name {
 		margin: 20px 0 0;
 		font-size: 14px;
@@ -1019,27 +1008,35 @@
 	}
 
 	.yellow {
-		stroke: #f89828;
+		&__stroke {
+			stroke: #f89828;
+		}
+		&::before {
+			border: 6px solid rgba($color: #f89828, $alpha: 0.3);
+		}
 	}
 	.purple {
-		stroke: #f52f6e;
+		&__stroke {
+			stroke: #f52f6e;
+		}
+		&::before {
+			border: 6px solid rgba($color: #f52f6e, $alpha: 0.3);
+		}
 	}
 	.blue {
-		stroke: #5a87fc;
+		&__stroke {
+			stroke: #5a87fc;
+		}
+		&::before {
+			border: 6px solid rgba($color: #5a87fc, $alpha: 0.3);
+		}
 	}
 	.green {
-		stroke: #03cea4;
-	}
-	.yellow-wrapper::before {
-		border: 6px solid rgba($color: #f89828, $alpha: 0.3);
-	}
-	.purple-wrapper::before {
-		border: 6px solid rgba($color: #f52f6e, $alpha: 0.3);
-	}
-	.blue-wrapper::before {
-		border: 6px solid rgba($color: #5a87fc, $alpha: 0.3);
-	}
-	.green-wrapper::before {
-		border: 6px solid rgba($color: #03cea4, $alpha: 0.3);
+		&__stroke {
+			stroke: #03cea4;
+		}
+		&::before {
+			border: 6px solid rgba($color: #03cea4, $alpha: 0.3);
+		}
 	}
 }

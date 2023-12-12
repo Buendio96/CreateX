@@ -1,16 +1,18 @@
-const setProgress = (percent, x) => {
-	const offset = (1 - percent / 100) * x;
-	return offset;
-};
+import keyframeProgressBar from '@js-templates/progressFrame';
 
-const progressRing = (item, percent) => {
-	const radius = item.r.baseVal.value;
+const style = new CSSStyleSheet();
+document.adoptedStyleSheets = [style];
+
+const showProgress = (element, to) => {
+	const radius = element.r.baseVal.value;
 	const circumference = 2 * Math.PI * radius;
+	const toPercent = circumference / 100 * to
 
-	item.style.strokeDasharray = `${circumference} ${circumference}`;
-	item.style.strokeDashoffset = 0;
+	const keyframeRool = keyframeProgressBar(element.id, circumference, toPercent);
+	style.insertRule(keyframeRool);
 
-	item.style.strokeDashoffset = setProgress(percent, circumference);
+	element.style.strokeDasharray = `${circumference} ${circumference}`;
+	element.style.animation = `draw-${element.id} 2s ease forwards`;
 };
 
-export default progressRing;
+export default showProgress;

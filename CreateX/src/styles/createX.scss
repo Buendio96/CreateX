@@ -27,6 +27,16 @@ body {
 	font-family: "Ubu-R";
 	user-select: none;
 }
+.invisible {
+	opacity: 0;
+	transform: scaleY(0);
+	transition: all 1s ease;
+}
+.visible {
+	opacity: 1;
+	transform: scaleY(1);
+	transition: all 1s ease;
+}
 //===================================
 //===================================
 .wrapper {

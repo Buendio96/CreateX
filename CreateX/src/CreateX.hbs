@@ -17,7 +17,7 @@
 		</section>
 		{{> header}}
 		<main class="main ">
-			<section class="welcome grid">
+			<section class="welcome grid ">
 				<div class="welcome__body center">
 					<h1 class="welcome__title">
 						CREATE<span>X</span>
@@ -49,8 +49,8 @@
 					</ul>
 				</div>
 			</section>
-			<section class="we-are grid">
-				<div class="we-are__body center">
+			<section class="we-are grid ">
+				<div class="we-are__body invisible center">
 					<div class="we-are__title title-block">
 						<h2 class="title-block__title">
 							We are Createx Construction Bureau
@@ -104,8 +104,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="our-core grid">
-				<div class="our-core__body center">
+			<section class="our-core grid ">
+				<div class="our-core__body invisible center">
 					<div class="our-core__title title-block">
 						<h2 class="title-block__title">
 							Our core values
@@ -234,9 +234,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="our-service grid">
+			<section class="our-service grid ">
 				<img class="image-adaptive" id="ourServicesBg" alt="Pretty background">
-				<div class="our-service__body center">
+				<div class="our-service__body invisible center">
 					<div class="our-service__title title-block">
 						<h2 class="title-block__title">Our services</h2>
 						<h4 class="title-block__subtitle">
@@ -325,8 +325,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="our-work grid">
-				<div class="our-work__body center">
+			<section class="our-work grid ">
+				<div class="our-work__body invisible center">
 					<div class="our-work__body-top">
 						<div class="our-work__title title-block">
 							<h2 class="title-block__title">
@@ -355,8 +355,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="supported grid">
-				<div class="supported__body center">
+			<section class="supported grid ">
+				<div class="supported__body invisible center">
 					<div class="supported__title title-block">
 						<h2 class="title-block__title">
 							Supported by 12+ partners
@@ -409,18 +409,19 @@
 					</div>
 				</div>
 			</section>
-			<section class="achievement grid">
-				<div class="achievement__body center">
+			<section class="achievement grid ">
+				<div class="achievement__body  center">
 					<div class="achievement__title title-block">
 						<h2 class="title-block__title">
 							Some facts and figures
 						</h2>
 					</div>
-					<div class="achievement__content">
+					<div class="achievement__content " id="progressBox">
 						<div class="achievement__item progress">
-							<div class="progress__wrapper yellow-wrapper">
-								<svg class="progress__ring yellow">
-									<circle id="progressRingClients" class="progress__circle" cx="75" cy="75" r="72" />
+							<div class="progress__wrapper yellow">
+								<svg class="progress__ring">
+									<circle id="progressRingClients" class="progress__circle yellow__stroke" cx="75"
+										cy="75" r="72" />
 								</svg>
 								<span>98%</span>
 							</div>
@@ -430,9 +431,10 @@
 						</div>
 
 						<div class="achievement__item progress">
-							<div class="progress__wrapper purple-wrapper">
-								<svg id="progressRing" class="progress__ring purple">
-									<circle id="progressRingExp" class="progress__circle" cx="75" cy="75" r="72" />
+							<div class="progress__wrapper purple">
+								<svg class="progress__ring ">
+									<circle id="progressRingExp" class="progress__circle purple__stroke" cx="75" cy="75"
+										r="72" />
 								</svg>
 								<span>20</span>
 							</div>
@@ -442,9 +444,10 @@
 						</div>
 
 						<div class="achievement__item progress">
-							<div class="progress__wrapper blue-wrapper">
-								<svg id="progressRing" class="progress__ring blue">
-									<circle id="progressRingHours" class="progress__circle" cx="75" cy="75" r="72" />
+							<div class="progress__wrapper blue">
+								<svg class="progress__ring">
+									<circle id="progressRingHours" class="progress__circle blue__stroke" cx="75" cy="75"
+										r="72" />
 								</svg>
 								<span>9452</span>
 							</div>
@@ -454,9 +457,10 @@
 						</div>
 
 						<div class="achievement__item progress">
-							<div class="progress__wrapper green-wrapper">
-								<svg id="progressRing" class="progress__ring green">
-									<circle id="progressRingProjects" class="progress__circle" cx="75" cy="75" r="72" />
+							<div class="progress__wrapper green">
+								<svg class="progress__ring">
+									<circle id="progressRingProjects" class="progress__circle green__stroke" cx="75"
+										cy="75" r="72" />
 								</svg>
 								<span>100%</span>
 							</div>
