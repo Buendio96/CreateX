@@ -1,10 +1,10 @@
-import '@styles/createX'
+import title from '@images/bg-image'
 import '@js-api/scrollHandler'
-import '@js-templates/header'
-import '@js-templates/discuss'
+import addBackground from '@js-modules/addBackground'
 import '@js-modules/scrollToTop'
 import '@js-store/projectsStore'
-import addBackground from '@js-modules/addBackground'
-import title from '@images/bg-image'
+import '@js-templates/discuss'
+import '@js-templates/header'
+import '@styles/createX'
 addBackground('titleImage', title)
 

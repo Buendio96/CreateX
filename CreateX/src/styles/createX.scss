@@ -1,11 +1,11 @@
-@import "@libs/normalize";
-@import "@s-common/fonts";
-@import "@s-common/vars";
-@import "@s-common/mixins";
-@import "@s-modules/header";
-@import "@s-modules/discuss";
-@import "@s-modules/footer";
-@import "@s-pages/homepage";
+@import '@libs/normalize';
+@import '@s-common/fonts';
+@import '@s-common/vars';
+@import '@s-common/mixins';
+@import '@s-modules/header';
+@import '@s-modules/discuss';
+@import '@s-modules/footer';
+@import '@s-pages/homepage';
 * {
 	&::-webkit-scrollbar-thumb {
 		background: $primary;
@@ -24,7 +24,7 @@
 body {
 	width: 100%;
 	min-height: 100%;
-	font-family: "Ubu-R";
+	font-family: 'Ubu-R';
 	user-select: none;
 }
 .invisible {
@@ -45,10 +45,10 @@ body {
 	display: grid;
 	grid-template: minmax(90px, auto) 1fr minmax(1fr, 825px) minmax(566px, auto) / 1fr;
 	grid-template-areas:
-		"header"
-		"main"
-		"discuss"
-		"footer";
+		'header'
+		'main'
+		'discuss'
+		'footer';
 }
 //===================================
 //===================================
@@ -75,7 +75,6 @@ body {
 }
 .footer {
 	grid-area: footer;
-
 	background-color: $titles;
 }
 //===================================
@@ -119,7 +118,7 @@ body {
 		position: relative;
 		overflow: hidden;
 		&::before {
-			content: "";
+			content: '';
 			position: absolute;
 			width: 16px;
 			height: 16px;
@@ -166,7 +165,7 @@ body {
 		margin: 40px 0 0;
 		font-size: 40px;
 		user-select: none;
-		font-family: "Ubu-B";
+		font-family: 'Ubu-B';
 		color: $primary;
 		text-shadow: 0 0 4px rgba($color: $text, $alpha: 0.5);
 		letter-spacing: 0.2rem;
