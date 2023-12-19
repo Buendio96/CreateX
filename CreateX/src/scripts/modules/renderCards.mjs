@@ -1,4 +1,4 @@
-import createCard from '@js-templates/work-item'
+import createPortfolioCard from '@js-templates/portfolioCard'
 
 const showCards = ({
 	array,
@@ -7,39 +7,39 @@ const showCards = ({
 	skipRight,
 	containerElement
 }) => {
-	let currentIndex = 0;
+	let currentIndex = 0
 	const renderCards = () => {
-		containerElement.innerHTML = '';
+		containerElement.innerHTML = ''
 		for (let x = 0; x < quantityOfCards; x++) {
-			const index = currentIndex + x;
+			const index = currentIndex + x
 			if (index < array.length) {
-				const card = createCard(array[index]);
-				containerElement.appendChild(card);
+				const card = createPortfolioCard(array[index])
+				containerElement.appendChild(card)
 			}
 		}
-	};
+	}
 
 
 	const handleRightButtonClick = () => {
-		currentIndex += quantityOfCards;
+		currentIndex += quantityOfCards
 		if (currentIndex >= array.length) {
-			currentIndex = 0;
+			currentIndex = 0
 		}
-		renderCards();
-	};
+		renderCards()
+	}
 
 	const handleLeftButtonClick = () => {
-		currentIndex -= quantityOfCards;
+		currentIndex -= quantityOfCards
 		if (currentIndex < 0) {
-			currentIndex = Math.max(0, array.length - quantityOfCards);
+			currentIndex = Math.max(0, array.length - quantityOfCards)
 		}
-		renderCards();
-	};
+		renderCards()
+	}
 
-	if (skipLeft) skipLeft.addEventListener('click', handleLeftButtonClick);
-	if (skipRight) skipRight.addEventListener('click', handleRightButtonClick);
+	if (skipLeft) skipLeft.addEventListener('click', handleLeftButtonClick)
+	if (skipRight) skipRight.addEventListener('click', handleRightButtonClick)
 
-	renderCards();
-};
+	renderCards()
+}
 
 export default showCards

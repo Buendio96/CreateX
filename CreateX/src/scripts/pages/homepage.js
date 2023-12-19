@@ -6,21 +6,21 @@ import showCards from '@js-modules/renderCards'
 import { initShowOpinion, toLeft, toRight } from '@js-modules/showOpinion'
 import isValidate from '@js-modules/validator'
 import player from "@js-modules/videoPlayer"
+import { NEWS_STORE, initGetRecentNewsData } from "@js-store/newsStore"
 import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore"
 import { PROJECTS_STORE, initGetFilteredData } from "@js-store/projectsStore"
+import createNewsCard from '@js-templates/newsCard'
 import '/src/createX.hbs'
-//WE-ARE=====================================================
-const videoBox = document.getElementById('homepageVideoBox')
-if (videoBox && player) player(videoBox)
-//OUR-CORE===================================================
-const newForm = document.getElementById('questionForm')
-const successEl = document.getElementById('questionSuccess')
-const closeBtn = document.getElementById('questionClose')
 
-if (newForm) isValidate(newForm, successEl, closeBtn)
-//OUR-SERVICE================================================
+//DATA ACQUISITION==========================================
+const todayIs = new Date()
+await initGetFilteredData(todayIs) //As the second argument can be the Number for the date range
+await initGetOpinionData()
+await initGetRecentNewsData() //The argument can be the number of news required(3 by default)
+//BACKGROUND ADDITION========================================
 addBackground('ourServicesBg', bgImageServices)
 addBackground('supportBoxBg', bgImageSupport)
+
 
 const imageBlocks = [
 	'service-one',
@@ -38,10 +38,16 @@ imageBlocks.forEach((blockId, index) => {
 	addBackground(blockId, bgImages[index])
 })
 
-//OUR-WORK===================================================
-const todayIs = new Date()
-await initGetFilteredData(todayIs) //As the second argument can be the Number for the date range
+//WE-ARE=====================================================
+const videoBox = document.getElementById('homepageVideoBox')
+if (videoBox && player) player(videoBox)
+//OUR-CORE===================================================
+const newForm = document.getElementById('questionForm')
+const successEl = document.getElementById('questionSuccess')
+const closeBtn = document.getElementById('questionClose')
 
+if (newForm) isValidate(newForm, successEl, closeBtn)
+//OUR-WORK===================================================
 const PORTFOLIO_DOM_ELEMENTS = {
 	array: PROJECTS_STORE.byDateProjects,
 	containerElement: document.getElementById('our-work-container'),
@@ -49,9 +55,8 @@ const PORTFOLIO_DOM_ELEMENTS = {
 	skipRight: document.getElementById('our-work-go-right'),
 	/* quantityOfCards: 3 */  //This is an optional option to increase the output cards
 }
-showCards(PORTFOLIO_DOM_ELEMENTS)
+if (PROJECTS_STORE.byDateProjects.length > 0) showCards(PORTFOLIO_DOM_ELEMENTS)
 //SUPPORTED===================================================
-await initGetOpinionData()
 const OPINION_DOM_ELEMENTS = {
 	avatar: document.getElementById(`opinionBoxImg`),
 	opinion: document.getElementById(`opinionText`),
@@ -59,9 +64,11 @@ const OPINION_DOM_ELEMENTS = {
 	companyName: document.getElementById(`opinionUserJob`),
 	workPositions: document.getElementById(`opinionUserPosition`),
 }
-initShowOpinion(OPINION_DOM_ELEMENTS, OPINIONS_STORE)
-document.getElementById('opinionToLeft').addEventListener('click', () => toLeft(OPINION_DOM_ELEMENTS, OPINIONS_STORE))
-document.getElementById('opinionToRight').addEventListener('click', () => toRight(OPINION_DOM_ELEMENTS, OPINIONS_STORE))
+if (OPINIONS_STORE.length > 0) {
+	initShowOpinion(OPINION_DOM_ELEMENTS, OPINIONS_STORE)
+	document.getElementById('opinionToLeft').addEventListener('click', () => toLeft(OPINION_DOM_ELEMENTS, OPINIONS_STORE))
+	document.getElementById('opinionToRight').addEventListener('click', () => toRight(OPINION_DOM_ELEMENTS, OPINIONS_STORE))
+}
 //PROGRESS===================================================
 const PROGRESS_EL = document.getElementById('progressBox')
 const isElementInViewport = (el) => {
@@ -76,6 +83,8 @@ const handleScroll = () => {
 		showProgress(document.getElementById('progressRingProjects'), 100)
 	};
 }
+window.addEventListener('scroll', handleScroll())
 
-window.addEventListener('scroll', handleScroll);
+//RECENT NEWS===================================================
+NEWS_STORE.recentNews.forEach(item => createNewsCard(item))
 
