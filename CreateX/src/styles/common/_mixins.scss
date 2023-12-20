@@ -7,7 +7,7 @@
 	align-items: center;
 	text-align: center;
 	text-transform: uppercase;
-	font-family: "Ubu-B";
+	font-family: 'Ubu-B';
 	transition: all 0.4s ease;
 	letter-spacing: 0.5px;
 	border-radius: 4px;
@@ -122,7 +122,7 @@
 	margin: 0 auto;
 	text-align: center;
 	&__title {
-		font-family: "Ubu-B";
+		font-family: 'Ubu-B';
 		font-size: 46px;
 		line-height: 130%;
 		color: $titles;
@@ -141,7 +141,7 @@
 		font-size: 18px;
 		line-height: 150%;
 		color: $desc;
-		font-family: "Ubu-R";
+		font-family: 'Ubu-R';
 		font-weight: 400;
 		@media (max-width: $tablet) {
 			font-size: 15px;
@@ -159,7 +159,7 @@
 	&__title {
 		color: $titles;
 		font-size: 28px;
-		font-family: "Ubu-B";
+		font-family: 'Ubu-B';
 		line-height: 150%;
 		@media (max-width: $tablet) {
 			font-size: 24px;
@@ -183,8 +183,7 @@
 	flex: 0 1 33.3333%;
 	text-align: center;
 	border-radius: 4px 4px 0 0;
-	box-shadow:
-		0px 4px 4px -4px rgba(30, 33, 44, 0.03),
+	box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),
 		0px 12px 10px -6px rgba(154, 156, 165, 0.04),
 		0px 30px 24px -10px rgba(154, 156, 165, 0.05),
 		0px 80px 80px -20px rgba(154, 156, 165, 0.08);
@@ -249,7 +248,7 @@
 		}
 	}
 	&__box-title {
-		font-family: "Ubu-B";
+		font-family: 'Ubu-B';
 		font-size: 20px;
 		line-height: 105%;
 		color: $titles;

@@ -7,7 +7,7 @@ const createNewsCard = (item) => {
 	const dateToStroke = MM_DD_YYYY(dateObject)
 
 	const htmlString = `
-		<div class="recent__content-item main-news" id="recent-news-item">
+		<div class="recent__content-item" id="recent-news-item">
 			<div class="recent__content-item-image">
 				<img src="assets/static-images/news/${item.imageName}.png" class="image-adaptive" alt="Sorry, the image doesn't found">
 			</div>

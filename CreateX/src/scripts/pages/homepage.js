@@ -2,14 +2,14 @@ import bgImageServices from '@images/homepage-services'
 import bgImageSupport from '@images/homepage-support'
 import addBackground from '@js-modules/addBackground'
 import showProgress from "@js-modules/progressRing"
-import showCards from '@js-modules/renderCards'
+import showNews from '@js-modules/showNews'
 import { initShowOpinion, toLeft, toRight } from '@js-modules/showOpinion'
+import showCards from '@js-modules/showPortfolio'
 import isValidate from '@js-modules/validator'
 import player from "@js-modules/videoPlayer"
 import { NEWS_STORE, initGetRecentNewsData } from "@js-store/newsStore"
 import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore"
 import { PROJECTS_STORE, initGetFilteredData } from "@js-store/projectsStore"
-import createNewsCard from '@js-templates/newsCard'
 import '/src/createX.hbs'
 
 //DATA ACQUISITION==========================================
@@ -71,20 +71,23 @@ if (OPINIONS_STORE.length > 0) {
 }
 //PROGRESS===================================================
 const PROGRESS_EL = document.getElementById('progressBox')
-const isElementInViewport = (el) => {
-	const rect = el.getBoundingClientRect()
+const isElementInViewport = (element) => {
+	const rect = element.getBoundingClientRect()
 	return rect.top >= 0 && rect.bottom <= window.innerHeight
 }
 const handleScroll = () => {
 	if (isElementInViewport(PROGRESS_EL)) {
-		showProgress(document.getElementById('progressRingClients'), 98)
-		showProgress(document.getElementById('progressRingExp'), 75)
-		showProgress(document.getElementById('progressRingHours'), 82)
-		showProgress(document.getElementById('progressRingProjects'), 100)
+		setTimeout(() => {
+			showProgress(document.getElementById('progressRingClients'), 98)
+			showProgress(document.getElementById('progressRingExp'), 75)
+			showProgress(document.getElementById('progressRingHours'), 82)
+			showProgress(document.getElementById('progressRingProjects'), 100)
+		}, 1500)
 	};
 }
-window.addEventListener('scroll', handleScroll())
+window.addEventListener('scroll', handleScroll)
 
 //RECENT NEWS===================================================
-NEWS_STORE.recentNews.forEach(item => createNewsCard(item))
+const RECENT_EL = document.getElementById('recentBox')
 
+showNews(RECENT_EL, NEWS_STORE.recentNews)
