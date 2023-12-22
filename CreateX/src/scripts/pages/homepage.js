@@ -82,7 +82,7 @@ const handleScroll = () => {
 			showProgress(document.getElementById('progressRingExp'), 75)
 			showProgress(document.getElementById('progressRingHours'), 82)
 			showProgress(document.getElementById('progressRingProjects'), 100)
-		}, 1500)
+		}, 500)
 	};
 }
 window.addEventListener('scroll', handleScroll)
@@ -90,4 +90,4 @@ window.addEventListener('scroll', handleScroll)
 //RECENT NEWS===================================================
 const RECENT_EL = document.getElementById('recentBox')
 
-showNews(RECENT_EL, NEWS_STORE.recentNews)
+showNews(RECENT_EL, NEWS_STORE.recentNews, 'RECENT')
