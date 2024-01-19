@@ -408,7 +408,14 @@
 			"date": "2024-06-24",
 			"type": "Innovation",
 			"linkToPage": "cubes-building",
-			"comments": []
+			"comments": [
+				{
+					"name": "Jovani Circus",
+					"imageName": "opinion-1",
+					"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, nam. Lorem ipsum dolor sit, amet consectetur adipisicing.",
+					"date": "2023-03-25"
+				}
+			]
 		},
 		{
 			"id": 3,

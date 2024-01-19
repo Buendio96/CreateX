@@ -7,7 +7,6 @@ import { initShowOpinion, toLeft, toRight } from '@js-modules/showOpinion'
 import showCards from '@js-modules/showPortfolio'
 import isValidate from '@js-modules/validator'
 import player from "@js-modules/videoPlayer"
-import showComments from '@js-modules/showComments'
 import { NEWS_STORE, initGetRecentNewsData } from "@js-store/newsStore"
 import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore"
 import { PROJECTS_STORE, initGetFilteredData } from "@js-store/projectsStore"
@@ -91,8 +90,10 @@ window.addEventListener('scroll', handleScroll)
 //RECENT NEWS===================================================
 const RECENT_EL = document.getElementById('recentBox')
 showNews(RECENT_EL, NEWS_STORE.recentNews)
-const openCommentsButton = document.getElementById('openComments')
+
+const showCommentsButton = document.getElementById('showComments')
 const commentsBlock = document.getElementById('commentsBlock')
-console.log(openCommentsButton)
-console.log(commentsBlock)
-openCommentsButton.addEventListener('click', showComments(commentsBlock))
+
+showCommentsButton.addEventListener('click', () => {
+	commentsBlock.classList.toggle('showComments')
+})

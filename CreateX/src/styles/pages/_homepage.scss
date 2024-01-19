@@ -1141,8 +1141,22 @@
 			color: $links;
 		}
 		&__comments-box {
+			min-width: 100%;
+			height: 100%;
+			overflow-x: hidden;
+			overflow-y: auto;
 			position: absolute;
+			display: flex;
+			flex-direction: column;
 			top: 100%;
+			left: 0;
+			right: 0;
+			transition: all 0.5s ease;
+			padding: 20px 40px 0;
+			row-gap: 15px;
+		}
+		.showComments {
+			top: 0;
 		}
 		&:hover {
 			.news-card__box-title {
@@ -1186,15 +1200,33 @@
 }
 
 .comment {
+	display: flex;
+	column-gap: 20px;
+	width: 100%;
+	border-bottom: 2px solid $primary;
+	padding: 0 0 15px;
 	&__image {
+		width: 40px;
+		height: 40px;
 	}
 	&__info {
+		max-width: 90%;
 	}
 	&__info-name {
+		font-size: 21px;
+		font-family: 'Ubu-B';
+		letter-spacing: 0.6px;
 	}
 	&__info-text {
+		margin: 10px 0 0;
+		font-family: 'Ubu-B';
+		font-size: 15px;
+		line-height: 150%;
 	}
 	&__info-date {
+		margin: 8px 0 0;
+		font-size: 14px;
+		color: $desc;
 	}
 }
 
