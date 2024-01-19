@@ -8,3 +8,6 @@ import '@js-templates/header'
 import '@styles/createX'
 addBackground('titleImage', title)
 
+
+
+

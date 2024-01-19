@@ -25,7 +25,7 @@ const createCommentsBlock = (comments = []) => {
 	})
 
 	const htmlCommentsBlock = `
-		<div class="news-card__comments-box">
+		<div id="commentsBlock" class="news-card__comments-box">
 			${commentsHTML}
 		</div>`
 

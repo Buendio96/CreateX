@@ -1040,7 +1040,6 @@
 	}
 }
 //==========================================
-
 .recent {
 	background: $main-bg;
 	&__body {
@@ -1073,6 +1072,7 @@
 			width: 100%;
 			height: 155px;
 			position: relative;
+			overflow: hidden;
 		}
 		&__comments-box {
 			z-index: 1;
@@ -1140,6 +1140,10 @@
 			line-height: 160%;
 			color: $links;
 		}
+		&__comments-box {
+			position: absolute;
+			top: 100%;
+		}
 		&:hover {
 			.news-card__box-title {
 				color: $primary;
@@ -1179,4 +1183,20 @@
 		&__info-date {
 		}
 	}
+}
+
+.comment {
+	&__image {
+	}
+	&__info {
+	}
+	&__info-name {
+	}
+	&__info-text {
+	}
+	&__info-date {
+	}
+}
+
+.news-card {
 }
