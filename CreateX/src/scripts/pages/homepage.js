@@ -91,9 +91,12 @@ window.addEventListener('scroll', handleScroll)
 const RECENT_EL = document.getElementById('recentBox')
 showNews(RECENT_EL, NEWS_STORE.recentNews)
 
-const showCommentsButton = document.getElementById('showComments')
-const commentsBlock = document.getElementById('commentsBlock')
+const showCommentsButton = document.querySelectorAll('#showComments')
 
-showCommentsButton.addEventListener('click', () => {
-	commentsBlock.classList.toggle('showComments')
+showCommentsButton.forEach(button => {
+	button.addEventListener('click', () => {
+		const parentBlock = button.closest('.news-card')
+		const commentsBlock = parentBlock.querySelector('.news-card__comments-box')
+		if (commentsBlock) commentsBlock.classList.toggle('showComments')
+	})
 })
