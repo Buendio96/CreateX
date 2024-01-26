@@ -72,8 +72,10 @@ if (OPINIONS_STORE.length > 0) {
 //PROGRESS===================================================
 const PROGRESS_EL = document.getElementById('progressBox')
 const isElementInViewport = (element) => {
-	const rect = element.getBoundingClientRect()
-	return rect.top >= 0 && rect.bottom <= window.innerHeight
+	if (element) {
+		const rect = element.getBoundingClientRect()
+		return rect.top >= 0 && rect.bottom <= window.innerHeight
+	}
 }
 const handleScroll = () => {
 	if (isElementInViewport(PROGRESS_EL)) {
@@ -89,14 +91,16 @@ window.addEventListener('scroll', handleScroll)
 
 //RECENT NEWS===================================================
 const RECENT_EL = document.getElementById('recentBox')
-showNews(RECENT_EL, NEWS_STORE.recentNews)
+if (RECENT_EL) showNews(RECENT_EL, NEWS_STORE.recentNews)
 
 const showCommentsButton = document.querySelectorAll('#showComments')
 
-showCommentsButton.forEach(button => {
-	button.addEventListener('click', () => {
-		const parentBlock = button.closest('.news-card')
-		const commentsBlock = parentBlock.querySelector('.news-card__comments-box')
-		if (commentsBlock) commentsBlock.classList.toggle('showComments')
+if (showCommentsButton) {
+	showCommentsButton.forEach(button => {
+		button.addEventListener('click', () => {
+			const parentBlock = button.closest('.news-card')
+			const commentsBlock = parentBlock.querySelector('.news-card__comments-box')
+			if (commentsBlock) commentsBlock.classList.toggle('showComments')
+		})
 	})
-})
+}

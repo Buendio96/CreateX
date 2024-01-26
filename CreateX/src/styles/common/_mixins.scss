@@ -290,16 +290,19 @@
 	}
 }
 //==============================================
-//ADAPTIVE======================================
+//ADAPTIVE && DISPLAY======================================
 //==============================================
 .grid {
 	display: grid;
 	grid-template: 1fr/1fr minmax(auto, 1230px) 1fr;
 	padding: 0 15px;
 }
+.center {
+	grid-column: 2/3;
+}
 .image-adaptive {
 	position: absolute;
-	min-width: 100%;
+	width: 100%;
 	height: 100%;
 	top: 0;
 	right: 0;

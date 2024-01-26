@@ -46,7 +46,7 @@
 	&__link {
 		color: $links;
 		font-size: 16px;
-		font-family: "Ubu-B";
+		font-family: 'Ubu-B';
 		transition: all 0.5s ease;
 		white-space: nowrap;
 	}
@@ -87,7 +87,7 @@
 		}
 		&-data {
 			&-title {
-				font-family: "Ubu-B";
+				font-family: 'Ubu-B';
 				font-size: 14px;
 				color: $links;
 				transition: all 0.5s ease;

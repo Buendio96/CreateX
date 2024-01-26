@@ -11,10 +11,31 @@
 </head>
 
 <body>
-	{{> header}}
-	{{> discuss}}
-	{{> footer}}
-	{{> goTop}}
+	<div class="wrapper">
+		{{> header}}
+		<main class="main">
+			<div class="name-page-block grid">
+				<div class="name-page-block__body center">
+					<div class="name-page-block__list">
+						<span>Homepage / </span>
+						<span>Services</span>
+					</div>
+					<h1 class="name-page-block__title">
+						Services
+					</h1>
+					<p class="name-page-block__text">
+						If you are looking for a full-service construction company, look to Createx Construction Bureau.
+						We
+						are
+						doing our best to be a partner for all of your construction needs.
+					</p>
+				</div>
+			</div>
+		</main>
+		{{> discuss}}
+		{{> footer}}
+		{{> goTop}}
+	</div>
 </body>
 
 </html>
