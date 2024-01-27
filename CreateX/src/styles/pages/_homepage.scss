@@ -373,10 +373,11 @@
 //==========================================
 .our-core {
 	background-color: $main-bg;
+	z-index: 2;
 	&__body {
-		padding: 60px 0 0;
+		padding: 60px 0 0px;
 		margin: 0 0 -90px 0;
-
+		position: relative;
 		@media (max-width: $desktop) {
 			padding: 45px 0;
 			margin: 0 0 -45px 0;
@@ -493,10 +494,11 @@
 		}
 	}
 	&__question-form {
-		position: relative;
 		display: flex;
 		flex-direction: column;
+		position: relative;
 		padding: 48px 60px;
+		margin: 120px 0 0;
 		text-align: center;
 		background-color: $main-bg;
 		border-radius: 4px;
@@ -616,7 +618,6 @@
 .our-service {
 	background: $auxiliary-bg;
 	position: relative;
-	z-index: -1;
 	&__body {
 		padding: 210px 0 80px;
 		display: flex;

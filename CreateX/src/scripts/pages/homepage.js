@@ -1,6 +1,7 @@
 import bgImageServices from '@images/homepage-services'
 import bgImageSupport from '@images/homepage-support'
 import addBackground from '@js-modules/addBackground'
+
 import showProgress from "@js-modules/progressRing"
 import showNews from '@js-modules/showNews'
 import { initShowOpinion, toLeft, toRight } from '@js-modules/showOpinion'
@@ -11,7 +12,6 @@ import { NEWS_STORE, initGetRecentNewsData } from "@js-store/newsStore"
 import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore"
 import { PROJECTS_STORE, initGetFilteredData } from "@js-store/projectsStore"
 import '/src/createX.hbs'
-
 //DATA ACQUISITION==========================================
 const todayIs = new Date()
 await initGetFilteredData(todayIs) //As the second argument can be the Number for the date range
@@ -22,21 +22,6 @@ addBackground('ourServicesBg', bgImageServices)
 addBackground('supportBoxBg', bgImageSupport)
 
 
-const imageBlocks = [
-	'service-one',
-	'service-two',
-	'service-three',
-	'service-four'
-]
-const bgImages = [
-	require('@images/home-serv-item-0'),
-	require('@images/home-serv-item-1'),
-	require('@images/home-serv-item-2'),
-	require('@images/home-serv-item-3')
-]
-imageBlocks.forEach((blockId, index) => {
-	addBackground(blockId, bgImages[index])
-})
 
 //WE-ARE=====================================================
 const videoBox = document.getElementById('homepageVideoBox')

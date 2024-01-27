@@ -1,0 +1,91 @@
+.services {
+	background-color: $main-bg;
+	&__body {
+		padding: 120px 0 180px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 120px;
+		@media (max-width: $desktop) {
+			padding: 80px 0 30px;
+			row-gap: 90px;
+		}
+		@media (max-width: $tablet) {
+			padding: 60px 0 30px;
+			row-gap: 0px;
+		}
+		@media (max-width: $phone) {
+			padding: 20px 0;
+			row-gap: 30px;
+		}
+	}
+	&__item {
+		width: 100%;
+		height: 420px;
+		display: flex;
+		column-gap: 80px;
+		@media (max-width: $desktop) {
+			height: 350px;
+			column-gap: 30px;
+		}
+		@media (max-width: $tablet) {
+			padding: 60px 0 30px;
+			row-gap: 60px;
+		}
+		@media (max-width: $phone) {
+			flex-direction: column;
+		}
+		&:nth-child(even) {
+			flex-direction: row-reverse;
+		}
+	}
+	&__item-image {
+		flex: 0 1 50%;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border-radius: 4px;
+		@media (max-width: $tablet) {
+			flex: 0 1 35%;
+		}
+	}
+	&__item-content {
+		flex: 0 1 50%;
+		@media (max-width: $tablet) {
+			flex: 0 1 65%;
+		}
+	}
+	&__item-title {
+		margin: 90px 0 0 0;
+		font-size: 32px;
+		font-family: 'Ubu-B';
+		line-height: 150%;
+		color: $titles;
+		@media (max-width: $desktop) {
+			margin: 20px 0 0 0;
+			font-size: 24px;
+		}
+		@media (max-width: $tablet) {
+			font-size: 20px;
+			margin: 0;
+		}
+		@media (max-width: $phone) {
+			margin: 10px 0 0 0;
+			font-size: 18px;
+		}
+	}
+	&__item-description {
+		margin: 24px 0 0 0;
+		line-height: 160%;
+		color: $desc;
+		@media (max-width: $desktop) {
+			margin: 10px 0 0 0;
+		}
+	}
+	&__item-btn {
+		margin: 50px 0 0 0;
+		@media (max-width: $desktop) {
+			margin: 20px 0 0 0;
+		}
+	}
+}
