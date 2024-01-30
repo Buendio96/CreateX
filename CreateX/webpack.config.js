@@ -13,6 +13,7 @@ const devtool = devMode ? 'source-map' : undefined
 const fileName = ext => devMode ? `[name].${ext}` : `[contenthash].${ext}`
 
 const pages = ['about', 'services', 'work', 'news', 'contacts',]
+const servicePages = ['construction', 'project-development', 'interior-design', 'repairs']
 const HTML_PLUGINS = () => {
 	return pages.map((page) => new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, `src/pages/${page}.hbs`),
@@ -20,10 +21,29 @@ const HTML_PLUGINS = () => {
 		minify: prodMode,
 		chunks: ['main', `${page}`],
 		templateParameters: {
-			'filename': `${page}`,
+			'filename': transformFileName(page),
 			'favicon': '/assets/icons/favicon.ico'
 		}
 	}))
+}
+const HTML_PLUGINS_FOLDER = (nameFolder) => {
+	return servicePages.map((page) => new HtmlWebpackPlugin({
+		template: path.resolve(__dirname, `src/pages/${nameFolder}/${page}.hbs`),
+		filename: `services/${page}.html`,
+		minify: prodMode,
+		chunks: ['main'],
+		templateParameters: {
+			'filename': transformFileName(page),
+			'favicon': '/assets/icons/favicon.ico'
+		}
+	}))
+}
+const transformFileName = (fileName) => {
+	const uppercasedFirstLetter = fileName.charAt(0).toUpperCase()
+	const restOfFileName = fileName.slice(1)
+	const finalFileName = uppercasedFirstLetter + restOfFileName.replace(/-/g, ' ')
+
+	return finalFileName
 }
 //=================================================================
 const optimization = () => {
@@ -108,6 +128,7 @@ module.exports = {
 			}
 		}),
 		...HTML_PLUGINS(),
+		...HTML_PLUGINS_FOLDER('services'),
 		new MiniCssExtractPlugin({
 			filename: 'styles/' + fileName('css')
 		}),

@@ -10,8 +10,8 @@
 			row-gap: 90px;
 		}
 		@media (max-width: $tablet) {
-			padding: 60px 0 30px;
-			row-gap: 0px;
+			padding: 40px 0 30px;
+			row-gap: 30px;
 		}
 		@media (max-width: $phone) {
 			padding: 20px 0;
@@ -23,16 +23,17 @@
 		height: 420px;
 		display: flex;
 		column-gap: 80px;
+		overflow: hidden;
 		@media (max-width: $desktop) {
 			height: 350px;
 			column-gap: 30px;
 		}
 		@media (max-width: $tablet) {
-			padding: 60px 0 30px;
-			row-gap: 60px;
+			height: 270px;
 		}
-		@media (max-width: $phone) {
-			flex-direction: column;
+		@media (max-width: 700px) {
+			position: relative;
+			height: auto;
 		}
 		&:nth-child(even) {
 			flex-direction: row-reverse;
@@ -48,11 +49,20 @@
 		@media (max-width: $tablet) {
 			flex: 0 1 35%;
 		}
+		@media (max-width: 700px) {
+			position: absolute;
+		}
 	}
 	&__item-content {
 		flex: 0 1 50%;
 		@media (max-width: $tablet) {
 			flex: 0 1 65%;
+		}
+		@media (max-width: 700px) {
+			flex: 0 1 100%;
+			z-index: 1;
+			background-color: rgba($color: white, $alpha: 0.5);
+			padding: 10px 15px;
 		}
 	}
 	&__item-title {
@@ -80,6 +90,12 @@
 		color: $desc;
 		@media (max-width: $desktop) {
 			margin: 10px 0 0 0;
+		}
+		@media (max-width: 700px) {
+			color: $titles;
+			background-color: rgba($color: white, $alpha: 0.8);
+			margin: 10px -15px 0;
+			padding: 0 15px;
 		}
 	}
 	&__item-btn {

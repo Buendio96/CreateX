@@ -1,5 +1,9 @@
 import homepageTitleImage from '@images/bg-image'
 import serviceTitleImage from '@images/bg-image-service'
+import image0 from '@images/services-0'
+import image1 from '@images/services-1'
+import image2 from '@images/services-2'
+import image3 from '@images/services-3'
 import '@js-api/scrollHandler'
 import addBackground from '@js-modules/addBackground'
 import addServicesBackground from '@js-modules/addServicesBg'
@@ -13,14 +17,10 @@ import '@styles/createX'
 addBackground('titleImage', homepageTitleImage)
 addBackground('serviceTitleImage', serviceTitleImage)
 
-const firstServicesBlock = document.getElementById('homepage-serviceBlock')
-const secondServicesBlock = document.getElementById('services-serviceBlock')
-if ((firstServicesBlock || secondServicesBlock) !== null) {
-	const imageBlocks = [
-		'service-one',
-		'service-two',
-		'service-three',
-		'service-four'
-	]
-	addServicesBackground(imageBlocks, addBackground)
+const firstServiceBlock = document.getElementById('homepage-serviceBlock')
+const secondServiceBlock = document.getElementById('services-serviceBlock')
+if ((firstServiceBlock || secondServiceBlock) !== null) {
+	const targetElementsName = ['service-0', 'service-1', 'service-2', 'service-3']
+	const imagesBlock = [image0, image1, image2, image3]
+	addServicesBackground(targetElementsName, imagesBlock)
 }

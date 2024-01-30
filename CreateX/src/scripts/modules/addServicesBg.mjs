@@ -1,11 +1,12 @@
+import addBackground from '@js-modules/addBackground'
 
-const addServicesBackground = async (array, addingFunction) => {
-	if (array.length > 0 && addingFunction) {
-		for (let index = 0; index < array.length; index++) {
-			const blockId = array[index]
-			const image = await import(`@images/home-serv-item-${index}.jpg`)
-			if (image) addingFunction(blockId, image.default)
-			else console.log('Image no found')
+const addServicesBackground = (targetBlock, imageArray) => {
+	if (targetBlock.length > 0 && imageArray.length > 0) {
+		for (let index = 0; targetBlock.length > index; index++) {
+			const imageId = targetBlock[index]
+			const imageName = imageArray[index]
+			if (imageName) addBackground(imageId, imageName)
+			else console.log('Image not found')
 		}
 	}
 }

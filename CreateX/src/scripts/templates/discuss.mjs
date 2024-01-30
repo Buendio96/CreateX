@@ -1,8 +1,8 @@
 import cover from '@images/discuss'
+import addBackground from '@js-modules/addBackground'
 import isValidate from '@js-modules/validator'
 
-const titleImg = document.getElementById('discussImage')
-if (titleImg) titleImg.src = cover
+addBackground('discussImage', cover)
 
 const successEl = document.getElementById('discussSuccess')
 const closeBtn = document.getElementById('discussClose')

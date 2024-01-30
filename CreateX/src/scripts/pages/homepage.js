@@ -1,7 +1,6 @@
 import bgImageServices from '@images/homepage-services'
 import bgImageSupport from '@images/homepage-support'
 import addBackground from '@js-modules/addBackground'
-
 import showProgress from "@js-modules/progressRing"
 import showNews from '@js-modules/showNews'
 import { initShowOpinion, toLeft, toRight } from '@js-modules/showOpinion'
@@ -11,7 +10,6 @@ import player from "@js-modules/videoPlayer"
 import { NEWS_STORE, initGetRecentNewsData } from "@js-store/newsStore"
 import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore"
 import { PROJECTS_STORE, initGetFilteredData } from "@js-store/projectsStore"
-import '/src/createX.hbs'
 //DATA ACQUISITION==========================================
 const todayIs = new Date()
 await initGetFilteredData(todayIs) //As the second argument can be the Number for the date range
@@ -20,8 +18,6 @@ await initGetRecentNewsData() //The argument can be the number of news required(
 //BACKGROUND ADDITION========================================
 addBackground('ourServicesBg', bgImageServices)
 addBackground('supportBoxBg', bgImageSupport)
-
-
 
 //WE-ARE=====================================================
 const videoBox = document.getElementById('homepageVideoBox')
