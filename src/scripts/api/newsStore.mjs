@@ -1,5 +1,5 @@
-import fetchData from '@js-api/getData'
-import sortByDate from '@js-modules/sortByDate'
+import fetchData from '@js-utilities/getData'
+import sortByDate from '@js-utilities/sortByDate'
 
 const NEWS_STORE = {
 	recentNews: [],

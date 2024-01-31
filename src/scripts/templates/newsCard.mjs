@@ -1,4 +1,4 @@
-import { MM_DD_YYYY } from '@js-modules/dateFormatter'
+import { MM_DD_YYYY } from '@js-utilities/dateFormatter'
 import createCommentsBlock from '@js-templates/comments'
 
 

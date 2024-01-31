@@ -1,16 +1,13 @@
-import fetchData from '@js-api/getData'
-import { YYYY_MM_DD, setNeededMonth } from '@js-modules/dateFormatter'
-import sortByDate from '@js-modules/sortByDate'
+import { YYYY_MM_DD, setNeededMonth } from '@js-utilities/dateFormatter'
+import fetchData from '@js-utilities/getData'
+import sortByDate from '@js-utilities/sortByDate'
 
-const STORE = {
+const PROJECTS_STORE = {
 	allProjects: [
-		sort = {},
-		sortBy1 = {}
 	],
-	allComments: [
+	byDateProjects: [
 
-	],
-	byDateProjects: []
+	]
 }
 
 

@@ -1,4 +1,4 @@
-import addBackground from '@js-modules/addBackground'
+import addBackground from '@js-utilities/addBackground'
 
 const addServicesBackground = (targetBlock, imageArray) => {
 	if (targetBlock.length > 0 && imageArray.length > 0) {

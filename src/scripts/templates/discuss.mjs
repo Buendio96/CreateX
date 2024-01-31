@@ -1,6 +1,6 @@
 import cover from '@images/discuss'
-import addBackground from '@js-modules/addBackground'
-import isValidate from '@js-modules/validator'
+import addBackground from '@js-utilities/addBackground'
+import isValidate from '@js-utilities/validator'
 
 addBackground('discussImage', cover)
 

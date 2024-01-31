@@ -1,15 +1,15 @@
 import bgImageServices from '@images/homepage-services'
 import bgImageSupport from '@images/homepage-support'
-import addBackground from '@js-modules/addBackground'
-import showProgress from "@js-modules/progressRing"
-import showNews from '@js-modules/showNews'
-import { initShowOpinion, toLeft, toRight } from '@js-modules/showOpinion'
-import showCards from '@js-modules/showPortfolio'
-import isValidate from '@js-modules/validator'
-import player from "@js-modules/videoPlayer"
-import { NEWS_STORE, initGetRecentNewsData } from "@js-store/newsStore"
-import { OPINIONS_STORE, initGetOpinionData } from "@js-store/opinionsStore"
-import { PROJECTS_STORE, initGetFilteredData } from "@js-store/projectsStore"
+import { NEWS_STORE, initGetRecentNewsData } from "@js-api/newsStore"
+import { OPINIONS_STORE, initGetOpinionData } from "@js-api/opinionsStore"
+import { PROJECTS_STORE, initGetFilteredData } from "@js-api/projectsStore"
+import addBackground from '@js-utilities/addBackground'
+import showProgress from "@js-utilities/progressRing"
+import showNews from '@js-utilities/showNews'
+import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
+import showCards from '@js-utilities/showPortfolio'
+import isValidate from '@js-utilities/validator'
+import player from "@js-utilities/videoPlayer"
 //DATA ACQUISITION==========================================
 const todayIs = new Date()
 await initGetFilteredData(todayIs) //As the second argument can be the Number for the date range

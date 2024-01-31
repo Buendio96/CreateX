@@ -1,12 +1,13 @@
-@import '@libs/normalize';
+@import '@s-common/reset';
 @import '@s-common/fonts';
 @import '@s-common/vars';
 @import '@s-common/mixins';
-@import '@s-modules/header';
-@import '@s-modules/discuss';
-@import '@s-modules/footer';
+@import '@s-templates/header';
+@import '@s-templates/discuss';
+@import '@s-templates/footer';
 @import '@s-pages/homepage';
 @import '@s-pages/services';
+
 * {
 	&::-webkit-scrollbar-thumb {
 		background: $primary;

@@ -1,4 +1,4 @@
-import { MM_DD_YYYY } from '@js-modules/dateFormatter'
+import { MM_DD_YYYY } from '@js-utilities/dateFormatter'
 
 const dateToStroke = (date) => MM_DD_YYYY(new Date(date))
 

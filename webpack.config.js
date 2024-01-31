@@ -85,7 +85,7 @@ module.exports = {
 	},
 	entry: {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),
-		homepage: path.resolve(__dirname, 'src/scripts/pages/homepage.js'),
+		homepage: path.resolve(__dirname, 'src/scripts/handlers/handleHomepage.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -101,18 +101,15 @@ module.exports = {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
 			'@images': path.resolve(__dirname, 'src/assets/images'),
-			'@staticImages': path.resolve(__dirname, 'src/assets/static-images'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@s-common': path.resolve(__dirname, 'src/styles/common'),
-			'@s-modules': path.resolve(__dirname, 'src/styles/modules'),
+			'@s-templates': path.resolve(__dirname, 'src/styles/templates'),
 			'@s-pages': path.resolve(__dirname, 'src/styles/pages'),
 			'@js': path.resolve(__dirname, 'src/scripts'),
-			'@js-modules': path.resolve(__dirname, 'src/scripts/modules'),
+			'@js-utilities': path.resolve(__dirname, 'src/scripts/utilities'),
 			'@js-templates': path.resolve(__dirname, 'src/scripts/templates'),
 			'@js-api': path.resolve(__dirname, 'src/scripts/api'),
 			'@js-store': path.resolve(__dirname, 'src/scripts/store'),
-			'@libs': path.resolve(__dirname, 'src/libs'),
-			'@hbs-templates': path.resolve(__dirname, 'src/pages/templates'),
 		}
 	},
 	//=================================================================
