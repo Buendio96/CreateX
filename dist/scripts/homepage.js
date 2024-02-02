@@ -12,16 +12,18 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_homepage_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @images/homepage-services */ "./src/assets/images/homepage-services.png");
 /* harmony import */ var _images_homepage_support__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @images/homepage-support */ "./src/assets/images/homepage-support.jpg");
-/* harmony import */ var _js_api_newsStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-api/newsStore */ "./src/scripts/api/newsStore.mjs");
-/* harmony import */ var _js_api_opinionsStore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js-api/opinionsStore */ "./src/scripts/api/opinionsStore.mjs");
-/* harmony import */ var _js_api_projectsStore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @js-api/projectsStore */ "./src/scripts/api/projectsStore.mjs");
-/* harmony import */ var _js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @js-utilities/addBackground */ "./src/scripts/utilities/addBackground.mjs");
-/* harmony import */ var _js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @js-utilities/progressRing */ "./src/scripts/utilities/progressRing.mjs");
-/* harmony import */ var _js_utilities_showNews__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @js-utilities/showNews */ "./src/scripts/utilities/showNews.mjs");
-/* harmony import */ var _js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @js-utilities/showOpinion */ "./src/scripts/utilities/showOpinion.mjs");
-/* harmony import */ var _js_utilities_showPortfolio__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @js-utilities/showPortfolio */ "./src/scripts/utilities/showPortfolio.mjs");
-/* harmony import */ var _js_utilities_validator__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @js-utilities/validator */ "./src/scripts/utilities/validator.mjs");
-/* harmony import */ var _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @js-utilities/videoPlayer */ "./src/scripts/utilities/videoPlayer.mjs");
+/* harmony import */ var _js_api_getNewsData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-api/getNewsData */ "./src/scripts/api/getNewsData.mjs");
+/* harmony import */ var _js_api_getOpinionsData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js-api/getOpinionsData */ "./src/scripts/api/getOpinionsData.mjs");
+/* harmony import */ var _js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @js-api/getProjectsData */ "./src/scripts/api/getProjectsData.mjs");
+/* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
+/* harmony import */ var _js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @js-utilities/addBackground */ "./src/scripts/utilities/addBackground.mjs");
+/* harmony import */ var _js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @js-utilities/progressRing */ "./src/scripts/utilities/progressRing.mjs");
+/* harmony import */ var _js_utilities_showNews__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @js-utilities/showNews */ "./src/scripts/utilities/showNews.mjs");
+/* harmony import */ var _js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @js-utilities/showOpinion */ "./src/scripts/utilities/showOpinion.mjs");
+/* harmony import */ var _js_utilities_showPortfolio__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @js-utilities/showPortfolio */ "./src/scripts/utilities/showPortfolio.mjs");
+/* harmony import */ var _js_utilities_validator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @js-utilities/validator */ "./src/scripts/utilities/validator.mjs");
+/* harmony import */ var _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @js-utilities/videoPlayer */ "./src/scripts/utilities/videoPlayer.mjs");
+
 
 
 
@@ -36,31 +38,31 @@ __webpack_require__.r(__webpack_exports__);
 
 //DATA ACQUISITION==========================================
 const todayIs = new Date();
-await (0,_js_api_projectsStore__WEBPACK_IMPORTED_MODULE_4__.initGetFilteredData)(todayIs); //As the second argument can be the Number for the date range
-await (0,_js_api_opinionsStore__WEBPACK_IMPORTED_MODULE_3__.initGetOpinionData)();
-await (0,_js_api_newsStore__WEBPACK_IMPORTED_MODULE_2__.initGetRecentNewsData)(); //The argument can be the number of news required(3 by default)
+await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_4__["default"])(todayIs); //As the second argument can be the Number for the date range
+await (0,_js_api_getOpinionsData__WEBPACK_IMPORTED_MODULE_3__["default"])();
+await (0,_js_api_getNewsData__WEBPACK_IMPORTED_MODULE_2__["default"])(); //The argument can be the number of news required(3 by default)
 //BACKGROUND ADDITION========================================
-(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_5__["default"])('ourServicesBg', _images_homepage_services__WEBPACK_IMPORTED_MODULE_0__);
-(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_5__["default"])('supportBoxBg', _images_homepage_support__WEBPACK_IMPORTED_MODULE_1__);
+(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_6__["default"])('ourServicesBg', _images_homepage_services__WEBPACK_IMPORTED_MODULE_0__);
+(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_6__["default"])('supportBoxBg', _images_homepage_support__WEBPACK_IMPORTED_MODULE_1__);
 
 //WE-ARE=====================================================
 const videoBox = document.getElementById('homepageVideoBox');
-if (videoBox && _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_11__["default"]) (0,_js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_11__["default"])(videoBox);
+if (videoBox && _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_12__["default"]) (0,_js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_12__["default"])(videoBox);
 //OUR-CORE===================================================
 const newForm = document.getElementById('questionForm');
 const successEl = document.getElementById('questionSuccess');
 const closeBtn = document.getElementById('questionClose');
-if (newForm) (0,_js_utilities_validator__WEBPACK_IMPORTED_MODULE_10__["default"])(newForm, successEl, closeBtn);
+if (newForm) (0,_js_utilities_validator__WEBPACK_IMPORTED_MODULE_11__["default"])(newForm, successEl, closeBtn);
 //OUR-WORK===================================================
 const PORTFOLIO_DOM_ELEMENTS = {
-  array: _js_api_projectsStore__WEBPACK_IMPORTED_MODULE_4__.PROJECTS_STORE.byDateProjects,
+  array: _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].PROJECTS.byDateProjects,
   containerElement: document.getElementById('our-work-container'),
   skipLeft: document.getElementById('our-work-go-left'),
   skipRight: document.getElementById('our-work-go-right')
   /* quantityOfCards: 3 */ //This is an optional option to increase the output cards
 };
 
-if (_js_api_projectsStore__WEBPACK_IMPORTED_MODULE_4__.PROJECTS_STORE.byDateProjects.length > 0) (0,_js_utilities_showPortfolio__WEBPACK_IMPORTED_MODULE_9__["default"])(PORTFOLIO_DOM_ELEMENTS);
+if (_js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].PROJECTS.byDateProjects.length > 0) (0,_js_utilities_showPortfolio__WEBPACK_IMPORTED_MODULE_10__["default"])(PORTFOLIO_DOM_ELEMENTS);
 //SUPPORTED===================================================
 const OPINION_DOM_ELEMENTS = {
   avatar: document.getElementById(`opinionBoxImg`),
@@ -69,10 +71,10 @@ const OPINION_DOM_ELEMENTS = {
   companyName: document.getElementById(`opinionUserJob`),
   workPositions: document.getElementById(`opinionUserPosition`)
 };
-if (_js_api_opinionsStore__WEBPACK_IMPORTED_MODULE_3__.OPINIONS_STORE.length > 0) {
-  (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_8__.initShowOpinion)(OPINION_DOM_ELEMENTS, _js_api_opinionsStore__WEBPACK_IMPORTED_MODULE_3__.OPINIONS_STORE);
-  document.getElementById('opinionToLeft').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_8__.toLeft)(OPINION_DOM_ELEMENTS, _js_api_opinionsStore__WEBPACK_IMPORTED_MODULE_3__.OPINIONS_STORE));
-  document.getElementById('opinionToRight').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_8__.toRight)(OPINION_DOM_ELEMENTS, _js_api_opinionsStore__WEBPACK_IMPORTED_MODULE_3__.OPINIONS_STORE));
+if (_js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS.length > 0) {
+  (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__.initShowOpinion)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS);
+  document.getElementById('opinionToLeft').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__.toLeft)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS));
+  document.getElementById('opinionToRight').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__.toRight)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS));
 }
 //PROGRESS===================================================
 const PROGRESS_EL = document.getElementById('progressBox');
@@ -85,10 +87,10 @@ const isElementInViewport = element => {
 const handleScroll = () => {
   if (isElementInViewport(PROGRESS_EL)) {
     setTimeout(() => {
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_6__["default"])(document.getElementById('progressRingClients'), 98);
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_6__["default"])(document.getElementById('progressRingExp'), 75);
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_6__["default"])(document.getElementById('progressRingHours'), 82);
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_6__["default"])(document.getElementById('progressRingProjects'), 100);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingClients'), 98);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingExp'), 75);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingHours'), 82);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingProjects'), 100);
     }, 500);
   }
   ;
@@ -97,7 +99,7 @@ window.addEventListener('scroll', handleScroll);
 
 //RECENT NEWS===================================================
 const RECENT_EL = document.getElementById('recentBox');
-if (RECENT_EL) (0,_js_utilities_showNews__WEBPACK_IMPORTED_MODULE_7__["default"])(RECENT_EL, _js_api_newsStore__WEBPACK_IMPORTED_MODULE_2__.NEWS_STORE.recentNews);
+if (RECENT_EL) (0,_js_utilities_showNews__WEBPACK_IMPORTED_MODULE_8__["default"])(RECENT_EL, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].NEWS.recentNews);
 const showCommentsButton = document.querySelectorAll('#showComments');
 if (showCommentsButton) {
   showCommentsButton.forEach(button => {
@@ -133,102 +135,121 @@ module.exports = __webpack_require__.p + "assets/images/homepage-support..jpg";
 
 /***/ }),
 
-/***/ "./src/scripts/api/newsStore.mjs":
-/*!***************************************!*\
-  !*** ./src/scripts/api/newsStore.mjs ***!
-  \***************************************/
+/***/ "./src/scripts/api/getNewsData.mjs":
+/*!*****************************************!*\
+  !*** ./src/scripts/api/getNewsData.mjs ***!
+  \*****************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NEWS_STORE: () => (/* binding */ NEWS_STORE),
-/* harmony export */   initGetRecentNewsData: () => (/* binding */ initGetRecentNewsData)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-utilities/getData */ "./src/scripts/utilities/getData.mjs");
-/* harmony import */ var _js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-utilities/sortByDate */ "./src/scripts/utilities/sortByDate.mjs");
-
-
-const NEWS_STORE = {
-  recentNews: [],
-  allNews: []
-};
-const initGetRecentNewsData = async function () {
-  let amount = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  try {
-    const NEWS_API = `http://localhost:4100/news?_sort=date&_order=desc&_limit=${amount}`;
-    const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__["default"])(NEWS_API);
-    NEWS_STORE.recentNews = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__["default"])(DATA);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-
-/***/ }),
-
-/***/ "./src/scripts/api/opinionsStore.mjs":
-/*!*******************************************!*\
-  !*** ./src/scripts/api/opinionsStore.mjs ***!
-  \*******************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   OPINIONS_STORE: () => (/* binding */ OPINIONS_STORE),
-/* harmony export */   initGetOpinionData: () => (/* binding */ initGetOpinionData)
-/* harmony export */ });
-/* harmony import */ var _js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-utilities/getData */ "./src/scripts/utilities/getData.mjs");
-/* harmony import */ var _js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-utilities/sortByDate */ "./src/scripts/utilities/sortByDate.mjs");
-
-
-let OPINIONS_STORE = [];
-const initGetOpinionData = async () => {
-  try {
-    const OPINIONS_API = 'http://localhost:4100/opinions';
-    const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__["default"])(OPINIONS_API);
-    OPINIONS_STORE = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__["default"])(DATA);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-
-/***/ }),
-
-/***/ "./src/scripts/api/projectsStore.mjs":
-/*!*******************************************!*\
-  !*** ./src/scripts/api/projectsStore.mjs ***!
-  \*******************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PROJECTS_STORE: () => (/* binding */ PROJECTS_STORE),
-/* harmony export */   initGetFilteredData: () => (/* binding */ initGetFilteredData)
-/* harmony export */ });
-/* harmony import */ var _js_utilities_dateFormatter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-utilities/dateFormatter */ "./src/scripts/utilities/dateFormatter.mjs");
+/* harmony import */ var _js_store_store_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-store/store.mjs */ "./src/scripts/store/store.mjs");
 /* harmony import */ var _js_utilities_getData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-utilities/getData */ "./src/scripts/utilities/getData.mjs");
 /* harmony import */ var _js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-utilities/sortByDate */ "./src/scripts/utilities/sortByDate.mjs");
 
 
 
-const PROJECTS_STORE = {
-  allProjects: [],
-  byDateProjects: []
-};
-const initGetFilteredData = async function (from) {
-  let to = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+const initGetRecentNewsData = async function () {
+  let amount = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
   try {
-    const FROM_DATE = (0,_js_utilities_dateFormatter__WEBPACK_IMPORTED_MODULE_0__.YYYY_MM_DD)(from);
-    const TO_DATE = (0,_js_utilities_dateFormatter__WEBPACK_IMPORTED_MODULE_0__.setNeededMonth)(to);
-    const PROJECTS_API = `http://localhost:4100/projects?date_gte=${TO_DATE}&date_lte=${FROM_DATE}`;
-    const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_1__["default"])(PROJECTS_API);
-    PROJECTS_STORE.byDateProjects = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_2__["default"])(DATA);
+    const NEWS_API = `http://localhost:4100/news?_sort=date&_order=desc&_limit=${amount}`;
+    const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_1__["default"])(NEWS_API);
+    _js_store_store_mjs__WEBPACK_IMPORTED_MODULE_0__["default"].NEWS.recentNews = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_2__["default"])(DATA);
   } catch (error) {
     console.error(error);
   }
 };
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initGetRecentNewsData);
 
+/***/ }),
+
+/***/ "./src/scripts/api/getOpinionsData.mjs":
+/*!*********************************************!*\
+  !*** ./src/scripts/api/getOpinionsData.mjs ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-utilities/getData */ "./src/scripts/utilities/getData.mjs");
+/* harmony import */ var _js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-utilities/sortByDate */ "./src/scripts/utilities/sortByDate.mjs");
+/* harmony import */ var _store_store_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/store.mjs */ "./src/scripts/store/store.mjs");
+
+
+
+const initGetOpinionData = async () => {
+  try {
+    const OPINIONS_API = 'http://localhost:4100/opinions';
+    const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__["default"])(OPINIONS_API);
+    _store_store_mjs__WEBPACK_IMPORTED_MODULE_2__["default"].OPINIONS = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__["default"])(DATA);
+  } catch (error) {
+    console.log(error);
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initGetOpinionData);
+
+/***/ }),
+
+/***/ "./src/scripts/api/getProjectsData.mjs":
+/*!*********************************************!*\
+  !*** ./src/scripts/api/getProjectsData.mjs ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
+/* harmony import */ var _js_utilities_dateFormatter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-utilities/dateFormatter */ "./src/scripts/utilities/dateFormatter.mjs");
+/* harmony import */ var _js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-utilities/getData */ "./src/scripts/utilities/getData.mjs");
+/* harmony import */ var _js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js-utilities/sortByDate */ "./src/scripts/utilities/sortByDate.mjs");
+
+
+
+
+const initGetFilteredData = async function (from) {
+  let to = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+  try {
+    const FROM_DATE = (0,_js_utilities_dateFormatter__WEBPACK_IMPORTED_MODULE_1__.YYYY_MM_DD)(from);
+    const TO_DATE = (0,_js_utilities_dateFormatter__WEBPACK_IMPORTED_MODULE_1__.setNeededMonth)(to);
+    const PROJECTS_API = `http://localhost:4100/projects?date_gte=${TO_DATE}&date_lte=${FROM_DATE}`;
+    const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(PROJECTS_API);
+    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.byDateProjects = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_3__["default"])(DATA);
+  } catch (error) {
+    console.error(error);
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initGetFilteredData);
+
+/***/ }),
+
+/***/ "./src/scripts/store/store.mjs":
+/*!*************************************!*\
+  !*** ./src/scripts/store/store.mjs ***!
+  \*************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const STORE = {
+  PROJECTS: {
+    allProjects: [],
+    byDateProjects: []
+  },
+  OPINIONS: {},
+  NEWS: {
+    recentNews: [],
+    allNews: []
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (STORE);
 
 /***/ }),
 

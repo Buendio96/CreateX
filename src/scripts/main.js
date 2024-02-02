@@ -18,7 +18,9 @@ addBackground('serviceTitleImage', serviceTitleImage)
 
 const firstServiceBlock = document.getElementById('homepage-serviceBlock')
 const secondServiceBlock = document.getElementById('services-serviceBlock')
-if ((firstServiceBlock || secondServiceBlock) !== null) {
+const relatedServiceBlock = document.getElementById('related-serviceBlock')
+
+if ((firstServiceBlock || secondServiceBlock || relatedServiceBlock) !== null) {
 	const targetElementsName = ['service-0', 'service-1', 'service-2', 'service-3']
 	const imagesBlock = [image0, image1, image2, image3]
 	addServicesBackground(targetElementsName, imagesBlock)

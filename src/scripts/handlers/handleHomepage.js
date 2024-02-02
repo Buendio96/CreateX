@@ -1,8 +1,9 @@
 import bgImageServices from '@images/homepage-services'
 import bgImageSupport from '@images/homepage-support'
-import { NEWS_STORE, initGetRecentNewsData } from "@js-api/newsStore"
-import { OPINIONS_STORE, initGetOpinionData } from "@js-api/opinionsStore"
-import { PROJECTS_STORE, initGetFilteredData } from "@js-api/projectsStore"
+import initGetRecentNewsData from "@js-api/getNewsData"
+import initGetOpinionData from "@js-api/getOpinionsData"
+import initGetFilteredData from "@js-api/getProjectsData"
+import STORE from '@js-store/store'
 import addBackground from '@js-utilities/addBackground'
 import showProgress from "@js-utilities/progressRing"
 import showNews from '@js-utilities/showNews'
@@ -30,13 +31,13 @@ const closeBtn = document.getElementById('questionClose')
 if (newForm) isValidate(newForm, successEl, closeBtn)
 //OUR-WORK===================================================
 const PORTFOLIO_DOM_ELEMENTS = {
-	array: PROJECTS_STORE.byDateProjects,
+	array: STORE.PROJECTS.byDateProjects,
 	containerElement: document.getElementById('our-work-container'),
 	skipLeft: document.getElementById('our-work-go-left'),
 	skipRight: document.getElementById('our-work-go-right'),
 	/* quantityOfCards: 3 */  //This is an optional option to increase the output cards
 }
-if (PROJECTS_STORE.byDateProjects.length > 0) showCards(PORTFOLIO_DOM_ELEMENTS)
+if (STORE.PROJECTS.byDateProjects.length > 0) showCards(PORTFOLIO_DOM_ELEMENTS)
 //SUPPORTED===================================================
 const OPINION_DOM_ELEMENTS = {
 	avatar: document.getElementById(`opinionBoxImg`),
@@ -45,10 +46,10 @@ const OPINION_DOM_ELEMENTS = {
 	companyName: document.getElementById(`opinionUserJob`),
 	workPositions: document.getElementById(`opinionUserPosition`),
 }
-if (OPINIONS_STORE.length > 0) {
-	initShowOpinion(OPINION_DOM_ELEMENTS, OPINIONS_STORE)
-	document.getElementById('opinionToLeft').addEventListener('click', () => toLeft(OPINION_DOM_ELEMENTS, OPINIONS_STORE))
-	document.getElementById('opinionToRight').addEventListener('click', () => toRight(OPINION_DOM_ELEMENTS, OPINIONS_STORE))
+if (STORE.OPINIONS.length > 0) {
+	initShowOpinion(OPINION_DOM_ELEMENTS, STORE.OPINIONS)
+	document.getElementById('opinionToLeft').addEventListener('click', () => toLeft(OPINION_DOM_ELEMENTS, STORE.OPINIONS))
+	document.getElementById('opinionToRight').addEventListener('click', () => toRight(OPINION_DOM_ELEMENTS, STORE.OPINIONS))
 }
 //PROGRESS===================================================
 const PROGRESS_EL = document.getElementById('progressBox')
@@ -72,7 +73,7 @@ window.addEventListener('scroll', handleScroll)
 
 //RECENT NEWS===================================================
 const RECENT_EL = document.getElementById('recentBox')
-if (RECENT_EL) showNews(RECENT_EL, NEWS_STORE.recentNews)
+if (RECENT_EL) showNews(RECENT_EL, STORE.NEWS.recentNews)
 
 const showCommentsButton = document.querySelectorAll('#showComments')
 
@@ -84,4 +85,4 @@ if (showCommentsButton) {
 			if (commentsBlock) commentsBlock.classList.toggle('showComments')
 		})
 	})
-}
+} 

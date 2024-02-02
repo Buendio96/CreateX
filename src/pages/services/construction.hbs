@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="{{favicon}}" type="image/x-icon">
 	<title>
-		{{filename}}
+		Services/{{filename}}
 	</title>
 </head>
 
@@ -46,7 +46,44 @@
 					</p>
 				</div>
 			</section>
-
+			<section class="we-offer grid">
+				<div id="related-serviceBlock" class="we-offer__body center invisible">
+					<div class="we-offer__top">
+						<div class="we-offer__image">
+							<img id="service-0" class="image-adaptive" alt="This image describe our work">
+						</div>
+						<div class="we-offer__information">
+							<h2 class="we-offer__information-title">We Offer</h2>
+							<ul class="we-offer__information-list">
+								<li class="we-offer__information-item">
+									<button type="button">
+										Construction of apartments
+									</button>
+									<p>
+										Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum
+										faucibus
+										dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac
+										facilisis.
+									</p>
+								</li>
+								<li class="we-offer__information-item">
+									<button type="button">
+										Construction of private houses
+									</button>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda natus harum
+										impedit
+										rerum dolorum! Exercitationem, deleniti officia laborum, ut itaque inventore
+										dolores
+										consequuntur dicta nam nostrum, laudantium voluptate velit vitae.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					{{>how-we-do-it}}
+				</div>
+			</section>
 		</main>
 		{{> discuss}}
 		{{> footer}}
