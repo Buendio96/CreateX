@@ -109,17 +109,41 @@
 	background-color: $main-bg;
 	&__body {
 		padding: 120px 0;
+		@media (max-width: $desktop) {
+			padding: 70px 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 50px 0;
+		}
+		@media (max-width: $phone) {
+			padding: 30px 0;
+		}
 	}
 	&__top {
 		width: 100%;
 		height: 440px;
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: $desktop) {
+			height: 350px;
+		}
+		@media (max-width: $tablet) {
+			height: 250px;
+		}
+		@media (max-width: $phone) {
+			height: 150px;
+		}
 	}
 	&__image {
 		position: relative;
 		flex: 0 1 57%;
 		height: 100%;
+		@media (max-width: $desktop) {
+			flex: 0 1 50%;
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 30%;
+		}
 		img {
 			box-shadow: 0 0 20px 0.5px rgba($color: black, $alpha: 0.6);
 			border-radius: 10px;
@@ -127,37 +151,102 @@
 	}
 	&__information {
 		flex: 0 1 34.2%;
+		@media (max-width: $desktop) {
+			flex: 0 1 45%;
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 65%;
+		}
 	}
 	&__information-title {
+		font-size: 40px;
 	}
 	&__information-list {
-		margin: 60px 0 0 45px;
+		margin: 60px 0 0 0px;
+		display: inline-flex;
+		flex-direction: column;
+		@media (max-width: $desktop) {
+			margin: 20px 0 0 0;
+		}
 	}
 	&__information-item {
 		&:not(:first-child) {
 			margin: 24px 0 0 0;
 		}
-		button {
+		p {
+			margin: 12px 0 0 0;
+			font-size: 16px;
+			line-height: 160%;
+			color: $desc;
+			padding: 0 0 0 45px;
+			height: 0;
+			width: 0;
+			overflow-y: hidden;
+			transition: width 0.2s ease;
+			@media (max-width: $phone) {
+				font-size: 12px;
+			}
+		}
+		@media (max-width: $desktop) {
+			&:not(:first-child) {
+				margin: 12px 0 0 0;
+			}
+		}
+	}
+	&__information-button {
+		width: 100%;
+		display: inline-flex;
+		align-items: center;
+		column-gap: 20px;
+		font-family: 'Ubu-B';
+		font-size: 28px;
+		line-height: 150%;
+		text-align: left;
+		@media (max-width: $desktop) {
+			font-size: 22px;
+			column-gap: 10px;
+		}
+		@media (max-width: $phone) {
+			font-size: 16px;
+		}
+		div {
 			position: relative;
+			min-width: 25px;
+			height: 25px;
 			&::before,
 			&::after {
 				content: '';
 				position: absolute;
-				top: 7px;
-				left: -22px;
+				top: 50%;
 				width: 22px;
 				height: 2px;
 				border-radius: 1px;
 				background-color: $primary;
+				transition: all 0.6s ease;
+				@media (max-width: $desktop) {
+					width: 16px;
+				}
 			}
 			&::after {
 				transform: rotate(90deg);
 			}
 		}
-		p {
-			margin: 12px 0 0 0;
-			height: 0;
-			overflow: hidden;
+	}
+	&__information-button:focus {
+		~ p {
+			height: 130px;
+			width: 100%;
+			overflow-y: auto;
+			@media (max-width: $phone) {
+				height: 60px;
+				margin: 0;
+			}
+		}
+		div {
+			transform: rotate(360deg);
+			&::after {
+				transform: rotate(0);
+			}
 		}
 	}
 }

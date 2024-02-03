@@ -1,4 +1,5 @@
 .footer {
+	background-color: $alternative-bg;
 	&__box {
 		grid-column: 2/3;
 		display: flex;
@@ -74,7 +75,7 @@
 		max-width: 495px;
 	}
 	&__subscribe-title {
-		font-family: "Ubu-B";
+		font-family: 'Ubu-B';
 		font-size: 24px;
 		color: $text;
 	}

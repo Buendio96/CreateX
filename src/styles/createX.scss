@@ -5,6 +5,8 @@
 @import '@s-templates/header';
 @import '@s-templates/discuss';
 @import '@s-templates/footer';
+@import '@s-templates/how-we-do-it';
+@import '@s-templates/benefits';
 @import '@s-pages/homepage';
 @import '@s-pages/services';
 
@@ -79,7 +81,6 @@ body {
 }
 .footer {
 	grid-area: footer;
-	background-color: $titles;
 }
 //===================================
 //===================================

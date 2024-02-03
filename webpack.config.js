@@ -79,9 +79,9 @@ module.exports = {
 		port: 4000,
 		open: true,
 		hot: true,
-		static: {
+		/* static: {
 			directory: path.join(__dirname, 'src'),
-		},
+		}, */
 	},
 	entry: {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),

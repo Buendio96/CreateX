@@ -1,7 +1,6 @@
 //==============================================
 //BUTTONS=======================================
 //==============================================
-
 @mixin buttons {
 	display: inline-flex;
 	align-items: center;
@@ -121,11 +120,13 @@
 .title-block {
 	margin: 0 auto;
 	text-align: center;
+
 	&__title {
 		font-family: 'Ubu-B';
 		font-size: 46px;
 		line-height: 130%;
 		color: $titles;
+
 		@media (max-width: $desktop) {
 			font-size: 40px;
 		}
@@ -152,6 +153,9 @@
 			font-size: 13px;
 		}
 	}
+}
+.text-left {
+	text-align: left;
 }
 .view-more-block {
 	display: flex;

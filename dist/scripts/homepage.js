@@ -145,7 +145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _js_store_store_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-store/store.mjs */ "./src/scripts/store/store.mjs");
+/* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
 /* harmony import */ var _js_utilities_getData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-utilities/getData */ "./src/scripts/utilities/getData.mjs");
 /* harmony import */ var _js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-utilities/sortByDate */ "./src/scripts/utilities/sortByDate.mjs");
 
@@ -156,7 +156,7 @@ const initGetRecentNewsData = async function () {
   try {
     const NEWS_API = `http://localhost:4100/news?_sort=date&_order=desc&_limit=${amount}`;
     const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_1__["default"])(NEWS_API);
-    _js_store_store_mjs__WEBPACK_IMPORTED_MODULE_0__["default"].NEWS.recentNews = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_2__["default"])(DATA);
+    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].NEWS.recentNews = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_2__["default"])(DATA);
   } catch (error) {
     console.error(error);
   }
@@ -177,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-utilities/getData */ "./src/scripts/utilities/getData.mjs");
 /* harmony import */ var _js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-utilities/sortByDate */ "./src/scripts/utilities/sortByDate.mjs");
-/* harmony import */ var _store_store_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/store.mjs */ "./src/scripts/store/store.mjs");
+/* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
 
 
 
@@ -185,7 +185,7 @@ const initGetOpinionData = async () => {
   try {
     const OPINIONS_API = 'http://localhost:4100/opinions';
     const DATA = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_0__["default"])(OPINIONS_API);
-    _store_store_mjs__WEBPACK_IMPORTED_MODULE_2__["default"].OPINIONS = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__["default"])(DATA);
+    _js_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].OPINIONS = (0,_js_utilities_sortByDate__WEBPACK_IMPORTED_MODULE_1__["default"])(DATA);
   } catch (error) {
     console.log(error);
   }
