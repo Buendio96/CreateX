@@ -819,17 +819,6 @@
 			padding: 20px 0 0;
 		}
 	}
-	&__clients {
-		margin: 21px 0 0;
-		display: flex;
-		justify-content: space-between;
-		@media (max-width: $desktop) {
-			flex-wrap: wrap;
-			/* img {
-				flex: 0 1 25%;
-			} */
-		}
-	}
 	&__content {
 		margin: 150px 0 0;
 		display: flex;

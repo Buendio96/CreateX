@@ -4,16 +4,18 @@ import initGetRecentNewsData from "@js-api/getNewsData"
 import initGetOpinionData from "@js-api/getOpinionsData"
 import initGetFilteredData from "@js-api/getProjectsData"
 import STORE from '@js-store/store'
+import createPortfolioCard from '@js-templates/portfolioCard'
 import addBackground from '@js-utilities/addBackground'
 import showProgress from "@js-utilities/progressRing"
 import showNews from '@js-utilities/showNews'
 import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
-import showCards from '@js-utilities/showPortfolio'
+import toggleProjectsCards from '@js-utilities/toggleCards'
 import isValidate from '@js-utilities/validator'
 import player from "@js-utilities/videoPlayer"
+
 //DATA ACQUISITION==========================================
-const todayIs = new Date()
-await initGetFilteredData(todayIs) //As the second argument can be the Number for the date range
+const TODAY = new Date()
+await initGetFilteredData(TODAY, 4) //As the second argument can be the Number for the date range
 await initGetOpinionData()
 await initGetRecentNewsData() //The argument can be the number of news required(3 by default)
 //BACKGROUND ADDITION========================================
@@ -30,14 +32,19 @@ const closeBtn = document.getElementById('questionClose')
 
 if (newForm) isValidate(newForm, successEl, closeBtn)
 //OUR-WORK===================================================
-const PORTFOLIO_DOM_ELEMENTS = {
-	array: STORE.PROJECTS.byDateProjects,
-	containerElement: document.getElementById('our-work-container'),
+const SHOW_SELECTED_PROJECTS_OPTIONS = {
+	inputData: STORE.PROJECTS.byDateProjects,
+	containerEl: document.getElementById('our-work-container'),
 	skipLeft: document.getElementById('our-work-go-left'),
 	skipRight: document.getElementById('our-work-go-right'),
+	cardTemplate: createPortfolioCard
 	/* quantityOfCards: 3 */  //This is an optional option to increase the output cards
 }
-if (STORE.PROJECTS.byDateProjects.length > 0) showCards(PORTFOLIO_DOM_ELEMENTS)
+if (STORE.PROJECTS.byDateProjects && STORE.PROJECTS.byDateProjects.length > 0) {
+	toggleProjectsCards(SHOW_SELECTED_PROJECTS_OPTIONS)
+} else {
+	console.log('Projects store not found')
+}
 //SUPPORTED===================================================
 const OPINION_DOM_ELEMENTS = {
 	avatar: document.getElementById(`opinionBoxImg`),
