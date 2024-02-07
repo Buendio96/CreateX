@@ -1,0 +1,75 @@
+.do-it {
+	margin: 180px 0 0 0;
+	@media (max-width: $desktop) {
+		margin: 80px 0 0 0;
+	}
+	@media (max-width: $phone) {
+		margin: 60px 0 0 0;
+	}
+	&__list {
+		margin: 60px 0 0 0;
+		display: flex;
+		column-gap: 30px;
+		@media (max-width: $tablet) {
+			margin: 30px 0 0 0;
+			column-gap: 15px;
+			row-gap: 50px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		@media (max-width: $phone) {
+			row-gap: 20px;
+		}
+	}
+	&__item {
+		flex: 0 1 25%;
+		@media (max-width: $tablet) {
+			flex: 0 1 47%;
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 100%;
+		}
+		> div h2 {
+			color: $input-bor;
+		}
+		> div {
+			position: relative;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+			column-gap: 23px;
+			.dash-line {
+				width: 100%;
+				height: 2px;
+				display: flex;
+				justify-content: space-between;
+				span {
+					flex: 0 1 5px;
+					height: 2px;
+					border-radius: 1px;
+					background-color: $input-bor;
+				}
+			}
+		}
+	}
+	&__item-title {
+		margin: 16px 0 0 0;
+		font-family: 'Ubu-B';
+		font-size: 20px;
+		line-height: 150%;
+		@media (max-width: $phone) {
+			margin: 5px 0 0 0;
+			font-size: 18px;
+		}
+	}
+	&__item-description {
+		margin: 8px 0 0 0;
+		font-size: 16px;
+		line-height: 160%;
+		color: $desc;
+		@media (max-width: $phone) {
+			font-size: 14px;
+			line-height: 140%;
+		}
+	}
+}

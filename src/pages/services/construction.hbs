@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{{favicon}}" type="image/x-icon">
+	<title>
+		Services/{{filename}}
+	</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		{{> header}}
+		<section class="parallax-block">
+			<img id="serviceTitleImage" class="image-adaptive for-service" alt="Title image">
+		</section>
+		<main class="main">
+			<section class="name-page-block grid">
+				<div class="name-page-block__body center">
+					<ul class="name-page-block__list">
+						<li>
+							<a class="link-hover" href="/">
+								Homepage / 
+							</a>
+						</li>
+						<li>
+							<a class="link-hover" href="../services.html">
+								Services / 
+							</a>
+						</li>
+						<li>
+							<a class="link-hover" href="./construction.html">
+								Construction
+							</a>
+						</li>
+					</ul>
+					<h1 class="name-page-block__title">
+						Construction
+					</h1>
+					<p class="name-page-block__text">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolores dolorem, doloribus
+						aliquam iusto voluptate perferendis veritatis molestias obcaecati ad at sapiente, accusamus
+						alias ducimus error nulla voluptatem ipsa similique!
+					</p>
+				</div>
+			</section>
+			<section class="we-offer grid">
+				<div id="related-serviceBlock" class="we-offer__body center invisible">
+					<div class="we-offer__top">
+						<div class="we-offer__image">
+							<img id="service-0" class="image-adaptive" alt="This image describe our work">
+						</div>
+						<div class="we-offer__information">
+							<div class="title-block text-left">
+								<h2 class="title-block__title ">
+									We offer
+								</h2>
+							</div>
+							<ul class="we-offer__information-list">
+								<li class="we-offer__information-item">
+									<button class="we-offer__information-button" type="button">
+										<div></div>
+										Construction of apartments
+									</button>
+									<p>
+										Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum
+										faucibus
+										dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac
+										facilisis.
+									</p>
+								</li>
+								<li class="we-offer__information-item">
+									<button class="we-offer__information-button" type="button">
+										<div></div>
+										Construction of private houses
+									</button>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda natus harum
+										impedit rerum dolorum! Exercitationem, deleniti officia laborum, ut itaque
+										inventore dolores consequuntur dicta nam nostrum, laudantium voluptate velit
+										vitae.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					{{>how-we-do-it}}
+				</div>
+			</section>
+			{{> benefits}}
+			<section class="related-projects grid" id="related-projects"></section>
+		</main>
+		{{> discuss}}
+		{{> footer}}
+		{{> goTop}}
+	</div>
+</body>
+
+</html>
