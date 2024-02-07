@@ -1,4 +1,3 @@
-
 const toggleProjectsCards = (OPTIONS) => {
 	const {
 		inputData,
@@ -6,61 +5,65 @@ const toggleProjectsCards = (OPTIONS) => {
 		skipLeft,
 		skipRight,
 		cardTemplate,
-		quantityOfCards = 3
 	} = OPTIONS
 
 	let currentIndex = 0
 
-	const RENDER_OPTIONS = {
-		container: containerEl,
-		array: inputData,
-		cardTemplate: cardTemplate,
-		quantityOfCards: quantityOfCards,
+	renderCards(containerEl, cardTemplate, inputData, currentIndex)
+
+	if (skipRight) {
+		skipRight.addEventListener('click', () => {
+			currentIndex = handleRightClick(currentIndex, inputData)
+			renderCards(containerEl, cardTemplate, inputData, currentIndex)
+		})
+	} else {
+		console.log('SkipRight not found')
 	}
 
+	if (skipLeft) {
+		skipLeft.addEventListener('click', () => {
+			currentIndex = handleLeftClick(currentIndex, inputData)
+			renderCards(containerEl, cardTemplate, inputData, currentIndex)
 
-	skipRight.addEventListener('click', () => {
-		currentIndex = handleRightClick(currentIndex, quantityOfCards, inputData)
-		renderCards(RENDER_OPTIONS, currentIndex)
-	})
-
-	skipLeft.addEventListener('click', () => {
-		currentIndex = handleLeftClick(currentIndex, quantityOfCards)
-		renderCards(RENDER_OPTIONS, currentIndex)
-	})
-	renderCards(RENDER_OPTIONS, currentIndex)
-
+		})
+	} else {
+		console.log('SkipLeft not found')
+	}
 }
 
-const renderCards = (argumentsForRender, index) => {
-	const {
-		container,
-		array,
-		cardTemplate,
-		cardsQuantity,
-	} = argumentsForRender
-	console.log(argumentsForRender, index)
-	if (container && cardsQuantity) {
+const renderCards = (container, cardTemplate, array, currentIndex) => {
+	if (!(container || cardTemplate || array || currentIndex)) {
+		console.log(
+			'All arguments were not transmitted in --RENDER CARDS--',
+			container, cardTemplate, array, container
+		)
+		return
+	} else {
 		container.innerHTML = ''
-
-		for (let i = 0; i < cardsQuantity; i++) {
-			const card = cardTemplate(array[index + i])
-			container.appendChild(card)
+		for (let i = 0; i < 3; i++) {
+			let index = currentIndex + i
+			if (index < array.length) {
+				const card = cardTemplate(array[index])
+				container.appendChild(card)
+			}
 		}
 	}
 }
 
-const handleRightClick = (index, quantity, array) => {
-	console.log(index, quantity, array)
-	return index + quantity
+const handleRightClick = (currentIndex, array) => {
+	currentIndex += 3
+	if (currentIndex >= array.length) {
+		currentIndex = 0
+	}
+	return currentIndex
 }
 
-const handleLeftClick = (index, quantity) => {
-	index -= quantity
-	if (index < 0) {
-		index = 0
+const handleLeftClick = (currentIndex, array) => {
+	currentIndex -= 3
+	if (currentIndex < 0) {
+		currentIndex = Math.max(0, array.length - 3)
 	}
-	return index
+	return currentIndex
 }
 
 

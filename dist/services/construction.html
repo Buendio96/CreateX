@@ -217,7 +217,7 @@
 						</h4>
 						<ul class="benefits__list">
 							<li class="benefits__item">
-								<img src="assets/vendors/contract.svg" alt="">
+								<img src="/assets/vendors/contract.svg" alt="Contract">
 								<div class="benefits__item-box">
 									<h4 class="benefits__item-title">
 										Fixed Terms & Cost
@@ -229,7 +229,7 @@
 								</div>
 							</li>
 							<li class="benefits__item">
-								<img src="assets/vendors/helmet.svg" alt="">
+								<img src="/assets/vendors/helmet.svg" alt="Helmet">
 								<div class="benefits__item-box">
 									<h4 class="benefits__item-title">
 										Qualified Workers
@@ -241,7 +241,7 @@
 								</div>
 							</li>
 							<li class="benefits__item">
-								<img src="assets/vendors/camera.svg" alt="">
+								<img src="/assets/vendors/camera.svg" alt="Camera">
 								<div class="benefits__item-box">
 									<h4 class="benefits__item-title">
 										Supervision & Control
@@ -253,13 +253,13 @@
 								</div>
 							</li>
 						</ul>
-						<button class="benefits__button solid-button">
+						<a href="#discuss" class="benefits__button solid-button">
 							Discuss a project
-						</button>
+						</a>
 					</div>
 				</div>
 			</section>		</main>
-		<div class="discuss grid">
+		<div id="discuss" class="discuss grid">
 			<section class="discuss-cover">
 				<img id="discussImage" class="image-adaptive" alt="Image not found...">
 			</section>
@@ -274,25 +274,21 @@
 							<input class="discuss__input input" data-typeCheck="letters" data-required="true" type="text"
 								id="name" name="name" placeholder="Your name" autocomplete="name">
 						</div>
-		
 						<div class="discuss__form-field" data-error-text="Please use only numbers">
 							<label class="discuss__label label" for="phone">Phone*</label>
 							<input class="discuss__input input" data-typeCheck="numbers" data-required="true" type="text"
 								id="phone" name="phone" placeholder="Your phone number" autocomplete="tel">
 						</div>
-		
 						<div class="discuss__form-field" data-error-text="Please enter valid Email(example@mail.com)">
 							<label class="discuss__label label" for="email">Email:</label>
 							<input class="discuss__input input" data-typeCheck="email" type="text" id="email" name="email"
 								placeholder="Your working email" autocomplete="email">
 						</div>
-		
 						<div class="discuss__form-field" data-error-text="Ask your qustion">
 							<label class="discuss__label label" for="message">Message*</label>
 							<textarea class="discuss__textarea input" data-required="true" id="message" name="message"
 								placeholder="Your message"></textarea>
 						</div>
-		
 						<div class="discuss__form-field-checkbox"
 							data-error-text="&dArr;	This agreement allows us to contact you">
 							<label for="agreement" class="discuss__label">
@@ -301,7 +297,6 @@
 							<input class="discuss__checkbox" type="checkbox" id="agreement" name="agreement">
 							<span class="discuss__custom-checkbox"></span>
 						</div>
-		
 						<button class="discuss__btn regular-button" type="submit">Send request</button>
 					</form>
 					<div id="discussSuccess" class="success-block">

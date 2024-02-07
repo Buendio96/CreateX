@@ -14,6 +14,7 @@ const fileName = ext => devMode ? `[name].${ext}` : `[contenthash].${ext}`
 
 const pages = ['about', 'services', 'work', 'news', 'contacts',]
 const servicePages = ['construction', 'project-development', 'interior-design', 'repairs']
+
 const HTML_PLUGINS = () => {
 	return pages.map((page) => new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, `src/pages/${page}.hbs`),
@@ -31,7 +32,7 @@ const HTML_PLUGINS_FOLDER = (nameFolder) => {
 		template: path.resolve(__dirname, `src/pages/${nameFolder}/${page}.hbs`),
 		filename: `services/${page}.html`,
 		minify: prodMode,
-		chunks: ['main'],
+		chunks: ['main', 'services'],
 		templateParameters: {
 			'filename': transformFileName(page),
 			'favicon': '/assets/icons/favicon.ico'
@@ -85,7 +86,8 @@ module.exports = {
 	},
 	entry: {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),
-		homepage: path.resolve(__dirname, 'src/scripts/handlers/handleHomepage.js'),
+		homepage: path.resolve(__dirname, 'src/scripts/handlers/handleHomePage.mjs'),
+		services: path.resolve(__dirname, 'src/scripts/handlers/handleServicesPage.mjs'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -110,6 +112,7 @@ module.exports = {
 			'@js-templates': path.resolve(__dirname, 'src/scripts/templates'),
 			'@js-api': path.resolve(__dirname, 'src/scripts/api'),
 			'@js-store': path.resolve(__dirname, 'src/scripts/store'),
+			'@hbs': path.resolve(__dirname, 'src/scripts/store'),
 		}
 	},
 	//=================================================================

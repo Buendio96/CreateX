@@ -1,27 +1,40 @@
+import homepageTitleImage from '@images/bg-image'
 import bgImageServices from '@images/homepage-services'
 import bgImageSupport from '@images/homepage-support'
+import image0 from '@images/services-0'
+import image1 from '@images/services-1'
+import image2 from '@images/services-2'
+import image3 from '@images/services-3'
 import initGetRecentNewsData from "@js-api/getNewsData"
 import initGetOpinionData from "@js-api/getOpinionsData"
 import initGetFilteredData from "@js-api/getProjectsData"
 import STORE from '@js-store/store'
 import createPortfolioCard from '@js-templates/portfolioCard'
 import addBackground from '@js-utilities/addBackground'
+import addServicesBackground from '@js-utilities/addServicesBg'
 import showProgress from "@js-utilities/progressRing"
 import showNews from '@js-utilities/showNews'
 import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
 import toggleProjectsCards from '@js-utilities/toggleCards'
 import isValidate from '@js-utilities/validator'
 import player from "@js-utilities/videoPlayer"
-
 //DATA ACQUISITION==========================================
 const TODAY = new Date()
 await initGetFilteredData(TODAY, 4) //As the second argument can be the Number for the date range
 await initGetOpinionData()
 await initGetRecentNewsData() //The argument can be the number of news required(3 by default)
 //BACKGROUND ADDITION========================================
+const homepageServices = document.getElementById('homepage-serviceBlock')
+addBackground('titleImage', homepageTitleImage)
 addBackground('ourServicesBg', bgImageServices)
 addBackground('supportBoxBg', bgImageSupport)
 
+
+if (homepageServices) {
+	const targetElementsName = ['service-0', 'service-1', 'service-2', 'service-3']
+	const imagesBlock = [image0, image1, image2, image3]
+	addServicesBackground(targetElementsName, imagesBlock)
+}
 //WE-ARE=====================================================
 const videoBox = document.getElementById('homepageVideoBox')
 if (videoBox && player) player(videoBox)
@@ -32,16 +45,15 @@ const closeBtn = document.getElementById('questionClose')
 
 if (newForm) isValidate(newForm, successEl, closeBtn)
 //OUR-WORK===================================================
-const SHOW_SELECTED_PROJECTS_OPTIONS = {
+const SELECTED_PROJECTS_OPTIONS = {
 	inputData: STORE.PROJECTS.byDateProjects,
 	containerEl: document.getElementById('our-work-container'),
-	skipLeft: document.getElementById('our-work-go-left'),
-	skipRight: document.getElementById('our-work-go-right'),
-	cardTemplate: createPortfolioCard
-	/* quantityOfCards: 3 */  //This is an optional option to increase the output cards
+	skipLeft: document.getElementById('our-work-skip-left'),
+	skipRight: document.getElementById('our-work-skip-right'),
+	cardTemplate: createPortfolioCard,
 }
 if (STORE.PROJECTS.byDateProjects && STORE.PROJECTS.byDateProjects.length > 0) {
-	toggleProjectsCards(SHOW_SELECTED_PROJECTS_OPTIONS)
+	toggleProjectsCards(SELECTED_PROJECTS_OPTIONS)
 } else {
 	console.log('Projects store not found')
 }

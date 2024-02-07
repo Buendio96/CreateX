@@ -16,13 +16,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_api_getOpinionsData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js-api/getOpinionsData */ "./src/scripts/api/getOpinionsData.mjs");
 /* harmony import */ var _js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @js-api/getProjectsData */ "./src/scripts/api/getProjectsData.mjs");
 /* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
-/* harmony import */ var _js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @js-utilities/addBackground */ "./src/scripts/utilities/addBackground.mjs");
-/* harmony import */ var _js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @js-utilities/progressRing */ "./src/scripts/utilities/progressRing.mjs");
-/* harmony import */ var _js_utilities_showNews__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @js-utilities/showNews */ "./src/scripts/utilities/showNews.mjs");
-/* harmony import */ var _js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @js-utilities/showOpinion */ "./src/scripts/utilities/showOpinion.mjs");
-/* harmony import */ var _js_utilities_showPortfolio__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @js-utilities/showPortfolio */ "./src/scripts/utilities/showPortfolio.mjs");
-/* harmony import */ var _js_utilities_validator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @js-utilities/validator */ "./src/scripts/utilities/validator.mjs");
-/* harmony import */ var _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @js-utilities/videoPlayer */ "./src/scripts/utilities/videoPlayer.mjs");
+/* harmony import */ var _js_templates_portfolioCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @js-templates/portfolioCard */ "./src/scripts/templates/portfolioCard.mjs");
+/* harmony import */ var _js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @js-utilities/addBackground */ "./src/scripts/utilities/addBackground.mjs");
+/* harmony import */ var _js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @js-utilities/progressRing */ "./src/scripts/utilities/progressRing.mjs");
+/* harmony import */ var _js_utilities_showNews__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @js-utilities/showNews */ "./src/scripts/utilities/showNews.mjs");
+/* harmony import */ var _js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @js-utilities/showOpinion */ "./src/scripts/utilities/showOpinion.mjs");
+/* harmony import */ var _js_utilities_toggleCards__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @js-utilities/toggleCards */ "./src/scripts/utilities/toggleCards.mjs");
+/* harmony import */ var _js_utilities_validator__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @js-utilities/validator */ "./src/scripts/utilities/validator.mjs");
+/* harmony import */ var _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @js-utilities/videoPlayer */ "./src/scripts/utilities/videoPlayer.mjs");
+
+
 
 
 
@@ -37,32 +40,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //DATA ACQUISITION==========================================
-const todayIs = new Date();
-await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_4__["default"])(todayIs); //As the second argument can be the Number for the date range
+const TODAY = new Date();
+await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_4__["default"])(TODAY, 4); //As the second argument can be the Number for the date range
 await (0,_js_api_getOpinionsData__WEBPACK_IMPORTED_MODULE_3__["default"])();
 await (0,_js_api_getNewsData__WEBPACK_IMPORTED_MODULE_2__["default"])(); //The argument can be the number of news required(3 by default)
 //BACKGROUND ADDITION========================================
-(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_6__["default"])('ourServicesBg', _images_homepage_services__WEBPACK_IMPORTED_MODULE_0__);
-(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_6__["default"])('supportBoxBg', _images_homepage_support__WEBPACK_IMPORTED_MODULE_1__);
+(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_7__["default"])('ourServicesBg', _images_homepage_services__WEBPACK_IMPORTED_MODULE_0__);
+(0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_7__["default"])('supportBoxBg', _images_homepage_support__WEBPACK_IMPORTED_MODULE_1__);
 
 //WE-ARE=====================================================
 const videoBox = document.getElementById('homepageVideoBox');
-if (videoBox && _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_12__["default"]) (0,_js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_12__["default"])(videoBox);
+if (videoBox && _js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_13__["default"]) (0,_js_utilities_videoPlayer__WEBPACK_IMPORTED_MODULE_13__["default"])(videoBox);
 //OUR-CORE===================================================
 const newForm = document.getElementById('questionForm');
 const successEl = document.getElementById('questionSuccess');
 const closeBtn = document.getElementById('questionClose');
-if (newForm) (0,_js_utilities_validator__WEBPACK_IMPORTED_MODULE_11__["default"])(newForm, successEl, closeBtn);
+if (newForm) (0,_js_utilities_validator__WEBPACK_IMPORTED_MODULE_12__["default"])(newForm, successEl, closeBtn);
 //OUR-WORK===================================================
-const PORTFOLIO_DOM_ELEMENTS = {
-  array: _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].PROJECTS.byDateProjects,
-  containerElement: document.getElementById('our-work-container'),
+const SELECTED_PROJECTS_OPTIONS = {
+  inputData: _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].PROJECTS.byDateProjects,
+  containerEl: document.getElementById('our-work-container'),
   skipLeft: document.getElementById('our-work-go-left'),
-  skipRight: document.getElementById('our-work-go-right')
-  /* quantityOfCards: 3 */ //This is an optional option to increase the output cards
+  skipRight: document.getElementById('our-work-go-right'),
+  cardTemplate: _js_templates_portfolioCard__WEBPACK_IMPORTED_MODULE_6__["default"]
 };
-
-if (_js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].PROJECTS.byDateProjects.length > 0) (0,_js_utilities_showPortfolio__WEBPACK_IMPORTED_MODULE_10__["default"])(PORTFOLIO_DOM_ELEMENTS);
+if (_js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].PROJECTS.byDateProjects && _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].PROJECTS.byDateProjects.length > 0) {
+  (0,_js_utilities_toggleCards__WEBPACK_IMPORTED_MODULE_11__["default"])(SELECTED_PROJECTS_OPTIONS);
+} else {
+  console.log('Projects store not found');
+}
 //SUPPORTED===================================================
 const OPINION_DOM_ELEMENTS = {
   avatar: document.getElementById(`opinionBoxImg`),
@@ -72,9 +78,9 @@ const OPINION_DOM_ELEMENTS = {
   workPositions: document.getElementById(`opinionUserPosition`)
 };
 if (_js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS.length > 0) {
-  (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__.initShowOpinion)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS);
-  document.getElementById('opinionToLeft').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__.toLeft)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS));
-  document.getElementById('opinionToRight').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_9__.toRight)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS));
+  (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_10__.initShowOpinion)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS);
+  document.getElementById('opinionToLeft').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_10__.toLeft)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS));
+  document.getElementById('opinionToRight').addEventListener('click', () => (0,_js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_10__.toRight)(OPINION_DOM_ELEMENTS, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].OPINIONS));
 }
 //PROGRESS===================================================
 const PROGRESS_EL = document.getElementById('progressBox');
@@ -87,10 +93,10 @@ const isElementInViewport = element => {
 const handleScroll = () => {
   if (isElementInViewport(PROGRESS_EL)) {
     setTimeout(() => {
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingClients'), 98);
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingExp'), 75);
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingHours'), 82);
-      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_7__["default"])(document.getElementById('progressRingProjects'), 100);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_8__["default"])(document.getElementById('progressRingClients'), 98);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_8__["default"])(document.getElementById('progressRingExp'), 75);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_8__["default"])(document.getElementById('progressRingHours'), 82);
+      (0,_js_utilities_progressRing__WEBPACK_IMPORTED_MODULE_8__["default"])(document.getElementById('progressRingProjects'), 100);
     }, 500);
   }
   ;
@@ -99,7 +105,7 @@ window.addEventListener('scroll', handleScroll);
 
 //RECENT NEWS===================================================
 const RECENT_EL = document.getElementById('recentBox');
-if (RECENT_EL) (0,_js_utilities_showNews__WEBPACK_IMPORTED_MODULE_8__["default"])(RECENT_EL, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].NEWS.recentNews);
+if (RECENT_EL) (0,_js_utilities_showNews__WEBPACK_IMPORTED_MODULE_9__["default"])(RECENT_EL, _js_store_store__WEBPACK_IMPORTED_MODULE_5__["default"].NEWS.recentNews);
 const showCommentsButton = document.querySelectorAll('#showComments');
 if (showCommentsButton) {
   showCommentsButton.forEach(button => {
@@ -617,59 +623,6 @@ const initShowOpinion = (elements, data) => {
 
 /***/ }),
 
-/***/ "./src/scripts/utilities/showPortfolio.mjs":
-/*!*************************************************!*\
-  !*** ./src/scripts/utilities/showPortfolio.mjs ***!
-  \*************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _js_templates_portfolioCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-templates/portfolioCard */ "./src/scripts/templates/portfolioCard.mjs");
-
-const showCards = _ref => {
-  let {
-    array,
-    quantityOfCards = 3,
-    skipLeft,
-    skipRight,
-    containerElement
-  } = _ref;
-  let currentIndex = 0;
-  const renderCards = () => {
-    containerElement.innerHTML = '';
-    for (let x = 0; x < quantityOfCards; x++) {
-      const index = currentIndex + x;
-      if (index < array.length) {
-        const card = (0,_js_templates_portfolioCard__WEBPACK_IMPORTED_MODULE_0__["default"])(array[index]);
-        containerElement.appendChild(card);
-      }
-    }
-  };
-  const handleRightButtonClick = () => {
-    currentIndex += quantityOfCards;
-    if (currentIndex >= array.length) {
-      currentIndex = 0;
-    }
-    renderCards();
-  };
-  const handleLeftButtonClick = () => {
-    currentIndex -= quantityOfCards;
-    if (currentIndex < 0) {
-      currentIndex = Math.max(0, array.length - quantityOfCards);
-    }
-    renderCards();
-  };
-  if (skipLeft) skipLeft.addEventListener('click', handleLeftButtonClick);
-  if (skipRight) skipRight.addEventListener('click', handleRightButtonClick);
-  renderCards();
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showCards);
-
-/***/ }),
-
 /***/ "./src/scripts/utilities/sortByDate.mjs":
 /*!**********************************************!*\
   !*** ./src/scripts/utilities/sortByDate.mjs ***!
@@ -690,6 +643,76 @@ const sortByDate = data => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sortByDate);
+
+/***/ }),
+
+/***/ "./src/scripts/utilities/toggleCards.mjs":
+/*!***********************************************!*\
+  !*** ./src/scripts/utilities/toggleCards.mjs ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const toggleProjectsCards = OPTIONS => {
+  const {
+    inputData,
+    containerEl,
+    skipLeft,
+    skipRight,
+    cardTemplate
+  } = OPTIONS;
+  let currentIndex = 0;
+  renderCards(containerEl, cardTemplate, inputData, currentIndex);
+  if (skipRight) {
+    skipRight.addEventListener('click', () => {
+      currentIndex = handleRightClick(currentIndex, inputData);
+      renderCards(containerEl, cardTemplate, inputData, currentIndex);
+    });
+  } else {
+    console.log('SkipRight not found');
+  }
+  if (skipLeft) {
+    skipLeft.addEventListener('click', () => {
+      currentIndex = handleLeftClick(currentIndex, inputData);
+      renderCards(containerEl, cardTemplate, inputData, currentIndex);
+    });
+  } else {
+    console.log('SkipLeft not found');
+  }
+};
+const renderCards = (container, cardTemplate, array, currentIndex) => {
+  if (!(container || cardTemplate || array || currentIndex)) {
+    console.log('All arguments were not transmitted in --RENDER CARDS--', container, cardTemplate, array, container);
+    return;
+  } else {
+    container.innerHTML = '';
+    for (let i = 0; i < 3; i++) {
+      let index = currentIndex + i;
+      if (index < array.length) {
+        const card = cardTemplate(array[index]);
+        container.appendChild(card);
+      }
+    }
+  }
+};
+const handleRightClick = (currentIndex, array) => {
+  currentIndex += 3;
+  if (currentIndex >= array.length) {
+    currentIndex = 0;
+  }
+  return currentIndex;
+};
+const handleLeftClick = (currentIndex, array) => {
+  currentIndex -= 3;
+  if (currentIndex < 0) {
+    currentIndex = Math.max(0, array.length - 3);
+  }
+  return currentIndex;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleProjectsCards);
 
 /***/ }),
 
