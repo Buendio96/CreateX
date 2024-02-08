@@ -7,7 +7,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio.png",
 			"linkToPage": "cubes-building",
-			"date": "2023-05-12"
+			"date": "2023-05-12",
+			"dataType": "construction"
 		},
 		{
 			"id": 2,
@@ -15,7 +16,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-1.png",
 			"linkToPage": "modern-cottage",
-			"date": "2023-06-22"
+			"date": "2023-06-22",
+			"dataType": "interior"
 		},
 		{
 			"id": 3,
@@ -23,7 +25,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-2.png",
 			"linkToPage": "luxury-beach-house",
-			"date": "2023-11-20"
+			"date": "2023-11-20",
+			"dataType": "interior"
 		},
 		{
 			"id": 4,
@@ -31,7 +34,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-3.png",
 			"linkToPage": "modern-double-bedroom-apartments",
-			"date": "2022-05-11"
+			"date": "2022-05-11",
+			"dataType": "project"
 		},
 		{
 			"id": 5,
@@ -39,7 +43,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-4.png",
 			"linkToPage": "kids-bedroom-with-decorations",
-			"date": "2023-11-15"
+			"date": "2023-11-15",
+			"dataType": "repairs"
 		},
 		{
 			"id": 6,
@@ -47,7 +52,8 @@
 			"description": "Stores & Malls",
 			"imageName": "image-portfolio-5.png",
 			"linkToPage": "the-pencil-building",
-			"date": "2023-10-23"
+			"date": "2023-10-23",
+			"dataType": "construction"
 		},
 		{
 			"id": 7,
@@ -55,7 +61,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio-6.png",
 			"linkToPage": "red-finger-building",
-			"date": "2023-09-27"
+			"date": "2023-09-27",
+			"dataType": "interior"
 		},
 		{
 			"id": 8,
@@ -63,7 +70,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-7.png",
 			"linkToPage": "scandinavian-style-interior",
-			"date": "2022-12-25"
+			"date": "2022-12-25",
+			"dataType": "construction"
 		},
 		{
 			"id": 9,
@@ -71,7 +79,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-8.png",
 			"linkToPage": "brown-and-gray-painted-house",
-			"date": "2021-12-24"
+			"date": "2021-12-24",
+			"dataType": "project"
 		},
 		{
 			"id": 10,
@@ -79,7 +88,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio-3.png",
 			"linkToPage": "cubes-building",
-			"date": "2022-10-17"
+			"date": "2022-10-17",
+			"dataType": "repairs"
 		},
 		{
 			"id": 11,
@@ -87,7 +97,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-1.png",
 			"linkToPage": "modern-cottage",
-			"date": "2021-02-13"
+			"date": "2021-02-13",
+			"dataType": "construction"
 		},
 		{
 			"id": 12,
@@ -95,7 +106,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-2.png",
 			"linkToPage": "luxury-beach-house",
-			"date": "2022-11-11"
+			"date": "2022-11-11",
+			"dataType": "interior"
 		},
 		{
 			"id": 13,
@@ -103,7 +115,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-3.png",
 			"linkToPage": "modern-double-bedroom-apartments",
-			"date": "2021-10-14"
+			"date": "2021-10-14",
+			"dataType": "construction"
 		},
 		{
 			"id": 14,
@@ -111,7 +124,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-4.png",
 			"linkToPage": "kids-bedroom-with-decorations",
-			"date": "2021-10-16"
+			"date": "2021-10-16",
+			"dataType": "construction"
 		},
 		{
 			"id": 15,
@@ -119,7 +133,8 @@
 			"description": "Stores & Malls",
 			"imageName": "image-portfolio-5.png",
 			"linkToPage": "the-pencil-building",
-			"date": "2020-09-01"
+			"date": "2020-09-01",
+			"dataType": "interior"
 		},
 		{
 			"id": 16,
@@ -127,7 +142,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio-6.png",
 			"linkToPage": "red-finger-building",
-			"date": "2020-09-07"
+			"date": "2020-09-07",
+			"dataType": "project"
 		},
 		{
 			"id": 17,
@@ -135,7 +151,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-7.png",
 			"linkToPage": "scandinavian-style-interior",
-			"date": "2021-11-08"
+			"date": "2021-11-08",
+			"dataType": "construction"
 		},
 		{
 			"id": 18,
@@ -143,7 +160,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-8.png",
 			"linkToPage": "brown-and-gray-painted-house",
-			"date": "2022-08-04"
+			"date": "2022-08-04",
+			"dataType": "construction"
 		},
 		{
 			"id": 19,
@@ -151,7 +169,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio-3.png",
 			"linkToPage": "cubes-building",
-			"date": "2021-06-02"
+			"date": "2021-06-02",
+			"dataType": "interior"
 		},
 		{
 			"id": 20,
@@ -159,7 +178,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-1.png",
 			"linkToPage": "modern-cottage",
-			"date": "2023-11-03"
+			"date": "2023-11-03",
+			"dataType": "repairs"
 		},
 		{
 			"id": 21,
@@ -167,7 +187,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-2.png",
 			"linkToPage": "luxury-beach-house",
-			"date": "2023-12-18"
+			"date": "2023-12-18",
+			"dataType": "project"
 		},
 		{
 			"id": 22,
@@ -175,7 +196,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-3.png",
 			"linkToPage": "modern-double-bedroom-apartments",
-			"date": "2023-03-17"
+			"date": "2023-03-17",
+			"dataType": "construction"
 		},
 		{
 			"id": 23,
@@ -183,7 +205,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-4.png",
 			"linkToPage": "kids-bedroom-with-decorations",
-			"date": "2022-02-14"
+			"date": "2022-02-14",
+			"dataType": "interior"
 		},
 		{
 			"id": 24,
@@ -191,7 +214,8 @@
 			"description": "Stores & Malls",
 			"imageName": "image-portfolio-5.png",
 			"linkToPage": "the-pencil-building",
-			"date": "2023-07-13"
+			"date": "2023-07-13",
+			"dataType": "construction"
 		},
 		{
 			"id": 25,
@@ -199,7 +223,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio-6.png",
 			"linkToPage": "red-finger-building",
-			"date": "2021-11-14"
+			"date": "2021-11-14",
+			"dataType": "repairs"
 		},
 		{
 			"id": 26,
@@ -207,7 +232,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-7.png",
 			"linkToPage": "scandinavian-style-interior",
-			"date": "2022-10-10"
+			"date": "2022-10-10",
+			"dataType": "interior"
 		},
 		{
 			"id": 27,
@@ -215,7 +241,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-8.png",
 			"linkToPage": "brown-and-gray-painted-house",
-			"date": "2022-05-01"
+			"date": "2022-05-01",
+			"dataType": "construction"
 		},
 		{
 			"id": 28,
@@ -223,7 +250,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio-1.png",
 			"linkToPage": "cubes-building",
-			"date": "2021-11-30"
+			"date": "2021-11-30",
+			"dataType": "project"
 		},
 		{
 			"id": 29,
@@ -231,7 +259,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-1.png",
 			"linkToPage": "modern-cottage",
-			"date": "2021-10-28"
+			"date": "2021-10-28",
+			"dataType": "project"
 		},
 		{
 			"id": 30,
@@ -239,7 +268,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-2.png",
 			"linkToPage": "luxury-beach-house",
-			"date": "2021-09-14"
+			"date": "2021-09-14",
+			"dataType": "construction"
 		},
 		{
 			"id": 31,
@@ -247,7 +277,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-3.png",
 			"linkToPage": "modern-double-bedroom-apartments",
-			"date": "2023-03-15"
+			"date": "2023-03-15",
+			"dataType": "interior"
 		},
 		{
 			"id": 32,
@@ -255,7 +286,8 @@
 			"description": "Apartments & flats",
 			"imageName": "image-portfolio-4.png",
 			"linkToPage": "kids-bedroom-with-decorations",
-			"date": "2023-01-11"
+			"date": "2023-01-11",
+			"dataType": "repairs"
 		},
 		{
 			"id": 33,
@@ -263,7 +295,8 @@
 			"description": "Stores & Malls",
 			"imageName": "image-portfolio-5.png",
 			"linkToPage": "the-pencil-building",
-			"date": "2021-11-10"
+			"date": "2021-11-10",
+			"dataType": "repairs"
 		},
 		{
 			"id": 34,
@@ -271,7 +304,8 @@
 			"description": "Business Centers",
 			"imageName": "image-portfolio-6.png",
 			"linkToPage": "red-finger-building",
-			"date": "2023-11-22"
+			"date": "2023-11-22",
+			"dataType": "construction"
 		},
 		{
 			"id": 35,
@@ -279,7 +313,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-7.png",
 			"linkToPage": "scandinavian-style-interior",
-			"date": "2023-11-05"
+			"date": "2023-11-05",
+			"dataType": "project"
 		},
 		{
 			"id": 36,
@@ -287,7 +322,8 @@
 			"description": "Private houses",
 			"imageName": "image-portfolio-8.png",
 			"linkToPage": "brown-and-gray-painted-house",
-			"date": "2023-11-01"
+			"date": "2023-11-01",
+			"dataType": "repairs"
 		}
 	],
 	"opinions": [

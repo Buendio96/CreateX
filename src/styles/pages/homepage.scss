@@ -1,3 +1,8 @@
+@import '@s-common/vars';
+@import '@s-common/mixins';
+@import '@s-templates/slider';
+@import '@s-templates/supported-by';
+
 .welcome {
 	&__body {
 		display: flex;
@@ -219,8 +224,8 @@
 		&::before {
 			content: '';
 			border-radius: 50%;
-			background: url('../assets/vendors/large.svg');
 			position: absolute;
+			background-color: $primary;
 			top: 50%;
 			left: 50%;
 			width: 80px;
@@ -235,6 +240,25 @@
 			}
 			@media (max-width: $phone) {
 				transform: translate(-50%, -50%) scale(0.5);
+			}
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-25%, -50%);
+			border: 18px solid transparent;
+			border-left: 25px solid white;
+			transition: all 0.3s ease;
+			@media (max-width: $desktop) {
+				transform: translate(-25%, -50%) scale(0.8);
+			}
+			@media (max-width: $tablet) {
+				transform: translate(-25%, -50%) scale(0.6);
+			}
+			@media (max-width: $phone) {
+				transform: translate(-25%, -50%) scale(0.5);
 			}
 		}
 	}
@@ -264,8 +288,6 @@
 		@media (max-width: $tablet) {
 			width: 30px;
 			height: 30px;
-		}
-		@media (max-width: $phone) {
 		}
 	}
 	&__content-controls-volume-mute {
@@ -350,7 +372,8 @@
 	}
 	&__content-play:checked + .we-are__content-play-real {
 		background: rgba($color: $titles, $alpha: 0);
-		&::before {
+		&::before,
+		&::after {
 			transform: translate(-50%, -400%) scale(0);
 		}
 	}
@@ -734,72 +757,6 @@
 	background-color: $main-bg;
 	&__body {
 		padding: 120px 0;
-		@media (max-width: $desktop) {
-			padding: 80px 0;
-		}
-		@media (max-width: $tablet) {
-			padding: 60px 0;
-		}
-		@media (max-width: $phone) {
-			padding: 40px 0;
-		}
-	}
-	&__body-top {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-	}
-	&__title {
-		text-align: left;
-		max-width: 700px;
-		margin: 0;
-	}
-	&__buttons {
-		display: flex;
-		column-gap: 24px;
-	}
-	&__content {
-		display: flex;
-		margin: 60px 0 0;
-		column-gap: 30px;
-		@media (max-width: $desktop) {
-			margin: 30px 0 0;
-			column-gap: 20px;
-		}
-		@media (max-width: $tablet) {
-			margin: 15px 0 0;
-			flex-wrap: wrap;
-			row-gap: 10px;
-		}
-		@media (max-width: $phone) {
-		}
-	}
-	&__box {
-		display: flex;
-		justify-content: center;
-		margin: 85px 0 0;
-		@media (max-width: $desktop) {
-			margin: 60px 0 0;
-		}
-		@media (max-width: $tablet) {
-			margin: 40px 0 0;
-		}
-		@media (max-width: $phone) {
-		}
-	}
-	.card {
-		animation: fadeIn 0.5s ease-out;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateX(-100px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
 	}
 }
 //==========================================

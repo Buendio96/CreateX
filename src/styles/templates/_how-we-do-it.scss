@@ -51,6 +51,14 @@
 				}
 			}
 		}
+		&:hover {
+			> div h2 {
+				color: $primary;
+			}
+			.dash-line span {
+				background-color: $primary;
+			}
+		}
 	}
 	&__item-title {
 		margin: 16px 0 0 0;

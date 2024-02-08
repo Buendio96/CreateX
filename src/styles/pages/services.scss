@@ -1,3 +1,10 @@
+@import '@s-common/vars';
+@import '@s-common/mixins';
+@import '@s-templates/how-we-do-it';
+@import '@s-templates/benefits';
+@import '@s-templates/slider';
+@import '@s-templates/supported-by';
+
 .services {
 	background-color: $main-bg;
 	&__body {
@@ -248,5 +255,11 @@
 				transform: rotate(0);
 			}
 		}
+	}
+}
+.related-projects {
+	background-color: $main-bg;
+	&__body {
+		padding: 180px 0 100px;
 	}
 }
