@@ -1,0 +1,17 @@
+.supported-by {
+	&__title {
+	}
+	&__list {
+		margin: 21px 0 0;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $desktop) {
+			flex-wrap: wrap;
+			column-gap: 10px;
+			row-gap: 15px;
+			img {
+				flex: 0 1 25%;
+			}
+		}
+	}
+}

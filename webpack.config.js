@@ -32,7 +32,7 @@ const HTML_PLUGINS_FOLDER = (nameFolder) => {
 		template: path.resolve(__dirname, `src/pages/${nameFolder}/${page}.hbs`),
 		filename: `services/${page}.html`,
 		minify: prodMode,
-		chunks: ['main', 'services'],
+		chunks: ['main', 'services', `${page}`],
 		templateParameters: {
 			'filename': transformFileName(page),
 			'favicon': '/assets/icons/favicon.ico'
@@ -79,15 +79,14 @@ module.exports = {
 	devServer: {
 		port: 4000,
 		open: true,
-		hot: true,
-		/* static: {
+		static: {
 			directory: path.join(__dirname, 'src'),
-		}, */
+		},
 	},
 	entry: {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),
-		homepage: path.resolve(__dirname, 'src/scripts/handlers/handleHomePage.mjs'),
-		services: path.resolve(__dirname, 'src/scripts/handlers/handleServicesPage.mjs'),
+		homepage: path.resolve(__dirname, 'src/scripts/handlers/handleHomePage.js'),
+		services: path.resolve(__dirname, 'src/scripts/handlers/handleServicesPage.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -112,7 +111,8 @@ module.exports = {
 			'@js-templates': path.resolve(__dirname, 'src/scripts/templates'),
 			'@js-api': path.resolve(__dirname, 'src/scripts/api'),
 			'@js-store': path.resolve(__dirname, 'src/scripts/store'),
-			'@hbs': path.resolve(__dirname, 'src/scripts/store'),
+			'@pages': path.resolve(__dirname, 'src/pages'),
+			'@p-temp': path.resolve(__dirname, 'src/pages/templates'),
 		}
 	},
 	//=================================================================

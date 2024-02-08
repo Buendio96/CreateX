@@ -1,7 +1,13 @@
 const STORE = {
 	PROJECTS: {
 		allProjects: [],
-		byDateProjects: []
+		byDateProjects: [],
+		relatedProjects: {
+			construction: [],
+			interior: [],
+			development: [],
+			repairs: []
+		}
 	},
 	OPINIONS: {},
 	NEWS: {

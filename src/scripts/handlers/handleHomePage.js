@@ -18,6 +18,9 @@ import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
 import toggleProjectsCards from '@js-utilities/toggleCards'
 import isValidate from '@js-utilities/validator'
 import player from "@js-utilities/videoPlayer"
+import sliderTemplate from '@p-temp/slider'
+import '@s-pages/homepage'
+
 //DATA ACQUISITION==========================================
 const TODAY = new Date()
 await initGetFilteredData(TODAY, 4) //As the second argument can be the Number for the date range
@@ -45,11 +48,24 @@ const closeBtn = document.getElementById('questionClose')
 
 if (newForm) isValidate(newForm, successEl, closeBtn)
 //OUR-WORK===================================================
+const HOMEPAGE_TEMPLATE_OPTION = {
+	title: 'Browse our selected projects and learn more about our work',
+	id: 'selected-projects',
+	modClass: ''
+}
+const selectedProjectsContainer = document.getElementById('selected-projects')
+if (selectedProjectsContainer) {
+	const renderHTML = sliderTemplate(HOMEPAGE_TEMPLATE_OPTION)
+	selectedProjectsContainer.innerHTML = renderHTML
+} else {
+	console.log('--selectedProjectsContainer-- not found')
+}
+
 const SELECTED_PROJECTS_OPTIONS = {
 	inputData: STORE.PROJECTS.byDateProjects,
-	containerEl: document.getElementById('our-work-container'),
-	skipLeft: document.getElementById('our-work-skip-left'),
-	skipRight: document.getElementById('our-work-skip-right'),
+	containerEl: document.getElementById('selected-projects-container'),
+	skipLeft: document.getElementById('selected-projects-skip-left'),
+	skipRight: document.getElementById('selected-projects-skip-right'),
 	cardTemplate: createPortfolioCard,
 }
 if (STORE.PROJECTS.byDateProjects && STORE.PROJECTS.byDateProjects.length > 0) {

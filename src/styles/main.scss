@@ -3,12 +3,9 @@
 @import '@s-common/vars';
 @import '@s-common/mixins';
 @import '@s-templates/header';
+@import '@s-templates/slider';
 @import '@s-templates/discuss';
 @import '@s-templates/footer';
-@import '@s-templates/how-we-do-it';
-@import '@s-templates/benefits';
-@import '@s-pages/homepage';
-@import '@s-pages/services';
 
 * {
 	&::-webkit-scrollbar-thumb {
@@ -236,7 +233,6 @@ body {
 	z-index: 100;
 	transition: all 0.5s ease;
 	transform: scaleY(0);
-
 	h5 {
 		margin: 40px 0 0;
 		font-size: 40px;
@@ -258,22 +254,5 @@ body {
 	button {
 		margin: 100px 0 40px;
 		align-self: center;
-	}
-}
-.supported-by {
-	&__title {
-	}
-	&__list {
-		margin: 21px 0 0;
-		display: flex;
-		justify-content: space-between;
-		@media (max-width: $desktop) {
-			flex-wrap: wrap;
-			column-gap: 10px;
-			row-gap: 15px;
-			img {
-				flex: 0 1 25%;
-			}
-		}
 	}
 }
