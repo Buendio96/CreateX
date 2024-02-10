@@ -7,7 +7,7 @@ import image2 from '@images/services-2'
 import image3 from '@images/services-3'
 import initGetRecentNewsData from "@js-api/getNewsData"
 import initGetOpinionData from "@js-api/getOpinionsData"
-import initGetFilteredData from "@js-api/getProjectsData"
+import { initGetFilteredData } from "@js-api/getProjectsData"
 import STORE from '@js-store/store'
 import createPortfolioCard from '@js-templates/portfolioCard'
 import addBackground from '@js-utilities/addBackground'
@@ -51,7 +51,7 @@ if (newForm) isValidate(newForm, successEl, closeBtn)
 const HOMEPAGE_TEMPLATE_OPTION = {
 	title: 'Browse our selected projects and learn more about our work',
 	id: 'selected-projects',
-	modClass: ''
+	modClass: null
 }
 const selectedProjectsContainer = document.getElementById('selected-projects')
 if (selectedProjectsContainer) {

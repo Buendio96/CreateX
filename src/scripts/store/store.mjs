@@ -5,7 +5,7 @@ const STORE = {
 		relatedProjects: {
 			construction: [],
 			interior: [],
-			development: [],
+			project: [],
 			repairs: []
 		}
 	},

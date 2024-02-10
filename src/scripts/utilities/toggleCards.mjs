@@ -32,7 +32,7 @@ const toggleProjectsCards = (OPTIONS) => {
 }
 
 const renderCards = (container, cardTemplate, array, currentIndex) => {
-	if (!(container || cardTemplate || array || currentIndex)) {
+	if ((container || cardTemplate || array || currentIndex) === undefined) {
 		console.log(
 			'All arguments were not transmitted in --RENDER CARDS--',
 			container, cardTemplate, array, container
