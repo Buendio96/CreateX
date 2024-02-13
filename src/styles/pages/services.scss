@@ -3,6 +3,7 @@
 @import '@s-templates/how-we-do-it';
 @import '@s-templates/benefits';
 @import '@s-templates/slider';
+@import '@s-templates/price-table';
 @import '@s-templates/supported-by';
 
 .services {
@@ -261,5 +262,14 @@
 	background-color: $main-bg;
 	&__body {
 		padding: 180px 0 100px;
+		@media (max-width: $desktop) {
+			padding: 150px 0 100px;
+		}
+		@media (max-width: $tablet) {
+			padding: 80px 0;
+		}
+		@media (max-width: $phone) {
+			padding: 40px 0;
+		}
 	}
 }
