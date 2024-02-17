@@ -12,6 +12,86 @@
 
 <body>
 	{{> header}}
+	<section class="parallax-block">
+		<img id="workTitleImage" class="image-adaptive for-work" alt="Title image">
+	</section>
+	<main class="main">
+		<section class="name-page-block grid">
+			<div class="name-page-block__body center">
+				<ul class="name-page-block__list">
+					<li>
+						<a class="link-hover" href="/">
+							Homepage / 
+						</a>
+					</li>
+					<li>
+						<a class="link-hover" href="./work.html">
+							Work
+						</a>
+					</li>
+				</ul>
+				<h1 class="name-page-block__title">
+					OUR WORK
+				</h1>
+				<p class="name-page-block__text">
+					Our portfolio represents 20 years of construction experience backed by a passion for perfect client
+					service, quality and innovations in consctuction industry.
+				</p>
+			</div>
+		</section>
+		<section class="projects grid">
+			<div class="projects__body invisible center">
+				<ul class="projects__filters">
+					<li>
+						<button id="projects-filter-all" class="projects__button" type="button">
+							<img src="/assets/vendors/house.svg" alt="">
+							<span>All projects</span>
+						</button>
+					</li>
+					<li>
+						<button id="projects-filter-all" class="projects__button" type="button">
+							<img src="/assets/vendors/construction.svg" alt="">
+							<span>Construction</span>
+						</button>
+					</li>
+					<li>
+						<button id="projects-filter-all" class="projects__button" type="button">
+							<img src="/assets/vendors/plan.svg" alt="">
+							<span>Project Development</span>
+						</button>
+					</li>
+					<li>
+						<button id="projects-filter-all" class="projects__button" type="button">
+							<img src="/assets/vendors/pantone.svg" alt="">
+							<span>Interior Design</span>
+						</button>
+					</li>
+					<li>
+						<button id="projects-filter-all" class="projects__button" type="button">
+							<img src="/assets/vendors/painting.svg" alt="">
+							<span>Repairs</span>
+						</button>
+					</li>
+				</ul>
+				<div class="projects__container" id="all-projects-container">
+
+				</div>
+				<button class="projects__show-more">
+					<img src="/assets/vendors/uno-reverse.svg" alt="">Load more
+				</button>
+			</div>
+		</section>
+		<section class="clients-opinion grid ">
+			<div class="clients-opinion__body invisible center">
+				{{> opinions}}
+			</div>
+		</section>
+		<section class="our-supports grid">
+			<div class="our-supports__body invisible center">
+				{{> supported-by}}
+			</div>
+		</section>
+	</main>
 	{{> discuss}}
 	{{> footer}}
 	{{> goTop}}

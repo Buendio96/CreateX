@@ -3,8 +3,12 @@ import image0 from '@images/services-0'
 import image1 from '@images/services-1'
 import image2 from '@images/services-2'
 import image3 from '@images/services-3'
+import { initGetRelatedData } from '@js-api/getProjectsData'
+import STORE from '@js-store/store'
+import createPortfolioCard from '@js-templates/portfolioCard'
 import addBackground from '@js-utilities/addBackground'
 import addServicesBackground from '@js-utilities/addServicesBg'
+import toggleProjectsCards from '@js-utilities/toggleCards'
 import sliderTemplate from '@p-temp/slider'
 import '@s-pages/services'
 
@@ -19,15 +23,34 @@ if (services || relatedServices) {
 	addServicesBackground(targetElementsName, imagesBlock)
 }
 //======================================
-const SERVICES_TEMPLATE_OPTION = {
-	title: 'Related projects',
-	id: 'related-projects',
-	modClass: null,
-}
-
 const relatedProjectsContainer = document.getElementById('related-projects')
+
 if (relatedProjectsContainer) {
 	const dataType = relatedProjectsContainer.getAttribute('data-related-projects')
-	const renderHTML = sliderTemplate(SERVICES_TEMPLATE_OPTION)
+	await initGetRelatedData(dataType)
+
+	const SERVICES_TEMPLATE_OPTIONS = {
+		title: 'Related projects',
+		id: 'related-projects',
+		modClass: '',
+	}
+
+	const renderHTML = sliderTemplate(SERVICES_TEMPLATE_OPTIONS)
 	relatedProjectsContainer.innerHTML = renderHTML
+
+	const RELATED_PROJECTS_OPTIONS = {
+		inputData: STORE.PROJECTS.relatedProjects[dataType],
+		containerEl: document.getElementById('related-projects-container'),
+		skipLeft: document.getElementById('related-projects-skip-left'),
+		skipRight: document.getElementById('related-projects-skip-right'),
+		cardTemplate: createPortfolioCard,
+	}
+
+	if (
+		STORE.PROJECTS.relatedProjects[dataType] &&
+		STORE.PROJECTS.relatedProjects[dataType].length > 0) {
+		toggleProjectsCards(RELATED_PROJECTS_OPTIONS)
+	} else {
+		console.log('Related projects store store not found')
+	}
 }
