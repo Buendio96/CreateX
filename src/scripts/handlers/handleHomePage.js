@@ -1,6 +1,6 @@
 import homepageTitleImage from '@images/bg-image'
 import bgImageServices from '@images/homepage-services'
-import bgImageSupport from '@images/homepage-support'
+import bgImageOpinion from '@images/homepage-support'
 import image0 from '@images/services-0'
 import image1 from '@images/services-1'
 import image2 from '@images/services-2'
@@ -23,14 +23,14 @@ import '@s-pages/homepage'
 
 //DATA ACQUISITION==========================================
 const TODAY = new Date()
-await initGetFilteredData(TODAY, 4) //As the second argument can be the Number for the date range
+await initGetFilteredData(TODAY) //As the second argument can be the Number for the date range
 await initGetOpinionData()
 await initGetRecentNewsData() //The argument can be the number of news required(3 by default)
 //BACKGROUND ADDITION========================================
 const homepageServices = document.getElementById('homepage-serviceBlock')
 addBackground('titleImage', homepageTitleImage)
 addBackground('ourServicesBg', bgImageServices)
-addBackground('supportBoxBg', bgImageSupport)
+addBackground('supportBoxBg', bgImageOpinion)
 
 
 if (homepageServices) {
@@ -74,6 +74,7 @@ if (STORE.PROJECTS.byDateProjects && STORE.PROJECTS.byDateProjects.length > 0) {
 	console.log('Projects store not found')
 }
 //SUPPORTED===================================================
+const OPINION_EL = document.getElementById(`opinion`)
 const OPINION_DOM_ELEMENTS = {
 	avatar: document.getElementById(`opinionBoxImg`),
 	opinion: document.getElementById(`opinionText`),
@@ -81,7 +82,7 @@ const OPINION_DOM_ELEMENTS = {
 	companyName: document.getElementById(`opinionUserJob`),
 	workPositions: document.getElementById(`opinionUserPosition`),
 }
-if (STORE.OPINIONS.length > 0) {
+if (STORE.OPINIONS.length > 0 && OPINION_EL) {
 	initShowOpinion(OPINION_DOM_ELEMENTS, STORE.OPINIONS)
 	document.getElementById('opinionToLeft').addEventListener('click', () => toLeft(OPINION_DOM_ELEMENTS, STORE.OPINIONS))
 	document.getElementById('opinionToRight').addEventListener('click', () => toRight(OPINION_DOM_ELEMENTS, STORE.OPINIONS))

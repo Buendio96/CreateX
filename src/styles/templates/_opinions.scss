@@ -1,0 +1,109 @@
+.opinion {
+	display: flex;
+	column-gap: 135px;
+	@media (max-width: $desktop) {
+		column-gap: 40px;
+	}
+	@media (max-width: $tablet) {
+		column-gap: 20px;
+		position: relative;
+	}
+	&__body {
+		max-width: 600px;
+		@media (max-width: $tablet) {
+			max-width: 400px;
+		}
+		@media (max-width: calc($tablet - 100px)) {
+			max-width: 100%;
+			position: absolute;
+			top: 35px;
+			z-index: 2;
+			padding: 0 10px;
+		}
+	}
+	&__title {
+		text-align: left;
+	}
+	&__content {
+		margin: 60px 0 0;
+		transition: all 0.5s ease;
+	}
+	&__content-img {
+		width: 72px;
+		height: 72px;
+		border-radius: 50%;
+		background: rgba($color: $primary, $alpha: 0.5);
+		box-shadow: 0 -3px 10px 0.5px rgba($color: $primary, $alpha: 0.9),
+			0 -7px 15px 1px rgba($color: $desc, $alpha: 0.4);
+		position: relative;
+	}
+	&__content-text {
+		margin: 24px 0 0;
+		font-size: 16px;
+		line-height: 160%;
+		color: $links;
+		max-height: 80px;
+		overflow-x: auto;
+		transition: all 0.5s ease;
+		@media (max-width: calc($tablet - 100px)) {
+			background-color: rgba($color: $desc, $alpha: 0.7);
+			margin: 10px -10px 0;
+			padding: 0 10px;
+			color: $titles;
+		}
+	}
+	&__content-info {
+		margin: 24px 0 0;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: calc($tablet - 100px)) {
+			background-color: rgba($color: $desc, $alpha: 0.7);
+			margin: 10px -10px 0;
+			padding: 0 10px;
+			color: $titles;
+		}
+	}
+	&__content-info-user {
+	}
+	&__content-info-user-name {
+		font-family: 'Ubu-B';
+		font-size: 16px;
+		line-height: 160%;
+		color: $titles;
+	}
+	&__content-info-user-work {
+		font-size: 14px;
+		line-height: 150%;
+		color: $desc;
+	}
+	&__content-info-buttons {
+		display: flex;
+		align-items: center;
+		button {
+			background-color: $auxiliary-bg;
+			@media (max-width: calc($tablet - 100px)) {
+				background-color: rgba($color: $desc, $alpha: 0.1);
+			}
+		}
+	}
+	&__image-block {
+		flex: 0 1 495px;
+		height: 550px;
+		position: relative;
+		border-radius: 4px;
+		overflow: hidden;
+		@media (max-width: $desktop) {
+			height: 370px;
+		}
+		@media (max-width: $tablet) {
+			margin: 35px 0 0;
+			column-gap: 20px;
+		}
+		@media (max-width: calc($tablet - 100px)) {
+			flex: 0 1 100%;
+			img {
+				opacity: 0.5;
+			}
+		}
+	}
+}

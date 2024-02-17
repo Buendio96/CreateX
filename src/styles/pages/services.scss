@@ -5,9 +5,13 @@
 @import '@s-templates/slider';
 @import '@s-templates/price-table';
 @import '@s-templates/supported-by';
-
+.for-service {
+	left: calc(100% - 975px);
+	width: 975px;
+}
 .services {
 	background-color: $main-bg;
+
 	&__body {
 		padding: 120px 0 180px;
 		display: flex;

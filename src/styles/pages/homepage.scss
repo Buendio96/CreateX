@@ -2,6 +2,7 @@
 @import '@s-common/mixins';
 @import '@s-templates/slider';
 @import '@s-templates/supported-by';
+@import '@s-templates/opinions';
 
 .welcome {
 	&__body {
@@ -741,10 +742,10 @@
 	.our-service__item-box-title,
 	.our-service__item-box-svg {
 		color: $text;
-		fill: $text;
+		filter: saturate(0) brightness(1000%);
 	}
 }
-.our-service__item:hover img {
+.our-service__item:hover > img {
 	top: -10px;
 	right: -10px;
 	bottom: -10px;
@@ -757,6 +758,15 @@
 	background-color: $main-bg;
 	&__body {
 		padding: 120px 0;
+		@media (max-width: $desktop) {
+			padding: 80px 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 50px 0;
+		}
+		@media (max-width: $phone) {
+			padding: 20px 0;
+		}
 	}
 }
 //==========================================
@@ -765,129 +775,20 @@
 	&__body {
 		padding: 80px 0 0;
 		margin: 0 0 -60px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 170px;
 		@media (max-width: $desktop) {
+			row-gap: 70px;
 			padding: 60px 0 10px;
 			margin: 0;
 		}
 		@media (max-width: $tablet) {
+			row-gap: 35px;
 			padding: 40px 0 10px;
 		}
 		@media (max-width: $phone) {
 			padding: 20px 0 0;
-		}
-	}
-	&__content {
-		margin: 150px 0 0;
-		display: flex;
-		column-gap: 135px;
-		@media (max-width: $desktop) {
-			margin: 70px 0 0;
-			column-gap: 40px;
-		}
-		@media (max-width: $tablet) {
-			margin: 35px 0 0;
-			column-gap: 20px;
-			position: relative;
-		}
-	}
-	&__content-box {
-		max-width: 600px;
-		@media (max-width: $tablet) {
-			max-width: 400px;
-		}
-		@media (max-width: calc($tablet - 100px)) {
-			max-width: 100%;
-			position: absolute;
-			top: 35px;
-			z-index: 2;
-			padding: 0 10px;
-		}
-	}
-	&__content-box-title {
-		text-align: left;
-	}
-	&__content-opinion {
-		margin: 60px 0 0;
-	}
-	&__content-image {
-		flex: 0 1 495px;
-		height: 550px;
-		position: relative;
-		border-radius: 4px;
-		overflow: hidden;
-		@media (max-width: $desktop) {
-			height: 370px;
-		}
-		@media (max-width: $tablet) {
-			margin: 35px 0 0;
-			column-gap: 20px;
-		}
-		@media (max-width: calc($tablet - 100px)) {
-			flex: 0 1 100%;
-			img {
-				opacity: 0.5;
-			}
-		}
-	}
-}
-.opinion {
-	transition: all 0.5s ease;
-	&__img {
-		width: 72px;
-		height: 72px;
-		border-radius: 50%;
-		background: rgba($color: $primary, $alpha: 0.5);
-		box-shadow: 0 -3px 10px 0.5px rgba($color: $primary, $alpha: 0.9),
-			0 -7px 15px 1px rgba($color: $desc, $alpha: 0.4);
-		position: relative;
-	}
-	&__text {
-		margin: 24px 0 0;
-		font-size: 16px;
-		line-height: 160%;
-		color: $links;
-		max-height: 80px;
-		overflow-x: auto;
-		transition: all 0.5s ease;
-		@media (max-width: calc($tablet - 100px)) {
-			background-color: rgba($color: $desc, $alpha: 0.7);
-			margin: 10px -10px 0;
-			padding: 0 10px;
-			color: $titles;
-		}
-	}
-	&__bottom {
-		margin: 24px 0 0;
-		display: flex;
-		justify-content: space-between;
-		@media (max-width: calc($tablet - 100px)) {
-			background-color: rgba($color: $desc, $alpha: 0.7);
-			margin: 10px -10px 0;
-			padding: 0 10px;
-			color: $titles;
-		}
-	}
-	&__bottom-user {
-	}
-	&__user-name {
-		font-family: 'Ubu-B';
-		font-size: 16px;
-		line-height: 160%;
-		color: $titles;
-	}
-	&__user-work {
-		font-size: 14px;
-		line-height: 150%;
-		color: $desc;
-	}
-	&__bottom-buttons {
-		display: flex;
-		align-items: center;
-		button {
-			background-color: $auxiliary-bg;
-			@media (max-width: calc($tablet - 100px)) {
-				background-color: rgba($color: $desc, $alpha: 0.1);
-			}
 		}
 	}
 }

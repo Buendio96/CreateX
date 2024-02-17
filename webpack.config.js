@@ -87,6 +87,7 @@ module.exports = {
 		main: path.resolve(__dirname, 'src/scripts/main.js'),
 		homepage: path.resolve(__dirname, 'src/scripts/handlers/handleHomePage.js'),
 		services: path.resolve(__dirname, 'src/scripts/handlers/handleServicesPage.js'),
+		work: path.resolve(__dirname, 'src/scripts/handlers/handleWorkPage.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
