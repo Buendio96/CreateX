@@ -1,5 +1,6 @@
 .footer {
 	background-color: $alternative-bg;
+	overflow: hidden;
 	&__box {
 		grid-column: 2/3;
 		display: flex;
@@ -18,7 +19,7 @@
 }
 
 .head {
-	width: 100%;
+	flex: 0 1 100%;
 	display: flex;
 	justify-content: space-between;
 	column-gap: 40px;
@@ -35,10 +36,15 @@
 	&__description-social {
 		display: flex;
 		column-gap: 60px;
+		@media (max-width: $phone) {
+			row-gap: 10px;
+			flex-wrap: wrap;
+		}
 	}
 	&__description-list {
 		display: flex;
 		column-gap: 16px;
+
 		.svg-social {
 			fill: white;
 			width: 24px;
@@ -69,10 +75,16 @@
 		margin: 24px 0 0;
 		color: rgba($color: $text, $alpha: 0.6);
 		font-size: 14px;
+		@media (max-width: $phone) {
+			font-size: 10px;
+		}
 	}
 	&__subscribe {
 		min-width: 330px;
 		max-width: 495px;
+		@media (max-width: $phone) {
+			min-width: 0;
+		}
 	}
 	&__subscribe-title {
 		font-family: 'Ubu-B';
@@ -87,9 +99,18 @@
 		border-radius: 4px;
 		border: 1px solid rgba(255, 255, 255, 0.2);
 		overflow: hidden;
+		@media (max-width: $phone) {
+			flex-wrap: wrap;
+			border: none;
+			height: auto;
+		}
 	}
 	&__subscribe-btn {
 		border-radius: 0 4px 4px 0;
+		@media (max-width: $phone) {
+			max-height: 30px;
+			margin: 5px auto 0;
+		}
 	}
 	&__subscribe-input {
 		width: 100%;
@@ -98,6 +119,11 @@
 		font-size: 14px;
 		color: rgba($color: $text, $alpha: 0.6);
 		letter-spacing: 0.8px;
+		@media (max-width: $phone) {
+			height: 35px;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: 4px;
+		}
 	}
 	&__subscribe-note {
 		margin: 16px 0 0;

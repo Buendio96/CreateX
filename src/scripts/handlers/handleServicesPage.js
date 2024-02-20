@@ -8,7 +8,7 @@ import STORE from '@js-store/store'
 import createPortfolioCard from '@js-templates/portfolioCard'
 import addBackground from '@js-utilities/addBackground'
 import addServicesBackground from '@js-utilities/addServicesBg'
-import toggleProjectsCards from '@js-utilities/toggleCards'
+import carousel from '@js-utilities/carousel'
 import sliderTemplate from '@p-temp/slider'
 import '@s-pages/services'
 
@@ -49,7 +49,7 @@ if (relatedProjectsContainer) {
 	if (
 		STORE.PROJECTS.relatedProjects[dataType] &&
 		STORE.PROJECTS.relatedProjects[dataType].length > 0) {
-		toggleProjectsCards(RELATED_PROJECTS_OPTIONS)
+		carousel(RELATED_PROJECTS_OPTIONS)
 	} else {
 		console.log('Related projects store store not found')
 	}

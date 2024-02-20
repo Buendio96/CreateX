@@ -1,6 +1,6 @@
 const createPortfolioCard = (item) => {
 	const htmlString = `
-	  <div class="portfolio-card card">
+	  <div class="portfolio-card card" id="${item.id}">
 		<div class="portfolio-card__img">
 		  <img class="image-adaptive" src="/assets/static-images/portfolio/${item.imageName}" alt="The picture with ${item.name}">
 		</div>
@@ -11,7 +11,7 @@ const createPortfolioCard = (item) => {
 		  <h3 class="portfolio-card__box-subtitle">
 			${item.description}
 		  </h3>
-		  <a href="#" class="portfolio-card__box-btn outline-regular-btn">
+		  <a href="" class="portfolio-card__box-btn outline-regular-btn">
 			View Project
 		  </a>
 		</div>

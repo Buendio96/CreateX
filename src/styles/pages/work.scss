@@ -1,6 +1,7 @@
 @import '@s-common/vars';
 @import '@s-common/mixins';
 @import '@s-templates/supported-by';
+@import '@s-templates/portfolio-card';
 @import '@s-templates/opinions';
 .for-work {
 	width: 915px;
@@ -139,11 +140,16 @@
 	&__container {
 		margin: 120px 0 0;
 		background: $text;
+		display: grid;
+		gap: 30px;
+		grid-template-columns: repeat(auto-fit, minmax(0, calc(33.333% - 30px)));
 		@media (max-width: $desktop) {
 			margin: 100px 0 0;
 		}
 		@media (max-width: $tablet) {
 			margin: 80px 0 0;
+			gap: 15px;
+			grid-template-columns: repeat(auto-fit, minmax(0, calc(50% - 15px)));
 		}
 		@media (max-width: $phone) {
 			margin: 50px 0 0;

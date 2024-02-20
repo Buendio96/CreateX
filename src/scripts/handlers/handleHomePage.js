@@ -12,10 +12,10 @@ import STORE from '@js-store/store'
 import createPortfolioCard from '@js-templates/portfolioCard'
 import addBackground from '@js-utilities/addBackground'
 import addServicesBackground from '@js-utilities/addServicesBg'
+import carousel from '@js-utilities/carousel'
 import showProgress from "@js-utilities/progressRing"
 import showNews from '@js-utilities/showNews'
 import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
-import toggleProjectsCards from '@js-utilities/toggleCards'
 import isValidate from '@js-utilities/validator'
 import player from "@js-utilities/videoPlayer"
 import sliderTemplate from '@p-temp/slider'
@@ -23,7 +23,7 @@ import '@s-pages/homepage'
 
 //DATA ACQUISITION==========================================
 const TODAY = new Date()
-await initGetFilteredData(TODAY) //As the second argument can be the Number for the date range
+await initGetFilteredData(TODAY, 4) //As the second argument can be the Number for the date range
 await initGetOpinionData()
 await initGetRecentNewsData() //The argument can be the number of news required(3 by default)
 //BACKGROUND ADDITION========================================
@@ -69,7 +69,7 @@ const SELECTED_PROJECTS_OPTIONS = {
 	cardTemplate: createPortfolioCard,
 }
 if (STORE.PROJECTS.byDateProjects && STORE.PROJECTS.byDateProjects.length > 0) {
-	toggleProjectsCards(SELECTED_PROJECTS_OPTIONS)
+	carousel(SELECTED_PROJECTS_OPTIONS)
 } else {
 	console.log('Projects store not found')
 }

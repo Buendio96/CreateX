@@ -8,9 +8,7 @@ const initGetFilteredData = async (from, to = 3) => {
 	try {
 		const FROM_DATE = YYYY_MM_DD(from)
 		const TO_DATE = setNeededMonth(to)
-		const PROJECTS_API =
-			`http://localhost:4100/projects?date_gte=${TO_DATE}&date_lte=${FROM_DATE}`
-		const data = await fetchData(PROJECTS_API)
+		const data = await fetchData(`http://localhost:4100/projects?date_gte=${TO_DATE}&date_lte=${FROM_DATE}`)
 		STORE.PROJECTS.byDateProjects = sortByDate(data)
 	} catch (error) {
 		console.error(error)
@@ -18,14 +16,21 @@ const initGetFilteredData = async (from, to = 3) => {
 }
 const initGetRelatedData = async (dataType) => {
 	try {
-		const RELATED_PROJECTS_API =
-			`http://localhost:4100/projects?dataType=${dataType}`
-		const data = await fetchData(RELATED_PROJECTS_API)
+		const data = await fetchData(`http://localhost:4100/projects?dataType=${dataType}`)
 		STORE.PROJECTS.relatedProjects[dataType] = data
 	} catch (error) {
 		console.error(error)
 
 	}
 }
-export { initGetFilteredData, initGetRelatedData }
+
+const initGetAllData = async () => {
+	try {
+		const data = await fetchData(`http://localhost:4100/projects`)
+		STORE.PROJECTS.allProjects = data
+	} catch (error) {
+		console.log(error)
+	}
+}
+export { initGetFilteredData, initGetRelatedData, initGetAllData }
 

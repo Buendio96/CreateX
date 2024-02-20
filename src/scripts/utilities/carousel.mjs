@@ -1,4 +1,4 @@
-const toggleProjectsCards = (OPTIONS) => {
+const carousel = (OPTIONS) => {
 	const {
 		inputData,
 		containerEl,
@@ -67,7 +67,7 @@ const handleLeftClick = (currentIndex, array) => {
 }
 
 
-export default toggleProjectsCards
+export default carousel
 
 
 
