@@ -24,13 +24,13 @@ const initGetRelatedData = async (dataType) => {
 	}
 }
 
-const initGetAllData = async () => {
+const initGetAllData = async (start, end) => {
 	try {
-		const data = await fetchData(`http://localhost:4100/projects`)
+		const data = await fetchData(`http://localhost:4100/projects?_start=${start}&_end=${end}`)
 		STORE.PROJECTS.allProjects = data
 	} catch (error) {
 		console.log(error)
 	}
 }
-export { initGetFilteredData, initGetRelatedData, initGetAllData }
+export { initGetAllData, initGetFilteredData, initGetRelatedData }
 
