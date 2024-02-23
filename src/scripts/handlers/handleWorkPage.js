@@ -2,16 +2,18 @@ import workTitleImage from '@images/bg-image-work'
 import bgImageOpinion from '@images/homepage-support'
 import initGetOpinionData from "@js-api/getOpinionsData"
 import { initGetAllData } from '@js-api/getProjectsData'
+import { setDataToLocalStor } from '@js-store/handlersLocalStorage'
 import STORE from '@js-store/store'
 import addBackground from '@js-utilities/addBackground'
 import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
-import { getFilterType, initShowProjects } from '@js-utilities/showProjects'
+import initShowProjects from '@js-utilities/showProjects'
 import '@s-pages/work'
 //===================================================
 await initGetOpinionData()
-await initGetAllData(0, 9)
+await initGetAllData()
 
 
+setDataToLocalStor(STORE.PROJECTS.allProjects)
 //===================================================
 addBackground('workTitleImage', workTitleImage)
 addBackground('supportBoxBg', bgImageOpinion)
@@ -36,12 +38,10 @@ if (STORE.OPINIONS.length > 0 && OPINION_EL) {
 //===================================================
 const CONTAINER_EL = document.getElementById('all-projects-container')
 const SHOW_MORE_BUTTON = document.getElementById('show-more-projects')
-
-initShowProjects(CONTAINER_EL, SHOW_MORE_BUTTON)
-//===================================================
 const FILTERS_BOX = document.getElementById('projects-filter')
 
-FILTERS_BOX.addEventListener('click', (event) => {
-	const x = getFilterType(event)
-	console.log(x)
-})
+initShowProjects(CONTAINER_EL, SHOW_MORE_BUTTON, undefined, FILTERS_BOX)
+//===================================================
+
+
+

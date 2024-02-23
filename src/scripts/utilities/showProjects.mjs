@@ -4,13 +4,12 @@ import createPortfolioCard from '@js-templates/portfolioCard'
 
 
 const getFilterType = (event) => {
-	var element = event.target.closest('button')
-	if (!element) return null
-
-	var filterType = element.getAttribute('data-filter')
-	return filterType
+	if (!event || !event.target.closest('button')) {
+		return null
+	}
+	var filterType = event.target.closest('button').getAttribute('data-filter')
+	return filterType !== null ? filterType : null
 }
-
 
 const renderProjects = (container, data) => {
 	for (let i = 0; i < data.length; i++) {
@@ -18,25 +17,74 @@ const renderProjects = (container, data) => {
 	}
 }
 
-const showMore = async (container, data, start) => {
+const renderFilteredProjects = (container, data) => {
+	container.innerHTML = ''
+	for (let i = 0; i < data.length; i++) {
+		container.appendChild(createPortfolioCard(data[i]))
+	}
+}
+const showMore = async (from, filter = null) => {
+	let start = from
 	let end = start + 9
-	await initGetAllData(start, end)
-	renderProjects(container, data)
+	if (!filter) {
+		await initGetAllData(from, end)
+	} else {
+		await initGetAllData(from, end, filter)
+	}
+	return STORE.PROJECTS.allProjects
 }
 
-const initShowProjects = (container, button) => {
+const initShowProjects = (container, showMoreBtn, quantityOfCards = 9, boxOfFilters = null) => {
+	let from = quantityOfCards
+	let data = STORE.PROJECTS.allProjects
+	let actualFilterType = null
 
-	let start = 9
-	renderProjects(container, STORE.PROJECTS.allProjects)
-	if (button && !button.hasEventListener) {
-		button.hasEventListener = true
-		button.addEventListener('click', async () => {
-			await showMore(container, STORE.PROJECTS.allProjects, start)
-			start += 9
+	renderProjects(container, data)
+
+	if (boxOfFilters !== null) {
+		boxOfFilters.addEventListener('click', async event => {
+			let filterValue = getFilterType(event)
+			actualFilterType = filterValue
+
+			if (filterValue !== null) {
+				let actualFilteredData = data.filter(item => item.dataType === filterValue)
+				renderFilteredProjects(container, actualFilteredData)
+				from = quantityOfCards
+			} if (filterValue === 'all') {
+				renderFilteredProjects(container, data)
+				from = quantityOfCards
+
+			}
 		})
+	} else {
+		console.log('--boxOfFilters-- not found')
+	}
+
+
+	if (showMoreBtn && !showMoreBtn.hasEventListener) {
+		showMoreBtn.hasEventListener = true
+
+		showMoreBtn.addEventListener('click', async () => {
+			let actualData = await showMore(from)
+
+			if (actualData.length <= 0) {
+				showMoreBtn.disabled = true
+				return
+			} else if (actualFilterType !== null) {
+				actualData = await showMore(from, actualFilterType)
+				renderProjects(container, actualData)
+				from += quantityOfCards
+			}
+			else {
+				renderProjects(container, actualData)
+				from += quantityOfCards
+			}
+		})
+	} else {
+		console.log('--showMoreBtn-- not found')
 	}
 }
 
 
-export { getFilterType, initShowProjects }
+export default initShowProjects
 

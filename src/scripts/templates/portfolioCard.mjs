@@ -1,6 +1,6 @@
 const createPortfolioCard = (item) => {
 	const htmlString = `
-	  <div class="portfolio-card card" id="${item.id}">
+	  <div class="portfolio-card card ${item.dataType}"  id="${item.id}">
 		<div class="portfolio-card__img">
 		  <img class="image-adaptive" src="/assets/static-images/portfolio/${item.imageName}" alt="The picture with ${item.name}">
 		</div>
