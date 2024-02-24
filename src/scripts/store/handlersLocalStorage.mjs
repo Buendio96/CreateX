@@ -1,20 +1,24 @@
-
-const setDataToLocalStor = (data) => {
+const setDataToLocalStor = (data, key) => {
 	if (data && data.length > 0) {
-		let selectedData = data.map(project => ({
-			id: project.id,
-			name: project.name,
-			description: project.description,
-			imageName: project.imageName,
-			dataType: project.dataType,
-		}))
-		localStorage.setItem('WorkProjects', JSON.stringify(selectedData))
-	} else {
-		console.log('no data to add to the local storage')
+		let storedData = JSON.parse(localStorage.getItem(key)) || []
+
+		data.forEach(newObject => {
+			let existingObject = storedData.find(item => item.id === newObject.id)
+
+			if (!existingObject) {
+				storedData.push({
+					id: newObject.id,
+					name: newObject.name,
+					description: newObject.description,
+					imageName: newObject.imageName,
+					dataType: newObject.dataType,
+				})
+			}
+		})
+		localStorage.setItem(key, JSON.stringify(storedData))
 	}
 }
 
-export { setDataToLocalStor }
 
-const checkedLocalStorage = (data) => {
-}
+export default setDataToLocalStor
+

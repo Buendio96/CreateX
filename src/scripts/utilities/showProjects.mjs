@@ -1,7 +1,9 @@
 import { initGetAllData } from '@js-api/getProjectsData'
+import setDataToLocalStor from '@js-store/handlersLocalStorage'
 import STORE from '@js-store/store'
 import createPortfolioCard from '@js-templates/portfolioCard'
 
+const STORE_KEY = 'WorkProjects'
 
 const getFilterType = (event) => {
 	if (!event || !event.target.closest('button')) {
@@ -11,77 +13,76 @@ const getFilterType = (event) => {
 	return filterType !== null ? filterType : null
 }
 
-const renderProjects = (container, data) => {
+const render = (container, data, filter = false) => {
+	if (!(container || data)) {
+		console.error('Container for render or data not found')
+		return
+	}
+	if (filter) {
+		container.innerHTML = ''
+	}
 	for (let i = 0; i < data.length; i++) {
 		container.appendChild(createPortfolioCard(data[i]))
 	}
 }
 
-const renderFilteredProjects = (container, data) => {
-	container.innerHTML = ''
-	for (let i = 0; i < data.length; i++) {
-		container.appendChild(createPortfolioCard(data[i]))
-	}
-}
-const showMore = async (from, filter = null) => {
-	let start = from
-	let end = start + 9
-	if (!filter) {
+const getMoreData = async (from, filter = null) => {
+	let end = from + 9
+	if (filter === null) {
 		await initGetAllData(from, end)
 	} else {
 		await initGetAllData(from, end, filter)
 	}
-	return STORE.PROJECTS.allProjects
+	return
+}
+const dataFromLocalStore = (key, startId, endId) => {
+	const storedData = JSON.parse(localStorage.getItem(key)) || []
+	return storedData.filter(item => item.id >= startId && item.id <= endId)
 }
 
-const initShowProjects = (container, showMoreBtn, quantityOfCards = 9, boxOfFilters = null) => {
-	let from = quantityOfCards
-	let data = STORE.PROJECTS.allProjects
-	let actualFilterType = null
 
-	renderProjects(container, data)
+const initShowProjects = async (container, button, quantityOfCards = 9, boxOfFilters = null) => {
+	let from = 0
+	let to = from + quantityOfCards - 1
 
-	if (boxOfFilters !== null) {
-		boxOfFilters.addEventListener('click', async event => {
-			let filterValue = getFilterType(event)
-			actualFilterType = filterValue
+	const RANGED_LOCAL_DATA = dataFromLocalStore(STORE_KEY, from, to)
 
-			if (filterValue !== null) {
-				let actualFilteredData = data.filter(item => item.dataType === filterValue)
-				renderFilteredProjects(container, actualFilteredData)
-				from = quantityOfCards
-			} if (filterValue === 'all') {
-				renderFilteredProjects(container, data)
-				from = quantityOfCards
+	if (RANGED_LOCAL_DATA.length > 0) {
+		render(container, RANGED_LOCAL_DATA)
+		from += quantityOfCards
+		to = from + quantityOfCards - 1
 
-			}
-		})
 	} else {
-		console.log('--boxOfFilters-- not found')
+		await getMoreData(from)
+		setDataToLocalStor(STORE.PROJECTS.allProjects, STORE_KEY)
+		render(container, STORE.PROJECTS.allProjects)
+		from += quantityOfCards
+		to = from + quantityOfCards - 1
 	}
 
+	if (button && !button.hasEventListener) {
+		button.hasEventListener = true
+		button.addEventListener('click', async () => {
+			const RANGED_LOCAL_DATA = dataFromLocalStore(STORE_KEY, from, to)
 
-	if (showMoreBtn && !showMoreBtn.hasEventListener) {
-		showMoreBtn.hasEventListener = true
-
-		showMoreBtn.addEventListener('click', async () => {
-			let actualData = await showMore(from)
-
-			if (actualData.length <= 0) {
-				showMoreBtn.disabled = true
+			if ((STORE.PROJECTS.allProjects.length || RANGED_LOCAL_DATA.length) <= 0) {
+				button.disabled = true
 				return
-			} else if (actualFilterType !== null) {
-				actualData = await showMore(from, actualFilterType)
-				renderProjects(container, actualData)
-				from += quantityOfCards
 			}
-			else {
-				renderProjects(container, actualData)
+
+			if (RANGED_LOCAL_DATA.length > 0) {
+				render(container, RANGED_LOCAL_DATA)
 				from += quantityOfCards
+				to = from + quantityOfCards - 1
+				return
 			}
+
+			await getMoreData(from)
+			render(container, STORE.PROJECTS.allProjects)
+			setDataToLocalStor(STORE.PROJECTS.allProjects, STORE_KEY)
+			from += quantityOfCards
+			to = from + quantityOfCards - 1
 		})
-	} else {
-		console.log('--showMoreBtn-- not found')
 	}
 }
 

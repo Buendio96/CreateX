@@ -1,8 +1,6 @@
 import workTitleImage from '@images/bg-image-work'
 import bgImageOpinion from '@images/homepage-support'
 import initGetOpinionData from "@js-api/getOpinionsData"
-import { initGetAllData } from '@js-api/getProjectsData'
-import { setDataToLocalStor } from '@js-store/handlersLocalStorage'
 import STORE from '@js-store/store'
 import addBackground from '@js-utilities/addBackground'
 import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
@@ -10,10 +8,8 @@ import initShowProjects from '@js-utilities/showProjects'
 import '@s-pages/work'
 //===================================================
 await initGetOpinionData()
-await initGetAllData()
 
 
-setDataToLocalStor(STORE.PROJECTS.allProjects)
 //===================================================
 addBackground('workTitleImage', workTitleImage)
 addBackground('supportBoxBg', bgImageOpinion)

@@ -24,10 +24,10 @@ const initGetRelatedData = async (dataType) => {
 	}
 }
 
-const initGetAllData = async (start = 0, end = 9, filterType) => {
+const initGetAllData = async (start = 0, end = 9, filterType = null) => {
 	let URL
 
-	if (filterType && filterType !== 'all') {
+	if (filterType !== null || filterType === 'all') {
 		URL = `http://localhost:4100/projects?_start=${start}&_end=${end}&dataType=${filterType}`
 	} else {
 		URL = `http://localhost:4100/projects?_start=${start}&_end=${end}`
