@@ -4,6 +4,8 @@ import STORE from '@js-store/store'
 import createPortfolioCard from '@js-templates/portfolioCard'
 
 const STORE_KEY = 'WorkProjects'
+const QUANTITY_OF_DATA = 9
+const URL = window.location.href
 
 const getFilterType = (event) => {
 	if (!event || !event.target.closest('button')) {
@@ -14,20 +16,20 @@ const getFilterType = (event) => {
 }
 
 const render = (container, data, filter = false) => {
-	if (!(container || data)) {
+	if (!container || !data) {
 		console.error('Container for render or data not found')
 		return
 	}
 	if (filter) {
 		container.innerHTML = ''
 	}
-	for (let i = 0; i < data.length; i++) {
-		container.appendChild(createPortfolioCard(data[i]))
-	}
+	data.forEach(item => {
+		container.appendChild(createPortfolioCard(item))
+	})
 }
 
 const getMoreData = async (from, filter = null) => {
-	let end = from + 9
+	let end = from + QUANTITY_OF_DATA
 	if (filter === null) {
 		await initGetAllData(from, end)
 	} else {
@@ -35,57 +37,62 @@ const getMoreData = async (from, filter = null) => {
 	}
 	return
 }
-const dataFromLocalStore = (key, startId, endId) => {
+
+const dataFromLocalStore = (key, startID) => {
+	let endID = startID + QUANTITY_OF_DATA
 	const storedData = JSON.parse(localStorage.getItem(key)) || []
-	return storedData.filter(item => item.id >= startId && item.id <= endId)
+	return storedData.filter(item => item.id >= startID && item.id < endID)
 }
 
-
-const initShowProjects = async (container, button, quantityOfCards = 9, boxOfFilters = null) => {
-	let from = 0
-	let to = from + quantityOfCards - 1
-
-	const RANGED_LOCAL_DATA = dataFromLocalStore(STORE_KEY, from, to)
-
-	if (RANGED_LOCAL_DATA.length > 0) {
-		render(container, RANGED_LOCAL_DATA)
-		from += quantityOfCards
-		to = from + quantityOfCards - 1
-
+const getAndRenderData = async (localData, container, startWith) => {
+	if (localData.length > 0) {
+		render(container, localData)
 	} else {
-		await getMoreData(from)
+		await getMoreData(startWith)
 		setDataToLocalStor(STORE.PROJECTS.allProjects, STORE_KEY)
 		render(container, STORE.PROJECTS.allProjects)
-		from += quantityOfCards
-		to = from + quantityOfCards - 1
 	}
+}
+
+const setNewURL = (value) => {
+	if (value !== null) {
+		var newUrl = URL + `&filters=${value}`
+		window.history.replaceState({}, document.title, newUrl)
+	}
+}
+
+const initShowProjects = async (container, button, boxOfFilters = null) => {
+	let startWith = 0
+
+
+	const INIT_LOCAL_DATA = dataFromLocalStore(STORE_KEY, startWith)
+
+	await getAndRenderData(INIT_LOCAL_DATA, container, startWith)
+	startWith += QUANTITY_OF_DATA
 
 	if (button && !button.hasEventListener) {
 		button.hasEventListener = true
+
 		button.addEventListener('click', async () => {
-			const RANGED_LOCAL_DATA = dataFromLocalStore(STORE_KEY, from, to)
+			const LOCAL_DATA = dataFromLocalStore(STORE_KEY, startWith)
 
-			if ((STORE.PROJECTS.allProjects.length || RANGED_LOCAL_DATA.length) <= 0) {
+			await getAndRenderData(LOCAL_DATA, container, startWith)
+			startWith += QUANTITY_OF_DATA
+
+			if (LOCAL_DATA.length === 0 && STORE.PROJECTS.allProjects.length === 0) {
 				button.disabled = true
-				return
 			}
-
-			if (RANGED_LOCAL_DATA.length > 0) {
-				render(container, RANGED_LOCAL_DATA)
-				from += quantityOfCards
-				to = from + quantityOfCards - 1
-				return
-			}
-
-			await getMoreData(from)
-			render(container, STORE.PROJECTS.allProjects)
-			setDataToLocalStor(STORE.PROJECTS.allProjects, STORE_KEY)
-			from += quantityOfCards
-			to = from + quantityOfCards - 1
 		})
 	}
+
+	if (boxOfFilters && !boxOfFilters.hasEventListener) {
+		boxOfFilters.hasEventListener = true
+
+		boxOfFilters.addEventListener('click', async (target) => {
+			const filterType = getFilterType(target)
+			setNewURL(filterType)
+		})
+	}
+
 }
-
-
 export default initShowProjects
-

@@ -36,7 +36,7 @@ const CONTAINER_EL = document.getElementById('all-projects-container')
 const SHOW_MORE_BUTTON = document.getElementById('show-more-projects')
 const FILTERS_BOX = document.getElementById('projects-filter')
 
-initShowProjects(CONTAINER_EL, SHOW_MORE_BUTTON, undefined, FILTERS_BOX)
+initShowProjects(CONTAINER_EL, SHOW_MORE_BUTTON, FILTERS_BOX)
 //===================================================
 
 
