@@ -23,17 +23,9 @@ const initGetRelatedData = async (dataType) => {
 	}
 }
 
-const initGetAllData = async (start = 0, end = 9, filterType = null) => {
-	let URL
-
-	if (filterType !== null || filterType === 'all') {
-		URL = `http://localhost:4100/projects?_start=${start}&_end=${end}&dataType=${filterType}`
-	} else {
-		URL = `http://localhost:4100/projects?_start=${start}&_end=${end}`
-	}
-
+const initGetAllData = async (start = 0, end = 9) => {
 	try {
-		const data = await fetchData(URL)
+		const data = await fetchData(`http://localhost:4100/projects?_start=${start}&_end=${end}`)
 		STORE.PROJECTS.allProjects = data
 	} catch (error) {
 		console.log(error)
