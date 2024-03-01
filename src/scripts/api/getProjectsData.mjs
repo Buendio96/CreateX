@@ -14,6 +14,7 @@ const initGetFilteredData = async (from, to = 3) => {
 		console.error(error)
 	}
 }
+
 const initGetRelatedData = async (dataType) => {
 	try {
 		const data = await fetchData(`http://localhost:4100/projects?dataType=${dataType}`)

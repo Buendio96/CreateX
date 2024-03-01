@@ -31,19 +31,11 @@ const render = (container, data, filter = null) => {
 const getMoreData = async (from) => {
 	let end = from + QUANTITY_OF_DATA
 	await initGetAllData(from, end)
-	return STORE.PROJECTS.allProjects
+	const data = STORE.PROJECTS.allProjects
+	console.log('Get data')
+	return data.length > 0 ? data : null
 }
 
-const getDataFromLocalStore = (startID, endIDFilter, filter = null) => {
-	const storedData = JSON.parse(localStorage.getItem(STORE_KEY)) || []
-	let endID = startID + QUANTITY_OF_DATA
-
-	if (filter === null) {
-		return storedData.filter(item => item.id >= startID && item.id < endID)
-	} else {
-		return storedData.filter(item => item.id >= startID && item.id < endIDFilter && item.dataType === filter)
-	}
-}
 
 const setNewURL = (value) => {
 	if (value !== null) {
@@ -52,22 +44,45 @@ const setNewURL = (value) => {
 	}
 }
 
+const getDataFromLocalStore = (startID = 0, endIDFilter, filter = null) => {
+	const storedData = JSON.parse(localStorage.getItem(STORE_KEY)) || []
+	let endID = startID + QUANTITY_OF_DATA
+
+	if (filter === null) {
+		return storedData.filter(item => item.id >= startID && item.id < endID)
+	} else if (filter !== null && filter !== 'all') {
+		return storedData.filter(item => item.id >= startID && item.id < endIDFilter && item.dataType === filter)
+	} else if (filter === 'all') {
+		return storedData.filter(item => item.id >= startID && item.id < endIDFilter)
+	}
+}
+
+const setDataForRender = async (startWith, maxFilteredItems, filterType) => {
+	let localData = getDataFromLocalStore(startWith, maxFilteredItems, filterType)
+
+	if (localData.length === 0 && filterType === null) {
+		const getData = await getMoreData(startWith)
+		if (getData === null) return null
+		setDataToLocalStor(getData, STORE_KEY)
+		localData = getDataFromLocalStore(startWith, maxFilteredItems)
+	} else if (localData.length === 0 && filterType !== null) {
+		const getData = await getMoreData(startWith)
+		if (getData === null) return null
+		setDataToLocalStor(getData, STORE_KEY)
+		localData = getDataFromLocalStore(undefined, maxFilteredItems, filterType)
+	} else if (localData.length > 0 && filterType !== null) {
+		localData = getDataFromLocalStore(0, maxFilteredItems, filterType)
+	}
+	return localData
+}
+
 const initShowProjects = async (container, button, boxOfFilters = null) => {
 	let startWith = 0
 	let maxFilteredItems = 9
 	let filterType = null
-	let localData = getDataFromLocalStore(startWith, maxFilteredItems, filterType)
-	console.log(startWith)
-
-	if (localData.length === 0) {
-		const getData = await getMoreData(startWith)
-		setDataToLocalStor(getData, STORE_KEY)
-		localData = getDataFromLocalStore(startWith, maxFilteredItems, filterType)
-	}
-
+	let localData = await setDataForRender(startWith, maxFilteredItems, filterType)
 	render(container, localData, filterType)
-	startWith += QUANTITY_OF_DATA
-	console.log(startWith)
+
 
 	if (button && !button.hasEventListener) {
 		button.hasEventListener = true
@@ -75,17 +90,14 @@ const initShowProjects = async (container, button, boxOfFilters = null) => {
 		button.addEventListener('click', async () => {
 			startWith += QUANTITY_OF_DATA
 			maxFilteredItems += QUANTITY_OF_DATA
-			if (localData.length === 0) {
-				const getData = await getMoreData(startWith)
-				setDataToLocalStor(getData, STORE_KEY)
-				localData = getDataFromLocalStore(startWith, maxFilteredItems, filterType)
-			}
 
-			render(container, localData, filterType)
+			localData = await setDataForRender(startWith, maxFilteredItems, filterType)
 
-
-			if (localData.length === 0 && STORE.PROJECTS.allProjects.length === 0) {
+			if (localData !== null) {
+				render(container, localData, filterType)
+			} else {
 				button.disabled = true
+				console.log('button was disablrd')
 			}
 		})
 	}
@@ -95,9 +107,9 @@ const initShowProjects = async (container, button, boxOfFilters = null) => {
 
 		boxOfFilters.addEventListener('click', async (target) => {
 			filterType = getFilterType(target)
-			const FILTERED_LOCAL_DATA = getDataFromLocalStore(0, maxFilteredItems, filterType)
+			localData = await setDataForRender(0, maxFilteredItems, filterType)
 			/* setNewURL(filterType) */
-			render(container, FILTERED_LOCAL_DATA, filterType)
+			render(container, localData, filterType)
 		})
 	}
 
