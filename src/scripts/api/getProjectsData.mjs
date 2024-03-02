@@ -24,7 +24,7 @@ const initGetRelatedData = async (dataType) => {
 	}
 }
 
-const initGetAllData = async (start = 0, end = 9) => {
+const initGetRangedData = async (start = 0, end = 9) => {
 	try {
 		const data = await fetchData(`http://localhost:4100/projects?_start=${start}&_end=${end}`)
 		STORE.PROJECTS.allProjects = data
@@ -33,5 +33,5 @@ const initGetAllData = async (start = 0, end = 9) => {
 	}
 }
 
-export { initGetAllData, initGetFilteredData, initGetRelatedData }
+export { initGetRangedData, initGetFilteredData, initGetRelatedData }
 

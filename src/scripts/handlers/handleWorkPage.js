@@ -9,13 +9,11 @@ import '@s-pages/work'
 //===================================================
 await initGetOpinionData()
 
-
 //===================================================
 addBackground('workTitleImage', workTitleImage)
 addBackground('supportBoxBg', bgImageOpinion)
 
 const OPINION_EL = document.getElementById(`opinion`)
-
 const OPINION_DOM_ELEMENTS = {
 	avatar: document.getElementById(`opinionBoxImg`),
 	opinion: document.getElementById(`opinionText`),
