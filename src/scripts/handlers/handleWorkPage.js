@@ -5,6 +5,7 @@ import STORE from '@js-store/store'
 import addBackground from '@js-utilities/addBackground'
 import { initShowOpinion, toLeft, toRight } from '@js-utilities/showOpinion'
 import initShowProjects from '@js-utilities/showProjects'
+import '@js-utilities/showSelectedProject'
 import '@s-pages/work'
 //===================================================
 await initGetOpinionData()
@@ -25,17 +26,15 @@ if (STORE.OPINIONS.length > 0 && OPINION_EL) {
 	initShowOpinion(OPINION_DOM_ELEMENTS, STORE.OPINIONS)
 	document.getElementById('opinionToLeft').addEventListener('click', () => toLeft(OPINION_DOM_ELEMENTS, STORE.OPINIONS))
 	document.getElementById('opinionToRight').addEventListener('click', () => toRight(OPINION_DOM_ELEMENTS, STORE.OPINIONS))
-} else {
-	OPINION_EL.style.display = 'none'
-	console.log('Opinion DOM Element or Data opinions nor found')
 }
 //===================================================
 const CONTAINER_EL = document.getElementById('all-projects-container')
 const SHOW_MORE_BUTTON = document.getElementById('show-more-projects')
 const FILTERS_BOX = document.getElementById('projects-filter')
 
-initShowProjects(CONTAINER_EL, SHOW_MORE_BUTTON, FILTERS_BOX)
-//===================================================
+if (CONTAINER_EL) {
+	initShowProjects(CONTAINER_EL, SHOW_MORE_BUTTON, FILTERS_BOX)
+}//===================================================
 
 
 

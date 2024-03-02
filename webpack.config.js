@@ -130,6 +130,16 @@ module.exports = {
 		}),
 		...HTML_PLUGINS(),
 		...HTML_PLUGINS_FOLDER('services'),
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'src/pages/work/project.hbs'),
+			filename: 'work/project.html',
+			chunks: ['main', 'work'],
+			minify: prodMode,
+			templateParameters: {
+				'filename': 'createX',
+				'favicon': '/assets/icons/favicon.ico',
+			}
+		}),
 		new MiniCssExtractPlugin({
 			filename: 'styles/' + fileName('css')
 		}),

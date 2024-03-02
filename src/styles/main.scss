@@ -93,8 +93,10 @@ body {
 	height: 100vh;
 	top: 90px;
 }
+
 .name-page-block {
 	height: 510px;
+
 	@media (max-width: $tablet) {
 		height: 400px;
 	}
@@ -159,6 +161,7 @@ body {
 		}
 	}
 }
+
 .go-top {
 	position: fixed;
 	display: flex;

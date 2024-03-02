@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{{favicon}}" type="image/x-icon">
+	<title>
+		{{filename}}
+	</title>
+</head>
+
+<body>
+	{{> header}}
+	<main class="main project" id="projectCheck">
+		<section class="name-page-block grid">
+			<div class="name-page-block__body center">
+				<ul class="name-page-block__list">
+					<li>
+						<a class="link-hover" href="/">
+							Homepage / 
+						</a>
+					</li>
+					<li>
+						<a class="link-hover" href="../work.html">
+							Work
+						</a>
+					</li>
+					<li>
+						<a class="link-hover" href="./project.html?id={{project-id}}">
+							{{project-name}}
+						</a>
+					</li>
+				</ul>
+				<h1 class="name-page-block__title">
+					{{project-name}}
+				</h1>
+			</div>
+		</section>
+		<section class="introduce grid">
+			<div class="introduce__body center">
+				<div class="introduce__slider">
+					<div class="introduce__slider-title-image">
+						<button class="arrow">
+							<img src="/assets/vendors/arrow-left.svg" alt="">
+						</button>
+						<button class="arrow">
+							<img src="/assets/vendors/arrow-right.svg" alt="">
+						</button>
+						<img id="project-introduce-0" class="image-adaptive" alt="">
+					</div>
+					<div class="introduce__slider-subtitle-body">
+						<div class="introduce__slider-subtitle-image">
+							<img id="project-introduce-1" class="image-adaptive" alt="">
+						</div>
+						<div class="introduce__slider-subtitle-image">
+							<img id="project-introduce-2" class="image-adaptive" alt="">
+						</div>
+						<div class="introduce__slider-subtitle-image">
+							<img id="project-introduce-3" class="image-adaptive" alt="">
+						</div>
+						<div class="introduce__slider-subtitle-image">
+							<img id="project-introduce-4" class="image-adaptive" alt="">
+						</div>
+						<div class="introduce__slider-subtitle-image">
+							<img id="project-introduce-5" class="image-adaptive" alt="">
+						</div>
+						<div class="introduce__slider-subtitle-image">
+							<img id="project-introduce-6" class="image-adaptive" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="introduce__description invisible">
+					<div class="introduce__description-value">
+						<h3 class="introduce__description-value-title">
+							Project goal
+						</h3>
+						<p class="introduce__description-value-text">{{project-description}}</p>
+						<p class="introduce__description-value-text">{{project-goal}}</p>
+					</div>
+					<ul class="introduce__description-info">
+						<li class="introduce__description-info-location">
+							Location <span>{{project-location}}</span>
+						</li>
+						<li class="introduce__description-info-location">
+							Client <span>{{project-client}}</span>
+						</li>
+						<li class="introduce__description-info-location">
+							Architect <span>{{project-architect}}</span>
+						</li>
+						<li class="introduce__description-info-location">
+							Size <span>{{project-size}}</span>
+						</li>
+						<li class="introduce__description-info-location">
+							Value <span>{{project-value}}</span>
+						</li>
+						<li class="introduce__description-info-location">
+							Completed <span>{{project-completed}}</span>
+						</li>
+				</div>
+		</section>
+		<section class="decisions grid">
+			<div class="decisions__body invisible center">
+				<div class="decision__image">
+					<img src="/assets/static-images/decision.jpe" class="image-adaptive" alt="">
+				</div>
+				<div class="decision__checklist">
+					<h3 class="decision__checklist-title">Constructive decision</h3>
+					<ul class="decision__checklist-body">
+						<li class="decision__checklist-item">
+							<img src="/assets/vendors/check.svg" alt="Checked">
+							Vitae ultrices ornare eu sed in est quisque duis id.
+						</li>
+						<li class="decision__checklist-item">
+							<img src="/assets/vendors/check.svg" alt="Checked">
+							A fermentum in morbi pretium aliquam adipiscing donec tempus.
+						</li>
+						<li class="decision__checklist-item">
+							<img src="/assets/vendors/check.svg" alt="Checked">
+							Mauris odio pellentesque commodo, diam.
+						</li>
+						<li class="decision__checklist-item">
+							<img src="/assets/vendors/check.svg" alt="Checked">
+							Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.
+						</li>
+						<li class="decision__checklist-item">
+							<img src="/assets/vendors/check.svg" alt="Checked">
+							At pharetra libero blandit risus, fringilla sed commodo diam.
+						</li>
+						<li class="decision__checklist-item">
+							<img src="/assets/vendors/check.svg" alt="Checked">
+							Integer ultricies viverra ut enim viverra ut.
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="similar-projects grid">
+			<div class="similar-projects__body invisible center" data-similar-projects="{{project-dataType}}"
+				id="similar-projects">
+
+			</div>
+		</section>
+	</main>
+	{{> discuss}}
+	{{> footer}}
+	{{> goTop}}
+</body>
+
+</html>

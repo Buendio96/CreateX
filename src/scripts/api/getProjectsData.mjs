@@ -33,5 +33,6 @@ const initGetRangedData = async (start = 0, end = 9) => {
 	}
 }
 
+
 export { initGetRangedData, initGetFilteredData, initGetRelatedData }
 
