@@ -1,0 +1,86 @@
+<section class="name-page-block ">
+	<div class="name-page-block__body project-title">
+		<ul class="name-page-block__list">
+			<li>
+				<a class="link-hover" href="/">
+					Homepage / 
+				</a>
+			</li>
+			<li>
+				<a class="link-hover" href="../work.html">
+					Work / 
+				</a>
+			</li>
+			<li>
+				<a class="link-hover" href="./project.html?id={{projectId}}">
+					{{projectName}}
+				</a>
+			</li>
+		</ul>
+		<h1 class="name-page-block__title ">
+			{{projectName}}
+		</h1>
+	</div>
+</section>
+<section class="introduce">
+	<div class="introduce__body ">
+		{{!-- <div class="introduce__slider">
+			<div class="introduce__slider-title-image">
+				<button class="arrow">
+					<img src="/assets/vendors/arrow-left.svg" alt="">
+				</button>
+				<button class="arrow">
+					<img src="/assets/vendors/arrow-right.svg" alt="">
+				</button>
+				<img id="project-introduce-0" class="image-adaptive" alt="">
+			</div>
+			<div class="introduce__slider-subtitle-body">
+				<div class="introduce__slider-subtitle-image">
+					<img id="project-introduce-1" class="image-adaptive" alt="">
+				</div>
+				<div class="introduce__slider-subtitle-image">
+					<img id="project-introduce-2" class="image-adaptive" alt="">
+				</div>
+				<div class="introduce__slider-subtitle-image">
+					<img id="project-introduce-3" class="image-adaptive" alt="">
+				</div>
+				<div class="introduce__slider-subtitle-image">
+					<img id="project-introduce-4" class="image-adaptive" alt="">
+				</div>
+				<div class="introduce__slider-subtitle-image">
+					<img id="project-introduce-5" class="image-adaptive" alt="">
+				</div>
+				<div class="introduce__slider-subtitle-image">
+					<img id="project-introduce-6" class="image-adaptive" alt="">
+				</div>
+			</div>
+		</div> --}}
+		<div class="introduce__description ">
+			<div class="introduce__description-value">
+				<h3 class="introduce__description-value-title">
+					Project goal
+				</h3>
+				<p class="introduce__description-value-text">{{projectDescription}}</p>
+				<p class="introduce__description-value-text">{{projectGoal}}</p>
+			</div>
+			<ul class="introduce__description-info">
+				<li class="introduce__description-info-location">
+					Location <span>{{projectLocation}}</span>
+				</li>
+				<li class="introduce__description-info-location">
+					Client <span>{{projectClient}}</span>
+				</li>
+				<li class="introduce__description-info-location">
+					Architect <span>{{projectArchitect}}</span>
+				</li>
+				<li class="introduce__description-info-location">
+					Size <span>{{projectSize}}</span>
+				</li>
+				<li class="introduce__description-info-location">
+					Value <span>{{projectValue}}</span>
+				</li>
+				<li class="introduce__description-info-location">
+					Completed <span>{{projectCompleted}}</span>
+				</li>
+		</div>
+</section>

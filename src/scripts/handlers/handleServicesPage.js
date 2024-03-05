@@ -39,7 +39,7 @@ if (relatedProjectsContainer) {
 	relatedProjectsContainer.innerHTML = renderHTML
 
 	const RELATED_PROJECTS_OPTIONS = {
-		inputData: STORE.PROJECTS.relatedProjects[dataType],
+		inputData: STORE.PROJECTS.relatedProjects,
 		containerEl: document.getElementById('related-projects-container'),
 		skipLeft: document.getElementById('related-projects-skip-left'),
 		skipRight: document.getElementById('related-projects-skip-right'),
@@ -47,8 +47,8 @@ if (relatedProjectsContainer) {
 	}
 
 	if (
-		STORE.PROJECTS.relatedProjects[dataType] &&
-		STORE.PROJECTS.relatedProjects[dataType].length > 0) {
+		STORE.PROJECTS.relatedProjects &&
+		STORE.PROJECTS.relatedProjects.length > 0) {
 		carousel(RELATED_PROJECTS_OPTIONS)
 	} else {
 		console.log('Related projects store store not found')

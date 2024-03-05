@@ -2,6 +2,7 @@ import { initGetRangedData } from '@js-api/getProjectsData'
 import setDataToLocalStor from '@js-store/handlersLocalStorage'
 import STORE from '@js-store/store'
 import createPortfolioCard from '@js-templates/portfolioCard'
+import initGetQueryParams from '@js-utilities/getQueryParams'
 
 const STORE_KEY = 'WorkProjects'
 const QUANTITY_OF_DATA = 9
@@ -10,7 +11,7 @@ const initShowProjects = async (container, button, boxOfFilters = null) => {
 	let startWith = 0
 	let maxFilteredItems = 9
 
-	let filterType = getFilterFromURL('filters')
+	let filterType = initGetQueryParams('filters')
 	let localData = await setDataForRender(startWith, maxFilteredItems, filterType)
 
 	render(container, localData, filterType)
@@ -87,7 +88,7 @@ const getMoreData = async (from) => {
 	let end = from + QUANTITY_OF_DATA
 	await initGetRangedData(from, end)
 	const data = STORE.PROJECTS.allProjects
-	console.log('Get data')
+
 	return data.length > 0 ? data : null
 }
 
@@ -111,11 +112,5 @@ const setNewURL = (value) => {
 	}
 }
 
-const getFilterFromURL = (queryRequire) => {
-	var queryParams = new URLSearchParams(window.location.search)
-	const filterValue = queryParams.get(queryRequire)
-
-	return filterValue !== '' ? filterValue : null
-}
 
 export default initShowProjects

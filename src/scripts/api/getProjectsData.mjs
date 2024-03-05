@@ -18,7 +18,7 @@ const initGetFilteredData = async (from, to = 3) => {
 const initGetRelatedData = async (dataType) => {
 	try {
 		const data = await fetchData(`http://localhost:4100/projects?dataType=${dataType}`)
-		STORE.PROJECTS.relatedProjects[dataType] = data
+		STORE.PROJECTS.relatedProjects = data
 	} catch (error) {
 		console.error(error)
 	}
@@ -32,7 +32,14 @@ const initGetRangedData = async (start = 0, end = 9) => {
 		console.log(error)
 	}
 }
+const initGetData = async (id) => {
+	try {
+		const data = await fetchData(`http://localhost:4100/projects?id=${id}`)
+		STORE.PROJECTS.selectedProject = data
+	} catch (error) {
+		console.log(error)
+	}
+}
 
-
-export { initGetRangedData, initGetFilteredData, initGetRelatedData }
+export { initGetData, initGetFilteredData, initGetRangedData, initGetRelatedData }
 

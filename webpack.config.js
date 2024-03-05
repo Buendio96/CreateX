@@ -88,6 +88,7 @@ module.exports = {
 		homepage: path.resolve(__dirname, 'src/scripts/handlers/handleHomePage.js'),
 		services: path.resolve(__dirname, 'src/scripts/handlers/handleServicesPage.js'),
 		work: path.resolve(__dirname, 'src/scripts/handlers/handleWorkPage.js'),
+		project: path.resolve(__dirname, 'src/scripts/handlers/handleProjectPage.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -133,7 +134,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/pages/work/project.hbs'),
 			filename: 'work/project.html',
-			chunks: ['main', 'work'],
+			chunks: ['main', 'project'],
 			minify: prodMode,
 			templateParameters: {
 				'filename': 'createX',

@@ -8,7 +8,27 @@
 			"imageName": "image-portfolio.png",
 			"linkToPage": "cubes-building",
 			"date": "2023-05-12",
-			"dataType": "construction"
+			"dataType": "construction",
+			"introduce": {
+				"text": "Create a modern office building with a unique cubic design. The structure will house various businesses and provide a collaborative workspace for innovation.",
+				"goal": "Foster a vibrant work environment and contribute to the urban landscape with a visually striking building.",
+				"pathToImages": {
+					"1": "cubes-building/building-1.png",
+					"2": "cubes-building/building-2.png",
+					"3": "cubes-building/building-3.png",
+					"4": "cubes-building/building-4.png",
+					"5": "cubes-building/building-5.png",
+					"6": "cubes-building/building-6.png"
+				}
+			},
+			"details": {
+				"location": "123 Innovation Blvd. Cityville, XYZ",
+				"client": "XYZ Corporation",
+				"architect": "Modern Architects Inc.",
+				"size": "100,000 sq. feet",
+				"value": "$50 million",
+				"completed": "December 2022"
+			}
 		},
 		{
 			"id": 1,
@@ -17,7 +37,27 @@
 			"imageName": "image-portfolio-1.png",
 			"linkToPage": "modern-cottage",
 			"date": "2023-06-22",
-			"dataType": "interior"
+			"dataType": "interior",
+			"introduce": {
+				"text": "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
+				"goal": "Modern design and care for each family member to feel as comfortable as possible in the new home.",
+				"pathToImages": {
+					"1": "modern-cottage/cottage-1.png",
+					"2": "modern-cottage/cottage-2.png",
+					"3": "modern-cottage/cottage-3.png",
+					"4": "modern-cottage/cottage-4.png",
+					"5": "modern-cottage/cottage-5.png",
+					"6": "modern-cottage/cottage-6.png"
+				}
+			},
+			"details": {
+				"location": "2464 Royal Ln. Mesa, New Jersey",
+				"client": "Darlene Robertson",
+				"architect": "HIK Architecture",
+				"size": "840 sq. feet",
+				"value": "$2 million",
+				"completed": "May 2020"
+			}
 		},
 		{
 			"id": 2,
@@ -26,7 +66,27 @@
 			"imageName": "image-portfolio-2.png",
 			"linkToPage": "luxury-beach-house",
 			"date": "2023-11-20",
-			"dataType": "interior"
+			"dataType": "interior",
+			"introduce": {
+				"text": "Build an elegant beachfront residence with luxurious amenities, panoramic ocean views, and a private beach access. A perfect retreat for relaxation and entertainment.",
+				"goal": "Combine opulence with the serenity of the beach, creating a sophisticated and comfortable coastal home.",
+				"pathToImages": {
+					"1": "luxury-beach-house/beach-house-1.png",
+					"2": "luxury-beach-house/beach-house-2.png",
+					"3": "luxury-beach-house/beach-house-3.png",
+					"4": "luxury-beach-house/beach-house-4.png",
+					"5": "luxury-beach-house/beach-house-5.png",
+					"6": "luxury-beach-house/beach-house-6.png"
+				}
+			},
+			"details": {
+				"location": "789 Oceanfront Dr. Paradise Cove, ABC",
+				"client": "John and Jane Smith",
+				"architect": "Coastal Designs",
+				"size": "5,000 sq. feet",
+				"value": "$10 million",
+				"completed": "July 2021"
+			}
 		},
 		{
 			"id": 3,
@@ -35,7 +95,27 @@
 			"imageName": "image-portfolio-3.png",
 			"linkToPage": "modern-double-bedroom-apartments",
 			"date": "2022-05-11",
-			"dataType": "project"
+			"dataType": "project",
+			"introduce": {
+				"text": "Develop a contemporary residential complex featuring modern double-bedroom apartments. Emphasis on efficient space utilization and stylish design for urban living.",
+				"goal": "Provide comfortable and stylish living spaces for individuals and families seeking a modern urban lifestyle.",
+				"pathToImages": {
+					"1": "modern-double-bedroom-apartments/apartments-1.png",
+					"2": "modern-double-bedroom-apartments/apartments-2.png",
+					"3": "modern-double-bedroom-apartments/apartments-3.png",
+					"4": "modern-double-bedroom-apartments/apartments-4.png",
+					"5": "modern-double-bedroom-apartments/apartments-5.png",
+					"6": "modern-double-bedroom-apartments/apartments-6.png"
+				}
+			},
+			"details": {
+				"location": "456 Urban Ave. Metropolis, LMN",
+				"client": "City Living Developments",
+				"architect": "Urban Spaces Architects",
+				"size": "2,500 sq. feet (each apartment)",
+				"value": "$20 million",
+				"completed": "March 2023"
+			}
 		},
 		{
 			"id": 4,
@@ -44,7 +124,27 @@
 			"imageName": "image-portfolio-4.png",
 			"linkToPage": "kids-bedroom-with-decorations",
 			"date": "2023-11-15",
-			"dataType": "repairs"
+			"dataType": "repairs",
+			"introduce": {
+				"text": "Design and decorate vibrant and imaginative kids' bedrooms with playful themes and interactive elements. Create spaces that inspire creativity and joy.",
+				"goal": "Craft personalized and enchanting environments for children to enjoy and grow in.",
+				"pathToImages": {
+					"1": "kids-bedroom/kids-room-1.png",
+					"2": "kids-bedroom/kids-room-2.png",
+					"3": "kids-bedroom/kids-room-3.png",
+					"4": "kids-bedroom/kids-room-4.png",
+					"5": "kids-bedroom/kids-room-5.png",
+					"6": "kids-bedroom/kids-room-6.png"
+				}
+			},
+			"details": {
+				"location": "789 Playful St. Imaginationland, PQR",
+				"client": "Happy Kids Foundation",
+				"architect": "Whimsical Designs Inc.",
+				"size": "500 sq. feet (each room)",
+				"value": "$1 million",
+				"completed": "October 2022"
+			}
 		},
 		{
 			"id": 5,
@@ -53,7 +153,27 @@
 			"imageName": "image-portfolio-5.png",
 			"linkToPage": "the-pencil-building",
 			"date": "2023-10-23",
-			"dataType": "construction"
+			"dataType": "construction",
+			"introduce": {
+				"text": "Construct an iconic office building shaped like a giant pencil, symbolizing creativity and innovation. The structure will house various creative enterprises.",
+				"goal": "Make a bold architectural statement that reflects the spirit of innovation and creative thinking.",
+				"pathToImages": {
+					"1": "pencil-building/building-1.png",
+					"2": "pencil-building/building-2.png",
+					"3": "pencil-building/building-3.png",
+					"4": "pencil-building/building-4.png",
+					"5": "pencil-building/building-5.png",
+					"6": "pencil-building/building-6.png"
+				}
+			},
+			"details": {
+				"location": "101 Sketch Ave. Creativitytown, XYZ",
+				"client": "Artistic Ventures Ltd.",
+				"architect": "Innovative Designs Co.",
+				"size": "75,000 sq. feet",
+				"value": "$30 million",
+				"completed": "June 2022"
+			}
 		},
 		{
 			"id": 6,

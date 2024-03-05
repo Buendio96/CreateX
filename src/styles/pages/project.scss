@@ -1,0 +1,86 @@
+@import '@s-common/vars';
+@import '@s-common/mixins';
+@import '@s-templates/portfolio-card';
+@import '@s-templates/slider';
+.project {
+	&__body {
+	}
+	.project-title {
+		max-width: 100%;
+	}
+}
+.introduce {
+	&__body {
+	}
+	&__slider {
+	}
+	&__slider-title-image {
+	}
+	&__slider-subtitle-body {
+	}
+	&__slider-subtitle-image {
+	}
+	&__description {
+		display: flex;
+	}
+	&__description-value {
+	}
+	&__description-value-title {
+	}
+	&__description-value-text {
+	}
+	&__description-info {
+	}
+	&__description-info-location {
+	}
+}
+
+.decision {
+	background-color: $auxiliary-bg;
+	margin: 0 0 60px;
+
+	&__body {
+		margin: 80px 0 -60px;
+		display: flex;
+		> div {
+			flex: 0 1 50%;
+		}
+	}
+	&__image {
+		position: relative;
+		width: 495px;
+		height: 550px;
+	}
+	&__checklist-title {
+		font-family: 'Ubu-B';
+		font-size: 46px;
+		line-height: 130%;
+		margin: 0 0 0 15px;
+	}
+	&__checklist-body {
+		margin: 60px 0 0 15px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 20px;
+	}
+	&__checklist-item {
+		display: flex;
+		align-items: center;
+		column-gap: 16px;
+		font-size: 16px;
+		color: $links;
+	}
+}
+.similar-projects {
+	&__body {
+		padding: 120px 0;
+	}
+}
+
+.image-adaptive {
+}
+
+.arrow {
+}
+.image-adaptive {
+}
