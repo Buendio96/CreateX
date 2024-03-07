@@ -1,5 +1,5 @@
 <section class="name-page-block ">
-	<div class="name-page-block__body project-title">
+	<div class="name-page-block__body">
 		<ul class="name-page-block__list">
 			<li>
 				<a class="link-hover" href="/">
@@ -24,12 +24,12 @@
 </section>
 <section class="introduce">
 	<div class="introduce__body ">
-		{{!-- <div class="introduce__slider">
+		<div class="introduce__slider">
 			<div class="introduce__slider-title-image">
 				<button class="arrow">
 					<img src="/assets/vendors/arrow-left.svg" alt="">
 				</button>
-				<button class="arrow">
+				<button type="button" class="arrow">
 					<img src="/assets/vendors/arrow-right.svg" alt="">
 				</button>
 				<img id="project-introduce-0" class="image-adaptive" alt="">
@@ -54,33 +54,33 @@
 					<img id="project-introduce-6" class="image-adaptive" alt="">
 				</div>
 			</div>
-		</div> --}}
+		</div>
 		<div class="introduce__description ">
 			<div class="introduce__description-value">
 				<h3 class="introduce__description-value-title">
 					Project goal
 				</h3>
-				<p class="introduce__description-value-text">{{projectDescription}}</p>
+				<p class="introduce__description-value-text first">{{projectDescription}}</p>
 				<p class="introduce__description-value-text">{{projectGoal}}</p>
 			</div>
 			<ul class="introduce__description-info">
-				<li class="introduce__description-info-location">
-					Location <span>{{projectLocation}}</span>
+				<li class="introduce__description-info-item">
+					<span>Location </span>{{projectLocation}}
 				</li>
-				<li class="introduce__description-info-location">
-					Client <span>{{projectClient}}</span>
+				<li class="introduce__description-info-item">
+					<span>Client </span>{{projectClient}}
 				</li>
-				<li class="introduce__description-info-location">
-					Architect <span>{{projectArchitect}}</span>
+				<li class="introduce__description-info-item">
+					<span>Architect </span>{{projectArchitect}}
 				</li>
-				<li class="introduce__description-info-location">
-					Size <span>{{projectSize}}</span>
+				<li class="introduce__description-info-item">
+					<span>Size </span>{{projectSize}}
 				</li>
-				<li class="introduce__description-info-location">
-					Value <span>{{projectValue}}</span>
+				<li class="introduce__description-info-item">
+					<span>Value </span>{{projectValue}}
 				</li>
-				<li class="introduce__description-info-location">
-					Completed <span>{{projectCompleted}}</span>
+				<li class="introduce__description-info-item">
+					<span>Completed </span>{{projectCompleted}}
 				</li>
 		</div>
 </section>

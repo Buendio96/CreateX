@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/scripts/handlers/handleWorkPage.js":
@@ -8,6 +7,7 @@
   \************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_bg_image_work__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @images/bg-image-work */ "./src/assets/images/bg-image-work.png");
@@ -17,7 +17,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @js-utilities/addBackground */ "./src/scripts/utilities/addBackground.mjs");
 /* harmony import */ var _js_utilities_showOpinion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @js-utilities/showOpinion */ "./src/scripts/utilities/showOpinion.mjs");
 /* harmony import */ var _js_utilities_showProjects__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @js-utilities/showProjects */ "./src/scripts/utilities/showProjects.mjs");
-/* harmony import */ var _s_pages_work__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @s-pages/work */ "./src/styles/pages/work.scss");
+/* harmony import */ var _js_utilities_showSelectedProject__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @js-utilities/showSelectedProject */ "./src/scripts/utilities/showSelectedProject.mjs");
+/* harmony import */ var _s_pages_work__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @s-pages/work */ "./src/styles/pages/work.scss");
+
 
 
 
@@ -63,6 +65,7 @@ __webpack_async_result__();
   \***************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -816,129 +819,53 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.solid-button {
   100% {
     transform: rotate(-360deg);
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/common/_mixins.scss","webpack://./src/styles/common/_vars.scss","webpack://./src/styles/pages/work.scss","webpack://./src/styles/templates/_supported-by.scss","webpack://./src/styles/templates/_portfolio-card.scss","webpack://./src/styles/templates/_opinions.scss"],"names":[],"mappings":"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","sourcesContent":["//==============================================\r\n//BUTTONS=======================================\r\n//==============================================\r\n@mixin buttons {\r\n\tdisplay: inline-flex;\r\n\talign-items: center;\r\n\ttext-align: center;\r\n\ttext-transform: uppercase;\r\n\tfont-family: 'Ubu-B';\r\n\ttransition: all 0.4s ease;\r\n\tletter-spacing: 0.5px;\r\n\tborder-radius: 4px;\r\n}\r\n.solid-button {\r\n\tfont-size: 16px;\r\n\theight: 52px;\r\n\tcolor: $text;\r\n\tbackground-color: $primary;\r\n\tpadding: 0 40px;\r\n\tborder: 1px solid transparent;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tbackground: $text;\r\n\t\tcolor: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.regular-button {\r\n\tfont-size: 14px;\r\n\theight: 44px;\r\n\tcolor: $text;\r\n\tbackground-color: $primary;\r\n\tpadding: 0 32px;\r\n\tborder: 1px solid transparent;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tbackground: $text;\r\n\t\tcolor: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.outline-solid-btn {\r\n\tfont-size: 16px;\r\n\tcolor: $primary;\r\n\theight: 52px;\r\n\tbackground-color: transparent;\r\n\tpadding: 0 40px;\r\n\tborder: 1px solid $primary;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tbackground: $text;\r\n\t\tcolor: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.outline-regular-btn {\r\n\tfont-size: 14px;\r\n\tcolor: $primary;\r\n\theight: 44px;\r\n\tbackground-color: transparent;\r\n\tpadding: 0 32px;\r\n\tborder: 1px solid $primary;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tcolor: $text;\r\n\t\tbackground: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.arrow {\r\n\tpadding: 0;\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tbackground: white;\r\n\twidth: 48px;\r\n\theight: 48px;\r\n\tborder-radius: 50%;\r\n\ttransition: all 0.4s ease;\r\n\t&:hover {\r\n\t\ttransition: all 0.3s ease;\r\n\t\tbackground: $primary;\r\n\t\timg {\r\n\t\t\ttransition: all 0.4s ease;\r\n\t\t\tfilter: invert(1);\r\n\t\t}\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\twidth: 32px;\r\n\t\theight: 32px;\r\n\t}\r\n}\r\n//==============================================\r\n//FORM TAGS=====================================\r\n//==============================================\r\n@mixin label-text {\r\n\tcolor: $links;\r\n\tfont-size: 14px;\r\n\tfont-style: normal;\r\n\tline-height: 150%;\r\n}\r\n.link-hover {\r\n\t&:hover {\r\n\t\tcolor: $primary;\r\n\t}\r\n}\r\n.label {\r\n\t@include label-text;\r\n}\r\n.input {\r\n\t@include label-text;\r\n\tpadding: 11px 0 12px 16px;\r\n\tborder: 1px solid $input-bor;\r\n\tbackground-color: $input-bg;\r\n\tborder-radius: 4px;\r\n}\r\n//==============================================\r\n//BLOCKS========================================\r\n//==============================================\r\n.title-block {\r\n\tmargin: 0 auto;\r\n\ttext-align: center;\r\n\r\n\t&__title {\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tfont-size: 46px;\r\n\t\tline-height: 130%;\r\n\t\tcolor: $titles;\r\n\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tfont-size: 40px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tfont-size: 25px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tfont-size: 18px;\r\n\t\t}\r\n\t}\r\n\t&__subtitle {\r\n\t\tmargin: 24px 0 0;\r\n\t\tfont-size: 18px;\r\n\t\tline-height: 150%;\r\n\t\tcolor: $desc;\r\n\t\tfont-family: 'Ubu-R';\r\n\t\tfont-weight: 400;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tfont-size: 15px;\r\n\t\t\tmargin: 12px 0 0;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tmargin: 10px 0 0;\r\n\t\t\tfont-size: 13px;\r\n\t\t}\r\n\t}\r\n}\r\n.text-left {\r\n\ttext-align: left;\r\n}\r\n.view-more-block {\r\n\tdisplay: flex;\r\n\tcolumn-gap: 40px;\r\n\t&__title {\r\n\t\tcolor: $titles;\r\n\t\tfont-size: 28px;\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tline-height: 150%;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tfont-size: 24px;\r\n\t\t\tflex: 0 1 100%;\r\n\t\t}\r\n\t}\r\n\t&__link {\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\theight: 30px;\r\n\t\t}\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tflex-wrap: wrap;\r\n\t\ttext-align: center;\r\n\t\tjustify-content: center;\r\n\t\trow-gap: 10px;\r\n\t\tmargin: 20px 0 0;\r\n\t}\r\n}\r\n\r\n//==============================================\r\n//ADAPTIVE && DISPLAY======================================\r\n//==============================================\r\n.grid {\r\n\tdisplay: grid;\r\n\tgrid-template: 1fr/1fr minmax(auto, 1230px) 1fr;\r\n\tpadding: 0 15px;\r\n}\r\n.center {\r\n\tgrid-column: 2/3;\r\n}\r\n.image-adaptive {\r\n\tposition: absolute;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\ttop: 0;\r\n\tleft: 0;\r\n\tobject-fit: cover;\r\n}\r\n","$primary: #ff5a30;\r\n$titles: #1e212c;\r\n$links: #424551;\r\n$desc: #787a80;\r\n$input-bg: #f4f5f6;\r\n$input-bor: #d7dadd;\r\n$text: #fff;\r\n$main-bg: #fff;\r\n$auxiliary-bg: #f4f5f6;\r\n$alternative-bg: #1e212c;\r\n//Output-Displays=========================\r\n$header: 1120px;\r\n$desktop: 992px;\r\n$tablet: 768px;\r\n$phone: 480px;\r\n$phone-s: 320px;\r\n","@import '@s-common/vars';\r\n@import '@s-common/mixins';\r\n@import '@s-templates/supported-by';\r\n@import '@s-templates/portfolio-card';\r\n@import '@s-templates/opinions';\r\n.for-work {\r\n\twidth: 915px;\r\n\tleft: calc(100% - 915px);\r\n}\r\n.clients-opinion {\r\n\tbackground: $auxiliary-bg;\r\n\t&__body {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: column;\r\n\t\trow-gap: 120px;\r\n\t\tpadding: 80px 0 0;\r\n\t\tmargin: 0 0 -60px;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\trow-gap: 70px;\r\n\t\t\tpadding: 60px 0 10px;\r\n\t\t\tmargin: 0;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\trow-gap: 35px;\r\n\t\t\tpadding: 40px 0 10px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tpadding: 20px 0 0;\r\n\t\t}\r\n\t}\r\n}\r\n.our-supports {\r\n\tpadding: 180px 0 120px;\r\n\tbackground-color: $main-bg;\r\n\t@media (max-width: $desktop) {\r\n\t\tpadding: 100px 0 40px;\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tpadding: 80px 0 50px;\r\n\t}\r\n\t@media (max-width: $phone) {\r\n\t\tpadding: 30px 0 20px;\r\n\t}\r\n}\r\n.projects {\r\n\tbackground-color: $main-bg;\r\n\ttext-align: center;\r\n\t&__body {\r\n\t\tpadding: 0 0 100px;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tpadding: 0 0 80px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tpadding: 0 0 60px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tpadding: 0 0 20px;\r\n\t\t}\r\n\t}\r\n\t&__filters {\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\tmargin: -60px 0 0;\r\n\t\tli {\r\n\t\t\tflex: 0 1 18.7%;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmargin: -30px 0 0;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tpadding: 20px 0;\r\n\t\t\tmargin: 0 - 15px;\r\n\t\t\tbackground-color: $auxiliary-bg;\r\n\t\t\tflex-wrap: wrap;\r\n\t\t\trow-gap: 15px;\r\n\t\t\tcolumn-gap: 10px;\r\n\t\t\tli:first-child {\r\n\t\t\t\tflex: 0 1 100%;\r\n\t\t\t\tbutton {\r\n\t\t\t\t\tjustify-content: center;\r\n\t\t\t\t\tcolumn-gap: 40px;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tli:not(:first-child) {\r\n\t\t\t\tflex: 0 1 calc(50% - 10px);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t&__button {\r\n\t\tdisplay: flex;\r\n\t\theight: 155px;\r\n\t\twidth: 100%;\r\n\t\tflex-direction: column;\r\n\t\talign-items: center;\r\n\t\tjustify-content: center;\r\n\t\tborder-radius: 4px;\r\n\t\tbox-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),\r\n\t\t\t0px 12px 10px -6px rgba(154, 156, 165, 0.04),\r\n\t\t\t0px 30px 24px -10px rgba(154, 156, 165, 0.05),\r\n\t\t\t0px 80px 80px -20px rgba(154, 156, 165, 0.08);\r\n\t\tbackground: $text;\r\n\t\ttransition: all 0.5s ease;\r\n\t\tspan {\r\n\t\t\tmargin: 16px 0 0 0;\r\n\t\t\tcolor: $desc;\r\n\t\t\tfont-size: 16px;\r\n\t\t\tline-height: 160%;\r\n\t\t\tfont-family: 'Ubu-B';\r\n\t\t}\r\n\t\t&:hover {\r\n\t\t\tbackground-color: $primary;\r\n\t\t\timg {\r\n\t\t\t\tfilter: saturate(0) brightness(1000%);\r\n\t\t\t}\r\n\t\t\tspan {\r\n\t\t\t\tcolor: $text;\r\n\t\t\t}\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\theight: 100px;\r\n\t\t\timg {\r\n\t\t\t\twidth: 30px;\r\n\t\t\t}\r\n\t\t\tspan {\r\n\t\t\t\tmargin: 10px 0 0 0;\r\n\t\t\t\tline-height: 100%;\r\n\t\t\t\tfont-size: 14px;\r\n\t\t\t}\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\theight: auto;\r\n\t\t\tflex-direction: row;\r\n\t\t\tjustify-content: space-between;\r\n\t\t\tpadding: 5px 8px 5px 10px;\r\n\t\t\tspan {\r\n\t\t\t\tmargin: 0;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t&__container {\r\n\t\tmargin: 120px 0 0;\r\n\t\tbackground: $text;\r\n\t\tdisplay: grid;\r\n\t\tgap: 30px;\r\n\t\tgrid-template-columns: repeat(auto-fit, minmax(0, calc(33.333% - 30px)));\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tmargin: 100px 0 0;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmargin: 80px 0 0;\r\n\t\t\tgap: 15px;\r\n\t\t\tgrid-template-columns: repeat(auto-fit, minmax(0, calc(50% - 15px)));\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tmargin: 50px 0 0;\r\n\t\t}\r\n\t}\r\n\t&__show-more {\r\n\t\tmargin: 60px 0 0;\r\n\t\tpadding: 20px 30px;\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tdisplay: inline-flex;\r\n\t\tcolumn-gap: 16px;\r\n\t\talign-items: center;\r\n\t\tfont-size: 16px;\r\n\t\tcolor: $titles;\r\n\t\ttransition: all 0.3s ease;\r\n\t\t&:hover {\r\n\t\t\ttransform: scale(1.1);\r\n\t\t\tcolor: $primary;\r\n\t\t}\r\n\t\timg {\r\n\t\t\tanimation: rotate 1.5s cubic-bezier(0.2, 0.2, 0.6, 0.8) infinite;\r\n\t\t}\r\n\t}\r\n\t@keyframes rotate {\r\n\t\t0% {\r\n\t\t\ttransform: rotate(0);\r\n\t\t}\r\n\t\t100% {\r\n\t\t\ttransform: rotate(-360deg);\r\n\t\t}\r\n\t}\r\n}\r\n",".supported-by {\r\n\t&__title {\r\n\t}\r\n\t&__list {\r\n\t\tmargin: 21px 0 0;\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tflex-wrap: wrap;\r\n\t\t\tcolumn-gap: 10px;\r\n\t\t\trow-gap: 15px;\r\n\t\t\timg {\r\n\t\t\t\tflex: 0 1 25%;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n",".portfolio-card {\r\n\tflex: 0 1 33.3333%;\r\n\ttext-align: center;\r\n\tborder-radius: 4px 4px 0 0;\r\n\tbox-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),\r\n\t\t0px 12px 10px -6px rgba(154, 156, 165, 0.04),\r\n\t\t0px 30px 24px -10px rgba(154, 156, 165, 0.05),\r\n\t\t0px 80px 80px -20px rgba(154, 156, 165, 0.08);\r\n\tposition: relative;\r\n\toverflow: hidden;\r\n\tpadding: 0 0 90px;\r\n\t&:hover .portfolio-card__box {\r\n\t\theight: 37.5%;\r\n\t}\r\n\t@media (max-width: $desktop) {\r\n\t\tpadding: 0 0 50px;\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tflex: 0 1 100%;\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\tpadding: 0;\r\n\t}\r\n\t@media (max-width: $phone) {\r\n\t\tflex-direction: column;\r\n\t\tpadding: 0 0 50px;\r\n\t}\r\n\t&__img {\r\n\t\theight: 345px;\r\n\t\tposition: relative;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\theight: 240px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tflex: 0 1 55%;\r\n\t\t\theight: 180px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tflex: 0 1 100%;\r\n\t\t\tmin-height: 200px;\r\n\t\t}\r\n\t}\r\n\t&__box {\r\n\t\tposition: absolute;\r\n\t\tbottom: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 21.6%;\r\n\t\tbackground-color: $main-bg;\r\n\t\tpadding: 15px 0 25px;\r\n\t\ttransition: all 0.3s ease-out;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tposition: relative;\r\n\t\t\theight: 100%;\r\n\t\t\twidth: 45%;\r\n\t\t\tdisplay: flex;\r\n\t\t\tflex-direction: column;\r\n\t\t\tjustify-content: center;\r\n\t\t\talign-items: center;\r\n\t\t\tpadding: 0 10px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tposition: absolute;\r\n\t\t\twidth: 100%;\r\n\t\t\theight: 21.6%;\r\n\t\t\tbottom: 0;\r\n\t\t\tpadding: 25px 3px 5px;\r\n\t\t}\r\n\t}\r\n\t&__box-title {\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tfont-size: 20px;\r\n\t\tline-height: 105%;\r\n\t\tcolor: $titles;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tfont-size: 15px;\r\n\t\t\tline-height: 1;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tfont-size: 13px;\r\n\t\t}\r\n\t}\r\n\t&__box-subtitle {\r\n\t\tmargin: 15px 0 0;\r\n\t\tfont-size: 14px;\r\n\t\tcolor: $desc;\r\n\t\tline-height: 150%;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tmargin: 10px 0 0;\r\n\t\t\tfont-size: 12px;\r\n\t\t\tline-height: 1;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tfont-size: 10px;\r\n\t\t}\r\n\t}\r\n\t&__box-btn {\r\n\t\tmargin: 24px 0 0;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tmargin: 13px 0 0;\r\n\t\t\theight: 30px;\r\n\t\t\tfont-size: 13px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tmargin: 16px 0 0;\r\n\t\t}\r\n\t}\r\n}\r\n.card {\r\n\tanimation: showCard 1s ease;\r\n}\r\n@keyframes showCard {\r\n\t0% {\r\n\t\tborder-radius: 50%;\r\n\t\ttransform: scale(0, 0);\r\n\t\topacity: 0;\r\n\t}\r\n\t100% {\r\n\t\tborder-radius: 4px;\r\n\t\ttransform: scale(100%, 100%);\r\n\t\topacity: 1;\r\n\t}\r\n}\r\n",".opinion {\r\n\tdisplay: flex;\r\n\tcolumn-gap: 135px;\r\n\t@media (max-width: $desktop) {\r\n\t\tcolumn-gap: 40px;\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tcolumn-gap: 20px;\r\n\t\tposition: relative;\r\n\t}\r\n\t&__body {\r\n\t\tmax-width: 600px;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmax-width: 400px;\r\n\t\t}\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tmax-width: 100%;\r\n\t\t\tposition: absolute;\r\n\t\t\ttop: 35px;\r\n\t\t\tz-index: 2;\r\n\t\t\tpadding: 0 10px;\r\n\t\t}\r\n\t}\r\n\t&__title {\r\n\t\ttext-align: left;\r\n\t}\r\n\t&__content {\r\n\t\tmargin: 60px 0 0;\r\n\t\ttransition: all 0.5s ease;\r\n\t}\r\n\t&__content-img {\r\n\t\twidth: 72px;\r\n\t\theight: 72px;\r\n\t\tborder-radius: 50%;\r\n\t\tbackground: rgba($color: $primary, $alpha: 0.5);\r\n\t\tbox-shadow: 0 -3px 10px 0.5px rgba($color: $primary, $alpha: 0.9),\r\n\t\t\t0 -7px 15px 1px rgba($color: $desc, $alpha: 0.4);\r\n\t\tposition: relative;\r\n\t}\r\n\t&__content-text {\r\n\t\tmargin: 24px 0 0;\r\n\t\tfont-size: 16px;\r\n\t\tline-height: 160%;\r\n\t\tcolor: $links;\r\n\t\tmax-height: 80px;\r\n\t\toverflow-x: auto;\r\n\t\ttransition: all 0.5s ease;\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tbackground-color: rgba($color: $desc, $alpha: 0.7);\r\n\t\t\tmargin: 10px -10px 0;\r\n\t\t\tpadding: 0 10px;\r\n\t\t\tcolor: $titles;\r\n\t\t}\r\n\t}\r\n\t&__content-info {\r\n\t\tmargin: 24px 0 0;\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tbackground-color: rgba($color: $desc, $alpha: 0.7);\r\n\t\t\tmargin: 10px -10px 0;\r\n\t\t\tpadding: 0 10px;\r\n\t\t\tcolor: $titles;\r\n\t\t}\r\n\t}\r\n\t&__content-info-user {\r\n\t}\r\n\t&__content-info-user-name {\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tfont-size: 16px;\r\n\t\tline-height: 160%;\r\n\t\tcolor: $titles;\r\n\t}\r\n\t&__content-info-user-work {\r\n\t\tfont-size: 14px;\r\n\t\tline-height: 150%;\r\n\t\tcolor: $desc;\r\n\t}\r\n\t&__content-info-buttons {\r\n\t\tdisplay: flex;\r\n\t\talign-items: center;\r\n\t\tbutton {\r\n\t\t\tbackground-color: $auxiliary-bg;\r\n\t\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\t\tbackground-color: rgba($color: $desc, $alpha: 0.1);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t&__image-block {\r\n\t\tflex: 0 1 495px;\r\n\t\theight: 550px;\r\n\t\tposition: relative;\r\n\t\tborder-radius: 4px;\r\n\t\toverflow: hidden;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\theight: 370px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmargin: 35px 0 0;\r\n\t\t\tcolumn-gap: 20px;\r\n\t\t}\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tflex: 0 1 100%;\r\n\t\t\timg {\r\n\t\t\t\topacity: 0.5;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/common/_mixins.scss","webpack://./src/styles/common/_vars.scss","webpack://./src/styles/pages/work.scss","webpack://./src/styles/templates/_supported-by.scss","webpack://./src/styles/templates/_portfolio-card.scss","webpack://./src/styles/templates/_opinions.scss"],"names":[],"mappings":"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","sourcesContent":["//==============================================\r\n//BUTTONS=======================================\r\n//==============================================\r\n@mixin buttons {\r\n\tdisplay: inline-flex;\r\n\talign-items: center;\r\n\ttext-align: center;\r\n\ttext-transform: uppercase;\r\n\tfont-family: 'Ubu-B';\r\n\ttransition: all 0.4s ease;\r\n\tletter-spacing: 0.5px;\r\n\tborder-radius: 4px;\r\n}\r\n.solid-button {\r\n\tfont-size: 16px;\r\n\theight: 52px;\r\n\tcolor: $text;\r\n\tbackground-color: $primary;\r\n\tpadding: 0 40px;\r\n\tborder: 1px solid transparent;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tbackground: $text;\r\n\t\tcolor: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.regular-button {\r\n\tfont-size: 14px;\r\n\theight: 44px;\r\n\tcolor: $text;\r\n\tbackground-color: $primary;\r\n\tpadding: 0 32px;\r\n\tborder: 1px solid transparent;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tbackground: $text;\r\n\t\tcolor: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.outline-solid-btn {\r\n\tfont-size: 16px;\r\n\tcolor: $primary;\r\n\theight: 52px;\r\n\tbackground-color: transparent;\r\n\tpadding: 0 40px;\r\n\tborder: 1px solid $primary;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tbackground: $text;\r\n\t\tcolor: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.outline-regular-btn {\r\n\tfont-size: 14px;\r\n\tcolor: $primary;\r\n\theight: 44px;\r\n\tbackground-color: transparent;\r\n\tpadding: 0 32px;\r\n\tborder: 1px solid $primary;\r\n\t@include buttons;\r\n\t&:hover {\r\n\t\tcolor: $text;\r\n\t\tbackground: $primary;\r\n\t\tborder: 1px solid $primary;\r\n\t}\r\n}\r\n.arrow {\r\n\tpadding: 0;\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tbackground: white;\r\n\twidth: 48px;\r\n\theight: 48px;\r\n\tborder-radius: 50%;\r\n\ttransition: all 0.4s ease;\r\n\t&:hover {\r\n\t\ttransition: all 0.3s ease;\r\n\t\tbackground: $primary;\r\n\t\timg {\r\n\t\t\ttransition: all 0.4s ease;\r\n\t\t\tfilter: invert(1);\r\n\t\t}\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\twidth: 32px;\r\n\t\theight: 32px;\r\n\t}\r\n}\r\n//==============================================\r\n//FORM TAGS=====================================\r\n//==============================================\r\n@mixin label-text {\r\n\tcolor: $links;\r\n\tfont-size: 14px;\r\n\tfont-style: normal;\r\n\tline-height: 150%;\r\n}\r\n.link-hover {\r\n\t&:hover {\r\n\t\tcolor: $primary;\r\n\t}\r\n}\r\n.label {\r\n\t@include label-text;\r\n}\r\n.input {\r\n\t@include label-text;\r\n\tpadding: 11px 0 12px 16px;\r\n\tborder: 1px solid $input-bor;\r\n\tbackground-color: $input-bg;\r\n\tborder-radius: 4px;\r\n}\r\n//==============================================\r\n//BLOCKS========================================\r\n//==============================================\r\n.title-block {\r\n\tmargin: 0 auto;\r\n\ttext-align: center;\r\n\r\n\t&__title {\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tfont-size: 46px;\r\n\t\tline-height: 130%;\r\n\t\tcolor: $titles;\r\n\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tfont-size: 40px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tfont-size: 25px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tfont-size: 18px;\r\n\t\t}\r\n\t}\r\n\t&__subtitle {\r\n\t\tmargin: 24px 0 0;\r\n\t\tfont-size: 18px;\r\n\t\tline-height: 150%;\r\n\t\tcolor: $desc;\r\n\t\tfont-family: 'Ubu-R';\r\n\t\tfont-weight: 400;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tfont-size: 15px;\r\n\t\t\tmargin: 12px 0 0;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tmargin: 10px 0 0;\r\n\t\t\tfont-size: 13px;\r\n\t\t}\r\n\t}\r\n}\r\n.text-left {\r\n\ttext-align: left;\r\n}\r\n.view-more-block {\r\n\tdisplay: flex;\r\n\tcolumn-gap: 40px;\r\n\t&__title {\r\n\t\tcolor: $titles;\r\n\t\tfont-size: 28px;\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tline-height: 150%;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tfont-size: 24px;\r\n\t\t\tflex: 0 1 100%;\r\n\t\t}\r\n\t}\r\n\t&__link {\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\theight: 30px;\r\n\t\t}\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tflex-wrap: wrap;\r\n\t\ttext-align: center;\r\n\t\tjustify-content: center;\r\n\t\trow-gap: 10px;\r\n\t\tmargin: 20px 0 0;\r\n\t}\r\n}\r\n\r\n//==============================================\r\n//ADAPTIVE && DISPLAY======================================\r\n//==============================================\r\n.grid {\r\n\tdisplay: grid;\r\n\tgrid-template: 1fr/1fr minmax(auto, 1230px) 1fr;\r\n\tpadding: 0 15px;\r\n}\r\n.center {\r\n\tgrid-column: 2/3;\r\n}\r\n.image-adaptive {\r\n\tposition: absolute;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\ttop: 0;\r\n\tleft: 0;\r\n\tobject-fit: cover;\r\n}\r\n","$primary: #ff5a30;\r\n$titles: #1e212c;\r\n$links: #424551;\r\n$desc: #787a80;\r\n$input-bg: #f4f5f6;\r\n$input-bor: #d7dadd;\r\n$text: #fff;\r\n$main-bg: #fff;\r\n$auxiliary-bg: #f4f5f6;\r\n$alternative-bg: #1e212c;\r\n//Output-Displays=========================\r\n$header: 1120px;\r\n$desktop: 992px;\r\n$tablet: 768px;\r\n$phone: 480px;\r\n$phone-s: 320px;\r\n","@import '@s-common/vars';\r\n@import '@s-common/mixins';\r\n@import '@s-templates/supported-by';\r\n@import '@s-templates/portfolio-card';\r\n@import '@s-templates/opinions';\r\n\r\n.for-work {\r\n\twidth: 915px;\r\n\tleft: calc(100% - 915px);\r\n}\r\n.clients-opinion {\r\n\tbackground: $auxiliary-bg;\r\n\t&__body {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: column;\r\n\t\trow-gap: 120px;\r\n\t\tpadding: 80px 0 0;\r\n\t\tmargin: 0 0 -60px;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\trow-gap: 70px;\r\n\t\t\tpadding: 60px 0 10px;\r\n\t\t\tmargin: 0;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\trow-gap: 35px;\r\n\t\t\tpadding: 40px 0 10px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tpadding: 20px 0 0;\r\n\t\t}\r\n\t}\r\n}\r\n.our-supports {\r\n\tpadding: 180px 0 120px;\r\n\tbackground-color: $main-bg;\r\n\t@media (max-width: $desktop) {\r\n\t\tpadding: 100px 0 40px;\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tpadding: 80px 0 50px;\r\n\t}\r\n\t@media (max-width: $phone) {\r\n\t\tpadding: 30px 0 20px;\r\n\t}\r\n}\r\n.projects {\r\n\tbackground-color: $main-bg;\r\n\ttext-align: center;\r\n\t&__body {\r\n\t\tpadding: 0 0 100px;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tpadding: 0 0 80px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tpadding: 0 0 60px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tpadding: 0 0 20px;\r\n\t\t}\r\n\t}\r\n\t&__filters {\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\tmargin: -60px 0 0;\r\n\t\tli {\r\n\t\t\tflex: 0 1 18.7%;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmargin: -30px 0 0;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tpadding: 20px 0;\r\n\t\t\tmargin: 0 - 15px;\r\n\t\t\tbackground-color: $auxiliary-bg;\r\n\t\t\tflex-wrap: wrap;\r\n\t\t\trow-gap: 15px;\r\n\t\t\tcolumn-gap: 10px;\r\n\t\t\tli:first-child {\r\n\t\t\t\tflex: 0 1 100%;\r\n\t\t\t\tbutton {\r\n\t\t\t\t\tjustify-content: center;\r\n\t\t\t\t\tcolumn-gap: 40px;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tli:not(:first-child) {\r\n\t\t\t\tflex: 0 1 calc(50% - 10px);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t&__button {\r\n\t\tdisplay: flex;\r\n\t\theight: 155px;\r\n\t\twidth: 100%;\r\n\t\tflex-direction: column;\r\n\t\talign-items: center;\r\n\t\tjustify-content: center;\r\n\t\tborder-radius: 4px;\r\n\t\tbox-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),\r\n\t\t\t0px 12px 10px -6px rgba(154, 156, 165, 0.04),\r\n\t\t\t0px 30px 24px -10px rgba(154, 156, 165, 0.05),\r\n\t\t\t0px 80px 80px -20px rgba(154, 156, 165, 0.08);\r\n\t\tbackground: $text;\r\n\t\ttransition: all 0.5s ease;\r\n\t\tspan {\r\n\t\t\tmargin: 16px 0 0 0;\r\n\t\t\tcolor: $desc;\r\n\t\t\tfont-size: 16px;\r\n\t\t\tline-height: 160%;\r\n\t\t\tfont-family: 'Ubu-B';\r\n\t\t}\r\n\t\t&:hover {\r\n\t\t\tbackground-color: $primary;\r\n\t\t\timg {\r\n\t\t\t\tfilter: saturate(0) brightness(1000%);\r\n\t\t\t}\r\n\t\t\tspan {\r\n\t\t\t\tcolor: $text;\r\n\t\t\t}\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\theight: 100px;\r\n\t\t\timg {\r\n\t\t\t\twidth: 30px;\r\n\t\t\t}\r\n\t\t\tspan {\r\n\t\t\t\tmargin: 10px 0 0 0;\r\n\t\t\t\tline-height: 100%;\r\n\t\t\t\tfont-size: 14px;\r\n\t\t\t}\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\theight: auto;\r\n\t\t\tflex-direction: row;\r\n\t\t\tjustify-content: space-between;\r\n\t\t\tpadding: 5px 8px 5px 10px;\r\n\t\t\tspan {\r\n\t\t\t\tmargin: 0;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t&__container {\r\n\t\tmargin: 120px 0 0;\r\n\t\tbackground: $text;\r\n\t\tdisplay: grid;\r\n\t\tgap: 30px;\r\n\t\tgrid-template-columns: repeat(auto-fit, minmax(0, calc(33.333% - 30px)));\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tmargin: 100px 0 0;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmargin: 80px 0 0;\r\n\t\t\tgap: 15px;\r\n\t\t\tgrid-template-columns: repeat(auto-fit, minmax(0, calc(50% - 15px)));\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tmargin: 50px 0 0;\r\n\t\t}\r\n\t}\r\n\t&__show-more {\r\n\t\tmargin: 60px 0 0;\r\n\t\tpadding: 20px 30px;\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tdisplay: inline-flex;\r\n\t\tcolumn-gap: 16px;\r\n\t\talign-items: center;\r\n\t\tfont-size: 16px;\r\n\t\tcolor: $titles;\r\n\t\ttransition: all 0.3s ease;\r\n\t\t&:hover {\r\n\t\t\ttransform: scale(1.1);\r\n\t\t\tcolor: $primary;\r\n\t\t}\r\n\t\timg {\r\n\t\t\tanimation: rotate 1.5s cubic-bezier(0.2, 0.2, 0.6, 0.8) infinite;\r\n\t\t}\r\n\t}\r\n\t@keyframes rotate {\r\n\t\t0% {\r\n\t\t\ttransform: rotate(0);\r\n\t\t}\r\n\t\t100% {\r\n\t\t\ttransform: rotate(-360deg);\r\n\t\t}\r\n\t}\r\n}\r\n",".supported-by {\r\n\t&__title {\r\n\t}\r\n\t&__list {\r\n\t\tmargin: 21px 0 0;\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tflex-wrap: wrap;\r\n\t\t\tcolumn-gap: 10px;\r\n\t\t\trow-gap: 15px;\r\n\t\t\timg {\r\n\t\t\t\tflex: 0 1 25%;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n",".portfolio-card {\r\n\tflex: 0 1 33.3333%;\r\n\ttext-align: center;\r\n\tborder-radius: 4px 4px 0 0;\r\n\tbox-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),\r\n\t\t0px 12px 10px -6px rgba(154, 156, 165, 0.04),\r\n\t\t0px 30px 24px -10px rgba(154, 156, 165, 0.05),\r\n\t\t0px 80px 80px -20px rgba(154, 156, 165, 0.08);\r\n\tposition: relative;\r\n\toverflow: hidden;\r\n\tpadding: 0 0 90px;\r\n\t&:hover .portfolio-card__box {\r\n\t\theight: 37.5%;\r\n\t}\r\n\t@media (max-width: $desktop) {\r\n\t\tpadding: 0 0 50px;\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tflex: 0 1 100%;\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\tpadding: 0;\r\n\t}\r\n\t@media (max-width: $phone) {\r\n\t\tflex-direction: column;\r\n\t\tpadding: 0 0 50px;\r\n\t}\r\n\t&__img {\r\n\t\theight: 345px;\r\n\t\tposition: relative;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\theight: 240px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tflex: 0 1 55%;\r\n\t\t\theight: 180px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tflex: 0 1 100%;\r\n\t\t\tmin-height: 200px;\r\n\t\t}\r\n\t}\r\n\t&__box {\r\n\t\tposition: absolute;\r\n\t\tbottom: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 21.6%;\r\n\t\tbackground-color: $main-bg;\r\n\t\tpadding: 15px 0 25px;\r\n\t\ttransition: all 0.3s ease-out;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tposition: relative;\r\n\t\t\theight: 100%;\r\n\t\t\twidth: 45%;\r\n\t\t\tdisplay: flex;\r\n\t\t\tflex-direction: column;\r\n\t\t\tjustify-content: center;\r\n\t\t\talign-items: center;\r\n\t\t\tpadding: 0 10px;\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tposition: absolute;\r\n\t\t\twidth: 100%;\r\n\t\t\theight: 21.6%;\r\n\t\t\tbottom: 0;\r\n\t\t\tpadding: 25px 3px 5px;\r\n\t\t}\r\n\t}\r\n\t&__box-title {\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tfont-size: 20px;\r\n\t\tline-height: 105%;\r\n\t\tcolor: $titles;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tfont-size: 15px;\r\n\t\t\tline-height: 1;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tfont-size: 13px;\r\n\t\t}\r\n\t}\r\n\t&__box-subtitle {\r\n\t\tmargin: 15px 0 0;\r\n\t\tfont-size: 14px;\r\n\t\tcolor: $desc;\r\n\t\tline-height: 150%;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tmargin: 10px 0 0;\r\n\t\t\tfont-size: 12px;\r\n\t\t\tline-height: 1;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tfont-size: 10px;\r\n\t\t}\r\n\t}\r\n\t&__box-btn {\r\n\t\tmargin: 24px 0 0;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\tmargin: 13px 0 0;\r\n\t\t\theight: 30px;\r\n\t\t\tfont-size: 13px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t}\r\n\t\t@media (max-width: $phone) {\r\n\t\t\tmargin: 16px 0 0;\r\n\t\t}\r\n\t}\r\n}\r\n.card {\r\n\tanimation: showCard 1s ease;\r\n}\r\n@keyframes showCard {\r\n\t0% {\r\n\t\tborder-radius: 50%;\r\n\t\ttransform: scale(0, 0);\r\n\t\topacity: 0;\r\n\t}\r\n\t100% {\r\n\t\tborder-radius: 4px;\r\n\t\ttransform: scale(100%, 100%);\r\n\t\topacity: 1;\r\n\t}\r\n}\r\n",".opinion {\r\n\tdisplay: flex;\r\n\tcolumn-gap: 135px;\r\n\t@media (max-width: $desktop) {\r\n\t\tcolumn-gap: 40px;\r\n\t}\r\n\t@media (max-width: $tablet) {\r\n\t\tcolumn-gap: 20px;\r\n\t\tposition: relative;\r\n\t}\r\n\t&__body {\r\n\t\tmax-width: 600px;\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmax-width: 400px;\r\n\t\t}\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tmax-width: 100%;\r\n\t\t\tposition: absolute;\r\n\t\t\ttop: 35px;\r\n\t\t\tz-index: 2;\r\n\t\t\tpadding: 0 10px;\r\n\t\t}\r\n\t}\r\n\t&__title {\r\n\t\ttext-align: left;\r\n\t}\r\n\t&__content {\r\n\t\tmargin: 60px 0 0;\r\n\t\ttransition: all 0.5s ease;\r\n\t}\r\n\t&__content-img {\r\n\t\twidth: 72px;\r\n\t\theight: 72px;\r\n\t\tborder-radius: 50%;\r\n\t\tbackground: rgba($color: $primary, $alpha: 0.5);\r\n\t\tbox-shadow: 0 -3px 10px 0.5px rgba($color: $primary, $alpha: 0.9),\r\n\t\t\t0 -7px 15px 1px rgba($color: $desc, $alpha: 0.4);\r\n\t\tposition: relative;\r\n\t}\r\n\t&__content-text {\r\n\t\tmargin: 24px 0 0;\r\n\t\tfont-size: 16px;\r\n\t\tline-height: 160%;\r\n\t\tcolor: $links;\r\n\t\tmax-height: 80px;\r\n\t\toverflow-x: auto;\r\n\t\ttransition: all 0.5s ease;\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tbackground-color: rgba($color: $desc, $alpha: 0.7);\r\n\t\t\tmargin: 10px -10px 0;\r\n\t\t\tpadding: 0 10px;\r\n\t\t\tcolor: $titles;\r\n\t\t}\r\n\t}\r\n\t&__content-info {\r\n\t\tmargin: 24px 0 0;\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tbackground-color: rgba($color: $desc, $alpha: 0.7);\r\n\t\t\tmargin: 10px -10px 0;\r\n\t\t\tpadding: 0 10px;\r\n\t\t\tcolor: $titles;\r\n\t\t}\r\n\t}\r\n\t&__content-info-user {\r\n\t}\r\n\t&__content-info-user-name {\r\n\t\tfont-family: 'Ubu-B';\r\n\t\tfont-size: 16px;\r\n\t\tline-height: 160%;\r\n\t\tcolor: $titles;\r\n\t}\r\n\t&__content-info-user-work {\r\n\t\tfont-size: 14px;\r\n\t\tline-height: 150%;\r\n\t\tcolor: $desc;\r\n\t}\r\n\t&__content-info-buttons {\r\n\t\tdisplay: flex;\r\n\t\talign-items: center;\r\n\t\tbutton {\r\n\t\t\tbackground-color: $auxiliary-bg;\r\n\t\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\t\tbackground-color: rgba($color: $desc, $alpha: 0.1);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t&__image-block {\r\n\t\tflex: 0 1 495px;\r\n\t\theight: 550px;\r\n\t\tposition: relative;\r\n\t\tborder-radius: 4px;\r\n\t\toverflow: hidden;\r\n\t\t@media (max-width: $desktop) {\r\n\t\t\theight: 370px;\r\n\t\t}\r\n\t\t@media (max-width: $tablet) {\r\n\t\t\tmargin: 35px 0 0;\r\n\t\t\tcolumn-gap: 20px;\r\n\t\t}\r\n\t\t@media (max-width: calc($tablet - 100px)) {\r\n\t\t\tflex: 0 1 100%;\r\n\t\t\timg {\r\n\t\t\t\topacity: 0.5;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
+/***/ "./src/pages/templates/selectedProject.hbs":
+/*!*************************************************!*\
+  !*** ./src/pages/templates/selectedProject.hbs ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-module.exports = function (cssWithMappingToString) {
-  var list = [];
-
-  // return the list of modules as css string
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = "";
-      var needLayer = typeof item[5] !== "undefined";
-      if (item[4]) {
-        content += "@supports (".concat(item[4], ") {");
-      }
-      if (item[2]) {
-        content += "@media ".concat(item[2], " {");
-      }
-      if (needLayer) {
-        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
-      }
-      content += cssWithMappingToString(item);
-      if (needLayer) {
-        content += "}";
-      }
-      if (item[2]) {
-        content += "}";
-      }
-      if (item[4]) {
-        content += "}";
-      }
-      return content;
-    }).join("");
-  };
-
-  // import a list of modules into the list
-  list.i = function i(modules, media, dedupe, supports, layer) {
-    if (typeof modules === "string") {
-      modules = [[null, modules, undefined]];
-    }
-    var alreadyImportedModules = {};
-    if (dedupe) {
-      for (var k = 0; k < this.length; k++) {
-        var id = this[k][0];
-        if (id != null) {
-          alreadyImportedModules[id] = true;
+var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
         }
-      }
-    }
-    for (var _k = 0; _k < modules.length; _k++) {
-      var item = [].concat(modules[_k]);
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        continue;
-      }
-      if (typeof layer !== "undefined") {
-        if (typeof item[5] === "undefined") {
-          item[5] = layer;
-        } else {
-          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
-          item[5] = layer;
-        }
-      }
-      if (media) {
-        if (!item[2]) {
-          item[2] = media;
-        } else {
-          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
-          item[2] = media;
-        }
-      }
-      if (supports) {
-        if (!item[4]) {
-          item[4] = "".concat(supports);
-        } else {
-          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
-          item[4] = supports;
-        }
-      }
-      list.push(item);
-    }
-  };
-  return list;
-};
+        return undefined
+    };
 
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
-/*!************************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
-  \************************************************************/
-/***/ ((module) => {
-
-
-
-module.exports = function (item) {
-  var content = item[1];
-  var cssMapping = item[3];
-  if (!cssMapping) {
-    return content;
-  }
-  if (typeof btoa === "function") {
-    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
-    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
-    var sourceMapping = "/*# ".concat(data, " */");
-    return [content].concat([sourceMapping]).join("\n");
-  }
-  return [content].join("\n");
-};
+  return "<section class=\"name-page-block \">\r\n	<div class=\"name-page-block__body\">\r\n		<ul class=\"name-page-block__list\">\r\n			<li>\r\n				<a class=\"link-hover\" href=\"/\">\r\n					Homepage / \r\n				</a>\r\n			</li>\r\n			<li>\r\n				<a class=\"link-hover\" href=\"../work.html\">\r\n					Work / \r\n				</a>\r\n			</li>\r\n			<li>\r\n				<a class=\"link-hover\" href=\"./project.html?id="
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectId") || (depth0 != null ? lookupProperty(depth0,"projectId") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectId","hash":{},"data":data,"loc":{"start":{"line":15,"column":50},"end":{"line":15,"column":63}}}) : helper)))
+    + "\">\r\n					"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectName") || (depth0 != null ? lookupProperty(depth0,"projectName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectName","hash":{},"data":data,"loc":{"start":{"line":16,"column":5},"end":{"line":16,"column":20}}}) : helper)))
+    + "\r\n				</a>\r\n			</li>\r\n		</ul>\r\n		<h1 class=\"name-page-block__title \">\r\n			"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectName") || (depth0 != null ? lookupProperty(depth0,"projectName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectName","hash":{},"data":data,"loc":{"start":{"line":21,"column":3},"end":{"line":21,"column":18}}}) : helper)))
+    + "\r\n		</h1>\r\n	</div>\r\n</section>\r\n<section class=\"introduce\">\r\n	<div class=\"introduce__body \">\r\n		<div class=\"introduce__slider\">\r\n			<div class=\"introduce__slider-title-image\">\r\n				<button class=\"arrow\">\r\n					<img src=\"/assets/vendors/arrow-left.svg\" alt=\"\">\r\n				</button>\r\n				<button type=\"button\" class=\"arrow\">\r\n					<img src=\"/assets/vendors/arrow-right.svg\" alt=\"\">\r\n				</button>\r\n				<img id=\"project-introduce-0\" class=\"image-adaptive\" alt=\"\">\r\n			</div>\r\n			<div class=\"introduce__slider-subtitle-body\">\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-1\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-2\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-3\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-4\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-5\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-6\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n			</div>\r\n		</div>\r\n		<div class=\"introduce__description \">\r\n			<div class=\"introduce__description-value\">\r\n				<h3 class=\"introduce__description-value-title\">\r\n					Project goal\r\n				</h3>\r\n				<p class=\"introduce__description-value-text first\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectDescription") || (depth0 != null ? lookupProperty(depth0,"projectDescription") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectDescription","hash":{},"data":data,"loc":{"start":{"line":63,"column":55},"end":{"line":63,"column":77}}}) : helper)))
+    + "</p>\r\n				<p class=\"introduce__description-value-text\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectGoal") || (depth0 != null ? lookupProperty(depth0,"projectGoal") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectGoal","hash":{},"data":data,"loc":{"start":{"line":64,"column":49},"end":{"line":64,"column":64}}}) : helper)))
+    + "</p>\r\n			</div>\r\n			<ul class=\"introduce__description-info\">\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Location </span>"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectLocation") || (depth0 != null ? lookupProperty(depth0,"projectLocation") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectLocation","hash":{},"data":data,"loc":{"start":{"line":68,"column":27},"end":{"line":68,"column":46}}}) : helper)))
+    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Client </span>"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectClient") || (depth0 != null ? lookupProperty(depth0,"projectClient") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectClient","hash":{},"data":data,"loc":{"start":{"line":71,"column":25},"end":{"line":71,"column":42}}}) : helper)))
+    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Architect </span>"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectArchitect") || (depth0 != null ? lookupProperty(depth0,"projectArchitect") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectArchitect","hash":{},"data":data,"loc":{"start":{"line":74,"column":28},"end":{"line":74,"column":48}}}) : helper)))
+    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Size </span>"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectSize") || (depth0 != null ? lookupProperty(depth0,"projectSize") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectSize","hash":{},"data":data,"loc":{"start":{"line":77,"column":23},"end":{"line":77,"column":38}}}) : helper)))
+    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Value </span>"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectValue") || (depth0 != null ? lookupProperty(depth0,"projectValue") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectValue","hash":{},"data":data,"loc":{"start":{"line":80,"column":24},"end":{"line":80,"column":40}}}) : helper)))
+    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Completed </span>"
+    + alias4(((helper = (helper = lookupProperty(helpers,"projectCompleted") || (depth0 != null ? lookupProperty(depth0,"projectCompleted") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectCompleted","hash":{},"data":data,"loc":{"start":{"line":83,"column":28},"end":{"line":83,"column":48}}}) : helper)))
+    + "\r\n				</li>\r\n		</div>\r\n</section>";
+},"useData":true});
 
 /***/ }),
 
@@ -948,6 +875,7 @@ module.exports = function (item) {
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -996,279 +924,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/***/ ((module) => {
-
-
-
-var stylesInDOM = [];
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-  for (var i = 0; i < stylesInDOM.length; i++) {
-    if (stylesInDOM[i].identifier === identifier) {
-      result = i;
-      break;
-    }
-  }
-  return result;
-}
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var indexByIdentifier = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3],
-      supports: item[4],
-      layer: item[5]
-    };
-    if (indexByIdentifier !== -1) {
-      stylesInDOM[indexByIdentifier].references++;
-      stylesInDOM[indexByIdentifier].updater(obj);
-    } else {
-      var updater = addElementStyle(obj, options);
-      options.byIndex = i;
-      stylesInDOM.splice(i, 0, {
-        identifier: identifier,
-        updater: updater,
-        references: 1
-      });
-    }
-    identifiers.push(identifier);
-  }
-  return identifiers;
-}
-function addElementStyle(obj, options) {
-  var api = options.domAPI(options);
-  api.update(obj);
-  var updater = function updater(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
-        return;
-      }
-      api.update(obj = newObj);
-    } else {
-      api.remove();
-    }
-  };
-  return updater;
-}
-module.exports = function (list, options) {
-  options = options || {};
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDOM[index].references--;
-    }
-    var newLastIdentifiers = modulesToDom(newList, options);
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-      var _index = getIndexByIdentifier(_identifier);
-      if (stylesInDOM[_index].references === 0) {
-        stylesInDOM[_index].updater();
-        stylesInDOM.splice(_index, 1);
-      }
-    }
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
-  \********************************************************************/
-/***/ ((module) => {
-
-
-
-var memo = {};
-
-/* istanbul ignore next  */
-function getTarget(target) {
-  if (typeof memo[target] === "undefined") {
-    var styleTarget = document.querySelector(target);
-
-    // Special case to return head of iframe instead of iframe itself
-    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-      try {
-        // This will throw an exception if access to iframe is blocked
-        // due to cross-origin restrictions
-        styleTarget = styleTarget.contentDocument.head;
-      } catch (e) {
-        // istanbul ignore next
-        styleTarget = null;
-      }
-    }
-    memo[target] = styleTarget;
-  }
-  return memo[target];
-}
-
-/* istanbul ignore next  */
-function insertBySelector(insert, style) {
-  var target = getTarget(insert);
-  if (!target) {
-    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-  }
-  target.appendChild(style);
-}
-module.exports = insertBySelector;
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-
-
-/* istanbul ignore next  */
-function insertStyleElement(options) {
-  var element = document.createElement("style");
-  options.setAttributes(element, options.attributes);
-  options.insert(element, options.options);
-  return element;
-}
-module.exports = insertStyleElement;
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
-  \**********************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-
-
-/* istanbul ignore next  */
-function setAttributesWithoutAttributes(styleElement) {
-  var nonce =  true ? __webpack_require__.nc : 0;
-  if (nonce) {
-    styleElement.setAttribute("nonce", nonce);
-  }
-}
-module.exports = setAttributesWithoutAttributes;
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
-  \***************************************************************/
-/***/ ((module) => {
-
-
-
-/* istanbul ignore next  */
-function apply(styleElement, options, obj) {
-  var css = "";
-  if (obj.supports) {
-    css += "@supports (".concat(obj.supports, ") {");
-  }
-  if (obj.media) {
-    css += "@media ".concat(obj.media, " {");
-  }
-  var needLayer = typeof obj.layer !== "undefined";
-  if (needLayer) {
-    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
-  }
-  css += obj.css;
-  if (needLayer) {
-    css += "}";
-  }
-  if (obj.media) {
-    css += "}";
-  }
-  if (obj.supports) {
-    css += "}";
-  }
-  var sourceMap = obj.sourceMap;
-  if (sourceMap && typeof btoa !== "undefined") {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  }
-
-  // For old IE
-  /* istanbul ignore if  */
-  options.styleTagTransform(css, styleElement, options.options);
-}
-function removeStyleElement(styleElement) {
-  // istanbul ignore if
-  if (styleElement.parentNode === null) {
-    return false;
-  }
-  styleElement.parentNode.removeChild(styleElement);
-}
-
-/* istanbul ignore next  */
-function domAPI(options) {
-  if (typeof document === "undefined") {
-    return {
-      update: function update() {},
-      remove: function remove() {}
-    };
-  }
-  var styleElement = options.insertStyleElement(options);
-  return {
-    update: function update(obj) {
-      apply(styleElement, options, obj);
-    },
-    remove: function remove() {
-      removeStyleElement(styleElement);
-    }
-  };
-}
-module.exports = domAPI;
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
-  \*********************************************************************/
-/***/ ((module) => {
-
-
-
-/* istanbul ignore next  */
-function styleTagTransform(css, styleElement) {
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = css;
-  } else {
-    while (styleElement.firstChild) {
-      styleElement.removeChild(styleElement.firstChild);
-    }
-    styleElement.appendChild(document.createTextNode(css));
-  }
-}
-module.exports = styleTagTransform;
-
-/***/ }),
-
 /***/ "./src/assets/images/bg-image-work.png":
 /*!*********************************************!*\
   !*** ./src/assets/images/bg-image-work.png ***!
   \*********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "assets/images/bg-image-work..png";
 
 /***/ }),
@@ -1279,6 +941,7 @@ module.exports = __webpack_require__.p + "assets/images/bg-image-work..png";
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "assets/images/homepage-support..jpg";
 
 /***/ }),
@@ -1289,6 +952,7 @@ module.exports = __webpack_require__.p + "assets/images/homepage-support..jpg";
   \*********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1318,8 +982,10 @@ const initGetOpinionData = async () => {
   \*********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initGetData: () => (/* binding */ initGetData),
 /* harmony export */   initGetFilteredData: () => (/* binding */ initGetFilteredData),
 /* harmony export */   initGetRangedData: () => (/* binding */ initGetRangedData),
 /* harmony export */   initGetRelatedData: () => (/* binding */ initGetRelatedData)
@@ -1346,7 +1012,7 @@ const initGetFilteredData = async function (from) {
 const initGetRelatedData = async dataType => {
   try {
     const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?dataType=${dataType}`);
-    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects[dataType] = data;
+    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects = data;
   } catch (error) {
     console.error(error);
   }
@@ -1361,6 +1027,14 @@ const initGetRangedData = async function () {
     console.log(error);
   }
 };
+const initGetData = async id => {
+  try {
+    const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?id=${id}`);
+    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.selectedProject = data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 
 /***/ }),
@@ -1371,6 +1045,7 @@ const initGetRangedData = async function () {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1403,6 +1078,7 @@ const setDataToLocalStor = (data, key) => {
   \*************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1411,12 +1087,8 @@ const STORE = {
   PROJECTS: {
     allProjects: [],
     byDateProjects: [],
-    relatedProjects: {
-      construction: [],
-      interior: [],
-      project: [],
-      repairs: []
-    }
+    relatedProjects: [],
+    selectedProject: []
   },
   OPINIONS: {},
   NEWS: {
@@ -1434,6 +1106,7 @@ const STORE = {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1471,6 +1144,7 @@ const createPortfolioCard = item => {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1489,6 +1163,7 @@ const addBackground = (idOfElement, imageEl) => {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MM_DD_YYYY: () => (/* binding */ MM_DD_YYYY),
@@ -1526,6 +1201,7 @@ const setNeededMonth = targetTime => {
   \*******************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1557,12 +1233,33 @@ const fetchData = async function (apiUrl) {
 
 /***/ }),
 
+/***/ "./src/scripts/utilities/getQueryParams.mjs":
+/*!**************************************************!*\
+  !*** ./src/scripts/utilities/getQueryParams.mjs ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const initGetQueryParams = queryRequire => {
+  var queryParams = new URLSearchParams(window.location.search);
+  const filterValue = queryParams.get(queryRequire);
+  return filterValue !== '' ? filterValue : null;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initGetQueryParams);
+
+/***/ }),
+
 /***/ "./src/scripts/utilities/showOpinion.mjs":
 /*!***********************************************!*\
   !*** ./src/scripts/utilities/showOpinion.mjs ***!
   \***********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   initShowOpinion: () => (/* binding */ initShowOpinion),
@@ -1622,6 +1319,7 @@ const initShowOpinion = (elements, data) => {
   \************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1630,6 +1328,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_store_handlersLocalStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js-store/handlersLocalStorage */ "./src/scripts/store/handlersLocalStorage.mjs");
 /* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
 /* harmony import */ var _js_templates_portfolioCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js-templates/portfolioCard */ "./src/scripts/templates/portfolioCard.mjs");
+/* harmony import */ var _js_utilities_getQueryParams__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @js-utilities/getQueryParams */ "./src/scripts/utilities/getQueryParams.mjs");
+
 
 
 
@@ -1640,7 +1340,7 @@ const initShowProjects = async function (container, button) {
   let boxOfFilters = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
   let startWith = 0;
   let maxFilteredItems = 9;
-  let filterType = getFilterFromURL('filters');
+  let filterType = (0,_js_utilities_getQueryParams__WEBPACK_IMPORTED_MODULE_4__["default"])('filters');
   let localData = await setDataForRender(startWith, maxFilteredItems, filterType);
   render(container, localData, filterType);
   if (button && !button.hasEventListener) {
@@ -1708,7 +1408,6 @@ const getMoreData = async from => {
   let end = from + QUANTITY_OF_DATA;
   await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__.initGetRangedData)(from, end);
   const data = _js_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].PROJECTS.allProjects;
-  console.log('Get data');
   return data.length > 0 ? data : null;
 };
 const render = function (container, data) {
@@ -1730,12 +1429,55 @@ const setNewURL = value => {
     window.history.replaceState({}, document.title, newUrl);
   }
 };
-const getFilterFromURL = queryRequire => {
-  var queryParams = new URLSearchParams(window.location.search);
-  const filterValue = queryParams.get(queryRequire);
-  return filterValue !== '' ? filterValue : null;
-};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initShowProjects);
+
+/***/ }),
+
+/***/ "./src/scripts/utilities/showSelectedProject.mjs":
+/*!*******************************************************!*\
+  !*** ./src/scripts/utilities/showSelectedProject.mjs ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-api/getProjectsData */ "./src/scripts/api/getProjectsData.mjs");
+/* harmony import */ var _p_temp_selectedProject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @p-temp/selectedProject */ "./src/pages/templates/selectedProject.hbs");
+/* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
+
+
+
+const initShowSelectedProject = async id => {
+  if (id === null) {
+    console.log("Project ID were not transferred");
+  }
+  const containerElement = document.getElementById('selected-project');
+  await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__.initGetData)(id);
+  const project = _js_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].PROJECTS.selectedProject[0];
+  console.log(project.id);
+  const PROJECT_TEMPLATE_OPTIONS = {
+    projectId: project.id,
+    projectName: project.name,
+    projectDescription: project.introduce.text,
+    projectGoal: project.introduce.goal,
+    projectLocation: project.details.location,
+    projectClient: project.details.client,
+    projectArchitect: project.details.architect,
+    projectSize: project.details.size,
+    projectValue: project.details.value,
+    projectCompleted: project.details.completed
+  };
+  const renderHTML = _p_temp_selectedProject__WEBPACK_IMPORTED_MODULE_1__(PROJECT_TEMPLATE_OPTIONS);
+  if (!renderHTML || !containerElement) {
+    console.log('Container element or project template not found');
+  } else {
+    containerElement.innerHTML = renderHTML;
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initShowSelectedProject);
 
 /***/ }),
 
@@ -1745,6 +1487,7 @@ const getFilterFromURL = queryRequire => {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1789,6 +1532,9 @@ const sortByDate = data => {
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/async module */
@@ -1857,6 +1603,38 @@ const sortByDate = data => {
 /******/ 				return fn.r ? promise : getResult();
 /******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
 /******/ 			queue && queue.d < 0 && (queue.d = 0);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -1935,6 +1713,59 @@ const sortByDate = data => {
 /******/ 		__webpack_require__.p = scriptUrl + "../";
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"work": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkcreatex"] = self["webpackChunkcreatex"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -1944,8 +1775,9 @@ const sortByDate = data => {
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module used 'module' so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/scripts/handlers/handleWorkPage.js");
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-464c4e"], () => (__webpack_require__("./src/scripts/handlers/handleWorkPage.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;

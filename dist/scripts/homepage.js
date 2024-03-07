@@ -2102,6 +2102,46 @@ module.exports = __webpack_require__.p + "assets/images/homepage-support..jpg";
 
 /***/ }),
 
+/***/ "./src/assets/images/services-0.jpg":
+/*!******************************************!*\
+  !*** ./src/assets/images/services-0.jpg ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/services-0..jpg";
+
+/***/ }),
+
+/***/ "./src/assets/images/services-1.jpg":
+/*!******************************************!*\
+  !*** ./src/assets/images/services-1.jpg ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/services-1..jpg";
+
+/***/ }),
+
+/***/ "./src/assets/images/services-2.jpg":
+/*!******************************************!*\
+  !*** ./src/assets/images/services-2.jpg ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/services-2..jpg";
+
+/***/ }),
+
+/***/ "./src/assets/images/services-3.jpg":
+/*!******************************************!*\
+  !*** ./src/assets/images/services-3.jpg ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/services-3..jpg";
+
+/***/ }),
+
 /***/ "./src/scripts/api/getNewsData.mjs":
 /*!*****************************************!*\
   !*** ./src/scripts/api/getNewsData.mjs ***!
@@ -2282,6 +2322,49 @@ const keyframeProgressBar = (id, from, to) => {
 `;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (keyframeProgressBar);
+
+/***/ }),
+
+/***/ "./src/scripts/utilities/addBackground.mjs":
+/*!*************************************************!*\
+  !*** ./src/scripts/utilities/addBackground.mjs ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const addBackground = (idOfElement, imageEl) => {
+  const targetElement = document.getElementById(`${idOfElement}`);
+  if (targetElement && imageEl) targetElement.src = imageEl;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addBackground);
+
+/***/ }),
+
+/***/ "./src/scripts/utilities/addServicesBg.mjs":
+/*!*************************************************!*\
+  !*** ./src/scripts/utilities/addServicesBg.mjs ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-utilities/addBackground */ "./src/scripts/utilities/addBackground.mjs");
+
+const addServicesBackground = (targetBlock, imageArray) => {
+  if (targetBlock.length > 0 && imageArray.length > 0) {
+    for (let index = 0; targetBlock.length > index; index++) {
+      const imageId = targetBlock[index];
+      const imageName = imageArray[index];
+      if (imageName) (0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_0__["default"])(imageId, imageName);else console.log('Image not found');
+    }
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addServicesBackground);
 
 /***/ }),
 
@@ -2839,7 +2922,7 @@ const player = box => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-464c4e","src_pages_templates_slider_hbs-src_assets_images_services-0_jpg-src_assets_images_services-1_-e878c4"], () => (__webpack_require__("./src/scripts/handlers/handleHomePage.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-464c4e","src_pages_templates_slider_hbs-src_scripts_api_getProjectsData_mjs-src_scripts_templates_port-9f2d00"], () => (__webpack_require__("./src/scripts/handlers/handleHomePage.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -1,4 +1,4 @@
-(self["webpackChunkcreatex"] = self["webpackChunkcreatex"] || []).push([["src_pages_templates_slider_hbs-src_assets_images_services-0_jpg-src_assets_images_services-1_-e878c4"],{
+(self["webpackChunkcreatex"] = self["webpackChunkcreatex"] || []).push([["src_pages_templates_slider_hbs-src_scripts_api_getProjectsData_mjs-src_scripts_templates_port-9f2d00"],{
 
 /***/ "./src/pages/templates/slider.hbs":
 /*!****************************************!*\
@@ -49,50 +49,6 @@ module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,"
 
 /***/ }),
 
-/***/ "./src/assets/images/services-0.jpg":
-/*!******************************************!*\
-  !*** ./src/assets/images/services-0.jpg ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/images/services-0..jpg";
-
-/***/ }),
-
-/***/ "./src/assets/images/services-1.jpg":
-/*!******************************************!*\
-  !*** ./src/assets/images/services-1.jpg ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/images/services-1..jpg";
-
-/***/ }),
-
-/***/ "./src/assets/images/services-2.jpg":
-/*!******************************************!*\
-  !*** ./src/assets/images/services-2.jpg ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/images/services-2..jpg";
-
-/***/ }),
-
-/***/ "./src/assets/images/services-3.jpg":
-/*!******************************************!*\
-  !*** ./src/assets/images/services-3.jpg ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/images/services-3..jpg";
-
-/***/ }),
-
 /***/ "./src/scripts/api/getProjectsData.mjs":
 /*!*********************************************!*\
   !*** ./src/scripts/api/getProjectsData.mjs ***!
@@ -102,6 +58,7 @@ module.exports = __webpack_require__.p + "assets/images/services-3..jpg";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initGetData: () => (/* binding */ initGetData),
 /* harmony export */   initGetFilteredData: () => (/* binding */ initGetFilteredData),
 /* harmony export */   initGetRangedData: () => (/* binding */ initGetRangedData),
 /* harmony export */   initGetRelatedData: () => (/* binding */ initGetRelatedData)
@@ -128,7 +85,7 @@ const initGetFilteredData = async function (from) {
 const initGetRelatedData = async dataType => {
   try {
     const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?dataType=${dataType}`);
-    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects[dataType] = data;
+    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects = data;
   } catch (error) {
     console.error(error);
   }
@@ -139,6 +96,14 @@ const initGetRangedData = async function () {
   try {
     const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?_start=${start}&_end=${end}`);
     _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.allProjects = data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+const initGetData = async id => {
+  try {
+    const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?id=${id}`);
+    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.selectedProject = data;
   } catch (error) {
     console.log(error);
   }
@@ -162,12 +127,8 @@ const STORE = {
   PROJECTS: {
     allProjects: [],
     byDateProjects: [],
-    relatedProjects: {
-      construction: [],
-      interior: [],
-      project: [],
-      repairs: []
-    }
+    relatedProjects: [],
+    selectedProject: []
   },
   OPINIONS: {},
   NEWS: {
@@ -214,51 +175,6 @@ const createPortfolioCard = item => {
   return tempContainer.firstElementChild;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createPortfolioCard);
-
-/***/ }),
-
-/***/ "./src/scripts/utilities/addBackground.mjs":
-/*!*************************************************!*\
-  !*** ./src/scripts/utilities/addBackground.mjs ***!
-  \*************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const addBackground = (idOfElement, imageEl) => {
-  const targetElement = document.getElementById(`${idOfElement}`);
-  if (targetElement && imageEl) targetElement.src = imageEl;
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addBackground);
-
-/***/ }),
-
-/***/ "./src/scripts/utilities/addServicesBg.mjs":
-/*!*************************************************!*\
-  !*** ./src/scripts/utilities/addServicesBg.mjs ***!
-  \*************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-utilities/addBackground */ "./src/scripts/utilities/addBackground.mjs");
-
-const addServicesBackground = (targetBlock, imageArray) => {
-  if (targetBlock.length > 0 && imageArray.length > 0) {
-    for (let index = 0; targetBlock.length > index; index++) {
-      const imageId = targetBlock[index];
-      const imageName = imageArray[index];
-      if (imageName) (0,_js_utilities_addBackground__WEBPACK_IMPORTED_MODULE_0__["default"])(imageId, imageName);else console.log('Image not found');
-    }
-  }
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addServicesBackground);
 
 /***/ }),
 
@@ -436,4 +352,4 @@ const sortByDate = data => {
 /***/ })
 
 }]);
-//# sourceMappingURL=src_pages_templates_slider_hbs-src_assets_images_services-0_jpg-src_assets_images_services-1_-e878c4.js.map
+//# sourceMappingURL=src_pages_templates_slider_hbs-src_scripts_api_getProjectsData_mjs-src_scripts_templates_port-9f2d00.js.map

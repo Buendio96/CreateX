@@ -3,65 +3,269 @@
 @import '@s-templates/portfolio-card';
 @import '@s-templates/slider';
 .project {
+	position: relative;
+	overflow: hidden;
+	> img {
+		width: 850px;
+		height: 820px;
+		left: calc(100% - 210px);
+	}
 	&__body {
 	}
-	.project-title {
+	.name-page-block {
+		height: auto;
+	}
+	.name-page-block__body {
 		max-width: 100%;
 	}
 }
 .introduce {
 	&__body {
+		margin: 60px 0 120px;
+		@media (max-width: $desktop) {
+			margin: 30px 0 70px;
+		}
 	}
 	&__slider {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		row-gap: 20px;
 	}
 	&__slider-title-image {
+		position: relative;
+		width: 100%;
+		height: 500px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		overflow: hidden;
+		border-radius: 8px;
+		background-color: #bfc9ca;
+		.arrow {
+			z-index: 1;
+			margin: 0 32px;
+			background: rgba($color: white, $alpha: 0.6);
+			&:hover {
+				background: $primary;
+			}
+		}
+		&::before {
+			content: 'Please wait for the photo to be uploaded...';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			text-align: center;
+			transform: translate(-50%, -50%);
+			color: $titles;
+			font-size: 30px;
+			font-style: italic;
+		}
+		@media (max-width: $tablet) {
+			height: 350px;
+			&::before {
+				font-size: 20px;
+			}
+			.arrow {
+				margin: 0 10px;
+			}
+		}
 	}
 	&__slider-subtitle-body {
+		width: 700px;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $tablet) {
+			width: 100%;
+			justify-content: left;
+			column-gap: 10px;
+			row-gap: 15px;
+			flex-wrap: wrap;
+		}
 	}
 	&__slider-subtitle-image {
+		position: relative;
+		flex: 0 1 100px;
+		height: 100px;
+		background-color: #bfc9ca;
+		border-radius: 4px;
+		overflow: hidden;
+		&::before {
+			content: 'Please wait...';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			text-align: center;
+			transform: translate(-50%, -50%);
+			color: $titles;
+			font-size: 14px;
+			font-style: italic;
+		}
 	}
 	&__description {
 		display: flex;
+		justify-content: space-between;
+		margin: 100px 0 0;
+		width: 100%;
+		@media (max-width: $desktop) {
+			margin: 50px 0 0;
+		}
+		@media (max-width: $tablet) {
+			flex-wrap: wrap;
+		}
 	}
 	&__description-value {
+		flex: 0 1 49%;
+		.first {
+			margin: 60px 0 20px;
+		}
+		@media (max-width: $desktop) {
+			.first {
+				margin: 20px 0 10px;
+			}
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 80%;
+		}
 	}
 	&__description-value-title {
+		font-family: 'Ubu-B';
+		font-size: 46px;
+		line-height: 130%;
+		color: $titles;
+		@media (max-width: $tablet) {
+			font-size: 30px;
+		}
 	}
 	&__description-value-text {
+		font-size: 18px;
+		line-height: 150%;
+		color: $links;
+		@media (max-width: $tablet) {
+			font-size: 15px;
+		}
 	}
 	&__description-info {
+		flex: 0 1 495px;
+		padding: 40px 60px;
+		background-color: $main-bg;
+		display: flex;
+		flex-direction: column;
+		row-gap: 16px;
+		box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),
+			0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+			0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+			0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+		@media (max-width: $tablet) {
+			margin: 20px 0 0;
+			flex: 0 1 100%;
+			padding: 15px 5px;
+			flex-direction: row;
+			row-gap: 0;
+			text-align: center;
+			flex-wrap: wrap;
+			row-gap: 30px;
+		}
 	}
-	&__description-info-location {
+	&__description-info-item {
+		font-family: 'Ubu-R';
+		text-transform: capitalize;
+		color: $desc;
+		font-size: 16px;
+		line-height: 160%;
+		display: flex;
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			flex: 0 1 33.333%;
+		}
+		@media (max-width: $phone) {
+			font-size: 14px;
+		}
+		span {
+			font-family: 'Ubu-B';
+			text-transform: uppercase;
+			color: $titles;
+			display: block;
+			min-width: 130px;
+			@media (max-width: $tablet) {
+				min-width: auto;
+			}
+		}
 	}
 }
 
 .decision {
 	background-color: $auxiliary-bg;
 	margin: 0 0 60px;
-
+	@media (max-width: $desktop) {
+		margin: 0 0 30px;
+	}
+	@media (max-width: $tablet) {
+		margin: 0;
+	}
 	&__body {
 		margin: 80px 0 -60px;
 		display: flex;
 		> div {
 			flex: 0 1 50%;
 		}
+		@media (max-width: $desktop) {
+			margin: 40px 0 -30px;
+		}
+		@media (max-width: $tablet) {
+			margin: 0;
+			padding: 20px 0;
+		}
+		@media (max-width: $phone) {
+			flex-direction: column;
+			padding: 0 0 20px;
+			row-gap: 20px;
+			margin: 0 -15px;
+		}
 	}
 	&__image {
 		position: relative;
 		width: 495px;
 		height: 550px;
+		@media (max-width: $desktop) {
+			width: 100%;
+		}
+		@media (max-width: $tablet) {
+			height: 400px;
+		}
+		@media (max-width: $phone) {
+			height: 200px;
+		}
 	}
 	&__checklist-title {
 		font-family: 'Ubu-B';
 		font-size: 46px;
 		line-height: 130%;
 		margin: 0 0 0 15px;
+		@media (max-width: $tablet) {
+			font-size: 30px;
+		}
+		@media (max-width: $phone) {
+			font-size: 24px;
+		}
 	}
 	&__checklist-body {
 		margin: 60px 0 0 15px;
 		display: flex;
 		flex-direction: column;
 		row-gap: 20px;
+		@media (max-width: $tablet) {
+			margin: 30px 0 0 15px;
+		}
+		@media (max-width: $phone) {
+			flex-wrap: wrap;
+			flex-direction: row;
+			margin: 15px 0 0 15px;
+			row-gap: 15px;
+			column-gap: 10px;
+		}
 	}
 	&__checklist-item {
 		display: flex;
@@ -69,18 +273,23 @@
 		column-gap: 16px;
 		font-size: 16px;
 		color: $links;
+		@media (max-width: $tablet) {
+			column-gap: 10px;
+			img {
+				width: 15px;
+			}
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 calc(50% - 10px);
+			align-items: flex-start;
+		}
 	}
 }
 .similar-projects {
 	&__body {
 		padding: 120px 0;
+		@media (max-width: $tablet) {
+			padding: 50px 0;
+		}
 	}
-}
-
-.image-adaptive {
-}
-
-.arrow {
-}
-.image-adaptive {
 }

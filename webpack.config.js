@@ -149,6 +149,7 @@ module.exports = {
 				pattern('icons'),
 				pattern('vendors'),
 				pattern('videos'),
+				pattern('project-images'),
 				pattern('static-images'),
 				pattern('static-images/portfolio'),
 				pattern('static-images/opinion'),
@@ -226,7 +227,14 @@ module.exports = {
 			}],
 			type: 'asset/resource',
 			generator: {
-				filename: `assets/images/${fileName('[ext]')}`
+				filename: `assets/images/${fileName('[ext]')}`,
+
+				filename: (pathData) => {
+					if (pathData.filename.includes('project-images')) {
+						return `assets/project-images/${fileName('[ext]')}`
+					}
+					return `assets/images/${fileName('[ext]')}`
+				}
 			}
 		}]
 	}
