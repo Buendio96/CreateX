@@ -28,14 +28,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const PROJECT_ID = (0,_js_utilities_getQueryParams__WEBPACK_IMPORTED_MODULE_4__["default"])('id');
-(0,_js_utilities_showSelectedProject__WEBPACK_IMPORTED_MODULE_5__["default"])(PROJECT_ID);
-//=================================================
-
-//=================================================
+const containerElement = document.getElementById('selected-project');
 const similarProjectsContainer = document.getElementById('similar-projects');
+const dataType = await (0,_js_utilities_showSelectedProject__WEBPACK_IMPORTED_MODULE_5__["default"])(PROJECT_ID, containerElement);
 if (similarProjectsContainer) {
-  const dataType = similarProjectsContainer.getAttribute('data-similar-projects');
-  await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__.initGetRelatedData)('repairs');
+  await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__.initGetRelatedData)(dataType);
   const SERVICES_TEMPLATE_OPTIONS = {
     title: 'Similar projects',
     id: 'similar-projects',
@@ -43,6 +40,8 @@ if (similarProjectsContainer) {
   };
   const renderHTML = _p_temp_slider__WEBPACK_IMPORTED_MODULE_6___default()(SERVICES_TEMPLATE_OPTIONS);
   similarProjectsContainer.innerHTML = renderHTML;
+}
+if (_js_store_store__WEBPACK_IMPORTED_MODULE_1__["default"].PROJECTS.relatedProjects && _js_store_store__WEBPACK_IMPORTED_MODULE_1__["default"].PROJECTS.relatedProjects.length > 0) {
   const RELATED_PROJECTS_OPTIONS = {
     inputData: _js_store_store__WEBPACK_IMPORTED_MODULE_1__["default"].PROJECTS.relatedProjects,
     containerEl: document.getElementById('similar-projects-container'),
@@ -50,11 +49,9 @@ if (similarProjectsContainer) {
     skipRight: document.getElementById('similar-projects-skip-right'),
     cardTemplate: _js_templates_portfolioCard__WEBPACK_IMPORTED_MODULE_2__["default"]
   };
-  if (_js_store_store__WEBPACK_IMPORTED_MODULE_1__["default"].PROJECTS.relatedProjects && _js_store_store__WEBPACK_IMPORTED_MODULE_1__["default"].PROJECTS.relatedProjects.length > 0) {
-    (0,_js_utilities_carousel__WEBPACK_IMPORTED_MODULE_3__["default"])(RELATED_PROJECTS_OPTIONS);
-  } else {
-    console.log('Similar projects store not found');
-  }
+  (0,_js_utilities_carousel__WEBPACK_IMPORTED_MODULE_3__["default"])(RELATED_PROJECTS_OPTIONS);
+} else {
+  console.log('Similar projects store not found');
 }
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } }, 1);
@@ -1008,14 +1005,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const initShowSelectedProject = async id => {
+const initShowSelectedProject = async (id, container) => {
   if (id === null) {
     console.log("Project ID were not transferred");
   }
-  const containerElement = document.getElementById('selected-project');
   await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__.initGetData)(id);
   const project = _js_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].PROJECTS.selectedProject[0];
-  console.log(project.id);
+  const typeOfProject = project.dataType;
+  console.log(project);
+  console.log(typeOfProject);
   const PROJECT_TEMPLATE_OPTIONS = {
     projectId: project.id,
     projectName: project.name,
@@ -1029,11 +1027,12 @@ const initShowSelectedProject = async id => {
     projectCompleted: project.details.completed
   };
   const renderHTML = _p_temp_selectedProject__WEBPACK_IMPORTED_MODULE_1__(PROJECT_TEMPLATE_OPTIONS);
-  if (!renderHTML || !containerElement) {
+  if (!renderHTML || !container) {
     console.log('Container element or project template not found');
   } else {
-    containerElement.innerHTML = renderHTML;
+    container.innerHTML = renderHTML;
   }
+  return typeOfProject;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initShowSelectedProject);
 

@@ -104,6 +104,7 @@ module.exports = {
 			'@': path.resolve(__dirname, 'src'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts'),
 			'@images': path.resolve(__dirname, 'src/assets/images'),
+			'@project-image': path.resolve(__dirname, 'src/assets/project-images'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 			'@s-common': path.resolve(__dirname, 'src/styles/common'),
 			'@s-templates': path.resolve(__dirname, 'src/styles/templates'),
@@ -149,8 +150,8 @@ module.exports = {
 				pattern('icons'),
 				pattern('vendors'),
 				pattern('videos'),
-				pattern('project-images'),
 				pattern('static-images'),
+				pattern('project-images'),
 				pattern('static-images/portfolio'),
 				pattern('static-images/opinion'),
 			]
@@ -227,14 +228,7 @@ module.exports = {
 			}],
 			type: 'asset/resource',
 			generator: {
-				filename: `assets/images/${fileName('[ext]')}`,
-
-				filename: (pathData) => {
-					if (pathData.filename.includes('project-images')) {
-						return `assets/project-images/${fileName('[ext]')}`
-					}
-					return `assets/images/${fileName('[ext]')}`
-				}
+				filename: `assets/images/${fileName('[ext]')}`
 			}
 		}]
 	}

@@ -13,12 +13,12 @@
 				"text": "Create a modern office building with a unique cubic design. The structure will house various businesses and provide a collaborative workspace for innovation.",
 				"goal": "Foster a vibrant work environment and contribute to the urban landscape with a visually striking building.",
 				"pathToImages": {
-					"1": "cubes-building/building-1.png",
-					"2": "cubes-building/building-2.png",
-					"3": "cubes-building/building-3.png",
-					"4": "cubes-building/building-4.png",
-					"5": "cubes-building/building-5.png",
-					"6": "cubes-building/building-6.png"
+					"one": "cubes-building/building-1.png",
+					"two": "cubes-building/building-2.png",
+					"three": "cubes-building/building-3.png",
+					"four": "cubes-building/building-4.png",
+					"five": "cubes-building/building-5.png",
+					"seven": "cubes-building/building-6.png"
 				}
 			},
 			"details": {
@@ -42,12 +42,12 @@
 				"text": "Build a private house 840 sq. feet with a large living room, three bedrooms, two bathrooms, a terrace, a pool and a garage for two cars.",
 				"goal": "Modern design and care for each family member to feel as comfortable as possible in the new home.",
 				"pathToImages": {
-					"1": "modern-cottage/cottage-1.png",
-					"2": "modern-cottage/cottage-2.png",
-					"3": "modern-cottage/cottage-3.png",
-					"4": "modern-cottage/cottage-4.png",
-					"5": "modern-cottage/cottage-5.png",
-					"6": "modern-cottage/cottage-6.png"
+					"one": "modern-cottage/cottage-1.png",
+					"two": "modern-cottage/cottage-2.png",
+					"three": "modern-cottage/cottage-3.png",
+					"four": "modern-cottage/cottage-4.png",
+					"five": "modern-cottage/cottage-5.png",
+					"seven": "modern-cottage/cottage-6.png"
 				}
 			},
 			"details": {
@@ -71,12 +71,12 @@
 				"text": "Build an elegant beachfront residence with luxurious amenities, panoramic ocean views, and a private beach access. A perfect retreat for relaxation and entertainment.",
 				"goal": "Combine opulence with the serenity of the beach, creating a sophisticated and comfortable coastal home.",
 				"pathToImages": {
-					"1": "luxury-beach-house/beach-house-1.png",
-					"2": "luxury-beach-house/beach-house-2.png",
-					"3": "luxury-beach-house/beach-house-3.png",
-					"4": "luxury-beach-house/beach-house-4.png",
-					"5": "luxury-beach-house/beach-house-5.png",
-					"6": "luxury-beach-house/beach-house-6.png"
+					"one": "luxury-beach-house/beach-house-1.png",
+					"two": "luxury-beach-house/beach-house-2.png",
+					"three": "luxury-beach-house/beach-house-3.png",
+					"four": "luxury-beach-house/beach-house-4.png",
+					"five": "luxury-beach-house/beach-house-5.png",
+					"seven": "luxury-beach-house/beach-house-6.png"
 				}
 			},
 			"details": {
@@ -100,12 +100,12 @@
 				"text": "Develop a contemporary residential complex featuring modern double-bedroom apartments. Emphasis on efficient space utilization and stylish design for urban living.",
 				"goal": "Provide comfortable and stylish living spaces for individuals and families seeking a modern urban lifestyle.",
 				"pathToImages": {
-					"1": "modern-double-bedroom-apartments/apartments-1.png",
-					"2": "modern-double-bedroom-apartments/apartments-2.png",
-					"3": "modern-double-bedroom-apartments/apartments-3.png",
-					"4": "modern-double-bedroom-apartments/apartments-4.png",
-					"5": "modern-double-bedroom-apartments/apartments-5.png",
-					"6": "modern-double-bedroom-apartments/apartments-6.png"
+					"one": "modern-double-bedroom-apartments/apartments-1.png",
+					"two": "modern-double-bedroom-apartments/apartments-2.png",
+					"three": "modern-double-bedroom-apartments/apartments-3.png",
+					"four": "modern-double-bedroom-apartments/apartments-4.png",
+					"five": "modern-double-bedroom-apartments/apartments-5.png",
+					"seven": "modern-double-bedroom-apartments/apartments-6.png"
 				}
 			},
 			"details": {
@@ -129,12 +129,12 @@
 				"text": "Design and decorate vibrant and imaginative kids' bedrooms with playful themes and interactive elements. Create spaces that inspire creativity and joy.",
 				"goal": "Craft personalized and enchanting environments for children to enjoy and grow in.",
 				"pathToImages": {
-					"1": "kids-bedroom/kids-room-1.png",
-					"2": "kids-bedroom/kids-room-2.png",
-					"3": "kids-bedroom/kids-room-3.png",
-					"4": "kids-bedroom/kids-room-4.png",
-					"5": "kids-bedroom/kids-room-5.png",
-					"6": "kids-bedroom/kids-room-6.png"
+					"one": "kids-bedroom/kids-room-1.png",
+					"two": "kids-bedroom/kids-room-2.png",
+					"three": "kids-bedroom/kids-room-3.png",
+					"four": "kids-bedroom/kids-room-4.png",
+					"five": "kids-bedroom/kids-room-5.png",
+					"seven": "kids-bedroom/kids-room-6.png"
 				}
 			},
 			"details": {
@@ -158,12 +158,12 @@
 				"text": "Construct an iconic office building shaped like a giant pencil, symbolizing creativity and innovation. The structure will house various creative enterprises.",
 				"goal": "Make a bold architectural statement that reflects the spirit of innovation and creative thinking.",
 				"pathToImages": {
-					"1": "pencil-building/building-1.png",
-					"2": "pencil-building/building-2.png",
-					"3": "pencil-building/building-3.png",
-					"4": "pencil-building/building-4.png",
-					"5": "pencil-building/building-5.png",
-					"6": "pencil-building/building-6.png"
+					"one": "pencil-building/building-1.png",
+					"two": "pencil-building/building-2.png",
+					"three": "pencil-building/building-3.png",
+					"four": "pencil-building/building-4.png",
+					"five": "pencil-building/building-5.png",
+					"seven": "pencil-building/building-6.png"
 				}
 			},
 			"details": {

@@ -1450,14 +1450,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const initShowSelectedProject = async id => {
+const initShowSelectedProject = async (id, container) => {
   if (id === null) {
     console.log("Project ID were not transferred");
   }
-  const containerElement = document.getElementById('selected-project');
   await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__.initGetData)(id);
   const project = _js_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].PROJECTS.selectedProject[0];
-  console.log(project.id);
+  const typeOfProject = project.dataType;
+  console.log(project);
+  console.log(typeOfProject);
   const PROJECT_TEMPLATE_OPTIONS = {
     projectId: project.id,
     projectName: project.name,
@@ -1471,11 +1472,12 @@ const initShowSelectedProject = async id => {
     projectCompleted: project.details.completed
   };
   const renderHTML = _p_temp_selectedProject__WEBPACK_IMPORTED_MODULE_1__(PROJECT_TEMPLATE_OPTIONS);
-  if (!renderHTML || !containerElement) {
+  if (!renderHTML || !container) {
     console.log('Container element or project template not found');
   } else {
-    containerElement.innerHTML = renderHTML;
+    container.innerHTML = renderHTML;
   }
+  return typeOfProject;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initShowSelectedProject);
 
