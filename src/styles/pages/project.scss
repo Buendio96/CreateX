@@ -41,7 +41,6 @@
 		align-items: center;
 		overflow: hidden;
 		border-radius: 8px;
-		background-color: #bfc9ca;
 		.arrow {
 			z-index: 1;
 			margin: 0 32px;
@@ -49,18 +48,6 @@
 			&:hover {
 				background: $primary;
 			}
-		}
-		&::before {
-			content: 'Please wait for the photo to be uploaded...';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 100%;
-			text-align: center;
-			transform: translate(-50%, -50%);
-			color: $titles;
-			font-size: 30px;
-			font-style: italic;
 		}
 		@media (max-width: $tablet) {
 			height: 350px;
@@ -88,21 +75,8 @@
 		position: relative;
 		flex: 0 1 100px;
 		height: 100px;
-		background-color: #bfc9ca;
 		border-radius: 4px;
 		overflow: hidden;
-		&::before {
-			content: 'Please wait...';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 100%;
-			text-align: center;
-			transform: translate(-50%, -50%);
-			color: $titles;
-			font-size: 14px;
-			font-style: italic;
-		}
 	}
 	&__description {
 		display: flex;

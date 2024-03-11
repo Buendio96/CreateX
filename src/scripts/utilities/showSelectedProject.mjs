@@ -3,12 +3,9 @@ import STORE from '@js-store/store'
 import projectTemplate from '@p-temp/selectedProject'
 
 const initShowSelectedProject = async (id, container) => {
-	if (id === null) {
-		console.log("project ID were not transferred")
+	if (id !== null) {
+		await initGetData(id)
 	}
-
-	await initGetData(id)
-
 	const PROJECT = STORE.PROJECTS.selectedProject[0]
 
 	const templateOptions = setTemplateOptions(PROJECT)
@@ -20,29 +17,29 @@ const initShowSelectedProject = async (id, container) => {
 		container.innerHTML = renderHTML
 	}
 
-	const typeOfProject = PROJECT.dataType
+	const typeOfProject = PROJECT?.dataType || null
+
 	return typeOfProject
 }
 
-
 const setTemplateOptions = (project) => {
 	return {
-		projectId: project.id,
-		projectName: project.name,
-		projectDescription: project.introduce.text,
-		projectGoal: project.introduce.goal,
-		projectLocation: project.details.location,
-		projectClient: project.details.client,
-		projectArchitect: project.details.architect,
-		projectSize: project.details.size,
-		projectValue: project.details.value,
-		projectCompleted: project.details.completed,
-		projectImage1: project.introduce.pathToImages.one,
-		projectImage2: project.introduce.pathToImages.two,
-		projectImage3: project.introduce.pathToImages.three,
-		projectImage4: project.introduce.pathToImages.four,
-		projectImage5: project.introduce.pathToImages.five,
-		projectImage6: project.introduce.pathToImages.seven,
+		projectId: project?.id || null,
+		projectName: project?.name || 'Nameless',
+		projectDescription: project?.introduce?.text || 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.Obcaecati a ipsam illo voluptatem esse reiciendis ut accusamus rem sapiente! Quasi.',
+		projectGoal: project?.introduce?.goal || 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.Obcaecati a ipsam illo voluptatem esse reiciendis ut accusamus rem sapiente! Quasi.',
+		projectLocation: project?.details?.location || 'Not found',
+		projectClient: project?.details?.client || 'Not found',
+		projectArchitect: project?.details?.architect || 'Not found',
+		projectSize: project?.details?.size || 'Not found',
+		projectValue: project?.details?.value || 'Not found',
+		projectCompleted: project?.details?.completed || 'Not found',
+		projectImage1: project?.introduce?.pathToImages?.one || 'not-found.png',
+		projectImage2: project?.introduce?.pathToImages?.two || 'not-found.png',
+		projectImage3: project?.introduce?.pathToImages?.three || 'not-found.png',
+		projectImage4: project?.introduce?.pathToImages?.four || 'not-found.png',
+		projectImage5: project?.introduce?.pathToImages?.five || 'not-found.png',
+		projectImage6: project?.introduce?.pathToImages?.six || 'not-found.png',
 	}
 }
 

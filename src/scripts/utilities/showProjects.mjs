@@ -16,8 +16,7 @@ const initShowProjects = async (container, button, boxOfFilters = null) => {
 
 	render(container, localData, filterType)
 
-	if (button && !button.hasEventListener) {
-		button.hasEventListener = true
+	if (button)
 		button.addEventListener('click', async () => {
 			startWith += QUANTITY_OF_DATA
 			maxFilteredItems += QUANTITY_OF_DATA
@@ -30,10 +29,8 @@ const initShowProjects = async (container, button, boxOfFilters = null) => {
 				button.disabled = true
 			}
 		})
-	}
 
-	if (boxOfFilters && !boxOfFilters.hasEventListener) {
-		boxOfFilters.hasEventListener = true
+	if (boxOfFilters) {
 		boxOfFilters.addEventListener('click', async (target) => {
 			filterType = getFilterType(target)
 			localData = await setDataForRender(0, maxFilteredItems, filterType)

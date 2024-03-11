@@ -4,8 +4,10 @@ import createPortfolioCard from '@js-templates/portfolioCard'
 import carousel from '@js-utilities/carousel'
 import initGetQueryParams from '@js-utilities/getQueryParams'
 import initShowSelectedProject from '@js-utilities/showSelectedProject'
+import initSliderProject from '@js-utilities/sliderProject'
 import sliderTemplate from '@p-temp/slider'
 import '@s-pages/project'
+
 const PROJECT_ID = initGetQueryParams('id')
 const containerElement = document.getElementById('selected-project')
 const similarProjectsContainer = document.getElementById('similar-projects')
@@ -37,14 +39,9 @@ if (STORE.PROJECTS.relatedProjects && STORE.PROJECTS.relatedProjects.length > 0)
 	carousel(RELATED_PROJECTS_OPTIONS)
 }
 
+const mainImage = document.getElementById('project-main-image')
 const imagesContainer = document.getElementById('project-secondary-image')
-imagesContainer.addEventListener('click', event => {
-	getImageNumber(event)
-})
-const getImageNumber = (event) => {
-	if (!event || !event.target.closest('div')) {
-		return null
-	}
-	var number = event.target.closest('div').getAttribute('data-numberOfImage')
-	return number === null ? null : number
-}
+const swapLeft = document.getElementById('project-swap-left')
+const swapRight = document.getElementById('project-swap-right')
+
+initSliderProject(mainImage, swapLeft, swapRight, imagesContainer)

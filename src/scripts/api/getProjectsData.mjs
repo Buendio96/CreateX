@@ -16,11 +16,13 @@ const initGetFilteredData = async (from, to = 3) => {
 }
 
 const initGetRelatedData = async (dataType) => {
-	try {
-		const data = await fetchData(`http://localhost:4100/projects?dataType=${dataType}`)
-		STORE.PROJECTS.relatedProjects = data
-	} catch (error) {
-		console.error(error)
+	if (dataType !== null) {
+		try {
+			const data = await fetchData(`http://localhost:4100/projects?dataType=${dataType}`)
+			STORE.PROJECTS.relatedProjects = data
+		} catch (error) {
+			console.error(error)
+		}
 	}
 }
 
