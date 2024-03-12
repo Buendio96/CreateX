@@ -1,0 +1,250 @@
+@import '@s-common/vars';
+@import '@s-common/mixins';
+@import '@s-templates/advantages';
+@import '@s-templates/supported-by';
+
+@media (max-width: $desktop) {
+}
+@media (max-width: $tablet) {
+}
+@media (max-width: $phone) {
+}
+
+.for-about {
+	left: calc(100% - 675px);
+	right: -25px;
+	width: 675px;
+	height: 650px;
+	z-index: 1;
+}
+.for-about-static {
+	left: calc(100% - 1025px);
+	width: 1025px;
+	height: 800px;
+	opacity: 0.6;
+}
+.our-life {
+	background-color: $main-bg;
+	position: relative;
+	&__body {
+		z-index: 2;
+		padding: 120px 0;
+		@media (max-width: $desktop) {
+			padding: 80px 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 60px 0;
+		}
+		@media (max-width: $phone) {
+			padding: 40px 0;
+		}
+	}
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $tablet) {
+			flex-wrap: wrap;
+			row-gap: 25px;
+		}
+	}
+	&__item:not(:last-child) {
+		flex: 0 1 19.5%;
+		@media (max-width: $desktop) {
+			flex: 0 1 25%;
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 50%;
+		}
+	}
+	&__item {
+		text-align: center;
+		@media (max-width: $desktop) {
+			flex: 0 1 25%;
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 50%;
+		}
+		@media (max-width: $phone) {
+			&:first-child {
+				flex: 0 1 100%;
+				display: flex;
+				column-gap: 10px;
+				align-items: center;
+			}
+			&:last-child {
+				flex: 0 1 100%;
+			}
+		}
+	}
+	&__item-icon {
+		path {
+			fill: $desc;
+		}
+		svg {
+			width: 25px;
+			height: 25px;
+		}
+	}
+	&__item-value {
+		margin: 20px 0 0;
+		font-family: 'Ubu-B';
+		color: $primary;
+		font-size: 46px;
+		line-height: 130%;
+		@media (max-width: $desktop) {
+			font-size: 32px;
+			margin: 10px 0 0;
+		}
+		@media (max-width: $phone) {
+			font-size: 24px;
+			margin: 0;
+		}
+	}
+	&__item-text {
+		margin: 8px 0 0;
+		line-height: 150%;
+		color: $titles;
+		@media (max-width: $phone) {
+			font-size: 17px;
+			margin: 0;
+		}
+	}
+	&__signature {
+		padding: 120px 0 0;
+		display: flex;
+		@media (max-width: $desktop) {
+			padding: 65px 0 0;
+		}
+		@media (max-width: $tablet) {
+			flex-wrap: wrap;
+			padding: 40px 0 0;
+		}
+		@media (max-width: $phone) {
+			justify-content: center;
+			padding: 20px 0 0;
+		}
+	}
+	&__signature-image {
+		margin: 120px 0 0;
+		min-width: 525px;
+		height: 580px;
+		position: relative;
+		overflow: hidden;
+		border-radius: 4px;
+		@media (max-width: $desktop) {
+			flex: 0 1 50%;
+			min-width: auto;
+			height: 510px;
+			margin: 50px 0 0;
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 80%;
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 80%;
+			height: 450px;
+		}
+	}
+	&__signature-info {
+		z-index: 2;
+		background: $main-bg;
+		padding: 80px 105px 80px 135px;
+		margin: 0 0 130px -30px;
+		border-radius: 4px;
+		box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03),
+			0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+			0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+			0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+		@media (max-width: $desktop) {
+			flex: 0 1 50%;
+			padding: 40px 80px;
+			margin: 0 0 50px -30px;
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 80%;
+			margin: -100px 0 30px calc(100% - 80%);
+		}
+		@media (max-width: $phone) {
+			flex: 0 1 100%;
+			padding: 20px 30px;
+			margin: -100px 0 0;
+		}
+	}
+	&__signature-info-text {
+		position: relative;
+		font-family: 'Ubu-B';
+		font-size: 20px;
+		line-height: 150%;
+		color: $titles;
+		@media (max-width: $desktop) {
+			font-size: 16px;
+		}
+		span {
+			position: absolute;
+			left: -50px;
+			@media (max-width: $phone) {
+				left: -20px;
+				svg {
+					width: 10px;
+					height: 10px;
+				}
+			}
+		}
+	}
+	&__signature-value {
+		margin: 60px 0 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__signature-value-name {
+		display: flex;
+		flex-direction: column;
+		span:first-child {
+			color: $titles;
+			font-family: 'Ubu-B';
+			font-size: 16px;
+			line-height: 160%;
+		}
+		span:last-child {
+			margin: 4px 0 0 0;
+			color: $desc;
+			font-size: 14px;
+			line-height: 150%;
+		}
+	}
+	&__signature-value-sign path {
+		fill: $primary;
+	}
+	.for-our-life {
+		width: 1025px;
+		height: 825px;
+		left: calc(100% - 500px);
+		top: calc(100% - 400px);
+	}
+}
+.our-core-about {
+	background: $auxiliary-bg;
+	z-index: 1;
+	&__body {
+		padding: 80px 0;
+		@media (max-width: $desktop) {
+			padding: 60px 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 40px 0;
+		}
+	}
+}
+.our-partners {
+	background: $main-bg;
+	padding: 120px 0;
+	@media (max-width: $desktop) {
+		padding: 80px 0;
+	}
+	@media (max-width: $tablet) {
+		padding: 60px 0;
+	}
+	@media (max-width: $phone) {
+		padding: 40px 0;
+	}
+}

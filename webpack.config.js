@@ -89,6 +89,7 @@ module.exports = {
 		services: path.resolve(__dirname, 'src/scripts/handlers/handleServicesPage.js'),
 		work: path.resolve(__dirname, 'src/scripts/handlers/handleWorkPage.js'),
 		project: path.resolve(__dirname, 'src/scripts/handlers/handleProjectPage.js'),
+		about: path.resolve(__dirname, 'src/scripts/handlers/handleAboutPage.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),

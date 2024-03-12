@@ -1,0 +1,105 @@
+.advantages {
+	&__content {
+		margin: 60px 0 0;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $desktop) {
+			margin: 40px 0 0;
+		}
+		@media (max-width: $tablet) {
+			margin: 30px 0 0;
+			flex-wrap: wrap;
+			row-gap: 20px;
+		}
+		@media (max-width: $phone) {
+			margin: 20px 0 0;
+		}
+	}
+	&__content-item {
+		flex: 0 1 23.1%;
+		text-align: center;
+		&:nth-child(2) {
+			position: relative;
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				height: 100%;
+				width: 1px;
+				background: linear-gradient(
+					135deg,
+					rgba(218, 219, 221, 0) 0%,
+					rgba(218, 219, 221, 0.5) 12.33%,
+					#dadbdd 51.91%,
+					rgba(218, 219, 221, 0.5) 87.85%,
+					rgba(218, 219, 221, 0) 100%
+				);
+			}
+			&::before {
+				left: -94px;
+			}
+			&::after {
+				right: -94px;
+			}
+		}
+		@media (max-width: $desktop) {
+			flex: 0 1 30%;
+			&:nth-child(2) {
+				position: relative;
+				&::before {
+					left: -5%;
+				}
+				&::after {
+					right: -5%;
+				}
+			}
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 100%;
+			display: flex;
+			align-items: center;
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+	}
+	&__content-item-box {
+		@media (max-width: $tablet) {
+			text-align: left;
+			margin: 0 0 0 20px;
+		}
+	}
+	&__content-item-title {
+		margin: 21px 0 0;
+		color: $titles;
+		font-size: 20px;
+		font-family: 'Ubu-B';
+		line-height: 30px;
+		@media (max-width: $tablet) {
+			margin: 0;
+			font-size: 17px;
+			line-height: 20px;
+		}
+		@media (max-width: $phone) {
+			font-size: 15px;
+			line-height: 15px;
+		}
+	}
+	&__content-item-text {
+		margin: 8px 0 0;
+		font-size: 16px;
+		color: $desc;
+		font-family: 'Ubu-R';
+		line-height: 25.6px;
+		@media (max-width: $tablet) {
+			font-size: 15px;
+			line-height: 20px;
+		}
+		@media (max-width: $phone) {
+			font-size: 12px;
+			line-height: 15px;
+		}
+	}
+}
