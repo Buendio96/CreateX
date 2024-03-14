@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/scripts/handlers/handleWorkPage.js":
@@ -7,7 +8,6 @@
   \************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_bg_image_work__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @images/bg-image-work */ "./src/assets/images/bg-image-work.png");
@@ -65,7 +65,6 @@ __webpack_async_result__();
   \***************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -826,56 +825,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.solid-button {
 
 /***/ }),
 
-/***/ "./src/pages/templates/selectedProject.hbs":
-/*!*************************************************!*\
-  !*** ./src/pages/templates/selectedProject.hbs ***!
-  \*************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<section class=\"name-page-block \">\r\n	<div class=\"name-page-block__body\">\r\n		<ul class=\"name-page-block__list\">\r\n			<li>\r\n				<a class=\"link-hover\" href=\"/\">\r\n					Homepage / \r\n				</a>\r\n			</li>\r\n			<li>\r\n				<a class=\"link-hover\" href=\"../work.html\">\r\n					Work / \r\n				</a>\r\n			</li>\r\n			<li>\r\n				<a class=\"link-hover\" href=\"./project.html?id="
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectId") || (depth0 != null ? lookupProperty(depth0,"projectId") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectId","hash":{},"data":data,"loc":{"start":{"line":15,"column":50},"end":{"line":15,"column":63}}}) : helper)))
-    + "\">\r\n					"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectName") || (depth0 != null ? lookupProperty(depth0,"projectName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectName","hash":{},"data":data,"loc":{"start":{"line":16,"column":5},"end":{"line":16,"column":20}}}) : helper)))
-    + "\r\n				</a>\r\n			</li>\r\n		</ul>\r\n		<h1 class=\"name-page-block__title \">\r\n			"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectName") || (depth0 != null ? lookupProperty(depth0,"projectName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectName","hash":{},"data":data,"loc":{"start":{"line":21,"column":3},"end":{"line":21,"column":18}}}) : helper)))
-    + "\r\n		</h1>\r\n	</div>\r\n</section>\r\n<section class=\"introduce\">\r\n	<div class=\"introduce__body \">\r\n		<div class=\"introduce__slider\">\r\n			<div class=\"introduce__slider-title-image\">\r\n				<button class=\"arrow\">\r\n					<img src=\"/assets/vendors/arrow-left.svg\" alt=\"\">\r\n				</button>\r\n				<button type=\"button\" class=\"arrow\">\r\n					<img src=\"/assets/vendors/arrow-right.svg\" alt=\"\">\r\n				</button>\r\n				<img id=\"project-introduce-0\" class=\"image-adaptive\" alt=\"\">\r\n			</div>\r\n			<div class=\"introduce__slider-subtitle-body\">\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-1\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-2\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-3\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-4\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-5\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n				<div class=\"introduce__slider-subtitle-image\">\r\n					<img id=\"project-introduce-6\" class=\"image-adaptive\" alt=\"\">\r\n				</div>\r\n			</div>\r\n		</div>\r\n		<div class=\"introduce__description \">\r\n			<div class=\"introduce__description-value\">\r\n				<h3 class=\"introduce__description-value-title\">\r\n					Project goal\r\n				</h3>\r\n				<p class=\"introduce__description-value-text first\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectDescription") || (depth0 != null ? lookupProperty(depth0,"projectDescription") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectDescription","hash":{},"data":data,"loc":{"start":{"line":63,"column":55},"end":{"line":63,"column":77}}}) : helper)))
-    + "</p>\r\n				<p class=\"introduce__description-value-text\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectGoal") || (depth0 != null ? lookupProperty(depth0,"projectGoal") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectGoal","hash":{},"data":data,"loc":{"start":{"line":64,"column":49},"end":{"line":64,"column":64}}}) : helper)))
-    + "</p>\r\n			</div>\r\n			<ul class=\"introduce__description-info\">\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Location </span>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectLocation") || (depth0 != null ? lookupProperty(depth0,"projectLocation") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectLocation","hash":{},"data":data,"loc":{"start":{"line":68,"column":27},"end":{"line":68,"column":46}}}) : helper)))
-    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Client </span>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectClient") || (depth0 != null ? lookupProperty(depth0,"projectClient") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectClient","hash":{},"data":data,"loc":{"start":{"line":71,"column":25},"end":{"line":71,"column":42}}}) : helper)))
-    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Architect </span>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectArchitect") || (depth0 != null ? lookupProperty(depth0,"projectArchitect") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectArchitect","hash":{},"data":data,"loc":{"start":{"line":74,"column":28},"end":{"line":74,"column":48}}}) : helper)))
-    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Size </span>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectSize") || (depth0 != null ? lookupProperty(depth0,"projectSize") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectSize","hash":{},"data":data,"loc":{"start":{"line":77,"column":23},"end":{"line":77,"column":38}}}) : helper)))
-    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Value </span>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectValue") || (depth0 != null ? lookupProperty(depth0,"projectValue") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectValue","hash":{},"data":data,"loc":{"start":{"line":80,"column":24},"end":{"line":80,"column":40}}}) : helper)))
-    + "\r\n				</li>\r\n				<li class=\"introduce__description-info-item\">\r\n					<span>Completed </span>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"projectCompleted") || (depth0 != null ? lookupProperty(depth0,"projectCompleted") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"projectCompleted","hash":{},"data":data,"loc":{"start":{"line":83,"column":28},"end":{"line":83,"column":48}}}) : helper)))
-    + "\r\n				</li>\r\n		</div>\r\n</section>";
-},"useData":true});
-
-/***/ }),
-
 /***/ "./src/styles/pages/work.scss":
 /*!************************************!*\
   !*** ./src/styles/pages/work.scss ***!
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -930,7 +885,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \*********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "assets/images/bg-image-work..png";
 
 /***/ }),
@@ -941,7 +895,6 @@ module.exports = __webpack_require__.p + "assets/images/bg-image-work..png";
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "assets/images/homepage-support..jpg";
 
 /***/ }),
@@ -952,7 +905,6 @@ module.exports = __webpack_require__.p + "assets/images/homepage-support..jpg";
   \*********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -982,7 +934,6 @@ const initGetOpinionData = async () => {
   \*********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   initGetData: () => (/* binding */ initGetData),
@@ -1010,11 +961,13 @@ const initGetFilteredData = async function (from) {
   }
 };
 const initGetRelatedData = async dataType => {
-  try {
-    const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?dataType=${dataType}`);
-    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects = data;
-  } catch (error) {
-    console.error(error);
+  if (dataType !== null) {
+    try {
+      const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?dataType=${dataType}`);
+      _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects = data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 };
 const initGetRangedData = async function () {
@@ -1045,7 +998,6 @@ const initGetData = async id => {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1078,7 +1030,6 @@ const setDataToLocalStor = (data, key) => {
   \*************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1106,7 +1057,6 @@ const STORE = {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1144,7 +1094,6 @@ const createPortfolioCard = item => {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1163,7 +1112,6 @@ const addBackground = (idOfElement, imageEl) => {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MM_DD_YYYY: () => (/* binding */ MM_DD_YYYY),
@@ -1201,7 +1149,6 @@ const setNeededMonth = targetTime => {
   \*******************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1233,33 +1180,12 @@ const fetchData = async function (apiUrl) {
 
 /***/ }),
 
-/***/ "./src/scripts/utilities/getQueryParams.mjs":
-/*!**************************************************!*\
-  !*** ./src/scripts/utilities/getQueryParams.mjs ***!
-  \**************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const initGetQueryParams = queryRequire => {
-  var queryParams = new URLSearchParams(window.location.search);
-  const filterValue = queryParams.get(queryRequire);
-  return filterValue !== '' ? filterValue : null;
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initGetQueryParams);
-
-/***/ }),
-
 /***/ "./src/scripts/utilities/showOpinion.mjs":
 /*!***********************************************!*\
   !*** ./src/scripts/utilities/showOpinion.mjs ***!
   \***********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   initShowOpinion: () => (/* binding */ initShowOpinion),
@@ -1319,7 +1245,6 @@ const initShowOpinion = (elements, data) => {
   \************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1343,21 +1268,17 @@ const initShowProjects = async function (container, button) {
   let filterType = (0,_js_utilities_getQueryParams__WEBPACK_IMPORTED_MODULE_4__["default"])('filters');
   let localData = await setDataForRender(startWith, maxFilteredItems, filterType);
   render(container, localData, filterType);
-  if (button && !button.hasEventListener) {
-    button.hasEventListener = true;
-    button.addEventListener('click', async () => {
-      startWith += QUANTITY_OF_DATA;
-      maxFilteredItems += QUANTITY_OF_DATA;
-      localData = await setDataForRender(startWith, maxFilteredItems, filterType);
-      if (localData !== null) {
-        render(container, localData, filterType);
-      } else {
-        button.disabled = true;
-      }
-    });
-  }
-  if (boxOfFilters && !boxOfFilters.hasEventListener) {
-    boxOfFilters.hasEventListener = true;
+  if (button) button.addEventListener('click', async () => {
+    startWith += QUANTITY_OF_DATA;
+    maxFilteredItems += QUANTITY_OF_DATA;
+    localData = await setDataForRender(startWith, maxFilteredItems, filterType);
+    if (localData !== null) {
+      render(container, localData, filterType);
+    } else {
+      button.disabled = true;
+    }
+  });
+  if (boxOfFilters) {
     boxOfFilters.addEventListener('click', async target => {
       filterType = getFilterType(target);
       localData = await setDataForRender(0, maxFilteredItems, filterType);
@@ -1433,63 +1354,12 @@ const setNewURL = value => {
 
 /***/ }),
 
-/***/ "./src/scripts/utilities/showSelectedProject.mjs":
-/*!*******************************************************!*\
-  !*** ./src/scripts/utilities/showSelectedProject.mjs ***!
-  \*******************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js-api/getProjectsData */ "./src/scripts/api/getProjectsData.mjs");
-/* harmony import */ var _p_temp_selectedProject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @p-temp/selectedProject */ "./src/pages/templates/selectedProject.hbs");
-/* harmony import */ var _js_store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js-store/store */ "./src/scripts/store/store.mjs");
-
-
-
-const initShowSelectedProject = async (id, container) => {
-  if (id === null) {
-    console.log("Project ID were not transferred");
-  }
-  await (0,_js_api_getProjectsData__WEBPACK_IMPORTED_MODULE_0__.initGetData)(id);
-  const project = _js_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].PROJECTS.selectedProject[0];
-  const typeOfProject = project.dataType;
-  console.log(project);
-  console.log(typeOfProject);
-  const PROJECT_TEMPLATE_OPTIONS = {
-    projectId: project.id,
-    projectName: project.name,
-    projectDescription: project.introduce.text,
-    projectGoal: project.introduce.goal,
-    projectLocation: project.details.location,
-    projectClient: project.details.client,
-    projectArchitect: project.details.architect,
-    projectSize: project.details.size,
-    projectValue: project.details.value,
-    projectCompleted: project.details.completed
-  };
-  const renderHTML = _p_temp_selectedProject__WEBPACK_IMPORTED_MODULE_1__(PROJECT_TEMPLATE_OPTIONS);
-  if (!renderHTML || !container) {
-    console.log('Container element or project template not found');
-  } else {
-    container.innerHTML = renderHTML;
-  }
-  return typeOfProject;
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initShowSelectedProject);
-
-/***/ }),
-
 /***/ "./src/scripts/utilities/sortByDate.mjs":
 /*!**********************************************!*\
   !*** ./src/scripts/utilities/sortByDate.mjs ***!
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1778,7 +1648,7 @@ const sortByDate = data => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-464c4e"], () => (__webpack_require__("./src/scripts/handlers/handleWorkPage.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-464c4e","src_scripts_utilities_getQueryParams_mjs-src_scripts_utilities_showSelectedProject_mjs"], () => (__webpack_require__("./src/scripts/handlers/handleWorkPage.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

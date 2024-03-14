@@ -80,9 +80,11 @@
 		path {
 			fill: $desc;
 		}
-		svg {
-			width: 25px;
-			height: 25px;
+		@media (max-width: $tablet) {
+			svg {
+				width: 25px;
+				height: 25px;
+			}
 		}
 	}
 	&__item-value {
@@ -142,7 +144,7 @@
 		}
 		@media (max-width: $phone) {
 			flex: 0 1 80%;
-			height: 450px;
+			height: 350px;
 		}
 	}
 	&__signature-info {
@@ -178,6 +180,9 @@
 		color: $titles;
 		@media (max-width: $desktop) {
 			font-size: 16px;
+		}
+		@media (max-width: $phone) {
+			font-size: 12px;
 		}
 		span {
 			position: absolute;
@@ -239,12 +244,210 @@
 	background: $main-bg;
 	padding: 120px 0;
 	@media (max-width: $desktop) {
-		padding: 80px 0;
-	}
-	@media (max-width: $tablet) {
 		padding: 60px 0;
 	}
-	@media (max-width: $phone) {
+	@media (max-width: $tablet) {
 		padding: 40px 0;
+	}
+	@media (max-width: $phone) {
+		padding: 20px 0;
+	}
+}
+.our-team {
+	background: $main-bg;
+	position: relative;
+	&__body {
+		padding: 75px 0 120px;
+		z-index: 1;
+		@media (max-width: $desktop) {
+			padding: 60px 0;
+		}
+		@media (max-width: $tablet) {
+			padding: 40px 0;
+		}
+		@media (max-width: $phone) {
+			padding: 20px 0;
+		}
+	}
+	&__list {
+		margin: 60px 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 30px;
+		row-gap: 60px;
+		@media (max-width: $desktop) {
+			column-gap: 10px;
+			row-gap: 20px;
+		}
+		@media (max-width: $tablet) {
+			margin: 30px 0 0;
+			justify-content: center;
+		}
+	}
+	&__item {
+		flex: 0 1 calc(25% - 30px);
+		border-radius: 4px;
+		overflow: hidden;
+		@media (max-width: $desktop) {
+			flex: 0 1 calc(25% - 10px);
+		}
+		@media (max-width: $tablet) {
+			flex: 0 1 calc(33.333% - 10px);
+		}
+	}
+	&__item:hover {
+		.our-team__info-social {
+			top: -60px;
+			z-index: 1;
+			background-color: rgba($color: $primary, $alpha: 0.7);
+			@media (max-width: $tablet) {
+				top: -40px;
+			}
+		}
+	}
+	&__item-image {
+		width: 100%;
+		height: 340px;
+		position: relative;
+		@media (max-width: $desktop) {
+			height: 35vw;
+		}
+	}
+	&__info {
+		position: relative;
+		background-color: $main-bg;
+		text-align: center;
+	}
+	&__info-social {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: -1;
+		background-color: $main-bg;
+		height: 60px;
+		display: flex;
+		column-gap: 17px;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.6s ease;
+		@media (max-width: $tablet) {
+			height: 40px;
+		}
+	}
+	&__info-social-link {
+		img {
+			width: 17px;
+			height: 17px;
+			&:hover {
+				transform: scale(1.6);
+			}
+		}
+	}
+	&__info-name {
+		font-family: 'Ubu-B';
+		font-size: 20px;
+		line-height: 150%;
+		color: $links;
+		padding: 16px 0 0;
+		@media (max-width: $tablet) {
+			padding: 7px 0 0;
+			font-size: 16px;
+		}
+		@media (max-width: $phone) {
+			font-size: 13px;
+		}
+	}
+	&__info-position {
+		margin: 4px 0 0;
+		line-height: 160%;
+		color: $desc;
+		font-size: 16px;
+		@media (max-width: $tablet) {
+			font-size: 13px;
+			margin: 0;
+		}
+		@media (max-width: $phone) {
+			font-size: 10px;
+		}
+	}
+	&__invite {
+		margin: 80px 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 18px;
+		line-height: 150%;
+		h3 {
+			color: $titles;
+		}
+		a {
+			margin: 0 0 0 5px;
+			color: $primary;
+			transition: all 0.5s ease;
+			&:hover {
+				background-color: $primary;
+				color: $text;
+				padding: 0 10px;
+				border-radius: 5px;
+			}
+		}
+		@media (max-width: $tablet) {
+			margin: 30px 0 0 0;
+			font-size: 14px;
+		}
+		@media (max-width: $phone) {
+			margin: 15px 0 0 0;
+			font-size: 11px;
+		}
+	}
+
+	.for-our-team {
+		position: absolute;
+		width: 790px;
+		height: 635px;
+		left: -360px;
+		top: calc(100% - 700px);
+	}
+}
+.map {
+	background: $auxiliary-bg;
+	z-index: 1;
+	&__body {
+		padding: 80px 0 120px;
+		@media (max-width: $desktop) {
+			padding: 60px 0 80px;
+		}
+		@media (max-width: $tablet) {
+			padding: 40px 0;
+		}
+		@media (max-width: $phone) {
+			padding: 20px 0;
+		}
+	}
+	&__title {
+		font-family: 'Ubu-B';
+		font-size: 46px;
+		line-height: 130%;
+		color: $titles;
+		text-align: center;
+		@media (max-width: $desktop) {
+			font-size: 36px;
+		}
+		@media (max-width: $tablet) {
+			font-size: 24px;
+		}
+		@media (max-width: $phone) {
+			font-size: 12px;
+		}
+	}
+	&__image {
+		margin: 60px 0 0 0;
+		position: relative;
+		width: 100%;
+		height: calc(563px / 1260px * 100vw);
+		max-height: 563px;
 	}
 }

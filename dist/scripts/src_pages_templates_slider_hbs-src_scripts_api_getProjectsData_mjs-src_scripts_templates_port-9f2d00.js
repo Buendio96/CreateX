@@ -44,7 +44,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,"
     + alias4(((helper = (helper = lookupProperty(helpers,"modClass") || (depth0 != null ? lookupProperty(depth0,"modClass") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"modClass","hash":{},"data":data,"loc":{"start":{"line":20,"column":31},"end":{"line":20,"column":43}}}) : helper)))
     + " view-more-block\">\r\n		<p class=\"view-more-block__title \">\r\n			Explore all our works\r\n		</p>\r\n		<a class=\"view-more-block__link "
     + alias4(((helper = (helper = lookupProperty(helpers,"modClass") || (depth0 != null ? lookupProperty(depth0,"modClass") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"modClass","hash":{},"data":data,"loc":{"start":{"line":24,"column":34},"end":{"line":24,"column":46}}}) : helper)))
-    + " solid-button\" href=\"#\">\r\n			view portfolio\r\n		</a>\r\n	</div>\r\n</div>";
+    + " solid-button\" href=\"work.html\">\r\n			view portfolio\r\n		</a>\r\n	</div>\r\n</div>";
 },"useData":true});
 
 /***/ }),
@@ -83,11 +83,13 @@ const initGetFilteredData = async function (from) {
   }
 };
 const initGetRelatedData = async dataType => {
-  try {
-    const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?dataType=${dataType}`);
-    _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects = data;
-  } catch (error) {
-    console.error(error);
+  if (dataType !== null) {
+    try {
+      const data = await (0,_js_utilities_getData__WEBPACK_IMPORTED_MODULE_2__["default"])(`http://localhost:4100/projects?dataType=${dataType}`);
+      _js_store_store__WEBPACK_IMPORTED_MODULE_0__["default"].PROJECTS.relatedProjects = data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 };
 const initGetRangedData = async function () {

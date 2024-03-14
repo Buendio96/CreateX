@@ -4,13 +4,25 @@
 	&__list {
 		margin: 21px 0 0;
 		display: flex;
-		justify-content: space-between;
+		flex-wrap: wrap;
+		column-gap: 102px;
+		justify-content: center;
+		> div {
+			width: 120px;
+			height: 64px;
+			position: relative;
+		}
 		@media (max-width: $desktop) {
-			flex-wrap: wrap;
+			column-gap: 20px;
+			> div {
+				width: 90px;
+				height: 50px;
+			}
+		}
+		@media (max-width: $phone) {
 			column-gap: 10px;
-			row-gap: 15px;
-			img {
-				flex: 0 1 25%;
+			> div {
+				width: calc(33.333% - 10px);
 			}
 		}
 	}

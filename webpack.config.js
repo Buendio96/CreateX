@@ -90,6 +90,7 @@ module.exports = {
 		work: path.resolve(__dirname, 'src/scripts/handlers/handleWorkPage.js'),
 		project: path.resolve(__dirname, 'src/scripts/handlers/handleProjectPage.js'),
 		about: path.resolve(__dirname, 'src/scripts/handlers/handleAboutPage.js'),
+		position: path.resolve(__dirname, 'src/scripts/handlers/handlePositionPage.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -137,6 +138,16 @@ module.exports = {
 			template: path.resolve(__dirname, 'src/pages/work/project.hbs'),
 			filename: 'work/project.html',
 			chunks: ['main', 'project'],
+			minify: prodMode,
+			templateParameters: {
+				'filename': 'createX',
+				'favicon': '/assets/icons/favicon.ico',
+			}
+		}),
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'src/pages/about-us/available-position.hbs'),
+			filename: 'about-us/available-position.html',
+			chunks: ['main', 'position'],
 			minify: prodMode,
 			templateParameters: {
 				'filename': 'createX',
